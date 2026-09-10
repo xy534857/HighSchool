@@ -147,7 +147,7 @@ function completeTask(world,owner){
 export function tickTasks(world,dt){
  for(const owner of Object.keys(world.state.tasks)){
   const task=world.state.tasks[owner],p=world.state.actors[owner];let spec=world.tuning.pack.actions[task.candidate.action];
-  if(spec.transition&&task.phase==='perform'){
+  if(spec.transition&&['travel','enter','perform'].includes(task.phase)){
    const bindings=world.roleBindings(owner,spec,task.candidate.roles)[0],ctx=bindings&&world.context(owner,bindings,task.candidate.args),next=world.tuning.pack.actions[spec.transition.action];
    if(ctx&&test(spec.transition.when,ctx)&&next.slot===spec.slot&&test(next.when,ctx)){
     world.state.receipts[task.id]={ok:true,status:'completed',commandId:task.id};

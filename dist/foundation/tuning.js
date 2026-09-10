@@ -107,6 +107,10 @@ export class Tuning {
    }
   }
   fail((p.clock?.step||.5)>0&&(p.clock?.step||.5)<=1,'Clock step must be in (0,1]');
+  for(const prep of p.clock.preparations||[]){
+   fail(p.clock.periods.some(p=>p.id===prep.period)&&typeof prep.object==='string'&&typeof prep.slot==='string'&&typeof prep.group==='string'&&Number.isFinite(prep.bufferMinutes)&&prep.bufferMinutes>=0,'Invalid schedule preparation');
+   validateExpression(prep.when);fail(!prep.weekdays||prep.weekdays.every(n=>Number.isInteger(n)&&n>=0&&n<7),'Invalid schedule weekdays');
+  }
   return this;
  }
  parameters(action,args={}){

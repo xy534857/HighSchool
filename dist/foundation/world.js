@@ -110,12 +110,12 @@ export class World {
    for(const p of Object.values(this.state.actors))for(const [need,rate] of Object.entries(this.tuning.pack.needs.decay))p.needs[need]=Math.max(0,Math.min(100,p.needs[need]-rate*dt));
    seedProjects(this);tickEnvironment(this,dt);tickObligations(this,dt);this.tickTasks(dt);this.syncObjects();tickSessions(this,dt);this.resumeTasks();this.tickAppointments();this.tickSituations();tickReflection(this);
    const actors=Object.values(this.state.actors),cursor=this.state.decisionCursor||0;let decisionsLeft=decisionBudget;
-   const priority=p=>{const task=this.state.tasks[p.id],period=perception.clockInfo(this);return (Object.values(this.state.sessions).some(s=>s.status==='open'&&s.members[p.id]?.status==='invited')?400:0)+(Object.values(this.tuning.pack.actions).some(a=>a.interruptWhen&&(!task||task.attention!=='block')&&(!task||a!==this.tuning.pack.actions[task.candidate.action])&&test(a.interruptWhen,{actor:p,clock:period}))?300:0)+(Math.min(...Object.values(p.needs))<15?200:0);};
+   const priority=p=>{const task=this.state.tasks[p.id],period=perception.clockInfo(this,p.id);return (Object.values(this.state.sessions).some(s=>s.status==='open'&&s.members[p.id]?.status==='invited')?400:0)+(Object.values(this.tuning.pack.actions).some(a=>a.interruptWhen&&(!task||task.attention!=='block')&&(!task||a!==this.tuning.pack.actions[task.candidate.action])&&test(a.interruptWhen,{actor:p,clock:period}))?300:0)+(Math.min(...Object.values(p.needs))<15?200:0);};
    const order=Number.isFinite(decisionBudget)?actors.slice(cursor).concat(actors.slice(0,cursor)).sort((a,b)=>priority(b)-priority(a)):actors;
    if(autonomy)for(const p of order)if(p.presence==='here'&&canDecide(this,p.id)){
     const pendingInvite=Object.values(this.state.sessions).some(s=>s.status==='open'&&s.members[p.id]?.status==='invited');
     const task=this.state.tasks[p.id],minute=this.state.time%1440,period=this.tuning.pack.clock.periods.find(c=>minute>=c.start&&minute<c.end)?.id;
-    const scheduleChange=task&&task.attention!=='block'&&Object.entries(this.tuning.pack.actions).some(([id,a])=>a.interruptWhen&&allowsAutomatic(this,p.id,a)&&id!==task.candidate.action&&test(a.interruptWhen,{actor:p,clock:perception.clockInfo(this)}));
+    const scheduleChange=task&&task.attention!=='block'&&Object.entries(this.tuning.pack.actions).some(([id,a])=>a.interruptWhen&&allowsAutomatic(this,p.id,a)&&id!==task.candidate.action&&test(a.interruptWhen,{actor:p,clock:perception.clockInfo(this,p.id)}));
     const situationDue=situations.situationDecisionDue(this,p.id);
     if(task&&!pendingInvite&&!scheduleChange&&!situationDue)continue;
     if(this.state.time+1e-7<(this.state.nextDecision[p.id]||0))continue;

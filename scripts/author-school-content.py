@@ -146,3 +146,4 @@ runpy.run_path(str(Path(__file__).with_name('refine-campus-planning.py')))
 
 runpy.run_path(str(Path(__file__).with_name('author-social-content.py')))
 runpy.run_path(str(Path(__file__).with_name('author-classroom-content.py')))
+runpy.run_path(str(Path(__file__).with_name('author-school-timetable.py')))

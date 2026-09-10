@@ -504,7 +504,7 @@
     },
     "canteen": {
       "name": "食堂",
-      "subtitle": "午餐 · 12:00",
+      "subtitle": "午餐与午休 · 12:15–13:45",
       "color": "#f0d7c1",
       "outdoor": false,
       "surface": "tiles",
@@ -573,7 +573,7 @@
       "zone": "生活区",
       "icon": "♨",
       "zones": [],
-      "description": "午餐 · 12:00。点选设施查看材料、空位和可执行交互。",
+      "description": "午餐与午休 · 12:15–13:45。领餐、用餐后可自由活动。",
       "transit": false
     },
     "infirmary": {

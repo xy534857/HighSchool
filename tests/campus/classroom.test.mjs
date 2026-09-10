@@ -21,7 +21,7 @@ function act(w,owner,name){
 test('ordinary Soar autonomy can open, question and resolve a classroom exchange while keeping attendance',async()=>{
  const g=await SchoolService.create(options),w=g.world;
  try{
-  w.state.time=500;w.state.situationKeys.push('club-preparation:0');w.advance(85);
+  w.state.time=500;w.state.situationKeys.push('club-preparation:0');w.advance(50);
   const run=runOf(w),turns=w.state.events.filter(e=>e.situation===run.id&&e.delivery==='room');
   assert.equal(run.status,'completed');assert.ok(turns.length>=4);
   assert.ok(turns.some(e=>e.intent==='classroom-question'));
@@ -57,7 +57,7 @@ test('a personal admission makes a real after-class commitment; a deflection cha
   assert.ok(w.modelContext('t').events.some(e=>e.intent==='classroom-question'));
   act(w,'teacher','close-open');
   assert.equal(runOf(w).state.outcome,'unresolved');assert.equal(w.mind.goal('t',goal.uid.slice(5)).status,'active');
-  w.state.time=600;for(const a of Object.values(w.state.actors))if(a.id!=='t')a.presence='away';w.state.controls.t.enabled=true;
+  w.state.time=555;for(const a of Object.values(w.state.actors))if(a.id!=='t')a.presence='away';w.state.controls.t.enabled=true;
   for(let i=0;i<45&&w.mind.goal('t',goal.uid.slice(5)).status==='active';i++)w.advance(.5);
   assert.equal(w.mind.goal('t',goal.uid.slice(5)).status,'completed');
   assert.ok(w.state.events.some(e=>e.actor==='t'&&e.action==='study'&&e.kind==='action-completed'));

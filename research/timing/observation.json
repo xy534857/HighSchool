@@ -1,0 +1,576 @@
+{
+  "method": "Unmodified default start at 08:00; ordinary SchoolService ticks with decisionBudget=2; one player command after the first lesson: solve chess at the student center; then autonomous return. No actor relocation, scripted NPC decisions or time jumps.",
+  "firstLessonEnd": 555,
+  "nextLessonStart": 600,
+  "departed": 555.5,
+  "arrived": 565,
+  "completed": 570,
+  "outboundMinutes": 9.5,
+  "freeMinutesAfterActivity": 30,
+  "seatedAt": 599,
+  "returnedAt": 600.5,
+  "attendance": "present",
+  "remedy": "none",
+  "playerAtEnd": {
+    "room": "classroom",
+    "action": "attend-class",
+    "phase": "perform"
+  },
+  "playerActions": [
+    {
+      "time": 555,
+      "kind": "action-cancelled",
+      "action": "attend-class",
+      "reason": "当前课程时段结束。"
+    },
+    {
+      "time": 570,
+      "kind": "action-completed",
+      "action": "solve-chess",
+      "reason": "玩家操作"
+    },
+    {
+      "time": 584,
+      "kind": "action-completed",
+      "action": "drink",
+      "reason": "照顾身体：喝水"
+    }
+  ],
+  "returnTrace": [
+    {
+      "time": 580,
+      "room": "hall",
+      "x": 7.865650169284874,
+      "z": 0,
+      "action": "drink",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 2.450209000908255,
+      "returnTravel": 2.3909700423293496
+    },
+    {
+      "time": 580.5,
+      "room": "hall",
+      "x": 2.344340151870249,
+      "z": 1.1556598481297509,
+      "action": "drink",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 1.9502090009082538,
+      "returnTravel": 2.1797667556433256
+    },
+    {
+      "time": 581,
+      "room": "hall",
+      "x": 0,
+      "z": 3.35,
+      "action": "drink",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 1.4502090009082538,
+      "returnTravel": 2.275073741698619
+    },
+    {
+      "time": 581.5,
+      "room": "hall",
+      "x": 0,
+      "z": 3.35,
+      "action": "drink",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 0.9502090009082539,
+      "returnTravel": 2.275073741698619
+    },
+    {
+      "time": 582,
+      "room": "courtyard",
+      "x": -2.0351667101674327,
+      "z": -5.464833289832567,
+      "action": "drink",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 0.4502090009082542,
+      "returnTravel": 3.506250638001016
+    },
+    {
+      "time": 582.5,
+      "room": "courtyard",
+      "x": -6,
+      "z": -2.05,
+      "action": "drink",
+      "phase": "enter",
+      "blockedBy": null,
+      "remainingRoute": 0.01250000000000003,
+      "returnTravel": 3.957064522840971
+    },
+    {
+      "time": 583,
+      "room": "courtyard",
+      "x": -6,
+      "z": -2.2,
+      "action": "drink",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": 3.969564522840971
+    },
+    {
+      "time": 583.5,
+      "room": "courtyard",
+      "x": -6,
+      "z": -2.2,
+      "action": "drink",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": 3.969564522840971
+    },
+    {
+      "time": 584,
+      "room": "courtyard",
+      "x": -6,
+      "z": -2.2,
+      "action": "drink",
+      "phase": "exit",
+      "blockedBy": null,
+      "remainingRoute": 0.12691275181454992,
+      "returnTravel": 3.9600664144790882
+    },
+    {
+      "time": 584.5,
+      "room": "courtyard",
+      "x": -4.6499999999999995,
+      "z": -1.7999999999999998,
+      "returnTravel": 3.8784496610059795
+    },
+    {
+      "time": 585,
+      "room": "courtyard",
+      "x": -4.6499999999999995,
+      "z": -1.7999999999999998,
+      "returnTravel": 3.8784496610059795
+    },
+    {
+      "time": 585.5,
+      "room": "courtyard",
+      "x": -4.6499999999999995,
+      "z": -1.7999999999999998,
+      "returnTravel": 3.8784496610059795
+    },
+    {
+      "time": 586,
+      "room": "courtyard",
+      "x": -4.6499999999999995,
+      "z": -1.7999999999999998,
+      "returnTravel": 3.8784496610059795
+    },
+    {
+      "time": 586.5,
+      "room": "courtyard",
+      "x": -4.6499999999999995,
+      "z": -1.7999999999999998,
+      "returnTravel": 3.8784496610059795
+    },
+    {
+      "time": 587,
+      "room": "courtyard",
+      "x": -4.6499999999999995,
+      "z": -1.7999999999999998,
+      "returnTravel": 3.8784496610059795
+    },
+    {
+      "time": 587.5,
+      "room": "courtyard",
+      "x": -4.6499999999999995,
+      "z": -1.7999999999999998,
+      "returnTravel": 3.8784496610059795
+    },
+    {
+      "time": 588,
+      "room": "courtyard",
+      "x": -4.6499999999999995,
+      "z": -1.7999999999999998,
+      "returnTravel": 3.8784496610059795
+    },
+    {
+      "time": 588.5,
+      "room": "courtyard",
+      "x": -4.6499999999999995,
+      "z": -1.7999999999999998,
+      "action": "prepare-class",
+      "phase": "travel",
+      "remainingRoute": 3.8784496610059795,
+      "returnTravel": 3.8784496610059795
+    },
+    {
+      "time": 589,
+      "room": "courtyard",
+      "x": -0.7966808243375558,
+      "z": -6.399122887080981,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 3.378449661005979,
+      "returnTravel": 3.378449661005979
+    },
+    {
+      "time": 589.5,
+      "room": "courtyard",
+      "x": -0.7966808243375558,
+      "z": -6.399122887080981,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "l",
+      "remainingRoute": 3.378449661005979,
+      "returnTravel": 3.378449661005979
+    },
+    {
+      "time": 590,
+      "room": "courtyard",
+      "x": -0.7966808243375558,
+      "z": -6.399122887080981,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "l",
+      "remainingRoute": 3.378449661005979,
+      "returnTravel": 3.378449661005979
+    },
+    {
+      "time": 590.5,
+      "room": "courtyard",
+      "x": -1.2559009431756643,
+      "z": -5.290467448067438,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 3.4760947727905083,
+      "returnTravel": 3.4760947727905083
+    },
+    {
+      "time": 591,
+      "room": "courtyard",
+      "x": -1.2559009431756643,
+      "z": -5.290467448067438,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "l",
+      "remainingRoute": 3.4760947727905083,
+      "returnTravel": 3.4760947727905083
+    },
+    {
+      "time": 591.5,
+      "room": "courtyard",
+      "x": -1.2559009431756643,
+      "z": -5.290467448067438,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "l",
+      "remainingRoute": 3.4760947727905083,
+      "returnTravel": 3.4760947727905083
+    },
+    {
+      "time": 592,
+      "room": "courtyard",
+      "x": -1.2559009431756643,
+      "z": -5.290467448067438,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "r",
+      "remainingRoute": 3.4760947727905083,
+      "returnTravel": 3.4760947727905083
+    },
+    {
+      "time": 592.5,
+      "room": "courtyard",
+      "x": -1.2559009431756643,
+      "z": -5.290467448067438,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "r",
+      "remainingRoute": 3.4760947727905083,
+      "returnTravel": 3.4760947727905083
+    },
+    {
+      "time": 593,
+      "room": "courtyard",
+      "x": 0,
+      "z": -7.35,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 2.9760947727905074,
+      "returnTravel": 3.2850737416986204
+    },
+    {
+      "time": 593.5,
+      "room": "courtyard",
+      "x": 0,
+      "z": -7.35,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 2.476094772790507,
+      "returnTravel": 3.2850737416986204
+    },
+    {
+      "time": 594,
+      "room": "hall",
+      "x": 0,
+      "z": 1,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "r",
+      "remainingRoute": 2.0792404083652865,
+      "returnTravel": 2.0792404083652865
+    },
+    {
+      "time": 594.5,
+      "room": "hall",
+      "x": 0,
+      "z": -1,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "r",
+      "remainingRoute": 1.9125737416986197,
+      "returnTravel": 1.9125737416986197
+    },
+    {
+      "time": 595,
+      "room": "hall",
+      "x": 0,
+      "z": -1,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "r",
+      "remainingRoute": 1.9125737416986197,
+      "returnTravel": 1.9125737416986197
+    },
+    {
+      "time": 595.5,
+      "room": "hall",
+      "x": 0,
+      "z": -1,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "r",
+      "remainingRoute": 1.9125737416986197,
+      "returnTravel": 1.9125737416986197
+    },
+    {
+      "time": 596,
+      "room": "hall",
+      "x": 0,
+      "z": -1,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "r",
+      "remainingRoute": 1.9125737416986197,
+      "returnTravel": 1.9125737416986197
+    },
+    {
+      "time": 596.5,
+      "room": "hall",
+      "x": 0,
+      "z": -3.35,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": "r",
+      "remainingRoute": 1.6089624359481889,
+      "returnTravel": 1.618962435948189
+    },
+    {
+      "time": 597,
+      "room": "hall",
+      "x": 0,
+      "z": -3.35,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 1.1089624359481884,
+      "returnTravel": 1.618962435948189
+    },
+    {
+      "time": 597.5,
+      "room": "classroom",
+      "x": 0,
+      "z": 5.35,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 0.6089624359481888,
+      "returnTravel": 0.6089624359481888
+    },
+    {
+      "time": 598,
+      "room": "classroom",
+      "x": -3,
+      "z": 1.057549231378266,
+      "action": "prepare-class",
+      "phase": "travel",
+      "blockedBy": null,
+      "remainingRoute": 0.10896243594818883,
+      "returnTravel": 0.10349517645310062
+    },
+    {
+      "time": 598.5,
+      "room": "classroom",
+      "x": -3.45,
+      "z": -0.09999999999999998,
+      "action": "prepare-class",
+      "phase": "enter",
+      "blockedBy": null,
+      "remainingRoute": 0.08749999999999998,
+      "returnTravel": 0.01
+    },
+    {
+      "time": 599,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "prepare-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": 0.09749999999999998
+    },
+    {
+      "time": 599.5,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "prepare-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": 0.09749999999999998
+    },
+    {
+      "time": 600,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 600.5,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 601,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 601.5,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 602,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 602.5,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 603,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 603.5,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 604,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 604.5,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    },
+    {
+      "time": 605,
+      "room": "classroom",
+      "x": -4.5,
+      "z": -0.09999999999999998,
+      "action": "attend-class",
+      "phase": "perform",
+      "blockedBy": null,
+      "remainingRoute": 0,
+      "returnTravel": null
+    }
+  ],
+  "timingMs": {
+    "scope": "SchoolService.advance(.5), including snapshot, local process",
+    "p50": 73.96641700000328,
+    "p95": 687.6623340000006,
+    "max": 2718.386018000001
+  },
+  "decisions": 241
+}

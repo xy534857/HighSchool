@@ -2802,7 +2802,7 @@
       "anchor": "$item",
       "attention": "pause",
       "cooldown": 0,
-      "duration": 20,
+      "duration": 60,
       "effects": [],
       "executor": "physical",
       "label": "去教室准备上课",
@@ -2834,23 +2834,9 @@
             "right": null
           },
           {
-            "all": [
-              {
-                "op": "eq",
-                "left": "$clock.nextPeriod",
-                "right": "class"
-              },
-              {
-                "op": "lte",
-                "left": "$clock.minutesToNext",
-                "right": 10
-              },
-              {
-                "op": "lt",
-                "left": "$clock.weekday",
-                "right": 5
-              }
-            ]
+            "op": "eq",
+            "left": "$clock.returnDue",
+            "right": true
           },
           {
             "op": "eq",
@@ -2866,23 +2852,9 @@
       "interruptWhen": {
         "all": [
           {
-            "all": [
-              {
-                "op": "eq",
-                "left": "$clock.nextPeriod",
-                "right": "class"
-              },
-              {
-                "op": "lte",
-                "left": "$clock.minutesToNext",
-                "right": 10
-              },
-              {
-                "op": "lt",
-                "left": "$clock.weekday",
-                "right": 5
-              }
-            ]
+            "op": "eq",
+            "left": "$clock.returnDue",
+            "right": true
           },
           {
             "op": "eq",
@@ -2934,7 +2906,7 @@
         }
       },
       "anchor": "$item",
-      "duration": 20,
+      "duration": 60,
       "cooldown": 0,
       "attention": "pause",
       "when": {
@@ -2945,23 +2917,9 @@
             "right": null
           },
           {
-            "all": [
-              {
-                "op": "eq",
-                "left": "$clock.nextPeriod",
-                "right": "class"
-              },
-              {
-                "op": "lte",
-                "left": "$clock.minutesToNext",
-                "right": 10
-              },
-              {
-                "op": "lt",
-                "left": "$clock.weekday",
-                "right": 5
-              }
-            ]
+            "op": "eq",
+            "left": "$clock.returnDue",
+            "right": true
           },
           {
             "op": "eq",
@@ -2980,23 +2938,9 @@
       "interruptWhen": {
         "all": [
           {
-            "all": [
-              {
-                "op": "eq",
-                "left": "$clock.nextPeriod",
-                "right": "class"
-              },
-              {
-                "op": "lte",
-                "left": "$clock.minutesToNext",
-                "right": 10
-              },
-              {
-                "op": "lt",
-                "left": "$clock.weekday",
-                "right": 5
-              }
-            ]
+            "op": "eq",
+            "left": "$clock.returnDue",
+            "right": true
           },
           {
             "op": "eq",
@@ -6133,46 +6077,106 @@
       {
         "id": "morning",
         "start": 0,
-        "end": 510
+        "end": 510,
+        "label": "早间自由活动"
       },
       {
         "id": "class",
         "start": 510,
-        "end": 600
+        "end": 555,
+        "label": "第一节课"
       },
       {
         "id": "break",
-        "start": 600,
-        "end": 625
+        "start": 555,
+        "end": 600,
+        "label": "课间自由活动"
       },
       {
         "id": "class",
-        "start": 625,
-        "end": 720
+        "start": 600,
+        "end": 645,
+        "label": "第二节课"
+      },
+      {
+        "id": "break",
+        "start": 645,
+        "end": 690,
+        "label": "课间自由活动"
+      },
+      {
+        "id": "class",
+        "start": 690,
+        "end": 735,
+        "label": "第三节课"
       },
       {
         "id": "lunch",
-        "start": 720,
-        "end": 790
+        "start": 735,
+        "end": 825,
+        "label": "午餐与午休"
       },
       {
         "id": "class",
-        "start": 790,
-        "end": 900
+        "start": 825,
+        "end": 870,
+        "label": "第四节课"
       },
       {
         "id": "after-school",
-        "start": 900,
-        "end": 1110
+        "start": 870,
+        "end": 1110,
+        "label": "放学后 · 社团与自由活动"
       },
       {
         "id": "night",
         "start": 1110,
-        "end": 1440
+        "end": 1440,
+        "label": "晚间自习"
       }
     ],
     "step": 0.5,
-    "walkSpeed": 4
+    "walkSpeed": 12,
+    "preparations": [
+      {
+        "period": "class",
+        "group": "class",
+        "weekdays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "when": {
+          "op": "eq",
+          "left": "$actor.role",
+          "right": "student"
+        },
+        "object": "$actor.profile.desk",
+        "slot": "study",
+        "bufferMinutes": 8
+      },
+      {
+        "period": "class",
+        "group": "class",
+        "weekdays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "when": {
+          "op": "eq",
+          "left": "$actor.role",
+          "right": "teacher"
+        },
+        "object": "blackboard",
+        "slot": "teach",
+        "bufferMinutes": 8
+      }
+    ]
   },
   "id": "school-playable-v1",
   "limits": {
@@ -6405,13 +6409,22 @@
       "action": "leave-conversation",
       "priority": 200,
       "repeat": true,
-      "reason": "上课铃响了，先结束闲聊，回到课堂。",
+      "reason": "留出返回教室的路程，先结束这段闲聊。",
       "when": {
         "all": [
           {
-            "op": "eq",
-            "left": "$clock.period",
-            "right": "class"
+            "any": [
+              {
+                "op": "eq",
+                "left": "$clock.period",
+                "right": "class"
+              },
+              {
+                "op": "eq",
+                "left": "$clock.returnDue",
+                "right": true
+              }
+            ]
           },
           {
             "op": "lt",
@@ -6426,9 +6439,18 @@
             }
           },
           {
-            "op": "lt",
-            "left": "$session.created",
-            "right": "$clock.periodStart"
+            "any": [
+              {
+                "op": "eq",
+                "left": "$clock.returnDue",
+                "right": true
+              },
+              {
+                "op": "lt",
+                "left": "$session.created",
+                "right": "$clock.periodStart"
+              }
+            ]
           }
         ]
       }
@@ -6450,25 +6472,11 @@
       "action": "prepare-class",
       "priority": 90,
       "repeat": true,
-      "reason": "距离上课不足十分钟，先去教室就位，避免铃响才开始赶路。",
+      "reason": "按当前位置到教室的路程，预留入座和让行时间后出发返课。",
       "when": {
-        "all": [
-          {
-            "op": "eq",
-            "left": "$clock.nextPeriod",
-            "right": "class"
-          },
-          {
-            "op": "lte",
-            "left": "$clock.minutesToNext",
-            "right": 10
-          },
-          {
-            "op": "lt",
-            "left": "$clock.weekday",
-            "right": 5
-          }
-        ]
+        "op": "eq",
+        "left": "$clock.returnDue",
+        "right": true
       }
     },
     {
@@ -6476,25 +6484,11 @@
       "action": "prepare-teach",
       "priority": 90,
       "repeat": true,
-      "reason": "距离上课不足十分钟，先去教室就位，避免铃响才开始赶路。",
+      "reason": "按当前位置到教室的路程，预留入座和让行时间后出发返课。",
       "when": {
-        "all": [
-          {
-            "op": "eq",
-            "left": "$clock.nextPeriod",
-            "right": "class"
-          },
-          {
-            "op": "lte",
-            "left": "$clock.minutesToNext",
-            "right": 10
-          },
-          {
-            "op": "lt",
-            "left": "$clock.weekday",
-            "right": 5
-          }
-        ]
+        "op": "eq",
+        "left": "$clock.returnDue",
+        "right": true
       }
     },
     {
@@ -6775,9 +6769,9 @@
       "id": "club-preparation",
       "label": "社团招新：海报与音乐",
       "notice": "校园公告：社团招新需要海报与开场音乐，有兴趣的同学可以到中庭商量。",
-      "at": 480,
+      "at": 885,
       "repeat": 10080,
-      "duration": 30,
+      "duration": 120,
       "room": "courtyard",
       "initial": "gather",
       "cast": {
@@ -7517,7 +7511,7 @@
         3,
         4
       ],
-      "duration": 68,
+      "duration": 31,
       "room": "classroom",
       "initial": "opening",
       "members": {
@@ -8091,7 +8085,7 @@
         "notice"
       ],
       "state": {
-        "topic": "周一早间与周四放学后，社团同学可在中庭商量招新。"
+        "topic": "周一 14:45 与周四 15:10，放学后在中庭商量社团招新。"
       },
       "visible": [
         "topic"
@@ -11026,5 +11020,6 @@
     "classroom-deflect",
     "classroom-close-clear",
     "classroom-close-open"
-  ]
+  ],
+  "timetableRevision": 1
 }

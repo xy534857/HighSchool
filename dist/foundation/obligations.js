@@ -20,13 +20,13 @@ export function tickObligations(world,dt){
   const start=day*1440+period.start,end=day*1440+period.end;
   for(const actor of Object.values(s.actors))if(test(spec.members,{actor})){
    const id=spec.id+':'+day+':'+period.start+':'+actor.id;
-   s.obligations[id]??={id,spec:spec.id,label:spec.label,owner:actor.id,room:spec.room,start,end,attended:0,missed:0,firstArrival:null,lastPresent:false,status:'expected',remedy:'none',supervisor:null,notices:[],closed:false};
+   s.obligations[id]??={id,spec:spec.id,label:spec.label,owner:actor.id,room:spec.room,start,end,trackingFrom:Math.max(start,s.obligationGraceUntil||start),attended:0,missed:0,firstArrival:null,lastPresent:false,status:'expected',remedy:'none',supervisor:null,notices:[],closed:false};
   }
  }
  const notices=[];
  for(const r of Object.values(s.obligations)){
   if(r.closed)continue;const spec=config.find(c=>c.id===r.spec);if(!spec)continue;
-  const actor=s.actors[r.owner],task=s.tasks[r.owner],span=Math.max(0,Math.min(now,r.end)-Math.max(now-dt,r.start));
+  const actor=s.actors[r.owner],task=s.tasks[r.owner],span=Math.max(0,Math.min(now,r.end)-Math.max(now-dt,r.start,r.trackingFrom||r.start));
   const present=actor.presence==='here'&&actor.room===r.room&&task?.phase==='perform'&&spec.actions.includes(task.candidate.action);
   if(span){
    if(present){r.attended+=span;if(r.firstArrival===null)r.firstArrival=now;}
@@ -45,7 +45,7 @@ export function tickObligations(world,dt){
    if(present&&!r.lastPresent&&(r.notices.includes('reminder')||r.remedy==='pending')&&!r.notices.includes('returned')){
     mark('returned',spec.text.returned);
    }
-   if(present&&r.status==='expected')r.status=r.firstArrival-r.start>spec.grace?'late':'present';
+   if(present&&r.status==='expected')r.status=r.firstArrival-(r.trackingFrom||r.start)>spec.grace?'late':'present';
   }
   r.lastPresent=present;
   if(now>=r.end){r.closed=true;if(r.status==='expected')r.status='unverified';}

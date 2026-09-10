@@ -4,7 +4,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {SchoolService} from '../../dist/campus/service.js';
 const options={read:p=>readFile(new URL(p,new URL('../../dist/foundation/',import.meta.url)),'utf8'),wasmBinary:await readFile(new URL('../../dist/soar/soar.wasm',import.meta.url))};
 const evidence=[];
-const until=(g,pred,max=45)=>{for(let i=0;i<max*2&&!pred();i++)g.advance(.5);assert.ok(pred(),'condition not reached');};
+const until=(g,pred,max=45)=>{for(let i=0;i<max*2&&!pred();i++)g.advance(.5);assert.ok(pred(),'condition not reached: '+JSON.stringify({time:g.world.state.time,player:g.world.state.actors.t,task:g.world.state.tasks.t,events:g.world.state.events.filter(e=>e.actor==='t').slice(-8)}));};
 const lesson=g=>Object.values(g.world.state.obligations||{}).findLast(r=>r.owner===g.player);
 function atClass(g){g.world.state.time=509;g.world.state.situationKeys.push('club-preparation:0');}
 test('no-input player independently attends sustained class and then eats at lunch',async()=>{
@@ -13,7 +13,7 @@ test('no-input player independently attends sustained class and then eats at lun
   assert.equal(w.state.tasks.t.candidate.action,'attend-class');assert.notEqual(w.state.tasks.t.decision.rule,'player');
   assert.equal(lesson(g).status,'present');assert.equal(lesson(g).remedy,'none');assert.ok(lesson(g).attended>30);
   assert.ok(w.state.events.some(e=>e.actor==='t'&&e.kind==='lesson-progress'));
-  w.state.time=719;g.advance(2);until(g,()=>w.state.events.some(e=>e.actor==='t'&&e.action==='eat'&&e.kind==='action-completed'));
+  w.state.time=734;g.advance(2);until(g,()=>w.state.events.some(e=>e.actor==='t'&&e.action==='eat'&&e.kind==='action-completed'),60);
   assert.equal(w.state.actors.t.room,'canteen');evidence.push({check:'no-input',classMinutes:40,classRule:'foundation*utility',ateLunch:true});
  }finally{g.destroy();}
 });
@@ -39,10 +39,10 @@ test('deliberate skipped class produces teacher memory and real makeup work; sav
   const notices=g.world.state.events.filter(e=>e.obligation===r.id&&e.kind==='obligation-assigned');assert.equal(notices.length,1);
   restored=await SchoolService.create({...options,saved:g.save()});restored.advance(5);
   assert.equal(restored.world.state.events.filter(e=>e.obligation===r.id&&e.kind==='obligation-assigned').length,1);
-  assert.equal(restored.snapshot().control.deferred.class,600);
+  assert.equal(restored.snapshot().control.deferred.class,555);
   restored.enqueue('attend-class',{item:restored.world.state.actors.t.profile.desk});until(restored,()=>restored.world.state.events.some(e=>e.obligation===r.id&&e.kind==='attendance-returned'));
   assert.equal(restored.world.state.obligations[r.id].status,'absent');assert.equal(restored.snapshot().control.deferred.class,undefined);
-  restored.world.state.time=899;restored.advance(3);until(restored,()=>restored.world.state.obligations[r.id].remedy==='completed');
+  restored.world.state.time=869;restored.advance(3);until(restored,()=>restored.world.state.obligations[r.id].remedy==='completed');
   assert.ok(restored.world.state.events.some(e=>e.kind==='action-completed'&&e.action==='make-up-work'&&e.actor==='t'));
   assert.equal(restored.world.mind.get('t',r.id+':remedy').value,'completed');
   assert.equal(restored.world.state.obligations[r.id].status,'absent');

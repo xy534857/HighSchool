@@ -2,6 +2,7 @@ import {roomPath} from './space.js';
 import {goalMethods,stepReady} from './projects.js';
 import {allowsAutomatic} from './autonomy.js';
 import {allowsDuringTask} from './participation.js';
+import {activityTime} from './timing.js';
 import {accessReason,requirementReason} from './environment.js';
 import {clone,fail,resolve,test,orderedRoles} from './tuning.js';
 
@@ -32,6 +33,7 @@ export function candidates(world,owner,{action,roles,args,ignoreBusy=false,advan
     if(spec.slot&&bindings.item){const slots=world.tuning.pack.types[s.objects[bindings.item.id]?.type]?.slots||[];if(!slots.some(slot=>slot.tags?.includes(spec.slot)&&!s.leases[bindings.item.id+':'+slot.id])){if(spec.need&&p.needs[spec.need]<15)blockedNeeds.add(spec.need);continue;}}
     const unknownRequirement=[...JSON.stringify(spec.requires||{}).matchAll(/\$[a-zA-Z0-9_.-]+/g)].some(m=>resolve(m[0],c)===undefined);
     if(!unknownRequirement&&!test(spec.requires,c))continue;
+    if(!action&&!(spec.need&&p.needs[spec.need]<15)&&activityTime(world,owner,spec,c)?.fits===false)continue;
     const roleIDs=Object.fromEntries(Object.entries(bindings).map(([k,v])=>[k,v.id]));
     const key=JSON.stringify([name,roleIDs,parameters]);const routines=(world.tuning.pack.routines||[]).filter(r=>r.action===name&&test(r.when,c)&&(r.repeat||s.time-(p.last['routine:'+r.id+':'+c.clock.day]??-Infinity)>1440));
     if(!routines.some(r=>r.repeat)&&(p.last[key]??-Infinity)+(spec.cooldown||0)>s.time)continue;

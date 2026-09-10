@@ -77,6 +77,7 @@ npm run author
 
 - [本轮认知与异步架构](docs/social-cognition.md)
 - [课堂机会、个人回应与课后承诺](docs/classroom-situations.md)
+- [课表、步行预算与活动往返验证](docs/school-timetable.md)
 - [模型协议和 tuning 扩展](docs/llm-protocol.md)
 - [调试结果与性能记录](research/runtime/README.md)
 - [通用基座](docs/foundation.md)、[校园空间](docs/campus-space.md)、[长期计划](docs/campus-planning.md)

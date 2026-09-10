@@ -9,12 +9,12 @@ const runOf=g=>Object.values(g.world.state.situations)[0];
 const afterSchool=g=>{g.world.state.time=3*1440+910;};
 test('a whole class stays at assigned classroom seats, while busy agents do not choose every tick',async()=>{
  const g=await SchoolService.create(options),w=g.world;try{
- w.state.time=500;w.state.situationKeys.push('club-preparation:0');const before=w.metrics.decisions;w.advance(20);for(const a of Object.values(w.state.actors).filter(a=>!a.controlled))assert.equal(a.room,'classroom','morning-to-class: '+a.id);w.advance(65);
+ w.state.time=500;w.state.situationKeys.push('club-preparation:0');const before=w.metrics.decisions;w.advance(20);for(const a of Object.values(w.state.actors).filter(a=>!a.controlled))assert.equal(a.room,'classroom','morning-to-class: '+a.id);w.advance(30);
  for(const a of Object.values(w.state.actors).filter(a=>!a.controlled)){
   assert.equal(a.room,'classroom',a.id);assert.equal(w.state.tasks[a.id]?.candidate.action,a.role==='teacher'?'teach-class':'attend-class',a.id);
   assert.ok(w.state.events.filter(e=>e.actor===a.id&&e.kind==='action-completed'&&['attend-class','teach-class'].includes(e.action)).length>=2,a.id);
  }
- assert.ok(w.metrics.decisions-before<120);evidence.push({check:'sustained-class',minutes:85,decisions:w.metrics.decisions-before,allNPCsInClass:true});
+ assert.ok(w.metrics.decisions-before<120);evidence.push({check:'sustained-class',minutes:50,decisions:w.metrics.decisions-before,allNPCsInClass:true});
  }finally{g.destroy();}
 });
 test('autonomous situation negotiates consent, then real complementary work; no player takeover',async()=>{

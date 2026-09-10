@@ -27,7 +27,9 @@ also available, and does not exempt the player from world rules.
 period, weekdays, room, valid attendance actions, supervisor conditions/actions,
 grace, absence threshold, remediation action and messages. No student ID or school
 room is embedded in the generic obligation evaluator. `prepare-class` and
-`prepare-teach` start ten minutes before a class. Class periods apply on weekdays.
+`prepare-teach` start according to each actor's route to their assigned classroom slot,
+with eight minutes reserved for leaving a facility, yielding at doors and taking a seat.
+Class periods apply on weekdays. See [the shared timetable](school-timetable.md).
 
 For this pack, five accumulated game minutes without attending permit a teacher
 reminder; fifteen minutes produce a missing-class record and a fifteen-minute

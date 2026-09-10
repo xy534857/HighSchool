@@ -15,7 +15,6 @@ const time=t=>`${String(Math.floor(t%1440/60)).padStart(2,'0')}:${String(Math.fl
 const setHTML=(id,value)=>{if($(id).innerHTML!==value)$(id).innerHTML=value;};
 const person=id=>snapshot?.actors.find(a=>a.id===id),player=()=>person(snapshot?.player);
 function toast(text,error=false){$('toast').textContent=text;$('toast').style.background=error?'#875d48':'#284f43';$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,4200);}
-function currentPeriod(t){const m=t%1440;return m<510?'morning':m<600?'class':m<625?'break':m<720?'class':m<790?'lunch':m<900?'class':m<1110?'after-school':'night';}
 async function refresh(){snapshot=await bridge.request('snapshot');render();}
 async function start(saved=null){
  ready=false;$('loading').hidden=false;$('retry').hidden=true;$('loading-text').textContent='正在准备校园与同学们的记忆…';
@@ -30,6 +29,7 @@ async function start(saved=null){
  }catch(e){$('loading-text').textContent='校园启动遇到问题：'+e.message;$('retry').hidden=false;console.error(e);}
 }
 function renderNav(){
+ setHTML('school-timetable',snapshot.timetable.map(p=>`<p><b>${time(p.start)}–${p.end===1440?'24:00':time(p.end)}</b> ${escape(p.label||periods[p.id])}</p>`).join(''));
  $('region-count').textContent=Object.keys(snapshot.rooms).length+' 个区域';
  $('room-list').innerHTML=Object.entries(snapshot.rooms).map(([id,r])=>`<button class="room-button ${id===room?'active':''}" data-room="${id}" aria-label="查看${escape(r.name)}" aria-pressed="${id===room}"><span class="room-icon">${r.icon||roomIcons[id]||'□'}</span><span>${escape(r.name)}</span><small>${snapshot.actors.filter(p=>p.room===id).length||'—'}</small></button>`).join('');
  $('room-list').querySelectorAll('button').forEach(b=>b.onclick=()=>{follow=false;setRoom(b.dataset.room);});
@@ -71,7 +71,7 @@ function eventText(e){
 }
 const phaseLabel=t=>t.blockedBy?'等待通道空出':({travel:'正在前往',enter:'正在就位',exit:'正在离开',return:'回到出发处',perform:'进行中'}[t.phase]||'准备中');
 function render(){
- if(!snapshot)return;const p=player(),day=Math.floor(snapshot.time/1440);$('day-label').textContent='周'+['一','二','三','四','五','六','日'][day%7]+' · 第 '+(day+1)+' 天';$('clock').textContent=time(snapshot.time);$('period-label').textContent=periods[currentPeriod(snapshot.time)];$('player-place').textContent=snapshot.rooms[p.room].name;$('player-action').textContent=p.task?phaseLabel(p.task)+' · '+p.task.label:p.session?'正在交谈':p.waiting||'自由活动';
+ if(!snapshot)return;const p=player(),day=Math.floor(snapshot.time/1440);$('day-label').textContent='周'+['一','二','三','四','五','六','日'][day%7]+' · 第 '+(day+1)+' 天';$('clock').textContent=time(snapshot.time);$('period-label').textContent=(snapshot.clock.periodLabel||periods[snapshot.clock.period])+' · 剩余 '+Math.ceil(snapshot.clock.minutesRemaining)+' 分钟';$('player-place').textContent=snapshot.rooms[p.room].name;$('player-action').textContent=p.task?phaseLabel(p.task)+' · '+p.task.label:p.session?'正在交谈':p.waiting||'自由活动';
  if(follow&&room!==p.room&&!campusMap?.open)setRoom(p.room);$('go-room').textContent=p.room===room?'走到空地':'前往'+snapshot.rooms[room].name;$('go-room').disabled=!!accessReason(snapshot,p,room);$('go-room').title=accessReason(snapshot,p,room);$('card-balance').textContent='校园卡 ¥'+p.resources.credits+' · '+(p.resources.meal?'已领餐':p.resources.tray?'待还餐盘':'轻装');
  for(const b of $('room-list').querySelectorAll('button'))b.querySelector('small').textContent=snapshot.actors.filter(a=>a.room===b.dataset.room).length||'—';
  const needsHTML=Object.entries(names).filter(([id])=>p.needs[id]!==undefined).map(([id,label])=>`<div class="need" data-need="${id}" aria-label="${label} ${Math.round(p.needs[id])}"><div class="need-label">${label}<b>${Math.round(p.needs[id])}</b></div><div class="need-track"><div class="need-fill" style="width:${Math.round(p.needs[id])}%;background:${p.needs[id]<25?'#ce8d66':p.needs[id]<50?'#c9b078':'#9db481'}"></div></div></div>`).join('');
@@ -89,10 +89,11 @@ function render(){
 function renderSchoolStatus(){
  const p=player(),c=snapshot.control,ui=snapshot.schoolUI,records=snapshot.attendance||[];
  $('autonomy-toggle').textContent=c.enabled?'自主：开':'自主：关';$('autonomy-toggle').setAttribute('aria-pressed',String(c.enabled));
- const current=records.findLast(r=>snapshot.time>=r.start&&snapshot.time<r.end),last=current||records.at(-1),debt=records.filter(r=>r.remedy==='pending');
+ const current=records.findLast(r=>!r.closed&&snapshot.time>=r.start&&snapshot.time<r.end),last=current||records.at(-1),debt=records.filter(r=>r.remedy==='pending');
  const deferred=(c.deferred[ui.group]||0)>snapshot.time,labels={expected:'等待就座',present:'正常出勤',late:'迟到记录',interrupted:'中途离课',absent:'缺课记录',unverified:'未完成点名'};
  $('attendance-title').textContent=current?'这节课 · '+labels[current.status]:'课程与考勤';
  $('attendance-text').textContent=current?(deferred?'这节课由你自行安排，考勤仍会记录。':p.task?.action===ui.attendAction?'正在按课表上课。':c.enabled?'空闲后会返回课堂；你安排的行动优先。':'自主已关闭，需要自己安排返课。')+` 已听课 ${Math.floor(current.attended)} 分钟，未听课 ${Math.floor(current.missed)} 分钟。`:last?`上一节：${labels[last.status]}。`:'08:30 开始上课，空闲时会自己回到座位。';
+ if(!current&&snapshot.clock.minutesToReturn!==null)$('attendance-text').textContent=`${time(snapshot.time+snapshot.clock.minutesToNext)} 上课 · 按当前位置，约 ${Math.ceil(snapshot.clock.minutesToReturn)} 分钟后出发返课（路程约 ${Math.ceil(snapshot.clock.returnTravel)} 分钟）。`;
  $('attendance-debt').textContent=debt.length?`待补 ${debt.length} 节课 · 每节练习 15 分钟，放学后完成。`:'没有待补的课堂练习。';
  $('return-class').hidden=!current;$('return-class').disabled=p.task?.action===ui.attendAction;
  $('defer-class').hidden=!current;$('defer-class').disabled=deferred;

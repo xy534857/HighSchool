@@ -1,5 +1,6 @@
 import {accessReason} from '../foundation/environment.js';
 import {roomPath,route,nearestFree} from '../foundation/space.js';
+import {travelOrigin} from '../foundation/timing.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const xy=(rooms,p)=>[rooms[p.room].map.x+p.x,rooms[p.room].map.z+p.z];
 export class CampusMap {
@@ -19,12 +20,12 @@ export class CampusMap {
    this.element.querySelector('#map-view').onclick=()=>{this.view(this.selected);this.hide();};
    this.element.querySelector('#map-go').onclick=()=>{this.go(this.selected);this.hide();};
   }
-  const room=rooms[this.selected],sequence=roomPath(rooms,p.room,this.selected)||[],dest=nearestFree(s,{room:this.selected,...(room.entry||{x:0,z:4.5})},{owner:p.id},2),origin=p.task?.approach&&p.task.phase!=='travel'?{...p,...p.task.approach}:p,points=dest&&route(s,origin,dest,4);if(points&&origin!==p)points.unshift(p.task.approach);
+  const room=rooms[this.selected],sequence=roomPath(rooms,p.room,this.selected)||[],dest=nearestFree(s,{room:this.selected,...(room.entry||{x:0,z:4.5})},{owner:p.id},2),travel=travelOrigin(s,p,s.clock.walkSpeed),origin=travel.point,points=dest&&route(s,origin,dest,s.clock.walkSpeed),eta=points?travel.minutes+points.reduce((n,p)=>n+p.duration,0):null;if(points&&origin!==p)points.unshift(p.task.approach);
   for(const el of this.element.querySelectorAll('[data-region]')){el.classList.toggle('chosen',el.dataset.region===this.selected);el.setAttribute('aria-pressed',String(el.dataset.region===this.selected));}
   this.element.querySelector('#map-people').innerHTML=s.actors.filter(a=>a.presence==='here'&&!a.private).map(a=>{const [x,z]=xy(rooms,a),own=a.id===s.player;return `<g class="map-person ${own?'map-player':''}" aria-label="${esc(a.name)}在${esc(rooms[a.room].name)}"><circle cx="${x}" cy="${z}" r="${own?.55:.38}" fill="${own?'#d48d29':esc(a.color)}"/><title>${esc(a.name)} · ${esc(a.task?.label||'自由活动')}</title>${own?`<text x="${x+.9}" y="${z+.3}">你</text>`:''}</g>`;}).join('');
   this.element.querySelector('#map-route').setAttribute('d',points?.length?`M${xy(rooms,p)} `+points.map(pt=>'L'+xy(rooms,pt)).join(' '):'');
   this.element.querySelector('#map-destination').textContent=room.name;
-  this.element.querySelector('#map-itinerary').textContent=sequence.length===1?'你已经在这里。点选场景中的设施即可互动。':'路线：'+sequence.map(id=>rooms[id].name).join(' → ');
+  this.element.querySelector('#map-itinerary').textContent=sequence.length===1?'你已经在这里。点选场景中的设施即可互动。':'路线：'+sequence.map(id=>rooms[id].name).join(' → ')+(eta===null?'':` · 步行约 ${Math.ceil(eta)} 分钟`)+(s.clock.nextPeriod==='class'?` · 距上课 ${Math.ceil(s.clock.minutesToNext)} 分钟`:'');
   const denied=accessReason(s,p,this.selected);this.element.querySelector('#map-go').disabled=!!denied||!points;if(denied)this.element.querySelector('#map-itinerary').textContent=denied;
  }
 }
