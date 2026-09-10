@@ -1,0 +1,83 @@
+# The director supplies a situation and personal evidence. These productions
+# choose participation, counteroffers and execution. There is no dialogue cursor.
+sp {calendar*leave-for-school-or-work
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^departure-due yes ^available <a>) (<a> ^kind depart)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 980 ^rule calendar*leave-for-school-or-work ^reason |到出门时间了，先走到玄关去上学或上班，回家再接着家里的事。|)
+}
+sp {episode*attend-the-agreed-meeting
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^scene.ready yes ^available <a>) (<a> ^kind gatherScene)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 150 ^rule episode*attend-the-agreed-meeting ^reason |到了留言板约好的碰头时间，先去客厅听听大家怎么想；我会保留自己的意见。|)
+}
+sp {episode*wait-for-other-arrivals
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^scene.waiting yes ^available <a>) (<a> ^kind << wait continue >>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 140 ^rule episode*wait-for-other-arrivals ^reason |我先到客厅了，等家人过来把这件事商量一下。|)
+}
+sp {episode*keep-my-preparation-promise
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^scene.prepare yes ^scene.pledged yes ^available <a>) (<a> ^kind prepareScene)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 145 ^rule episode*keep-my-preparation-promise ^reason |这是我刚才亲口答应的准备，先做出自己的那一份，做完再继续其他安排。|)
+}
+sp {episode*protect-meals-and-sleep
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^guidance.basis << family-meal prepare-family-meal resume-tomorrow >> ^available <a>)
+ (<f> ^guidance.kind <kind>) (<a> ^kind <kind>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 850 ^rule episode*protect-meals-and-sleep ^reason |先按作息吃饭或休息，家庭活动接着约好的时间进行。|)
+}
+sp {routine*attend-the-meal-window
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^meal-window yes ^meal-due yes ^available <a>) (<a> ^kind eat)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 860 ^rule routine*attend-the-meal-window ^reason |到了全家吃饭的时段，先把手里的事放下去吃饭。|)
+}
+sp {routine*check-the-kitchen-at-mealtime
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^meal-window yes ^meal-due yes ^available <a>) (<a> ^kind inspect ^search-item none ^spot stove)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 865 ^rule routine*check-the-kitchen-at-mealtime ^reason |饭点到了，我还不知道有没有饭，先去厨房看一眼。|)
+}
+sp {routine*leave-time-to-cook
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^cook-duty yes ^night no ^food < 5 ^available <a>) (<a> ^kind cook)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 855 ^rule routine*leave-time-to-cook ^reason |该提前备饭了，这一顿轮到我，先把饭做好。|)
+}
+sp {episode*join-a-relevant-discussion
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^topic.kind scene ^available <a>) (<a> ^kind join)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 80 ^rule episode*join-a-relevant-discussion ^reason |这件事也关系到我的安排，过去听听，也把自己的想法说出来。|)
+}
+sp {episode*finish-the-family-discussion
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase participation ^topic.kind scene ^available <a>) (<a> ^kind stay)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 75 ^rule episode*finish-the-family-discussion ^reason |这次是在商量共同的事，先把这一轮说清楚，再回去准备。|)
+}
+sp {episode*say-what-I-want
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind << scene-pitch scene-perform >>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 60 ^rule episode*say-what-I-want ^reason |说出这次的提议，或展示我实际完成的那一份。|)
+}
+sp {episode*ask-for-missed-context
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind scene-ask)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 70 ^rule episode*ask-for-missed-context ^reason |我刚加入，先问清刚才的提议。|)
+}
+sp {episode*recap-for-a-newcomer
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind scene-recap)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 95 ^rule episode*recap-for-a-newcomer ^reason |把当前的提议讲给刚到的人听，请他自己决定。|)
+}
+sp {episode*accept-a-manageable-part
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind scene-accept)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 50 ^rule episode*accept-a-manageable-part ^reason |我可以承担自己的那一份。|)
+}
+sp {episode*xue-protect-revision-time
+ (state <s> ^io.input-link.frame <f>) (<f> ^self xue ^mode conversation ^phase turn ^scene.small no ^scene.goal-left > 30 ^available <a>) (<a> ^kind scene-counter)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 90 ^rule episode*xue-protect-revision-time ^reason |我的复习还没做完，先要求缩短活动。|)
+}
+sp {episode*me-require-shared-preparation
+ (state <s> ^io.input-link.frame <f>) (<f> ^self me ^mode conversation ^phase turn ^scene.small no ^available <a>) (<a> ^kind scene-counter)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 95 ^rule episode*me-require-shared-preparation ^reason |我不想再包办，让大家各自准备才能答应。|)
+}
+sp {episode*dad-leave-time-for-manuscript
+ (state <s> ^io.input-link.frame <f>) (<f> ^self dad ^mode conversation ^phase turn ^scene.small no ^scene.goal-left > 35 ^available <a>) (<a> ^kind scene-counter)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 85 ^rule episode*dad-leave-time-for-manuscript ^reason |稿子还差一些，商量一个能兼顾的小办法。|)
+}
+sp {episode*too-tired-to-promise
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^energy < 25 ^available <a>) (<a> ^kind scene-decline)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 120 ^rule episode*too-tired-to-promise ^reason |今天精力不够，不能先答应再做不到。|)
+}
+sp {episode*revise-after-a-counteroffer
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind scene-revise)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 100 ^rule episode*revise-after-a-counteroffer ^reason |有人提出了具体困难，把提议缩小，再让每个人决定。|)
+}
+sp {episode*close-with-real-commitments
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind scene-wrap)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 40 ^rule episode*close-with-real-commitments ^reason |把已经答应的事情记下来，留时间实际去做。|)
+}

@@ -1,0 +1,47 @@
+# Speaking is an operator over the speaker's own retrieved knowledge, never world truth.
+sp {communication*propose-known-claim
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode compose ^intent share ^claim <claim>)
+ (<claim> ^status << known tentative disputed >> ^value <> unknown ^domain object ^at <at> ^key <key>)
+ --> (<s> ^operator <o> +) (<o> ^name tell-claim ^claim <claim> ^priority <at> ^key <key>)
+}
+sp {communication*prefer-recent
+ (state <s> ^operator <a> + ^operator <b> +)
+ (<a> ^name tell-claim ^priority <pa>) (<b> ^name tell-claim ^priority < <pa>)
+ --> (<s> ^operator <a> > <b>)
+}
+sp {communication*choose-stable-key
+ (state <s> ^operator <a> + ^operator <b> +)
+ (<a> ^name tell-claim ^priority <p> ^key <ka>) (<b> ^name tell-claim ^priority <p> ^key > <ka>)
+ --> (<s> ^operator <a> > <b>)
+}
+sp {communication*tell-own-claim
+ (state <s> ^operator <o> ^io.input-link.frame <f> ^io.output-link <out>)
+ (<o> ^name tell-claim ^claim <claim>) (<f> ^mode compose ^intent share ^seq <seq>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind claim ^claim (deep-copy <claim>))
+}
+sp {communication*no-content
+ (state <s> ^io.input-link.frame <f> ^io.output-link <out>)
+ (<f> ^mode compose ^intent share ^seq <seq>)
+ -{ (<f> ^claim <claim>) (<claim> ^status << known tentative disputed >> ^value <> unknown ^domain object) }
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind greeting)
+}
+
+sp {communication*expose-purpose
+ (state <s> ^operator <o> ^io.input-link.frame <f> ^io.output-link.command <cmd>)
+ (<f> ^seq <seq> ^mode act) (<cmd> ^seq <seq>) (<o> ^speech-act <act> ^topic <topic>)
+ --> (<cmd> ^speech-act <act> ^topic <topic>)
+}
+sp {communication*ask-for-cause
+ (state <s> ^io.input-link.frame <f> ^io.output-link <out>) (<f> ^mode compose ^intent ask-reason ^topic <topic> ^seq <seq>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind question ^topic <topic>)
+}
+sp {communication*explain-own-conflict
+ (state <s> ^io.input-link.frame <f> ^io.output-link <out>)
+ (<f> ^mode explain ^seq <seq> ^response <r>) (<r> ^goal-threat yes)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind explanation ^value constrained)
+}
+sp {communication*no-recorded-explanation
+ (state <s> ^io.input-link.frame <f> ^io.output-link <out>) (<f> ^mode explain ^seq <seq>)
+ -{ (<f> ^response <r>) (<r> ^goal-threat yes) }
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind explanation ^value unknown)
+}

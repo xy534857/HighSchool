@@ -1,0 +1,166 @@
+# Shared operators and body maintenance. Personality programs are loaded separately.
+sp {core*prefer-higher-priority
+ (state <s> ^operator <a> + ^operator <b> +)
+ (<a> ^name choose ^priority <pa>)
+ (<b> ^name choose ^priority { <pb> < <pa> })
+ -->
+ (<s> ^operator <a> > <b>)
+}
+sp {core*tie-break-by-affordance
+ (state <s> ^operator <a> + ^operator <b> +)
+ (<a> ^name choose ^priority <p> ^choice <ca>)
+ (<b> ^name choose ^priority <p> ^choice <cb>)
+ (<ca> ^ordinal <ia>)
+ (<cb> ^ordinal { <ib> > <ia> })
+ -->
+ (<s> ^operator <a> > <b>)
+}
+sp {core*emit-selected-command
+ :i-support
+ (state <s> ^superstate nil ^operator <o> ^io.input-link.frame <f> ^io.output-link <out>)
+ (<o> ^name choose ^choice <a> ^rule <rule> ^reason <reason>)
+ (<f> ^mode act ^seq <seq> ^available <a>)
+ (<a> ^id <id> ^kind <kind> ^target <target>)
+ -->
+ (<out> ^command <cmd>)
+ (<cmd> ^seq <seq> ^id <id> ^kind <kind> ^target <target> ^rule <rule> ^reason <reason>)
+}
+sp {base*continue-intention
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy yes ^available <a>) (<a> ^kind continue)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 60 ^rule base*continue-intention ^reason |先把正在做的事办完。|)
+}
+sp {base*wait-for-opportunity
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^available <a>) (<a> ^kind wait)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 0 ^rule base*wait-for-opportunity ^reason |等一个合适的空当。|)
+}
+sp {base*eat-when-hungry
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^meal-window yes ^meal-due yes ^hunger { <h> < 101 } ^available <a>) (<a> ^kind eat)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 100 <h>) ^rule base*eat-when-hungry ^reason |肚子饿了，先吃饭。|)
+}
+sp {base*urgent-food
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^hunger-urgent <threshold> ^hunger < <threshold> ^food-task no ^available <a>) (<a> ^kind << eat snack cook groceries >>)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 1000 ^rule base*urgent-food ^reason |饿得难受，先解决吃的。|)
+}
+sp {base*urgent-rest
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^energy-urgent <threshold> ^energy < <threshold> ^rest-task no ^available <a>) (<a> ^kind << sleep rest >>)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 990 ^rule base*urgent-rest ^reason |撑不住了，先休息。|)
+}
+sp {base*night-sleep
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^night yes ^available <a>) (<a> ^kind sleep)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 95 ^rule base*night-sleep ^reason |夜深了，明天接着忙。|)
+}
+sp {base*rest
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^energy { <e> < 55 } ^available <a>) (<a> ^kind rest)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 90 <e>) ^rule base*rest ^reason |累了，歇一会儿。|)
+}
+sp {base*snack
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^meal-window no ^minutes-to-meal > 35 ^hunger { <h> < 30 } ^available <a>) (<a> ^kind snack)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 83 <h>) ^rule base*snack ^reason |先随手垫一口。|)
+}
+sp {base*prepare-food
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^prep-window yes ^cook-duty yes ^food-needed <required> ^food < <required> ^hunger <h> ^available <a>) (<a> ^kind cook)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (+ 60 (- 58 <h>)) ^rule base*prepare-food ^reason |家里有人饿了，做点热饭。|)
+}
+sp {base*replenish-food
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^ingredients-known yes ^busy no ^ingredients < 2 ^available <a>) (<a> ^kind groceries)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 55 ^rule base*replenish-food ^reason |冰箱快空了，补些食材。|)
+}
+sp {base*tidy-house
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^clean { <c> < 65 } ^available <a>) (<a> ^kind tidy)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 81 <c>) ^rule base*tidy-house ^reason |脚边有些乱，顺手收拾。|)
+}
+sp {base*enjoy-tv
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^fun { <v> < 85 } ^available <a>) (<a> ^kind watch)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 74 <v>) ^rule base*enjoy-tv ^reason |看会儿电视，换换心情。|)
+}
+sp {base*read
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^fun { <v> < 90 } ^available <a>) (<a> ^kind read)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 71 <v>) ^rule base*read ^reason |翻一会儿书。|)
+}
+sp {base*play
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^fun { <v> < 80 } ^available <a>) (<a> ^kind play)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 69 <v>) ^rule base*play ^reason |找点好玩的。|)
+}
+sp {base*socialize
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^social { <v> < 67 } ^available <a>) (<a> ^kind chat)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 91 <v>) ^rule base*socialize ^reason |想找家人说说话。|)
+}
+sp {base*keep-promises
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^promised-task <kind> ^available <a>) (<a> ^kind <kind>)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 87 ^rule base*keep-promises ^reason |这是刚答应过的事，先兑现。|)
+}
+sp {core*honor-player-action
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy yes ^manual yes ^available <a>) (<a> ^kind continue)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 900 ^rule core*honor-player-action ^reason |先完成玩家安排的这件事。|)
+}
+sp {base*repair-relationship
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^social < 50 ^available <a>) (<a> ^kind apologize)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 62 ^rule base*repair-relationship ^reason |一直别扭着也不好，找机会把话说开。|)
+}
+
+# Explanations of excluded actions come from fired productions, not a prose guess.
+sp {core*expose-active-constraint
+ (state <s> ^context <c> ^io.output-link.command <cmd>)
+ (<c> ^frame <f> ^constraint <constraint>) (<f> ^mode act ^seq <seq>) (<cmd> ^seq <seq>)
+ --> (<cmd> ^constraints <constraint>)
+}
+# Several memories can support exactly the same action. Equivalent proposals must not impasse.
+sp {core*equivalent-proposals
+ (state <s> ^operator <a> + ^operator { <b> <> <a> } +)
+ (<a> ^name choose ^priority <p> ^choice <c>) (<b> ^name choose ^priority <p> ^choice <c>)
+ --> (<s> ^operator <a> = <b>)
+}

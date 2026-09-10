@@ -1,0 +1,79 @@
+# Shared contract semantics, independent of character or concrete task.
+sp {contract*encode-explicit-promise
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^frame <f>)
+ (<f> ^mode observe ^event <e>)
+ (<e> ^kind commitment ^uid <uid> ^actor <debtor> ^target <creditor> ^action <action> ^deadline <deadline> ^time <t> ^source <source>)
+ -->
+ (<c> ^formed-contract <p>)
+ (<p> ^type commitment ^uid <uid> ^debtor <debtor> ^creditor <creditor> ^action <action> ^deadline <deadline> ^status pending ^open yes ^evidence <uid> ^time <t> ^source <source>)
+ (<mc> ^store <p>)
+}
+sp {contract*query-outstanding
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^frame <f> ^goal-ready yes)
+ (<f> ^mode << act response plan >> ^self <me>) -(<c> ^contract-ready yes)
+ --> (<c> ^contract-query <q>) (<q> ^type commitment ^debtor <me> ^open yes) (<mc> ^query <q>)
+}
+sp {contract*receive-outstanding
+ :o-support
+ (state <s> ^context <c> ^smem.result <mr>) (<c> ^frame <f> ^contract-query <q>) (<f> ^mode << act response plan >>) -(<c> ^contract-ready yes)
+ (<mr> ^success <q> ^retrieved <p>)
+ --> (<c> ^contract-ready yes ^commitment (deep-copy <p>))
+}
+sp {contract*no-outstanding
+ :o-support
+ (state <s> ^context <c> ^smem.result.failure <q>) (<c> ^frame <f> ^contract-query <q>) (<f> ^mode << act response plan >>) -(<c> ^contract-ready yes)
+ --> (<c> ^contract-ready yes)
+}
+sp {contract*activate-promised-action
+ (state <s> ^context <c>) (<c> ^frame <f> ^commitment <p>) (<p> ^action <kind>)
+ --> (<f> ^promised-task <kind>)
+}
+sp {contract*expose-outstanding
+ (state <s> ^context <c> ^io.output-link.command <cmd>) (<c> ^frame <f> ^commitment <p>) (<f> ^seq <seq>) (<cmd> ^seq <seq>)
+ --> (<cmd> ^commitment <p>)
+}
+sp {contract*detect-overdue
+ (state <s> ^context <c> ^io.output-link.command <cmd>) (<c> ^frame <f> ^commitment <p>)
+ (<f> ^seq <seq> ^time <now>) (<cmd> ^seq <seq>) (<p> ^deadline < <now> ^status pending)
+ --> (<cmd> ^breach <p>)
+}
+# Completion query matches any task family registered in tuning.
+sp {contract*query-completed-action
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^frame <f>) -(<c> ^contract-write yes)
+ (<f> ^mode complete-action ^self <me> ^action <action>)
+ --> (<c> ^contract-query <q>) (<q> ^type commitment ^debtor <me> ^action <action> ^open yes) (<mc> ^query <q>)
+}
+sp {contract*query-status-update
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^frame <f>) -(<c> ^contract-write yes)
+ (<f> ^mode contract-update ^uid <uid>)
+ --> (<c> ^contract-query <q>) (<q> ^type commitment ^uid <uid>) (<mc> ^query <q>)
+}
+sp {contract*propose-fulfil
+ (state <s> ^context <c> ^smem.result <mr>) (<c> ^frame <f> ^contract-query <q>) -(<c> ^contract-write yes)
+ (<f> ^mode complete-action) (<mr> ^success <q> ^retrieved <p>)
+ --> (<s> ^operator <o> +) (<o> ^name change-contract ^record <p> ^new-status fulfilled ^open no)
+}
+sp {contract*propose-status-update
+ (state <s> ^context <c> ^smem.result <mr>) (<c> ^frame <f> ^contract-query <q>) -(<c> ^contract-write yes)
+ (<f> ^mode contract-update ^status <status> ^open <open>) (<mr> ^success <q> ^retrieved <p>)
+ --> (<s> ^operator <o> +) (<o> ^name change-contract ^record <p> ^new-status <status> ^open <open>)
+}
+sp {contract*apply-change
+ (state <s> ^context <c> ^operator <o>) -(<c> ^contract-write yes)
+ (<o> ^name change-contract ^record <p> ^new-status <new> ^open <open>) (<p> ^status <old> ^open <old-open>)
+ --> (<p> ^status <old> - ^status <new> ^open <old-open> - ^open <open>)
+ (<c> ^contract-write yes ^changed-contract <p>)
+}
+sp {contract*store-change
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^changed-contract <p>)
+ --> (<mc> ^store <p>)
+}
+sp {contract*ack-change
+ (state <s> ^context <c> ^smem.result.success <p> ^io.output-link <out>) (<c> ^frame <f> ^changed-contract <p>) (<f> ^seq <seq>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind contract ^commitment <p>)
+}
+sp {contract*ack-no-match
+ (state <s> ^context <c> ^smem.result.failure <q> ^io.output-link <out>) (<c> ^frame <f> ^contract-query <q>)
+ (<f> ^mode << complete-action contract-update >> ^seq <seq>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind no-contract)
+}

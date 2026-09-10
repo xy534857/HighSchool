@@ -1,0 +1,20 @@
+# ChatGPT-generated cognitive revision. Reuses generic recollection and appraisal.
+# The evidence must be recalled by Soar; no host history counter can activate it.
+sp {learned*xing*reinterpret-compatible-request
+ (state <s> ^context <c>)
+ (<c> ^frame <f> ^evaluated yes ^goal-threat no ^recollection <e>)
+ (<f> ^mode response ^self <me> ^request quiet)
+ (<e> ^kind distraction ^actor <me> ^source self ^uid <uid>)
+ -->
+ (<c> ^reframed yes ^concern mutual-space ^interpretation <i>)
+ (<i> ^predicate shared-impact ^evidence <uid> ^conclusion preserve-both-activities)
+}
+sp {learned*xing*protect-concentration-after-experience
+ (state <s> ^context <c>)
+ (<c> ^frame <f> ^memory-ready yes ^recollection <e>)
+ (<f> ^mode act ^self <me> ^active-task study ^hear-tv yes ^noise-minutes > 3 ^manual no ^available <a>)
+ (<e> ^kind distraction ^actor <me> ^source self)
+ (<a> ^kind askQuiet)
+ --> (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 84 ^rule learned*xing*protect-concentration-after-experience ^reason |上次我也被吵得写不下去，这次先商量一下。|)
+}

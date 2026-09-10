@@ -1,0 +1,92 @@
+{
+  "time": 1566,
+  "applied": 2,
+  "pending": [
+    {
+      "id": "knowledge-3",
+      "owner": "f",
+      "elapsedMs": 55474.24573599998
+    }
+  ],
+  "people": [
+    {
+      "id": "m",
+      "session": null,
+      "reason": "等待可执行的安排。",
+      "goals": [
+        {
+          "id": "goal:m-hold-two-friendships",
+          "stage": 1,
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "id": "f",
+      "task": "play-guitar",
+      "goal": "none",
+      "session": null,
+      "reason": "空闲时间继续自己的活动。",
+      "goals": []
+    },
+    {
+      "id": "t",
+      "task": "draw-poster",
+      "goal": "none",
+      "session": null,
+      "reason": "现在没有课，我喜欢画画，想去美术桌继续练习。",
+      "goals": [
+        {
+          "id": "goal:t-clarify-own-boundary",
+          "stage": 0,
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "uid": "event-24",
+      "kind": "social-act",
+      "actor": "f",
+      "room": "courtyard",
+      "time": 1041,
+      "session": "session-10",
+      "to": "t",
+      "text": "明远，社团结束我们几个一起走吧。知夏，这次你先别跟来了。",
+      "replyTo": null,
+      "claim": null,
+      "intent": "exclusion",
+      "about": "m",
+      "recipients": [
+        "f",
+        "m",
+        "t"
+      ]
+    },
+    {
+      "uid": "event-235",
+      "kind": "action-failed",
+      "actor": "m",
+      "room": "courtyard",
+      "time": 1545,
+      "action": "start-conversation",
+      "reason": "Target no longer perceived",
+      "recipients": [
+        "m"
+      ]
+    },
+    {
+      "uid": "event-240",
+      "kind": "action-failed",
+      "actor": "m",
+      "room": "courtyard",
+      "time": 1550,
+      "action": "start-conversation",
+      "reason": "Target no longer perceived",
+      "recipients": [
+        "m"
+      ]
+    }
+  ]
+}

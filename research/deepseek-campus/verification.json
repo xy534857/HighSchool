@@ -1,0 +1,468 @@
+{
+  "scope": "Isolated fictional M/T invitation fixture; not a playable campus, full conversation, automatic appraisal, or production model service.",
+  "nativeKernel": "Soar 9.6.5 WASM",
+  "model": "deepseek-v4-flash-vision-exp",
+  "completionRequests": 3,
+  "usage": {
+    "prompt": 3482,
+    "completion": 2153,
+    "total": 5635
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "latencySeconds": 14.786,
+      "usage": {
+        "prompt_tokens": 722,
+        "completion_tokens": 722,
+        "total_tokens": 1444,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 722
+      },
+      "interfaceErrors": [
+        "unknown input field: io.input.link.frame",
+        "unknown input field: name"
+      ],
+      "nativeParse": false,
+      "nativeError": "Expected variable or constant for test\n(Ignoring production learned*m*accept-other-low-pressure)\n\nProduction addition failed.\nError while sourcing file\n"
+    },
+    {
+      "attempt": 2,
+      "latencySeconds": 12.97,
+      "usage": {
+        "prompt_tokens": 1694,
+        "completion_tokens": 706,
+        "total_tokens": 2400,
+        "prompt_tokens_details": {
+          "cached_tokens": 1408
+        },
+        "prompt_cache_hit_tokens": 1408,
+        "prompt_cache_miss_tokens": 286
+      },
+      "interfaceErrors": [
+        "unknown input field: io.input.link.frame"
+      ],
+      "nativeParse": false,
+      "nativeError": "Expected ^ followed by attribute\n(Ignoring production learned*m*accept-other-low-pressure)\n\nProduction addition failed.\nError while sourcing file\n"
+    },
+    {
+      "attempt": 3,
+      "latencySeconds": 14.135,
+      "usage": {
+        "prompt_tokens": 1066,
+        "completion_tokens": 725,
+        "total_tokens": 1791,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1066
+      },
+      "interfaceErrors": [],
+      "nativeParse": true
+    }
+  ],
+  "cases": [
+    {
+      "name": "before-install",
+      "owner": "m",
+      "from": "t",
+      "audience": "public",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "high"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e2"
+      },
+      "choice": "ask-time",
+      "target": "t",
+      "rule": "campus*default-consider",
+      "reason": "尚无适用策略，先请求考虑时间。",
+      "fired": [
+        "memory*context",
+        "campus*default-consider",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "public-high",
+      "owner": "m",
+      "from": "t",
+      "audience": "public",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "high"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e2"
+      },
+      "choice": "ask-time",
+      "target": "t",
+      "rule": "learned*m*ask-time-public-high",
+      "reason": "公开且压力高，先拖延考虑。",
+      "fired": [
+        "memory*context",
+        "learned*m*ask-time-public-high",
+        "campus*default-consider",
+        "core*prefer-higher-priority",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "private-high",
+      "owner": "m",
+      "from": "t",
+      "audience": "private",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "high"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e2"
+      },
+      "choice": "ask-private",
+      "target": "t",
+      "rule": "learned*m*ask-private-high",
+      "reason": "私下但压力高，先私聊确认。",
+      "fired": [
+        "memory*context",
+        "learned*m*ask-private-high",
+        "campus*default-consider",
+        "core*prefer-higher-priority",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "private-high-no-redundant-private",
+      "owner": "m",
+      "from": "t",
+      "audience": "private",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "high"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e2"
+      },
+      "choice": "ask-time",
+      "target": "t",
+      "rule": "campus*default-consider",
+      "reason": "尚无适用策略，先请求考虑时间。",
+      "fired": [
+        "memory*context",
+        "campus*default-consider",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "other-inviter",
+      "owner": "m",
+      "from": "a",
+      "audience": "public",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "high"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e2"
+      },
+      "choice": "ask-time",
+      "target": "a",
+      "rule": "campus*default-consider",
+      "reason": "尚无适用策略，先请求考虑时间。",
+      "fired": [
+        "memory*context",
+        "campus*default-consider",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "other-agent",
+      "owner": "f",
+      "from": "t",
+      "audience": "public",
+      "known": {
+        "affection-target": "unknown",
+        "affection": "unknown",
+        "peer-pressure": "unknown"
+      },
+      "evidence": {},
+      "choice": "ask-time",
+      "target": "t",
+      "rule": "campus*default-consider",
+      "reason": "尚无适用策略，先请求考虑时间。",
+      "fired": [
+        "memory*context",
+        "campus*default-consider",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "restored-public-high",
+      "owner": "m",
+      "from": "t",
+      "audience": "public",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "high"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e2"
+      },
+      "choice": "ask-time",
+      "target": "t",
+      "rule": "learned*m*ask-time-public-high",
+      "reason": "公开且压力高，先拖延考虑。",
+      "fired": [
+        "learned*m*ask-time-public-high",
+        "campus*default-consider",
+        "memory*context",
+        "core*prefer-higher-priority",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "public-low",
+      "owner": "m",
+      "from": "t",
+      "audience": "public",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "low"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e3"
+      },
+      "choice": "ask-time",
+      "target": "t",
+      "rule": "learned*m*ask-time-public-low",
+      "reason": "公开但压力低，先考虑时间。",
+      "fired": [
+        "memory*context",
+        "learned*m*ask-time-public-low",
+        "campus*default-consider",
+        "core*prefer-higher-priority",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "private-low",
+      "owner": "m",
+      "from": "t",
+      "audience": "private",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "low"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e3"
+      },
+      "choice": "accept-prom",
+      "target": "t",
+      "rule": "learned*m*accept-private-low",
+      "reason": "私下且压力低，接受邀请。",
+      "fired": [
+        "memory*context",
+        "learned*m*accept-private-low",
+        "campus*default-consider",
+        "core*prefer-higher-priority",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "private-low-repeat",
+      "owner": "m",
+      "from": "t",
+      "audience": "private",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "low"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e3"
+      },
+      "choice": "accept-prom",
+      "target": "t",
+      "rule": "learned*m*accept-private-low",
+      "reason": "私下且压力低，接受邀请。",
+      "fired": [
+        "memory*context",
+        "learned*m*accept-private-low",
+        "campus*default-consider",
+        "core*prefer-higher-priority",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "old-save-still-high",
+      "owner": "m",
+      "from": "t",
+      "audience": "public",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "high"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e2"
+      },
+      "choice": "ask-time",
+      "target": "t",
+      "rule": "learned*m*ask-time-public-high",
+      "reason": "公开且压力高，先拖延考虑。",
+      "fired": [
+        "learned*m*ask-time-public-high",
+        "campus*default-consider",
+        "memory*context",
+        "core*prefer-higher-priority",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    },
+    {
+      "name": "same-private-low-without-policy",
+      "owner": "m",
+      "from": "t",
+      "audience": "private",
+      "known": {
+        "affection-target": "t",
+        "affection": "yes",
+        "peer-pressure": "low"
+      },
+      "evidence": {
+        "target": "m-e1-target",
+        "affection": "m-e1",
+        "pressure": "m-e3"
+      },
+      "choice": "ask-time",
+      "target": "t",
+      "rule": "campus*default-consider",
+      "reason": "尚无适用策略，先请求考虑时间。",
+      "fired": [
+        "memory*context",
+        "campus*default-consider",
+        "campus*emit-selected-command"
+      ],
+      "cycles": 1,
+      "validOption": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "model-productions-execute",
+      "pass": true,
+      "detail": "learned*m*accept-private-low"
+    },
+    {
+      "name": "policy-install-changes-behavior",
+      "pass": true,
+      "detail": {
+        "sameFrame": true,
+        "withoutPolicy": "ask-time",
+        "withPolicy": "accept-prom"
+      }
+    },
+    {
+      "name": "every-output-is-an-available-action",
+      "pass": true
+    },
+    {
+      "name": "affection-is-bound-to-the-inviter",
+      "pass": true
+    },
+    {
+      "name": "other-agent-does-not-share-M-memory",
+      "pass": true
+    },
+    {
+      "name": "native-memory-update-affects-private-choice",
+      "pass": true
+    },
+    {
+      "name": "pressure-update-preserves-affection",
+      "pass": true
+    },
+    {
+      "name": "unavailable-private-request-falls-back",
+      "pass": true
+    },
+    {
+      "name": "native-save-restores-choice-and-memory",
+      "pass": true
+    },
+    {
+      "name": "same-policy-reuses-without-model-call",
+      "pass": true
+    },
+    {
+      "name": "public-pressure-changes-selected-action",
+      "pass": false,
+      "detail": {
+        "high": "ask-time",
+        "low": "ask-time"
+      }
+    },
+    {
+      "name": "private-context-does-not-request-private-again",
+      "pass": false,
+      "detail": {
+        "actual": "ask-private"
+      }
+    }
+  ],
+  "acceptedForGame": false
+}

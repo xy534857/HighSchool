@@ -1,0 +1,33 @@
+[
+  {
+    "check": "no-input",
+    "classMinutes": 40,
+    "classRule": "foundation*utility",
+    "ateLunch": true
+  },
+  {
+    "check": "manual-takeover",
+    "interrupted": true,
+    "queueRespected": true,
+    "resumed": true
+  },
+  {
+    "check": "skip-save-return-remedy",
+    "teacherRecorded": true,
+    "duplicateAssignments": 0,
+    "remedied": true,
+    "recordPreserved": true
+  },
+  {
+    "check": "late-vs-absence",
+    "lateWithoutPenalty": true,
+    "teacherNotOmniscient": true,
+    "settingRestored": true
+  },
+  {
+    "check": "legacy-content-upgrade",
+    "customActionPreserved": true,
+    "personalMemoryPreserved": true,
+    "playerEnabled": true
+  }
+]

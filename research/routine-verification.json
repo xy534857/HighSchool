@@ -1,0 +1,148 @@
+{
+  "kernel": "Soar 9.6.5",
+  "tests": "routine, persistent intentions, day-end patch execution (provider fixtures do not test LLM quality)",
+  "evidence": [
+    {
+      "name": "ordinary-shared-dinner",
+      "times": [
+        1116.75,
+        1118,
+        1114,
+        1126,
+        1114.5
+      ],
+      "mealCount": 5,
+      "offWindowMeals": 0,
+      "nativePlans": [
+        {
+          "due": 1320,
+          "company-done": "no",
+          "break-done": "no",
+          "credited-day": 1,
+          "started-day": 1,
+          "created": 990.25,
+          "milestones": 1,
+          "motive": "想把收入安排好，家里需要时也能腾出手",
+          "method": "steady",
+          "revision": 2,
+          "uid": "project-dad-1",
+          "target": 2,
+          "title": "连续写完两份稿子，留出家用",
+          "day": 1,
+          "owner": "dad",
+          "status": "active",
+          "type": "intention"
+        },
+        {
+          "due": 1110,
+          "company-done": "no",
+          "break-done": "no",
+          "credited-day": 0,
+          "started-day": 1,
+          "created": 990.75,
+          "milestones": 0,
+          "motive": "希望家里有热饭，也给自己留点不用操心的时间",
+          "method": "provision",
+          "revision": 1,
+          "uid": "project-me-1",
+          "target": 2,
+          "title": "把接下来几顿饭安排妥当",
+          "day": 1,
+          "owner": "me",
+          "status": "active",
+          "type": "intention"
+        },
+        {
+          "due": 1290,
+          "company-done": "no",
+          "break-done": "no",
+          "credited-day": 1,
+          "started-day": 1,
+          "created": 991.5,
+          "milestones": 1,
+          "motive": "想把复习做扎实，不愿一直被打断重来",
+          "method": "focus",
+          "revision": 2,
+          "uid": "project-xue-1",
+          "target": 2,
+          "title": "按计划完成两轮复习，留出完整的休息时间",
+          "day": 1,
+          "owner": "xue",
+          "status": "active",
+          "type": "intention"
+        },
+        {
+          "due": 1320,
+          "company-done": "no",
+          "break-done": "yes",
+          "credited-day": 1,
+          "started-day": 1,
+          "created": 992.25,
+          "milestones": 1,
+          "motive": "想保住自己的娱乐时间，也不想作业一直拖着",
+          "method": "break-first",
+          "revision": 3,
+          "uid": "project-xing-1",
+          "target": 2,
+          "title": "把这两天的作业交代完，晚上安心看电视",
+          "day": 1,
+          "owner": "xing",
+          "status": "active",
+          "type": "intention"
+        },
+        {
+          "due": 1140,
+          "company-done": "no",
+          "break-done": "no",
+          "credited-day": 1,
+          "started-day": 1,
+          "created": 993,
+          "milestones": 1,
+          "motive": "想玩，也希望有人陪着自己",
+          "method": "company-first",
+          "revision": 2,
+          "uid": "project-xiaoyu-1",
+          "target": 2,
+          "title": "这两天多和家人在一起，把好玩的事玩够",
+          "day": 1,
+          "owner": "xiaoyu",
+          "status": "active",
+          "type": "intention"
+        }
+      ]
+    },
+    {
+      "name": "cross-midnight",
+      "uid": "project-dad-1",
+      "breakfast": [
+        {
+          "who": "xiaoyu",
+          "time": 439.25
+        },
+        {
+          "who": "xing",
+          "time": 439.75
+        },
+        {
+          "who": "me",
+          "time": 442.75
+        },
+        {
+          "who": "xue",
+          "time": 452.5
+        },
+        {
+          "who": "dad",
+          "time": 454.75
+        }
+      ],
+      "progress": 7.538462
+    },
+    {
+      "name": "world-patch-and-rollback",
+      "nativeActionAfterPatch": "eat",
+      "retainedMemory": "event-402",
+      "version": 3
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "check": "sustained-class",
+    "minutes": 85,
+    "decisions": 12,
+    "allNPCsInClass": true
+  },
+  {
+    "check": "consensual-situation",
+    "phase": "together",
+    "status": "completed",
+    "finished": 5298.5,
+    "playerNotCast": true,
+    "declinedParticipation": "m"
+  },
+  {
+    "check": "runtime-refusal",
+    "outcome": "solo",
+    "nativeRule": "learned*f*decline-project-test"
+  },
+  {
+    "check": "resource-save-expiry",
+    "status": "expired",
+    "duplicateGoals": false,
+    "fakeCompletion": false
+  }
+]

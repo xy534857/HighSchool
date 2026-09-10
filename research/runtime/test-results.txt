@@ -1,0 +1,56 @@
+
+> test
+> node --test tests/foundation/kernel.test.mjs tests/campus/*.test.mjs tests/runtime/*.test.mjs
+
+✔ a whole class stays at assigned classroom seats, while busy agents do not choose every tick (10536.777038ms)
+✔ autonomous situation negotiates consent, then real complementary work; no player takeover (19065.619821ms)
+✔ a runtime Soar rule can refuse the proposal and change the shared outcome (27851.0811ms)
+✔ missing resources cannot fake completion; situation and native plans survive save/load (48919.00256ms)
+✔ access and owned lockers constrain both manual routes and autonomous candidates (9316.137758ms)
+✔ new interactions form real resource chains, with depletion, cleanup and scheduled replenishment (9718.77437ms)
+✔ expanded school autonomously handles the lunch sequence without player scripting (8965.182813ms)
+✔ prior campus save gains expanded geography without losing native memories or custom rules (40503.83839ms)
+✔ every region can be reached, every usable furniture anchor has an obstacle-free route (9278.518487ms)
+✔ player menu drives cross-room washing, water, toilet, art, sport, reading and genuine bed sleep (11629.85007ms)
+✔ real agents answer multiple turns, consent to loan and physically transfer, then survive portable save (30599.689618ms)
+✔ every campus route uses public circulation; room entry and approach paths remain usable (9595.350536ms)
+✔ runtime-authored native plan repeats to an outcome, yields to class, and resumes after next-day load (27975.482396ms)
+✔ blocked plan supplies its own prerequisites instead of falsely advancing the goal (9108.282566ms)
+✔ same experienced broken promise produces distinct native appraisals and decisions (8660.115804ms)
+✔ no-input player independently attends sustained class and then eats at lunch (19558.384827ms)
+✔ manual takeover interrupts automatic class, queue stays manual; autonomy resumes after completion (10264.150701ms)
+✔ deliberate skipped class produces teacher memory and real makeup work; save never duplicates it (42244.405039ms)
+✔ late arrival is not absence; inactive teacher cannot observe missing students; autonomy setting persists (33852.722746ms)
+✔ old embedded school content upgrades without discarding custom actions or personal memory (31832.831776ms)
+✔ experienced appraisals update directed native relationships; unseen actors learn nothing (8640.207137ms)
+✔ a prerequisite cannot complete a speech goal; personality and strategy patches require evidence (8906.742677ms)
+✔ daily reflection queues once and survives loading while old in-flight replies are rejected (28297.629865ms)
+✔ inference latency does not block ticks; concurrency and rolling request budgets are enforced (15.909289ms)
+✔ timeouts and reload cancellation discard late model results (39.788415ms)
+✔ witnessed acceptance replaces pending Soar memory and completes the consent wait (8354.647483ms)
+✔ experience-based assertiveness changes native operator eligibility, not just a label (8087.75052ms)
+✔ a distant social goal still drives travel instead of losing to repeated nearby leisure (8448.098888ms)
+✔ all tuned clips resolve and embodied activities have distinct joints and props (6.046864ms)
+✔ exclusive facilities retain occupancy through exit, protect privacy, and use furniture anchors (8961.4421ms)
+✔ crossing traffic detours without body overlap; running follows an actual obstacle-free circuit (8655.789304ms)
+✔ eight autonomous actors share three toilets without co-occupancy or deadlock (21303.512163ms)
+✔ old save receives geometry and valid resumed approach while keeping memory and extensions (36355.08658ms)
+✔ native Soar rules produce consent, anchored transfer, persistent goal and exactly-once return (1533.889306ms)
+✔ a new object and interaction are added by tuning alone, with atomic resource effects (584.169866ms)
+✔ beds and seats require travel and a unique slot; busy resources cannot duplicate (324.921118ms)
+✔ conversation delivery, late joins, group consent and replies use actual participants (680.656148ms)
+✔ native plans, remaining action time and personal facts survive saves; old replies fail (4746.095426ms)
+✔ rule schemas reject unknown capabilities and stale evidence without replacing valid policy (342.740708ms)
+✔ missed commitments produce one native directed social record, not global mood changes (837.147794ms)
+✔ paused work releases its slot, resumes remaining progress, and cancellation keeps the goal (889.924902ms)
+✔ core modules contain no campus content IDs and observed provenance survives a multi-turn answer (942.687449ms)
+✔ compatible provider sends bounded structured context, handles JSON and propagates cancellation (1.978248ms)
+✔ local runtime serves the game and completes manual asynchronous requests without exposing credentials (669.59394ms)
+ℹ tests 44
+ℹ suites 0
+ℹ pass 44
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 137925.736787

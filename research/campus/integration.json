@@ -1,0 +1,74 @@
+[
+  {
+    "check": "navigation",
+    "regions": 19,
+    "interactionAnchors": 153
+  },
+  {
+    "check": "player-interaction",
+    "action": "wash-hands",
+    "room": "bathroom",
+    "result": "action-completed"
+  },
+  {
+    "check": "player-interaction",
+    "action": "drink",
+    "room": "courtyard",
+    "result": "action-completed"
+  },
+  {
+    "check": "player-interaction",
+    "action": "toilet",
+    "room": "bathroom",
+    "result": "action-completed"
+  },
+  {
+    "check": "player-interaction",
+    "action": "draw-poster",
+    "room": "club",
+    "result": "action-completed"
+  },
+  {
+    "check": "player-interaction",
+    "action": "shoot-hoops",
+    "room": "playground",
+    "result": "action-completed"
+  },
+  {
+    "check": "player-interaction",
+    "action": "read-book",
+    "room": "library",
+    "result": "action-completed"
+  },
+  {
+    "check": "player-interaction",
+    "action": "use-computer",
+    "room": "office",
+    "result": "action-completed"
+  },
+  {
+    "check": "player-interaction",
+    "action": "get-lunch",
+    "room": "canteen",
+    "result": "action-completed"
+  },
+  {
+    "check": "player-interaction",
+    "action": "eat",
+    "room": "canteen",
+    "result": "action-completed"
+  },
+  {
+    "check": "player-interaction",
+    "action": "rest",
+    "room": "infirmary",
+    "result": "action-completed"
+  },
+  {
+    "check": "native-conversation",
+    "accepted": true,
+    "handedOver": true,
+    "memoryReply": true,
+    "saved": true
+  }
+]

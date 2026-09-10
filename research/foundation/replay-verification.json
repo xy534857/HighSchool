@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "externalAPICalls": 0,
+  "recordedAuthorInterventions": 2,
+  "goal": "completed",
+  "commitment": "fulfilled",
+  "timeline": [
+    {
+      "time": 482.5,
+      "kind": "proposal",
+      "actor": "t",
+      "text": "想借这份笔记，稍后归还",
+      "claim": null,
+      "replyTo": null
+    },
+    {
+      "time": 485.5,
+      "kind": "cooperate",
+      "actor": "m",
+      "text": "好，就这么说定了",
+      "claim": {
+        "subject": "offer-15",
+        "predicate": "status",
+        "value": "accepted"
+      },
+      "replyTo": null
+    },
+    {
+      "time": 487,
+      "kind": "object-transferred",
+      "actor": "m",
+      "claim": {
+        "subject": "notes",
+        "predicate": "holder",
+        "value": "t"
+      }
+    },
+    {
+      "time": 488.5,
+      "kind": "question",
+      "actor": "t",
+      "text": "那我们刚才说好的借阅，还作数吗？",
+      "claim": null,
+      "replyTo": null
+    },
+    {
+      "time": 491.5,
+      "kind": "information",
+      "actor": "m",
+      "text": "我记得结果是“已经答应”。",
+      "claim": {
+        "subject": "offer-15",
+        "predicate": "status",
+        "value": "accepted",
+        "root": "event-19"
+      },
+      "replyTo": "event-26"
+    },
+    {
+      "time": 494.5,
+      "kind": "object-transferred",
+      "actor": "t",
+      "claim": {
+        "subject": "notes",
+        "predicate": "holder",
+        "value": "m"
+      }
+    },
+    {
+      "time": 494.5,
+      "kind": "commitment-fulfilled",
+      "actor": "t",
+      "claim": {
+        "subject": "appointment:offer-15",
+        "predicate": "status",
+        "value": "fulfilled"
+      }
+    }
+  ]
+}

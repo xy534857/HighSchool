@@ -1,0 +1,117 @@
+{
+  "source": "Two patches authored by ChatGPT after reading sequential native household day reports. Controlled re-exposure tests measure causal rule effects; they are not spontaneous future stories.",
+  "runtimeApiCalls": 0,
+  "results": [
+    {
+      "scenario": "meal-before-optional-delivery",
+      "patched": false,
+      "action": "groceries",
+      "rule": "base*replenish-food",
+      "fired": [
+        "memory*context",
+        "memory*query-goal",
+        "memory*receive-goal-for-action",
+        "contract*query-outstanding",
+        "contract*no-outstanding",
+        "me*check-outstanding-obligations",
+        "cognition*issue-semantic-cue",
+        "cognition*semantic-miss",
+        "base*wait-for-opportunity",
+        "base*replenish-food",
+        "core*prefer-higher-priority",
+        "core*emit-selected-command",
+        "cognition*expose-goal"
+      ],
+      "project": "project-me-1"
+    },
+    {
+      "scenario": "meal-before-optional-delivery",
+      "patched": true,
+      "action": "idle",
+      "rule": "base*wait-for-opportunity",
+      "fired": [
+        "memory*context",
+        "memory*query-goal",
+        "memory*receive-goal-for-action",
+        "contract*query-outstanding",
+        "contract*no-outstanding",
+        "me*check-outstanding-obligations",
+        "cognition*issue-semantic-cue",
+        "cognition*semantic-miss",
+        "base*wait-for-opportunity",
+        "base*replenish-food",
+        "core*prefer-higher-priority",
+        "learned*me*leave-time-for-shared-meals",
+        "core*emit-selected-command",
+        "core*expose-active-constraint",
+        "cognition*expose-goal"
+      ],
+      "project": "project-me-1"
+    },
+    {
+      "scenario": "negotiating-noise",
+      "patched": false,
+      "action": "work",
+      "rule": "plan*continue-guided-step",
+      "fired": [
+        "memory*context",
+        "memory*query-goal",
+        "memory*receive-goal-for-action",
+        "cognition*expose-active-work",
+        "contract*query-outstanding",
+        "contract*no-outstanding",
+        "dad*recall-conflict-he-witnessed",
+        "cognition*issue-semantic-cue",
+        "cognition*receive-semantic-evidence",
+        "cognition*expose-known-conflict",
+        "base*continue-intention",
+        "base*wait-for-opportunity",
+        "plan*continue-guided-step",
+        "core*prefer-higher-priority",
+        "core*prefer-higher-priority",
+        "core*prefer-higher-priority",
+        "core*emit-selected-command",
+        "cognition*expose-recollection",
+        "cognition*expose-goal"
+      ],
+      "project": "project-dad-1"
+    },
+    {
+      "scenario": "negotiating-noise",
+      "patched": true,
+      "action": "idle",
+      "rule": "learned*dad*negotiate-to-protect-writing",
+      "fired": [
+        "memory*context",
+        "memory*query-goal",
+        "memory*receive-goal-for-action",
+        "cognition*expose-active-work",
+        "contract*query-outstanding",
+        "contract*no-outstanding",
+        "dad*recall-conflict-he-witnessed",
+        "cognition*issue-semantic-cue",
+        "cognition*receive-semantic-evidence",
+        "cognition*expose-known-conflict",
+        "base*continue-intention",
+        "base*wait-for-opportunity",
+        "learned*dad*negotiate-to-protect-writing",
+        "plan*continue-guided-step",
+        "core*prefer-higher-priority",
+        "core*prefer-higher-priority",
+        "core*prefer-higher-priority",
+        "core*prefer-higher-priority",
+        "core*prefer-higher-priority",
+        "core*prefer-higher-priority",
+        "core*emit-selected-command",
+        "cognition*expose-recollection",
+        "cognition*expose-goal"
+      ],
+      "project": "project-dad-1",
+      "conversationTurns": [
+        "request",
+        "respond",
+        "ack"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "name": "autonomous-situation",
+      "observed": "愿意参与 / 决定不参加 / 完成海报和音乐"
+    },
+    {
+      "name": "player-travel",
+      "observed": "玩家实际从教室走到中庭"
+    },
+    {
+      "name": "continuous-class",
+      "time": "09:04",
+      "npcCount": 7,
+      "observed": "互动\n校园记录 5\n乔\n沈乔\n\n同学 · 青禾高中\n\n正在\n在自己的座位上课\n位置\n高一（2）班\n\n现在是上课时间，回自己的教室和座位，持续听课到下课。\n\n社团招新：海报与音乐\n\n海报和开场音乐都实际完成了，这次筹备有了结果。\n\n苏禾 · 愿意参与，沈乔 · 愿意参与，周明远 · 决定不参加\n看看现场\n这里的同学与老师\n远\n周明远\n在自己的座位上课\n乔\n沈乔\n在自己的座位上课\n安\n许安\n在自己的座位上课\n师\n陈老师\n给同学们讲课\n川\n陆川\n在自己的座位上课\n禾\n苏禾\n在自己的座位上课\n乐\n何乐\n在自己的座位上课"
+    },
+    {
+      "name": "canvas-drawing-sample",
+      "fps": 21,
+      "positionUpdateMs": 184,
+      "mode": "1x, moving actors, visible diagnostic panel"
+    }
+  ],
+  "webglGPUValidated": false,
+  "externalModelAPICalls": 0
+}

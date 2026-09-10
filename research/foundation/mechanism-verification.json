@@ -1,0 +1,49 @@
+{
+  "kind": "mechanism tests; not a personality quality benchmark",
+  "externalAPICalls": 0,
+  "results": [
+    {
+      "test": "loan-chain",
+      "rules": [
+        "player",
+        "foundation*utility",
+        "player",
+        "learned*m*fixture-accept",
+        "foundation*goal",
+        "player"
+      ],
+      "goal": "completed",
+      "commitment": "fulfilled"
+    },
+    {
+      "test": "tuning-only-extension",
+      "newType": "drawing-kit",
+      "newAction": "draw-poster",
+      "engineEdits": 0,
+      "atomicFailure": true
+    },
+    {
+      "test": "shared-conversation",
+      "members": 3,
+      "noBackfill": true,
+      "noRemoteKnowledge": true
+    },
+    {
+      "test": "native-save",
+      "sameRemaining": true,
+      "goalResumed": true,
+      "oldReplyRejected": true
+    },
+    {
+      "test": "interrupt-resume",
+      "slotReleased": true,
+      "goalRetained": true
+    },
+    {
+      "test": "multi-turn-answer",
+      "replyTo": "event-26",
+      "preservedProvenance": true,
+      "noObserverLeak": true
+    }
+  ]
+}

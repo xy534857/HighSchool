@@ -1,0 +1,36 @@
+[
+  {
+    "check": "animation-vocabulary",
+    "clips": 33,
+    "allActionsMapped": true
+  },
+  {
+    "check": "facility-lifecycle",
+    "exclusive": true,
+    "private": true,
+    "cancelRetainsLease": true,
+    "reusableAfterExit": true,
+    "sleepOnBed": true
+  },
+  {
+    "check": "traffic-and-motion",
+    "minimumSeparation": 1.1114574344922912,
+    "runDistance": 19.234812249792334,
+    "runPositions": 50
+  },
+  {
+    "check": "autonomous-toilet-queue",
+    "actors": 8,
+    "facilities": 3,
+    "completed": 8,
+    "maximumReserved": 3,
+    "minimumSeparation": 0.9968639753725493,
+    "elapsedMinutes": 21.75
+  },
+  {
+    "check": "spatial-save-upgrade",
+    "memoryPreserved": true,
+    "activeSlotRestored": true,
+    "exitReachable": true
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "check": "access",
+    "actors": 8,
+    "genderEnforced": true,
+    "privateLockers": true,
+    "runtimeGeneratedSoarUsesResources": true,
+    "rooms": 19,
+    "objects": 148
+  },
+  {
+    "check": "resource-chains",
+    "completed": [
+      "get-lunch",
+      "eat",
+      "return-tray",
+      "observe-sample",
+      "clean-microscope",
+      "do-experiment",
+      "clean-experiment",
+      "print-notes",
+      "buy-supplies",
+      "restock-art",
+      "paint-study",
+      "exhibit-work",
+      "practice-piano",
+      "read-score",
+      "practice-pingpong",
+      "stretch",
+      "solve-chess",
+      "use-care-pack",
+      "tend-garden",
+      "harvest-garden",
+      "toilet",
+      "clean-stall"
+    ],
+    "finiteStock": true,
+    "restoredNextDay": true,
+    "scheduledAllowance": true
+  },
+  {
+    "check": "autonomous-lunch",
+    "sequence": [
+      "get-lunch",
+      "eat",
+      "return-tray"
+    ],
+    "soarCycles": 3
+  },
+  {
+    "check": "expanded-save",
+    "nativeMemoryKept": true,
+    "customContentKept": true,
+    "newRegions": true,
+    "balanceKept": true,
+    "activeServiceSlotMigrated": true
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "requestId": "reflection-2026-2-697c9328",
+  "baseRuleVersion": 2,
+  "author": "ChatGPT（读取第二天实际日结后生成，非运行时 API）",
+  "summary": "第二天全家都在三个饭点吃到了饭，世界作息继续保留。刘梅早餐前去收配送，直到 07:57 才吃上，增加饭前不启动非必要长采购的个人规则。",
+  "changes": [
+    {
+      "kind": "person",
+      "person": "me",
+      "reason": "刘梅在 07:16 开始取配送（431），07:51 才收到（459），07:57 才开始早餐（477），比其他人晚约 20 分钟。已有足量热饭、采购耗时超过距饭点的时间时，暂缓这项采购；没有饭时仍可采购备餐。",
+      "evidence": [
+        431,
+        459,
+        477
+      ],
+      "source": "sp {learned*me*leave-time-for-shared-meals\n (state <s> ^context <c> ^operator <o> +)\n (<c> ^frame <f> ^memory-ready yes)\n (<f> ^mode act ^busy no ^food-needed <required> ^food >= <required> ^minutes-to-meal <remaining>)\n (<o> ^name choose ^choice <a>) (<a> ^kind groceries ^minutes > <remaining>)\n --> (<s> ^operator <o> -) (<c> ^constraint <why>) (<why> ^action groceries ^reason |现成饭够了，采购来不及在饭前完成；吃过这一顿再去。| ^evidence event-459)\n}"
+    }
+  ]
+}

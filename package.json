@@ -1,0 +1,18 @@
+{
+  "name": "highschool-soar",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.config.js",
+    "test": "node --test tests/foundation/kernel.test.mjs tests/campus/*.test.mjs tests/runtime/*.test.mjs",
+    "start": "node server/runtime-server.mjs",
+    "author": "python3 scripts/author-school-content.py",
+    "test:live": "node scripts/live-social-lab.mjs"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

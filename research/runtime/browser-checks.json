@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "campus starts with 8 independent actors",
+    "player remains in class without manual input",
+    "character selector displays different native project and directed relationships",
+    "settings identifies static manual-import mode",
+    "19-area overview opens and navigation stays visible",
+    "pause control works"
+  ],
+  "rendering": "Canvas compatibility renderer in test browser",
+  "observedFPS": 25,
+  "observedPositionUpdateMs": 172,
+  "limitations": "Not a 60fps guarantee; browser UI plus separate real WASM/HTTP integration tests, not a live external-model browser run."
+}

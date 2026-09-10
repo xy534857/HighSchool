@@ -1,0 +1,22 @@
+{
+  "author": "ChatGPT in this conversation",
+  "externalApiCalls": 0,
+  "basis": {
+    "uid": "event-13",
+    "text": "刘星亲身体会到电视声会拖慢进度。",
+    "source": "self",
+    "actor": "xing"
+  },
+  "interpretation": "刘星亲身体会过噪音阻碍学习。调小电视不必牺牲观看，可以把请求理解为保留双方活动。",
+  "changes": [
+    "复用个人 EpMem 检索，要求 self 来源的亲身证据",
+    "将兼容的安静请求解释为 mutual-space，使原生 RL 在该考虑下选择方法",
+    "在以后自己的学习受干扰时提出商量安静的操作"
+  ],
+  "boundary": [
+    "传闻不能代替亲身经历",
+    "不把无关家务请求解释为同一个问题",
+    "不指定未来剧情或自动修改世界效果"
+  ],
+  "source": "dist/soar/learned/xing-v2.soar"
+}

@@ -1,0 +1,1945 @@
+{
+  "id": "knowledge-1",
+  "owner": "m",
+  "reason": "unhandled-proposal:offer-15",
+  "epoch": 1,
+  "baseRevision": 0,
+  "contentRevision": 1,
+  "dependencies": [
+    {
+      "key": "offer-15:status",
+      "value": "unknown"
+    }
+  ],
+  "context": {
+    "actor": "m",
+    "time": 483.5,
+    "profile": {
+      "sensitivity": 10,
+      "coping": "verify"
+    },
+    "facts": {
+      "mode": "foundation",
+      "room": "classroom",
+      "period": "morning",
+      "session": "session-7",
+      "phase": "speaking",
+      "bladder": 79.65000000000002,
+      "energy": 84.71999999999996,
+      "hunger": 79.57999999999998,
+      "social": 69.86000000000003,
+      "known": [
+        {
+          "key": "desk-1:room",
+          "subject": "desk-1",
+          "predicate": "room",
+          "value": "classroom",
+          "status": "known",
+          "provenance": "map:desk-1:room"
+        },
+        {
+          "key": "desk-1:x",
+          "subject": "desk-1",
+          "predicate": "x",
+          "value": -2,
+          "status": "known",
+          "provenance": "map:desk-1:x"
+        },
+        {
+          "key": "desk-1:z",
+          "subject": "desk-1",
+          "predicate": "z",
+          "value": 0,
+          "status": "known",
+          "provenance": "map:desk-1:z"
+        },
+        {
+          "key": "desk-2:room",
+          "subject": "desk-2",
+          "predicate": "room",
+          "value": "classroom",
+          "status": "known",
+          "provenance": "map:desk-2:room"
+        },
+        {
+          "key": "desk-2:x",
+          "subject": "desk-2",
+          "predicate": "x",
+          "value": -2,
+          "status": "known",
+          "provenance": "map:desk-2:x"
+        },
+        {
+          "key": "desk-2:z",
+          "subject": "desk-2",
+          "predicate": "z",
+          "value": 2,
+          "status": "known",
+          "provenance": "map:desk-2:z"
+        },
+        {
+          "key": "library-desk:room",
+          "subject": "library-desk",
+          "predicate": "room",
+          "value": "library",
+          "status": "known",
+          "provenance": "map:library-desk:room"
+        },
+        {
+          "key": "library-desk:x",
+          "subject": "library-desk",
+          "predicate": "x",
+          "value": 1,
+          "status": "known",
+          "provenance": "map:library-desk:x"
+        },
+        {
+          "key": "library-desk:z",
+          "subject": "library-desk",
+          "predicate": "z",
+          "value": 0,
+          "status": "known",
+          "provenance": "map:library-desk:z"
+        },
+        {
+          "key": "lunch-table:room",
+          "subject": "lunch-table",
+          "predicate": "room",
+          "value": "canteen",
+          "status": "known",
+          "provenance": "map:lunch-table:room"
+        },
+        {
+          "key": "lunch-table:x",
+          "subject": "lunch-table",
+          "predicate": "x",
+          "value": 0,
+          "status": "known",
+          "provenance": "map:lunch-table:x"
+        },
+        {
+          "key": "lunch-table:z",
+          "subject": "lunch-table",
+          "predicate": "z",
+          "value": 0,
+          "status": "known",
+          "provenance": "map:lunch-table:z"
+        },
+        {
+          "key": "toilet-1:room",
+          "subject": "toilet-1",
+          "predicate": "room",
+          "value": "bathroom",
+          "status": "known",
+          "provenance": "map:toilet-1:room"
+        },
+        {
+          "key": "toilet-1:x",
+          "subject": "toilet-1",
+          "predicate": "x",
+          "value": 0,
+          "status": "known",
+          "provenance": "map:toilet-1:x"
+        },
+        {
+          "key": "toilet-1:z",
+          "subject": "toilet-1",
+          "predicate": "z",
+          "value": 0,
+          "status": "known",
+          "provenance": "map:toilet-1:z"
+        },
+        {
+          "key": "infirmary-bed:room",
+          "subject": "infirmary-bed",
+          "predicate": "room",
+          "value": "infirmary",
+          "status": "known",
+          "provenance": "map:infirmary-bed:room"
+        },
+        {
+          "key": "infirmary-bed:x",
+          "subject": "infirmary-bed",
+          "predicate": "x",
+          "value": 0,
+          "status": "known",
+          "provenance": "map:infirmary-bed:x"
+        },
+        {
+          "key": "infirmary-bed:z",
+          "subject": "infirmary-bed",
+          "predicate": "z",
+          "value": 0,
+          "status": "known",
+          "provenance": "map:infirmary-bed:z"
+        },
+        {
+          "key": "water:room",
+          "subject": "water",
+          "predicate": "room",
+          "value": "hall",
+          "status": "known",
+          "provenance": "map:water:room"
+        },
+        {
+          "key": "water:x",
+          "subject": "water",
+          "predicate": "x",
+          "value": 2,
+          "status": "known",
+          "provenance": "map:water:x"
+        },
+        {
+          "key": "water:z",
+          "subject": "water",
+          "predicate": "z",
+          "value": 0,
+          "status": "known",
+          "provenance": "map:water:z"
+        }
+      ],
+      "sensitivity": 10,
+      "coping": "verify"
+    },
+    "available": [
+      {
+        "id": "candidate-0",
+        "key": "[\"accept-offer\",{\"offer\":\"offer-15\"},{}]",
+        "kind": "accept-offer",
+        "action": "accept-offer",
+        "target": "t",
+        "roles": {
+          "offer": "offer-15"
+        },
+        "args": {},
+        "item": "notes",
+        "offer": "offer-15",
+        "offer-kind": "loan",
+        "offer-status": "pending",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "response",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 0
+      },
+      {
+        "id": "candidate-1",
+        "key": "[\"decline-offer\",{\"offer\":\"offer-15\"},{}]",
+        "kind": "decline-offer",
+        "action": "decline-offer",
+        "target": "t",
+        "roles": {
+          "offer": "offer-15"
+        },
+        "args": {},
+        "item": "notes",
+        "offer": "offer-15",
+        "offer-kind": "loan",
+        "offer-status": "pending",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "response",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 1
+      },
+      {
+        "id": "candidate-2",
+        "key": "[\"inspect\",{\"item\":\"notes\"},{}]",
+        "kind": "inspect",
+        "action": "inspect",
+        "target": "notes",
+        "roles": {
+          "item": "notes"
+        },
+        "args": {},
+        "item": "notes",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 2
+      },
+      {
+        "id": "candidate-3",
+        "key": "[\"inspect\",{\"item\":\"desk-1\"},{}]",
+        "kind": "inspect",
+        "action": "inspect",
+        "target": "desk-1",
+        "roles": {
+          "item": "desk-1"
+        },
+        "args": {},
+        "item": "desk-1",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 3
+      },
+      {
+        "id": "candidate-4",
+        "key": "[\"inspect\",{\"item\":\"desk-2\"},{}]",
+        "kind": "inspect",
+        "action": "inspect",
+        "target": "desk-2",
+        "roles": {
+          "item": "desk-2"
+        },
+        "args": {},
+        "item": "desk-2",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 4
+      },
+      {
+        "id": "candidate-5",
+        "key": "[\"inspect\",{\"item\":\"library-desk\"},{}]",
+        "kind": "inspect",
+        "action": "inspect",
+        "target": "library-desk",
+        "roles": {
+          "item": "library-desk"
+        },
+        "args": {},
+        "item": "library-desk",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 5
+      },
+      {
+        "id": "candidate-6",
+        "key": "[\"inspect\",{\"item\":\"lunch-table\"},{}]",
+        "kind": "inspect",
+        "action": "inspect",
+        "target": "lunch-table",
+        "roles": {
+          "item": "lunch-table"
+        },
+        "args": {},
+        "item": "lunch-table",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 6
+      },
+      {
+        "id": "candidate-7",
+        "key": "[\"inspect\",{\"item\":\"toilet-1\"},{}]",
+        "kind": "inspect",
+        "action": "inspect",
+        "target": "toilet-1",
+        "roles": {
+          "item": "toilet-1"
+        },
+        "args": {},
+        "item": "toilet-1",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 7
+      },
+      {
+        "id": "candidate-8",
+        "key": "[\"inspect\",{\"item\":\"infirmary-bed\"},{}]",
+        "kind": "inspect",
+        "action": "inspect",
+        "target": "infirmary-bed",
+        "roles": {
+          "item": "infirmary-bed"
+        },
+        "args": {},
+        "item": "infirmary-bed",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 8
+      },
+      {
+        "id": "candidate-9",
+        "key": "[\"inspect\",{\"item\":\"water\"},{}]",
+        "kind": "inspect",
+        "action": "inspect",
+        "target": "water",
+        "roles": {
+          "item": "water"
+        },
+        "args": {},
+        "item": "water",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 9
+      },
+      {
+        "id": "candidate-10",
+        "key": "[\"invite-into-conversation\",{\"target\":\"f\"},{}]",
+        "kind": "invite-into-conversation",
+        "action": "invite-into-conversation",
+        "target": "f",
+        "roles": {
+          "target": "f"
+        },
+        "args": {},
+        "item": "none",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "student",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 10
+      },
+      {
+        "id": "candidate-11",
+        "key": "[\"leave-conversation\",{},{}]",
+        "kind": "leave-conversation",
+        "action": "leave-conversation",
+        "target": "none",
+        "roles": {},
+        "args": {},
+        "item": "none",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 11
+      },
+      {
+        "id": "candidate-12",
+        "key": "[\"make-group\",{\"target\":\"t\"},{\"name\":\"学习小组\"}]",
+        "kind": "make-group",
+        "action": "make-group",
+        "target": "t",
+        "roles": {
+          "target": "t"
+        },
+        "args": {
+          "name": "学习小组"
+        },
+        "item": "none",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "student",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 12
+      },
+      {
+        "id": "candidate-13",
+        "key": "[\"make-group\",{\"target\":\"f\"},{\"name\":\"学习小组\"}]",
+        "kind": "make-group",
+        "action": "make-group",
+        "target": "f",
+        "roles": {
+          "target": "f"
+        },
+        "args": {
+          "name": "学习小组"
+        },
+        "item": "none",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "student",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 13
+      },
+      {
+        "id": "candidate-14",
+        "key": "[\"offer-meeting\",{\"target\":\"t\"},{\"due\":1020}]",
+        "kind": "offer-meeting",
+        "action": "offer-meeting",
+        "target": "t",
+        "roles": {
+          "target": "t"
+        },
+        "args": {
+          "due": 1020
+        },
+        "item": "none",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "student",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 14
+      },
+      {
+        "id": "candidate-15",
+        "key": "[\"put-down\",{\"item\":\"notes\"},{}]",
+        "kind": "put-down",
+        "action": "put-down",
+        "target": "notes",
+        "roles": {
+          "item": "notes"
+        },
+        "args": {},
+        "item": "notes",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": false,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 15
+      },
+      {
+        "id": "candidate-16",
+        "key": "[\"wait\",{},{}]",
+        "kind": "wait",
+        "action": "wait",
+        "target": "none",
+        "roles": {},
+        "args": {},
+        "item": "none",
+        "offer": "none",
+        "offer-kind": "none",
+        "offer-status": "none",
+        "invitation": "none",
+        "group": "none",
+        "message": "none",
+        "message-key": "none",
+        "target-role": "none",
+        "category": "ordinary",
+        "utility": 0,
+        "fallback": true,
+        "goal": "none",
+        "goal-step": false,
+        "goalStage": -1,
+        "ordinal": 16
+      }
+    ],
+    "goals": [],
+    "events": [
+      {
+        "uid": "event-2",
+        "kind": "arrived",
+        "actor": "m",
+        "time": 480,
+        "text": "进入场景。"
+      },
+      {
+        "uid": "event-8",
+        "kind": "session-invitation",
+        "actor": "t",
+        "time": 481,
+        "target": "m",
+        "session": "session-7",
+        "topic": "课间聊聊"
+      },
+      {
+        "uid": "event-12",
+        "kind": "session-joined",
+        "actor": "m",
+        "time": 481,
+        "session": "session-7"
+      },
+      {
+        "uid": "event-13",
+        "kind": "action-completed",
+        "actor": "m",
+        "time": 481,
+        "action": "join-conversation",
+        "commandId": "autonomy-11",
+        "rule": "foundation*utility",
+        "reason": "按身体需要与共同作息选择。"
+      },
+      {
+        "uid": "event-16",
+        "kind": "proposal",
+        "actor": "t",
+        "time": 482.5,
+        "session": "session-7",
+        "to": "m",
+        "text": "想借这份笔记，稍后归还",
+        "replyTo": null,
+        "claim": null,
+        "offer": "offer-15",
+        "proposal": {
+          "id": "offer-15",
+          "kind": "loan",
+          "from": "t",
+          "to": "m",
+          "item": "notes",
+          "giver": "m",
+          "receiver": "t",
+          "due": 550,
+          "status": "pending",
+          "expires": 497.5,
+          "session": "session-7",
+          "transferred": false,
+          "transferAllowed": true,
+          "returnAllowed": true,
+          "heardBy": []
+        }
+      }
+    ],
+    "currentRules": [],
+    "contract": {
+      "version": 1,
+      "ruleLanguage": "typed conditions/selectors compiled into native Soar productions",
+      "candidateFields": [
+        "action",
+        "target",
+        "target-role",
+        "item",
+        "offer",
+        "offer-kind",
+        "offer-status",
+        "invitation",
+        "group",
+        "message",
+        "message-key",
+        "goal",
+        "goal-step",
+        "category",
+        "utility"
+      ],
+      "selfFields": [
+        "room",
+        "period",
+        "session",
+        "phase",
+        "energy",
+        "hunger",
+        "social",
+        "bladder"
+      ],
+      "conditionOperators": [
+        "eq",
+        "ne",
+        "lt",
+        "lte",
+        "gt",
+        "gte"
+      ],
+      "reply": {
+        "requestId": "copy",
+        "epoch": "copy",
+        "baseRevision": "copy",
+        "contentRevision": "copy",
+        "evidence": [
+          "actual observed event IDs"
+        ],
+        "rules": [
+          {
+            "id": "unique-rule-id",
+            "select": {
+              "action": "registered-action"
+            },
+            "when": [
+              {
+                "scope": "memory",
+                "key": "subject:predicate",
+                "op": "eq",
+                "value": "known-value"
+              }
+            ],
+            "priority": 80,
+            "reason": "why these tested conditions support this choice"
+          }
+        ],
+        "goals": [],
+        "source": "optional exact compilePolicy output; arbitrary native code is not accepted by this interface"
+      },
+      "capabilities": {
+        "version": 1,
+        "id": "campus-foundation-v1",
+        "types": {
+          "bed": {
+            "slots": [
+              {
+                "id": "pillow",
+                "pose": "sleeping",
+                "tags": [
+                  "rest"
+                ],
+                "x": 0,
+                "z": 0
+              }
+            ],
+            "state": {},
+            "tags": [
+              "rest"
+            ],
+            "visible": []
+          },
+          "book": {
+            "inspect": [
+              "pages"
+            ],
+            "state": {
+              "pages": 24,
+              "title": "课堂笔记"
+            },
+            "tags": [
+              "portable",
+              "loanable"
+            ],
+            "visible": [
+              "title"
+            ]
+          },
+          "desk": {
+            "slots": [
+              {
+                "id": "seat",
+                "pose": "sitting",
+                "tags": [
+                  "study"
+                ],
+                "x": 0,
+                "z": 0.5
+              }
+            ],
+            "state": {},
+            "tags": [
+              "study"
+            ],
+            "visible": []
+          },
+          "fountain": {
+            "slots": [
+              {
+                "id": "tap",
+                "pose": "standing",
+                "tags": [
+                  "drink"
+                ],
+                "x": 0,
+                "z": 0.5
+              }
+            ],
+            "state": {
+              "working": true
+            },
+            "tags": [
+              "drink"
+            ],
+            "visible": [
+              "working"
+            ]
+          },
+          "meal-table": {
+            "slots": [
+              {
+                "id": "seat-a",
+                "pose": "sitting",
+                "tags": [
+                  "eat"
+                ],
+                "x": 0,
+                "z": 0.5
+              },
+              {
+                "id": "seat-b",
+                "pose": "sitting",
+                "tags": [
+                  "eat"
+                ],
+                "x": 0,
+                "z": -0.5
+              }
+            ],
+            "state": {
+              "servings": 8
+            },
+            "tags": [
+              "eat"
+            ],
+            "visible": [
+              "servings"
+            ]
+          },
+          "toilet": {
+            "slots": [
+              {
+                "id": "seat",
+                "pose": "sitting",
+                "tags": [
+                  "toilet"
+                ],
+                "x": 0,
+                "z": 0
+              }
+            ],
+            "state": {},
+            "tags": [
+              "toilet"
+            ],
+            "visible": []
+          }
+        },
+        "actions": {
+          "accept-offer": {
+            "attention": "none",
+            "category": "response",
+            "cooldown": 0,
+            "duration": 0,
+            "effects": [
+              {
+                "offer": "$offer.id",
+                "status": "accepted",
+                "type": "offer.resolve"
+              }
+            ],
+            "executor": "speech",
+            "label": "好，就这么说定了",
+            "roles": {
+              "offer": {
+                "from": "offers",
+                "where": {
+                  "all": [
+                    {
+                      "left": "$bound.to",
+                      "op": "eq",
+                      "right": "$actor.id"
+                    },
+                    {
+                      "left": "$bound.status",
+                      "op": "eq",
+                      "right": "pending"
+                    }
+                  ]
+                }
+              }
+            },
+            "when": {
+              "left": "$actor.hasFloor",
+              "op": "eq",
+              "right": true
+            }
+          },
+          "answer-known": {
+            "attention": "none",
+            "category": "answer",
+            "cooldown": 0,
+            "duration": 0,
+            "effects": [
+              {
+                "key": "$message.key",
+                "replyTo": "$message.uid",
+                "to": "$message.actor",
+                "type": "knowledge.tell"
+              }
+            ],
+            "executor": "speech",
+            "label": "把自己知道的情况告诉对方",
+            "roles": {
+              "message": {
+                "from": "messages",
+                "where": {
+                  "all": [
+                    {
+                      "left": "$bound.answered",
+                      "op": "eq",
+                      "right": false
+                    },
+                    {
+                      "left": "$bound.known",
+                      "op": "eq",
+                      "right": true
+                    }
+                  ]
+                }
+              }
+            },
+            "when": {
+              "left": "$actor.hasFloor",
+              "op": "eq",
+              "right": true
+            }
+          },
+          "answer-unknown": {
+            "attention": "none",
+            "category": "answer",
+            "cooldown": 0,
+            "duration": 0,
+            "effects": [
+              {
+                "replyTo": "$message.uid",
+                "to": "$message.actor",
+                "type": "speech.emit"
+              }
+            ],
+            "executor": "speech",
+            "label": "我还不清楚",
+            "roles": {
+              "message": {
+                "from": "messages",
+                "where": {
+                  "all": [
+                    {
+                      "left": "$bound.answered",
+                      "op": "eq",
+                      "right": false
+                    },
+                    {
+                      "left": "$bound.known",
+                      "op": "eq",
+                      "right": false
+                    }
+                  ]
+                }
+              }
+            },
+            "when": {
+              "left": "$actor.hasFloor",
+              "op": "eq",
+              "right": true
+            }
+          },
+          "ask-loan": {
+            "attention": "none",
+            "cooldown": 20,
+            "duration": 0,
+            "effects": [
+              {
+                "due": "$args.due",
+                "giver": "$target.id",
+                "item": "$item.id",
+                "kind": "loan",
+                "receiver": "$actor.id",
+                "to": "$target.id",
+                "type": "offer.create"
+              }
+            ],
+            "executor": "speech",
+            "label": "想借这份笔记，稍后归还",
+            "parameters": {
+              "due": {
+                "default": 600,
+                "max": 100000,
+                "min": 0,
+                "type": "number"
+              }
+            },
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.tags",
+                  "op": "includes",
+                  "right": "loanable"
+                }
+              },
+              "target": {
+                "from": "actors"
+              }
+            },
+            "when": {
+              "all": [
+                {
+                  "left": "$actor.hasFloor",
+                  "op": "eq",
+                  "right": true
+                },
+                {
+                  "left": "$target.session",
+                  "op": "eq",
+                  "right": "$actor.session"
+                },
+                {
+                  "left": "$item.holder",
+                  "op": "eq",
+                  "right": "$target.id"
+                }
+              ]
+            }
+          },
+          "ask-question": {
+            "attention": "none",
+            "cooldown": 5,
+            "duration": 0,
+            "effects": [
+              {
+                "data": {
+                  "key": "$args.key"
+                },
+                "kind": "question",
+                "text": "$args.text",
+                "to": "$target.id",
+                "type": "speech.emit"
+              }
+            ],
+            "executor": "speech",
+            "label": "问清楚刚才的事情",
+            "parameters": {
+              "key": {
+                "type": "string"
+              },
+              "text": {
+                "default": "这件事是怎么说的？",
+                "type": "string"
+              }
+            },
+            "roles": {
+              "target": {
+                "from": "actors"
+              }
+            },
+            "when": {
+              "all": [
+                {
+                  "left": "$actor.hasFloor",
+                  "op": "eq",
+                  "right": true
+                },
+                {
+                  "left": "$target.session",
+                  "op": "eq",
+                  "right": "$actor.session"
+                }
+              ]
+            }
+          },
+          "decline-conversation": {
+            "attention": "none",
+            "category": "invitation",
+            "cooldown": 0,
+            "duration": 0,
+            "effects": [
+              {
+                "decline": true,
+                "session": "$invitation.session",
+                "type": "session.leave"
+              }
+            ],
+            "executor": "instant",
+            "label": "暂时不聊",
+            "roles": {
+              "invitation": {
+                "from": "invitations"
+              }
+            }
+          },
+          "decline-offer": {
+            "attention": "none",
+            "category": "response",
+            "cooldown": 0,
+            "duration": 0,
+            "effects": [
+              {
+                "offer": "$offer.id",
+                "status": "declined",
+                "type": "offer.resolve"
+              }
+            ],
+            "executor": "speech",
+            "label": "这次不能答应",
+            "roles": {
+              "offer": {
+                "from": "offers",
+                "where": {
+                  "all": [
+                    {
+                      "left": "$bound.to",
+                      "op": "eq",
+                      "right": "$actor.id"
+                    },
+                    {
+                      "left": "$bound.status",
+                      "op": "eq",
+                      "right": "pending"
+                    }
+                  ]
+                }
+              }
+            },
+            "when": {
+              "left": "$actor.hasFloor",
+              "op": "eq",
+              "right": true
+            }
+          },
+          "drink": {
+            "anchor": "$item",
+            "attention": "pause",
+            "cooldown": 30,
+            "duration": 1,
+            "effects": [
+              {
+                "amount": 4,
+                "need": "energy",
+                "type": "need.change"
+              }
+            ],
+            "executor": "physical",
+            "label": "喝水",
+            "needThreshold": 35,
+            "pose": "standing",
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.tags",
+                  "op": "includes",
+                  "right": "drink"
+                }
+              }
+            },
+            "slot": "drink",
+            "when": {
+              "left": "$actor.session",
+              "op": "eq",
+              "right": null
+            }
+          },
+          "eat": {
+            "anchor": "$item",
+            "attention": "pause",
+            "cooldown": 30,
+            "duration": 6,
+            "effects": [
+              {
+                "type": "object.add",
+                "object": "$item.id",
+                "field": "servings",
+                "amount": -1,
+                "min": 0
+              },
+              {
+                "amount": 45,
+                "need": "hunger",
+                "type": "need.change"
+              }
+            ],
+            "executor": "physical",
+            "label": "吃饭",
+            "need": "hunger",
+            "needThreshold": 35,
+            "pose": "sitting",
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.tags",
+                  "op": "includes",
+                  "right": "eat"
+                }
+              }
+            },
+            "slot": "eat",
+            "when": {
+              "left": "$actor.session",
+              "op": "eq",
+              "right": null
+            },
+            "requires": {
+              "op": "gt",
+              "left": "$item.state.servings",
+              "right": 0
+            }
+          },
+          "hand-over": {
+            "anchor": "$target",
+            "attention": "none",
+            "cooldown": 0,
+            "duration": 0.5,
+            "effects": [
+              {
+                "authorization": "$offer.id",
+                "from": "$actor.id",
+                "object": "$item.id",
+                "to": "$target.id",
+                "type": "object.transfer"
+              }
+            ],
+            "executor": "physical",
+            "label": "把物品交给对方",
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.id",
+                  "op": "eq",
+                  "right": "$offer.item"
+                }
+              },
+              "offer": {
+                "from": "offers",
+                "where": {
+                  "all": [
+                    {
+                      "left": "$bound.status",
+                      "op": "eq",
+                      "right": "accepted"
+                    },
+                    {
+                      "left": "$bound.giver",
+                      "op": "eq",
+                      "right": "$actor.id"
+                    },
+                    {
+                      "left": "$bound.transferred",
+                      "op": "eq",
+                      "right": false
+                    }
+                  ]
+                }
+              },
+              "target": {
+                "from": "actors",
+                "where": {
+                  "left": "$bound.id",
+                  "op": "eq",
+                  "right": "$offer.receiver"
+                }
+              }
+            },
+            "when": {
+              "left": "$item.holder",
+              "op": "eq",
+              "right": "$actor.id"
+            }
+          },
+          "inspect": {
+            "anchor": "$item",
+            "attention": "none",
+            "cooldown": 5,
+            "duration": 1,
+            "effects": [
+              {
+                "object": "$item.id",
+                "type": "object.inspect"
+              }
+            ],
+            "executor": "physical",
+            "label": "查看物品",
+            "roles": {
+              "item": {
+                "from": "objects"
+              }
+            }
+          },
+          "invite-group": {
+            "attention": "none",
+            "cooldown": 5,
+            "duration": 0,
+            "effects": [
+              {
+                "group": "$group.id",
+                "type": "session.invite"
+              }
+            ],
+            "executor": "instant",
+            "label": "邀请小组一起聊",
+            "roles": {
+              "group": {
+                "from": "groups"
+              }
+            },
+            "when": {
+              "left": "$actor.session",
+              "op": "ne",
+              "right": null
+            }
+          },
+          "invite-into-conversation": {
+            "attention": "none",
+            "cooldown": 5,
+            "duration": 0,
+            "effects": [
+              {
+                "target": "$target.id",
+                "type": "session.invite"
+              }
+            ],
+            "executor": "instant",
+            "label": "叫同学一起聊",
+            "roles": {
+              "target": {
+                "from": "actors"
+              }
+            },
+            "when": {
+              "all": [
+                {
+                  "left": "$actor.session",
+                  "op": "ne",
+                  "right": null
+                },
+                {
+                  "left": "$target.session",
+                  "op": "ne",
+                  "right": "$actor.session"
+                }
+              ]
+            }
+          },
+          "join-conversation": {
+            "attention": "none",
+            "category": "invitation",
+            "cooldown": 0,
+            "defaultPriority": 30,
+            "duration": 0,
+            "effects": [
+              {
+                "session": "$invitation.session",
+                "type": "session.join"
+              }
+            ],
+            "executor": "instant",
+            "label": "加入交谈",
+            "roles": {
+              "invitation": {
+                "from": "invitations"
+              }
+            },
+            "when": {
+              "all": [
+                {
+                  "left": "$actor.session",
+                  "op": "eq",
+                  "right": null
+                },
+                {
+                  "left": "$actor.interruptible",
+                  "op": "eq",
+                  "right": true
+                }
+              ]
+            }
+          },
+          "leave-conversation": {
+            "attention": "none",
+            "cooldown": 0,
+            "duration": 0,
+            "effects": [
+              {
+                "type": "session.leave"
+              }
+            ],
+            "executor": "instant",
+            "label": "先去忙了",
+            "roles": {},
+            "when": {
+              "left": "$actor.session",
+              "op": "ne",
+              "right": null
+            }
+          },
+          "make-group": {
+            "attention": "none",
+            "cooldown": 10,
+            "duration": 0,
+            "effects": [
+              {
+                "invited": [
+                  "$target.id"
+                ],
+                "name": "$args.name",
+                "type": "group.create"
+              }
+            ],
+            "executor": "instant",
+            "label": "组织一个学习小组",
+            "parameters": {
+              "name": {
+                "default": "学习小组",
+                "type": "string"
+              }
+            },
+            "roles": {
+              "target": {
+                "from": "actors"
+              }
+            }
+          },
+          "offer-meeting": {
+            "attention": "none",
+            "cooldown": 20,
+            "duration": 0,
+            "effects": [
+              {
+                "due": "$args.due",
+                "kind": "meeting",
+                "to": "$target.id",
+                "type": "offer.create"
+              }
+            ],
+            "executor": "speech",
+            "label": "约个时间一起参加活动",
+            "parameters": {
+              "due": {
+                "default": 1020,
+                "max": 100000,
+                "min": 0,
+                "type": "number"
+              }
+            },
+            "roles": {
+              "target": {
+                "from": "actors"
+              }
+            },
+            "when": {
+              "all": [
+                {
+                  "left": "$actor.hasFloor",
+                  "op": "eq",
+                  "right": true
+                },
+                {
+                  "left": "$target.session",
+                  "op": "eq",
+                  "right": "$actor.session"
+                }
+              ]
+            }
+          },
+          "pick-up": {
+            "anchor": "$item",
+            "attention": "none",
+            "cooldown": 1,
+            "duration": 0.5,
+            "effects": [
+              {
+                "object": "$item.id",
+                "type": "object.take"
+              }
+            ],
+            "executor": "physical",
+            "label": "拿起物品",
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.tags",
+                  "op": "includes",
+                  "right": "portable"
+                }
+              }
+            },
+            "when": {
+              "left": "$item.holder",
+              "op": "eq",
+              "right": null
+            }
+          },
+          "put-down": {
+            "attention": "none",
+            "cooldown": 1,
+            "duration": 0,
+            "effects": [
+              {
+                "object": "$item.id",
+                "type": "object.put"
+              }
+            ],
+            "executor": "instant",
+            "label": "放下物品",
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.tags",
+                  "op": "includes",
+                  "right": "portable"
+                }
+              }
+            },
+            "when": {
+              "left": "$item.holder",
+              "op": "eq",
+              "right": "$actor.id"
+            }
+          },
+          "rest": {
+            "anchor": "$item",
+            "attention": "pause",
+            "cooldown": 30,
+            "duration": 10,
+            "effects": [
+              {
+                "amount": 50,
+                "need": "energy",
+                "type": "need.change"
+              }
+            ],
+            "executor": "physical",
+            "label": "休息",
+            "need": "energy",
+            "needThreshold": 35,
+            "pose": "sleeping",
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.tags",
+                  "op": "includes",
+                  "right": "rest"
+                }
+              }
+            },
+            "slot": "rest",
+            "when": {
+              "left": "$actor.session",
+              "op": "eq",
+              "right": null
+            }
+          },
+          "return-loan": {
+            "anchor": "$target",
+            "attention": "none",
+            "cooldown": 0,
+            "duration": 0.5,
+            "effects": [
+              {
+                "authorization": "$offer.id",
+                "from": "$actor.id",
+                "object": "$item.id",
+                "return": true,
+                "to": "$target.id",
+                "type": "object.transfer"
+              },
+              {
+                "appointment": "$offer.appointment",
+                "type": "appointment.fulfill",
+                "when": {
+                  "left": "$item.holder",
+                  "op": "eq",
+                  "right": "$target.id"
+                }
+              }
+            ],
+            "executor": "physical",
+            "label": "按约把借来的物品还给对方",
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.id",
+                  "op": "eq",
+                  "right": "$offer.item"
+                }
+              },
+              "offer": {
+                "from": "offers",
+                "where": {
+                  "all": [
+                    {
+                      "left": "$bound.status",
+                      "op": "eq",
+                      "right": "accepted"
+                    },
+                    {
+                      "left": "$bound.receiver",
+                      "op": "eq",
+                      "right": "$actor.id"
+                    },
+                    {
+                      "left": "$bound.transferred",
+                      "op": "eq",
+                      "right": true
+                    },
+                    {
+                      "not": {
+                        "left": "$bound.returned",
+                        "op": "eq",
+                        "right": true
+                      }
+                    }
+                  ]
+                }
+              },
+              "target": {
+                "from": "actors",
+                "where": {
+                  "left": "$bound.id",
+                  "op": "eq",
+                  "right": "$offer.giver"
+                }
+              }
+            },
+            "when": {
+              "left": "$item.holder",
+              "op": "eq",
+              "right": "$actor.id"
+            }
+          },
+          "say": {
+            "attention": "none",
+            "cooldown": 1,
+            "duration": 0,
+            "effects": [
+              {
+                "text": "$args.text",
+                "to": "$target.id",
+                "type": "speech.emit"
+              }
+            ],
+            "executor": "speech",
+            "label": "说说话",
+            "parameters": {
+              "text": {
+                "type": "string"
+              }
+            },
+            "roles": {
+              "target": {
+                "from": "actors"
+              }
+            },
+            "when": {
+              "all": [
+                {
+                  "left": "$actor.hasFloor",
+                  "op": "eq",
+                  "right": true
+                },
+                {
+                  "left": "$target.session",
+                  "op": "eq",
+                  "right": "$actor.session"
+                }
+              ]
+            }
+          },
+          "start-conversation": {
+            "anchor": "$target",
+            "attention": "none",
+            "cooldown": 5,
+            "duration": 0.1,
+            "effects": [
+              {
+                "access": "$args.access",
+                "target": "$target.id",
+                "topic": "$args.topic",
+                "type": "session.open"
+              }
+            ],
+            "executor": "physical",
+            "label": "过去聊聊",
+            "parameters": {
+              "access": {
+                "default": "public",
+                "enum": [
+                  "public",
+                  "private"
+                ],
+                "type": "string"
+              },
+              "topic": {
+                "default": "课间聊聊",
+                "type": "string"
+              }
+            },
+            "roles": {
+              "target": {
+                "from": "actors"
+              }
+            },
+            "when": {
+              "left": "$actor.session",
+              "op": "eq",
+              "right": null
+            }
+          },
+          "study": {
+            "anchor": "$item",
+            "attention": "pause",
+            "cooldown": 10,
+            "duration": 8,
+            "effects": [
+              {
+                "amount": -1,
+                "need": "social",
+                "type": "need.change"
+              },
+              {
+                "kind": "study-progress",
+                "text": "完成了一段学习。",
+                "type": "event.emit"
+              }
+            ],
+            "executor": "physical",
+            "label": "学习",
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.tags",
+                  "op": "includes",
+                  "right": "study"
+                }
+              }
+            },
+            "slot": "study",
+            "when": {
+              "left": "$actor.session",
+              "op": "eq",
+              "right": null
+            }
+          },
+          "toilet": {
+            "anchor": "$item",
+            "attention": "pause",
+            "cooldown": 30,
+            "duration": 3,
+            "effects": [
+              {
+                "amount": 70,
+                "need": "bladder",
+                "type": "need.change"
+              }
+            ],
+            "executor": "physical",
+            "label": "上厕所",
+            "need": "bladder",
+            "needThreshold": 35,
+            "pose": "sitting",
+            "roles": {
+              "item": {
+                "from": "objects",
+                "where": {
+                  "left": "$bound.tags",
+                  "op": "includes",
+                  "right": "toilet"
+                }
+              }
+            },
+            "slot": "toilet",
+            "when": {
+              "left": "$actor.session",
+              "op": "eq",
+              "right": null
+            }
+          },
+          "wait": {
+            "attention": "none",
+            "cooldown": 0,
+            "duration": 0,
+            "effects": [],
+            "executor": "instant",
+            "fallback": true,
+            "label": "等一会儿",
+            "roles": {}
+          }
+        },
+        "proposals": {
+          "loan": {
+            "accept": [
+              {
+                "kind": "return-item",
+                "offer": "$offer.id",
+                "type": "appointment.create"
+              }
+            ],
+            "decline": [],
+            "when": {
+              "left": "$offer.giver",
+              "op": "eq",
+              "right": "$actor.id"
+            },
+            "rights": {
+              "transfer": true,
+              "return": true
+            }
+          },
+          "meeting": {
+            "accept": [
+              {
+                "kind": "meeting",
+                "offer": "$offer.id",
+                "type": "appointment.create"
+              }
+            ],
+            "decline": []
+          }
+        },
+        "predicates": {
+          "holder": {
+            "type": "string"
+          },
+          "pages": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          }
+        },
+        "effects": [
+          "need.change",
+          "object.set",
+          "object.add",
+          "object.take",
+          "object.put",
+          "object.transfer",
+          "session.open",
+          "session.invite",
+          "session.join",
+          "session.leave",
+          "speech.emit",
+          "knowledge.tell",
+          "object.inspect",
+          "offer.create",
+          "offer.resolve",
+          "appointment.create",
+          "appointment.fulfill",
+          "group.create",
+          "group.leave",
+          "event.emit"
+        ]
+      }
+    }
+  }
+}

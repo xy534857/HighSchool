@@ -1,0 +1,22 @@
+{
+  "author": "ChatGPT in this development conversation",
+  "externalApiCalls": 0,
+  "scope": "Reusable native cognitive rules, not a prescribed sequence of scenes",
+  "findings": [
+    {
+      "evidence": "research/cognition-verification.json: personality-and-body and actual-authored-coping-rule",
+      "problem": "Liu Xing withdrew while the reason for an obstruction was still uncertain.",
+      "change": "dist/soar/learned/xing-clarify.soar",
+      "conditions": "Only while not busy, energy > 45, hunger > 35, cause uncertain, relevant person available.",
+      "verification": "Same saved state selects rest without the patch, asks the person with the patch, and still rests when tired. The selected speech act reaches the receiver as a real question."
+    },
+    {
+      "evidence": "research/cognition-baseline-seven-days.json",
+      "problem": "The seven-day run contained repeated missed meals with stale knownFood=0 while the person was idle.",
+      "change": "mind*recheck-stale-empty-stock in dist/soar/mind.soar",
+      "conditions": "An otherwise relevant stock check, empty stock last known more than 15 minutes ago, no current task. Normal physical inspection and cooldown still apply.",
+      "verification": "The regression starts from old belief=0 and actual stock=5, observes an inspection, and asserts a real meal starts within its scheduled window."
+    }
+  ],
+  "limits": "This is ChatGPT authoring from actual test results. The browser still needs an explicitly connected provider for fresh daily model reflection. Domain knowledge and emotion rules are a finite game model."
+}

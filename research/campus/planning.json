@@ -1,0 +1,56 @@
+[
+  {
+    "check": "public-routes",
+    "pairs": 361,
+    "rooms": 19
+  },
+  {
+    "check": "persistent-native-plan",
+    "steps": [
+      {
+        "action": "use-computer",
+        "time": 909,
+        "rule": "foundation*goal"
+      },
+      {
+        "action": "use-computer",
+        "time": 2356.25,
+        "rule": "foundation*goal"
+      },
+      {
+        "action": "print-notes",
+        "time": 2362.5,
+        "rule": "foundation*goal"
+      }
+    ],
+    "stage": 2,
+    "loaded": true
+  },
+  {
+    "check": "material-repair",
+    "actions": [
+      "buy-supplies",
+      "restock-art",
+      "draw-poster"
+    ]
+  },
+  {
+    "check": "individual-appraisal",
+    "sameEvent": true,
+    "privateKnowledge": true,
+    "people": [
+      {
+        "id": "m",
+        "intensity": 48,
+        "coping": "discuss",
+        "action": "start-conversation"
+      },
+      {
+        "id": "f",
+        "intensity": 66,
+        "coping": "withdraw",
+        "action": "sit-bench"
+      }
+    ]
+  }
+]

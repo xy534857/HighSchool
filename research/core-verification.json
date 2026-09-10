@@ -1,0 +1,100 @@
+{
+  "kernel": "Soar 9.6.5 / C++ WebAssembly",
+  "ruleAuthor": "ChatGPT",
+  "externalApiCalls": 0,
+  "results": [
+    {
+      "name": "episodic-cognitive-revision",
+      "kind": "accept",
+      "memory": {
+        "uid": "own",
+        "source": "self",
+        "type": "event",
+        "kind": "distraction",
+        "actor": "xing",
+        "time": 100,
+        "text": "distraction",
+        "action": "none"
+      },
+      "interpretation": {
+        "conclusion": "preserve-both-activities",
+        "evidence": "own",
+        "predicate": "shared-impact"
+      },
+      "trace": [
+        "memory*context",
+        "cognition*read-noninterrupting-effect",
+        "memory*query-goal",
+        "memory*receive-goal-for-action",
+        "cognition*expose-active-study",
+        "contract*query-outstanding",
+        "contract*no-outstanding",
+        "xing*recall-my-experience",
+        "cognition*issue-episodic-cue",
+        "cognition*receive-exact-episode",
+        "cognition*propose-evaluate-request",
+        "chunk*cognition*evaluate-compatible-request*t8-1",
+        "learned*xing*reinterpret-compatible-request",
+        "xing*interpret-request-as-control",
+        "cognition*propose-protect-plan",
+        "cognition*propose-accommodate",
+        "cognition*propose-protect-plan",
+        "cognition*propose-accommodate",
+        "rl*xing*self-direction*protect-plan",
+        "rl*xing*self-direction*accommodate",
+        "rl*xing*mutual-space*protect-plan",
+        "rl*xing*mutual-space*accommodate",
+        "cognition*output-response",
+        "cognition*expose-interpretation",
+        "cognition*expose-recollection",
+        "cognition*expose-goal"
+      ]
+    },
+    {
+      "name": "personal-appraisal",
+      "xueBefore": "concentration",
+      "xueAfter": "return-help",
+      "dad": "repair-trust"
+    },
+    {
+      "name": "native-chunking",
+      "firstCycles": 7,
+      "reuseCycles": 6,
+      "source": "sp {chunk*cognition*evaluate-compatible-request*t8-1\n    :chunk\n    (state <s1> ^operator <o1> ^context <c1>)\n    (<o1> ^name evaluate-request)\n    (<c1> ^frame <f1>)\n    (<f1> ^interrupts no ^mode response ^ontology-version <o2>\n          ^policy-version <p1>)\n    -->\n    (<c1> ^evaluated yes ^goal-threat no)\n}\n\n"
+    },
+    {
+      "name": "native-rl",
+      "before": 3,
+      "once": 1.5,
+      "trained": -1.999335,
+      "nextChoice": "accept",
+      "personalReward": -2
+    },
+    {
+      "name": "full-save",
+      "bytes": 6436774,
+      "memories": {
+        "dad": {
+          "smem": 507904,
+          "epmem": 376832
+        },
+        "me": {
+          "smem": 507904,
+          "epmem": 376832
+        },
+        "xue": {
+          "smem": 507904,
+          "epmem": 376832
+        },
+        "xing": {
+          "smem": 507904,
+          "epmem": 376832
+        },
+        "xiaoyu": {
+          "smem": 507904,
+          "epmem": 376832
+        }
+      }
+    }
+  ]
+}

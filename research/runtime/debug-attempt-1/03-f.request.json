@@ -1,0 +1,4058 @@
+{
+  "id": "knowledge-3",
+  "owner": "f",
+  "reason": "daily-reflection",
+  "meta": {
+    "day": 0,
+    "job": "0:f"
+  },
+  "epoch": 1,
+  "baseRevision": 1,
+  "contentRevision": 1,
+  "dependencies": [],
+  "context": {
+    "actor": "f",
+    "time": 1393.5,
+    "profile": {
+      "sensitivity": 28,
+      "coping": "withdraw",
+      "interest": "music",
+      "desk": "desk-3",
+      "gender": "female",
+      "sociability": 35,
+      "persistence": 65,
+      "projects": [
+        "piano-study"
+      ],
+      "biography": "敏感、准备充分才安心；失约后倾向先拉开距离。",
+      "status-concern": 85,
+      "empathy": 38,
+      "assertiveness": 63
+    },
+    "facts": {
+      "mode": "foundation",
+      "activity": "free",
+      "room": "hall",
+      "period": "night",
+      "session": "none",
+      "phase": "free",
+      "bladder": 59.65000000000201,
+      "energy": 66.71999999999558,
+      "hunger": 93.51999999999975,
+      "social": 80.86000000000281,
+      "thirst": 83.27000000000163,
+      "hygiene": 74.55749999999759,
+      "fun": 99.02499999999978,
+      "resource-credits": 24,
+      "resource-meal": 0,
+      "resource-tray": 0,
+      "resource-supplies": 0,
+      "resource-research": 0,
+      "resource-arts": 0,
+      "resource-music": 64,
+      "resource-fitness": 0,
+      "resource-homework": 0,
+      "resource-printouts": 0,
+      "resource-seedlings": 0,
+      "known": [
+        {
+          "key": "m:relationship-trust",
+          "subject": "m",
+          "predicate": "relationship-trust",
+          "value": 58,
+          "status": "known",
+          "provenance": "background:f:m",
+          "emotion": "neutral",
+          "intensity": 0,
+          "coping": "continue"
+        },
+        {
+          "key": "m:relationship-affinity",
+          "subject": "m",
+          "predicate": "relationship-affinity",
+          "value": 65,
+          "status": "known",
+          "provenance": "background:f:m",
+          "emotion": "neutral",
+          "intensity": 0,
+          "coping": "continue"
+        },
+        {
+          "key": "t:relationship-trust",
+          "subject": "t",
+          "predicate": "relationship-trust",
+          "value": -10,
+          "status": "known",
+          "provenance": "background:f:t",
+          "emotion": "neutral",
+          "intensity": 0,
+          "coping": "continue"
+        },
+        {
+          "key": "t:relationship-affinity",
+          "subject": "t",
+          "predicate": "relationship-affinity",
+          "value": -18,
+          "status": "known",
+          "provenance": "background:f:t",
+          "emotion": "neutral",
+          "intensity": 0,
+          "coping": "continue"
+        },
+        {
+          "key": "project-piano-study-0-f:stage",
+          "subject": "project-piano-study-0-f",
+          "predicate": "stage",
+          "value": 2,
+          "status": "known",
+          "provenance": "wait:goal:project-piano-study-0-f:1",
+          "emotion": "neutral",
+          "intensity": 0,
+          "coping": "continue"
+        },
+        {
+          "key": "f:social-exclusion",
+          "subject": "f",
+          "predicate": "social-exclusion",
+          "value": "t",
+          "status": "known",
+          "provenance": "event-24",
+          "emotion": "neutral",
+          "intensity": 0,
+          "coping": "continue"
+        },
+        {
+          "key": "project-piano-study-0-f:last-step-0",
+          "subject": "project-piano-study-0-f",
+          "predicate": "last-step-0",
+          "value": 1062,
+          "status": "known",
+          "provenance": "event-41",
+          "emotion": "neutral",
+          "intensity": 0,
+          "coping": "continue"
+        },
+        {
+          "key": "project-piano-study-0-f:last-step-1",
+          "subject": "project-piano-study-0-f",
+          "predicate": "last-step-1",
+          "value": 1088.5,
+          "status": "known",
+          "provenance": "event-60",
+          "emotion": "neutral",
+          "intensity": 0,
+          "coping": "continue"
+        }
+      ],
+      "profile-sensitivity": 28,
+      "profile-sociability": 35,
+      "profile-persistence": 65,
+      "profile-coping": "withdraw",
+      "profile-status-concern": 85,
+      "profile-empathy": 38,
+      "profile-assertiveness": 63,
+      "sensitivity": 28,
+      "coping": "withdraw"
+    },
+    "relationships": {
+      "t": {
+        "id": "t",
+        "trust": -10,
+        "affinity": -18,
+        "grievance": 0,
+        "respect": 0
+      },
+      "m": {
+        "id": "m",
+        "trust": 58,
+        "affinity": 65,
+        "grievance": 0,
+        "respect": 0
+      },
+      "a": {
+        "id": "a",
+        "trust": 0,
+        "affinity": 0,
+        "grievance": 0,
+        "respect": 0
+      },
+      "teacher": {
+        "id": "teacher",
+        "trust": 0,
+        "affinity": 0,
+        "grievance": 0,
+        "respect": 0
+      },
+      "r": {
+        "id": "r",
+        "trust": 0,
+        "affinity": 0,
+        "grievance": 0,
+        "respect": 0
+      },
+      "q": {
+        "id": "q",
+        "trust": 0,
+        "affinity": 0,
+        "grievance": 0,
+        "respect": 0
+      },
+      "l": {
+        "id": "l",
+        "trust": 0,
+        "affinity": 0,
+        "grievance": 0,
+        "respect": 0
+      }
+    },
+    "contacts": [
+      {
+        "id": "t",
+        "name": "林知夏",
+        "role": "student",
+        "room": "canteen",
+        "x": 0,
+        "z": -0.09999999999999998,
+        "seenAt": 1343.5,
+        "visible": false
+      },
+      {
+        "id": "m",
+        "name": "周明远",
+        "role": "student",
+        "room": "courtyard",
+        "x": -1.8200615940186475,
+        "z": 3.718507112218769,
+        "seenAt": 1274.5,
+        "visible": false
+      }
+    ],
+    "map": [
+      {
+        "id": "classroom",
+        "name": "高一（2）班"
+      },
+      {
+        "id": "office",
+        "name": "教师办公室"
+      },
+      {
+        "id": "bathroom",
+        "name": "无障碍卫生间"
+      },
+      {
+        "id": "club",
+        "name": "美术社团工坊"
+      },
+      {
+        "id": "playground",
+        "name": "操场"
+      },
+      {
+        "id": "courtyard",
+        "name": "中庭"
+      },
+      {
+        "id": "library",
+        "name": "图书馆"
+      },
+      {
+        "id": "canteen",
+        "name": "食堂"
+      },
+      {
+        "id": "infirmary",
+        "name": "医务室"
+      },
+      {
+        "id": "hall",
+        "name": "教学楼走廊"
+      },
+      {
+        "id": "bathroom-f",
+        "name": "女生卫生间"
+      },
+      {
+        "id": "bathroom-m",
+        "name": "男生卫生间"
+      },
+      {
+        "id": "science",
+        "name": "科学实验室"
+      },
+      {
+        "id": "music-room",
+        "name": "音乐教室"
+      },
+      {
+        "id": "garden",
+        "name": "校园种植园"
+      },
+      {
+        "id": "gym",
+        "name": "体育馆"
+      },
+      {
+        "id": "student-center",
+        "name": "学生活动中心"
+      },
+      {
+        "id": "west-walk",
+        "name": "西侧公共走廊"
+      },
+      {
+        "id": "east-walk",
+        "name": "东侧公共走廊"
+      }
+    ],
+    "available": [],
+    "goals": [
+      {
+        "situationPhase": "none",
+        "situation": "none",
+        "stepCount": 2,
+        "definition": "{\"motive\":\"在公开展示前先准备充分，减少临场不安。\",\"activeWhen\":{\"all\":[{\"op\":\"eq\",\"left\":\"$clock.period\",\"right\":\"after-school\"},{\"op\":\"lt\",\"left\":\"$clock.weekday\",\"right\":5}]},\"about\":[],\"windowLabel\":\"周一至周五放学后推进；上课、用餐和紧急需求优先。\",\"origin\":\"personal-project\"}",
+        "deadline": 10079,
+        "priority": 46,
+        "title": "本周把开场旋律练熟",
+        "time": 480,
+        "uid": "goal:project-piano-study-0-f",
+        "source": "self",
+        "actor": "f",
+        "kind": "personal-plan",
+        "type": "foundation-goal",
+        "motive": "在公开展示前先准备充分，减少临场不安。",
+        "activeWhen": {
+          "all": [
+            {
+              "op": "eq",
+              "left": "$clock.period",
+              "right": "after-school"
+            },
+            {
+              "op": "lt",
+              "left": "$clock.weekday",
+              "right": 5
+            }
+          ]
+        },
+        "about": [],
+        "windowLabel": "周一至周五放学后推进；上课、用餐和紧急需求优先。",
+        "origin": "personal-project",
+        "steps": [
+          {
+            "label": "先读谱理解旋律",
+            "action": "read-score",
+            "spacingMinutes": 0,
+            "repeatUntil": {
+              "op": "gte",
+              "left": "$actor.resources.music",
+              "right": 8
+            },
+            "skipWhen": {
+              "op": "gte",
+              "left": "$actor.resources.music",
+              "right": 8
+            },
+            "progress": {
+              "label": "音乐熟练",
+              "value": "$actor.resources.music",
+              "target": 8
+            },
+            "roles": {},
+            "args": {}
+          },
+          {
+            "label": "反复练习，达到开场所需熟练度",
+            "action": "practice-piano",
+            "spacingMinutes": 1440,
+            "repeatUntil": {
+              "op": "gte",
+              "left": "$actor.resources.music",
+              "right": 32
+            },
+            "skipWhen": {
+              "op": "gte",
+              "left": "$actor.resources.music",
+              "right": 32
+            },
+            "progress": {
+              "label": "音乐熟练",
+              "value": "$actor.resources.music",
+              "target": 32
+            },
+            "roles": {},
+            "args": {}
+          }
+        ],
+        "stage": 2,
+        "status": "completed"
+      }
+    ],
+    "events": [
+      {
+        "uid": "event-25",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "courtyard",
+        "time": 1041,
+        "action": "exclude-peer",
+        "commandId": "command-23",
+        "situation": "none"
+      },
+      {
+        "uid": "event-27",
+        "kind": "session-left",
+        "actor": "m",
+        "room": "courtyard",
+        "time": 1041,
+        "session": "session-10"
+      },
+      {
+        "uid": "event-30",
+        "kind": "session-left",
+        "actor": "f",
+        "room": "courtyard",
+        "time": 1041,
+        "session": "session-10"
+      },
+      {
+        "uid": "event-32",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "courtyard",
+        "time": 1041,
+        "action": "leave-conversation",
+        "commandId": "command-29",
+        "situation": "none"
+      },
+      {
+        "uid": "event-41",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "music-room",
+        "time": 1062,
+        "action": "read-score",
+        "commandId": "autonomy-34",
+        "situation": "none"
+      },
+      {
+        "uid": "event-45",
+        "kind": "piano-practice",
+        "actor": "f",
+        "room": "music-room",
+        "time": 1070.5,
+        "text": "反复练习了几小节钢琴旋律。"
+      },
+      {
+        "uid": "event-46",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "music-room",
+        "time": 1070.5,
+        "action": "practice-piano",
+        "commandId": "autonomy-43",
+        "situation": "none"
+      },
+      {
+        "uid": "event-52",
+        "kind": "music",
+        "actor": "f",
+        "room": "music-room",
+        "time": 1079.5,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-53",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "music-room",
+        "time": 1079.5,
+        "action": "play-guitar",
+        "commandId": "autonomy-49",
+        "situation": "none"
+      },
+      {
+        "uid": "event-59",
+        "kind": "piano-practice",
+        "actor": "f",
+        "room": "music-room",
+        "time": 1088.5,
+        "text": "反复练习了几小节钢琴旋律。"
+      },
+      {
+        "uid": "event-60",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "music-room",
+        "time": 1088.5,
+        "action": "practice-piano",
+        "commandId": "autonomy-55",
+        "situation": "none"
+      },
+      {
+        "uid": "event-64",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1103,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-65",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1103,
+        "action": "play-guitar",
+        "commandId": "autonomy-61",
+        "situation": "none"
+      },
+      {
+        "uid": "event-71",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1119,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-72",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1119,
+        "action": "play-guitar",
+        "commandId": "autonomy-69",
+        "situation": "none"
+      },
+      {
+        "uid": "event-77",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1135,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-78",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1135,
+        "action": "play-guitar",
+        "commandId": "autonomy-74",
+        "situation": "none"
+      },
+      {
+        "uid": "event-84",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1151,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-85",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1151,
+        "action": "play-guitar",
+        "commandId": "autonomy-82",
+        "situation": "none"
+      },
+      {
+        "uid": "event-92",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1167,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-93",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1167,
+        "action": "play-guitar",
+        "commandId": "autonomy-88",
+        "situation": "none"
+      },
+      {
+        "uid": "event-99",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1183,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-100",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1183,
+        "action": "play-guitar",
+        "commandId": "autonomy-95",
+        "situation": "none"
+      },
+      {
+        "uid": "event-108",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1199,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-109",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1199,
+        "action": "play-guitar",
+        "commandId": "autonomy-106",
+        "situation": "none"
+      },
+      {
+        "uid": "event-116",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1215,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-117",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1215,
+        "action": "play-guitar",
+        "commandId": "autonomy-112",
+        "situation": "none"
+      },
+      {
+        "uid": "event-121",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1231,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-122",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1231,
+        "action": "play-guitar",
+        "commandId": "autonomy-119",
+        "situation": "none"
+      },
+      {
+        "uid": "event-129",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1247,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-130",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1247,
+        "action": "play-guitar",
+        "commandId": "autonomy-127",
+        "situation": "none"
+      },
+      {
+        "uid": "event-136",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "courtyard",
+        "time": 1274,
+        "action": "drink",
+        "commandId": "autonomy-133",
+        "situation": "none"
+      },
+      {
+        "uid": "event-144",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1297,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-145",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1297,
+        "action": "play-guitar",
+        "commandId": "autonomy-138",
+        "situation": "none"
+      },
+      {
+        "uid": "event-158",
+        "kind": "meal-collected",
+        "actor": "f",
+        "room": "canteen",
+        "time": 1331,
+        "text": "刷校园卡领了一份午餐，准备找座位。"
+      },
+      {
+        "uid": "event-159",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "canteen",
+        "time": 1331,
+        "action": "get-lunch",
+        "commandId": "autonomy-146",
+        "situation": "none"
+      },
+      {
+        "uid": "event-162",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "canteen",
+        "time": 1339.5,
+        "action": "eat",
+        "commandId": "autonomy-160",
+        "situation": "none"
+      },
+      {
+        "uid": "event-168",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "canteen",
+        "time": 1343,
+        "action": "return-tray",
+        "commandId": "autonomy-166",
+        "situation": "none"
+      },
+      {
+        "uid": "event-179",
+        "kind": "music",
+        "actor": "f",
+        "room": "club",
+        "time": 1374,
+        "text": "练完了一小段旋律。"
+      },
+      {
+        "uid": "event-180",
+        "kind": "action-completed",
+        "actor": "f",
+        "room": "club",
+        "time": 1374,
+        "action": "play-guitar",
+        "commandId": "autonomy-170",
+        "situation": "none"
+      }
+    ],
+    "currentRules": [
+      {
+        "id": "join",
+        "select": {
+          "action": "join-conversation"
+        },
+        "priority": 160,
+        "reason": "有人邀请我交谈，先回应。"
+      },
+      {
+        "id": "known",
+        "select": {
+          "action": "answer-known"
+        },
+        "priority": 140,
+        "reason": "我记得这件事，回答对方的问题。"
+      },
+      {
+        "id": "greeting",
+        "select": {
+          "action": "reply-greeting"
+        },
+        "priority": 110,
+        "reason": "同学正在问我，接着这轮话题回应。"
+      },
+      {
+        "id": "loan",
+        "select": {
+          "action": "accept-offer",
+          "offer-kind": "loan"
+        },
+        "priority": 120,
+        "reason": "借用后归还的约定可以接受。"
+      },
+      {
+        "id": "meeting",
+        "select": {
+          "action": "accept-offer",
+          "offer-kind": "meeting"
+        },
+        "priority": 120,
+        "reason": "把邀请记成约定。"
+      },
+      {
+        "id": "handover",
+        "select": {
+          "action": "hand-over"
+        },
+        "priority": 150,
+        "reason": "已经同意借出，先完成物品交接。"
+      },
+      {
+        "id": "social-greet",
+        "select": {
+          "action": "greet"
+        },
+        "when": [
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ],
+        "priority": 20,
+        "reason": "已经一起聊天，主动接起今天的话题。"
+      },
+      {
+        "id": "join-activity",
+        "select": {
+          "action": "join-activity"
+        },
+        "priority": 55,
+        "reason": "招新准备与自己的兴趣有关，愿意试着参与，仍要顾及课程与身体状态。"
+      },
+      {
+        "id": "help-project",
+        "select": {
+          "action": "accept-project"
+        },
+        "priority": 125,
+        "reason": "我愿意帮忙准备招新；接受后会按实际分工行动。"
+      },
+      {
+        "id": "decline-unavailable-invite",
+        "select": {
+          "action": "decline-conversation"
+        },
+        "priority": 1,
+        "reason": "现在不方便加入交谈，先回应邀请。"
+      },
+      {
+        "id": "sociability-gte",
+        "select": {
+          "action": "start-conversation"
+        },
+        "when": [
+          {
+            "scope": "self",
+            "field": "profile-sociability",
+            "op": "gte",
+            "value": 60
+          },
+          {
+            "scope": "self",
+            "field": "social",
+            "op": "lt",
+            "value": 75
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ],
+        "priority": 24,
+        "reason": "我习惯主动找身边的人说话；现在没有课程或既定活动。"
+      },
+      {
+        "id": "sociability-lt",
+        "select": {
+          "action": "start-conversation"
+        },
+        "when": [
+          {
+            "scope": "self",
+            "field": "profile-sociability",
+            "op": "lt",
+            "value": 60
+          },
+          {
+            "scope": "self",
+            "field": "social",
+            "op": "lt",
+            "value": 40
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ],
+        "priority": 10,
+        "reason": "我比较慢热，只有确实想交谈时才找身边的人。"
+      },
+      {
+        "id": "coping-discuss",
+        "select": {
+          "action": "start-conversation"
+        },
+        "when": [
+          {
+            "scope": "memory",
+            "key": "*",
+            "field": "coping",
+            "op": "eq",
+            "value": "discuss",
+            "matchTarget": true,
+            "minIntensity": 30
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "social",
+            "op": "lt",
+            "value": 80
+          }
+        ],
+        "priority": 54,
+        "reason": "对方确实失约，我想找当事人当面谈清楚。"
+      },
+      {
+        "id": "coping-verify",
+        "select": {
+          "action": "start-conversation"
+        },
+        "when": [
+          {
+            "scope": "memory",
+            "key": "*",
+            "field": "coping",
+            "op": "eq",
+            "value": "verify",
+            "matchTarget": true,
+            "minIntensity": 30
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "social",
+            "op": "lt",
+            "value": 80
+          }
+        ],
+        "priority": 54,
+        "reason": "这次经历让我在意，我想先向当事人核实。"
+      },
+      {
+        "id": "coping-withdraw",
+        "select": {
+          "action": "sit-bench"
+        },
+        "when": [
+          {
+            "scope": "memory",
+            "key": "*",
+            "field": "coping",
+            "op": "eq",
+            "value": "withdraw",
+            "matchTarget": false,
+            "minIntensity": 30
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "social",
+            "op": "lt",
+            "value": 80
+          }
+        ],
+        "priority": 54,
+        "reason": "这次失约让我不舒服，我想先找个地方缓一缓。"
+      },
+      {
+        "id": "coping-seek-company",
+        "select": {
+          "action": "start-conversation"
+        },
+        "when": [
+          {
+            "scope": "memory",
+            "key": "*",
+            "field": "coping",
+            "op": "eq",
+            "value": "seek-company",
+            "matchTarget": false,
+            "minIntensity": 30
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "social",
+            "op": "lt",
+            "value": 80
+          }
+        ],
+        "priority": 54,
+        "reason": "这件事让我难受，我想找身边的人聊一聊。"
+      },
+      {
+        "id": "consider-reconnect",
+        "select": {
+          "action": "accept-offer",
+          "offer-kind": "reconnect"
+        },
+        "when": [
+          {
+            "scope": "candidate",
+            "field": "target-trust",
+            "op": "gte",
+            "value": 10
+          },
+          {
+            "scope": "candidate",
+            "field": "target-grievance",
+            "op": "lt",
+            "value": 40
+          }
+        ],
+        "priority": 132,
+        "reason": "我还愿意信任这个人，接受慢慢重新来往。"
+      },
+      {
+        "id": "decline-reconnect",
+        "select": {
+          "action": "decline-offer",
+          "offer-kind": "reconnect"
+        },
+        "when": [
+          {
+            "scope": "candidate",
+            "field": "target-grievance",
+            "op": "gte",
+            "value": 40
+          }
+        ],
+        "priority": 134,
+        "reason": "积累的伤害还没有消化，暂时不答应。"
+      },
+      {
+        "id": "support-friend",
+        "select": {
+          "action": "accept-offer",
+          "offer-kind": "support"
+        },
+        "when": [
+          {
+            "scope": "self",
+            "field": "profile-empathy",
+            "op": "gte",
+            "value": 60
+          },
+          {
+            "scope": "candidate",
+            "field": "target-trust",
+            "op": "gte",
+            "value": 10
+          }
+        ],
+        "priority": 132,
+        "reason": "我愿意支持信任的朋友自行处理关系。"
+      },
+      {
+        "id": "hesitate-support",
+        "select": {
+          "action": "decline-offer",
+          "offer-kind": "support"
+        },
+        "when": [
+          {
+            "scope": "self",
+            "field": "profile-status-concern",
+            "op": "gte",
+            "value": 75
+          }
+        ],
+        "priority": 133,
+        "reason": "这件事触及我在意的群体关系，现在不愿支持。"
+      },
+      {
+        "id": "free-interest",
+        "select": {
+          "action": "play-guitar",
+          "item": "guitar-chair"
+        },
+        "priority": 12,
+        "reason": "空闲时间继续自己的活动。",
+        "when": [
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "lunch"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ]
+      }
+    ],
+    "contract": {
+      "version": 2,
+      "ruleLanguage": "typed rules compiled into native Soar; do not return arbitrary code",
+      "candidateFields": [
+        "obligation",
+        "obligation-status",
+        "situation",
+        "situation-role",
+        "action",
+        "target",
+        "target-role",
+        "item",
+        "offer",
+        "offer-kind",
+        "offer-status",
+        "invitation",
+        "group",
+        "message",
+        "message-key",
+        "goal",
+        "goal-step",
+        "category",
+        "utility",
+        "target-trust",
+        "target-affinity",
+        "target-grievance",
+        "target-respect",
+        "session-size"
+      ],
+      "selfFields": [
+        "activity",
+        "room",
+        "period",
+        "session",
+        "phase",
+        "energy",
+        "hunger",
+        "social",
+        "bladder",
+        "thirst",
+        "hygiene",
+        "fun",
+        "resource-credits",
+        "resource-meal",
+        "resource-tray",
+        "resource-supplies",
+        "resource-research",
+        "resource-arts",
+        "resource-music",
+        "resource-fitness",
+        "resource-homework",
+        "resource-printouts",
+        "resource-seedlings",
+        "profile-sensitivity",
+        "profile-sociability",
+        "profile-persistence",
+        "profile-coping",
+        "profile-status-concern",
+        "profile-empathy",
+        "profile-assertiveness"
+      ],
+      "conditionOperators": [
+        "eq",
+        "ne",
+        "lt",
+        "lte",
+        "gt",
+        "gte"
+      ],
+      "memoryConditions": {
+        "fields": [
+          "value",
+          "emotion",
+          "coping",
+          "intensity"
+        ],
+        "key": "exact key or *",
+        "matchTarget": true,
+        "minIntensity": "optional"
+      },
+      "goalSchema": {
+        "fields": [
+          "id",
+          "title",
+          "motive",
+          "priority",
+          "deadline",
+          "activeWhen",
+          "about",
+          "successWhen",
+          "abandonWhen",
+          "windowLabel",
+          "steps"
+        ],
+        "stepFields": [
+          "label",
+          "action",
+          "roles",
+          "args",
+          "until",
+          "repeatUntil",
+          "skipWhen",
+          "spacingMinutes",
+          "alternatives",
+          "blockedReason"
+        ],
+        "expression": {
+          "op": "eq/ne/lt/lte/gt/gte/exists/includes",
+          "left": "$knownByKey.subject:predicate or $relationships.person.trust or $clock.period",
+          "right": "literal"
+        },
+        "wait": {
+          "until": {
+            "key": "personal memory key",
+            "value": "expected value"
+          }
+        },
+        "semantics": "Only personal knowledge is available. Action completion is not consent. Others decide independently. Use outcome checks and waits; never force another actor."
+      },
+      "cognition": {
+        "sensitivity": {
+          "label": "情绪敏感",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "mutable": true,
+          "maxDailyChange": 3,
+          "maxDrift": 24
+        },
+        "sociability": {
+          "label": "社交主动",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "mutable": true,
+          "maxDailyChange": 3,
+          "maxDrift": 24
+        },
+        "persistence": {
+          "label": "目标坚持",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "mutable": true,
+          "maxDailyChange": 3,
+          "maxDrift": 24
+        },
+        "coping": {
+          "label": "面对失约",
+          "type": "string",
+          "values": [
+            "verify",
+            "discuss",
+            "withdraw",
+            "seek-company"
+          ],
+          "mutable": true
+        },
+        "status-concern": {
+          "label": "在意群体评价",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "mutable": true,
+          "maxDailyChange": 3,
+          "maxDrift": 24
+        },
+        "empathy": {
+          "label": "体谅他人",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "mutable": true,
+          "maxDailyChange": 3,
+          "maxDrift": 24
+        },
+        "assertiveness": {
+          "label": "表达立场",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "mutable": true,
+          "maxDailyChange": 3,
+          "maxDrift": 24
+        }
+      },
+      "relationships": {
+        "trust": {
+          "label": "信任",
+          "min": -100,
+          "max": 100,
+          "initial": 0
+        },
+        "affinity": {
+          "label": "亲近",
+          "min": -100,
+          "max": 100,
+          "initial": 0
+        },
+        "grievance": {
+          "label": "积怨",
+          "min": 0,
+          "max": 100,
+          "initial": 0
+        },
+        "respect": {
+          "label": "尊重",
+          "min": -100,
+          "max": 100,
+          "initial": 0
+        }
+      },
+      "reply": {
+        "requestId": "copy request.id",
+        "epoch": "copy",
+        "baseRevision": "copy",
+        "contentRevision": "copy",
+        "evidence": [
+          "observed event IDs from this request"
+        ],
+        "summary": "first-person reflection, grounded in evidence; may retain existing strategy",
+        "rules": [],
+        "retireRules": [],
+        "goals": [],
+        "cancelGoals": [],
+        "cognition": [
+          {
+            "field": "mutable cognition field",
+            "delta": "bounded number",
+            "reason": "evidence-based reason"
+          }
+        ]
+      },
+      "actions": {
+        "accept-offer": {
+          "label": "好，就这么说定了",
+          "roles": {
+            "offer": {
+              "from": "offers",
+              "where": {
+                "all": [
+                  {
+                    "left": "$bound.to",
+                    "op": "eq",
+                    "right": "$actor.id"
+                  },
+                  {
+                    "left": "$bound.status",
+                    "op": "eq",
+                    "right": "pending"
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.hasFloor",
+            "op": "eq",
+            "right": true
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "offer": "$offer.id",
+              "status": "accepted",
+              "type": "offer.resolve"
+            }
+          ]
+        },
+        "answer-known": {
+          "label": "把自己知道的情况告诉对方",
+          "roles": {
+            "message": {
+              "from": "messages",
+              "where": {
+                "all": [
+                  {
+                    "left": "$bound.answered",
+                    "op": "eq",
+                    "right": false
+                  },
+                  {
+                    "left": "$bound.known",
+                    "op": "eq",
+                    "right": true
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.hasFloor",
+            "op": "eq",
+            "right": true
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "key": "$message.key",
+              "replyTo": "$message.uid",
+              "to": "$message.actor",
+              "type": "knowledge.tell"
+            }
+          ]
+        },
+        "answer-unknown": {
+          "label": "我还不清楚",
+          "roles": {
+            "message": {
+              "from": "messages",
+              "where": {
+                "all": [
+                  {
+                    "left": "$bound.answered",
+                    "op": "eq",
+                    "right": false
+                  },
+                  {
+                    "left": "$bound.known",
+                    "op": "eq",
+                    "right": false
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.hasFloor",
+            "op": "eq",
+            "right": true
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "replyTo": "$message.uid",
+              "to": "$message.actor",
+              "type": "speech.emit"
+            }
+          ]
+        },
+        "ask-loan": {
+          "label": "想借这份笔记，稍后归还",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "loanable"
+              }
+            },
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "due": {
+              "default": 600,
+              "max": 100000,
+              "min": 0,
+              "type": "number"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              },
+              {
+                "left": "$item.holder",
+                "op": "eq",
+                "right": "$target.id"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "due": "$args.due",
+              "giver": "$target.id",
+              "item": "$item.id",
+              "kind": "loan",
+              "receiver": "$actor.id",
+              "to": "$target.id",
+              "type": "offer.create"
+            }
+          ]
+        },
+        "ask-question": {
+          "label": "问清楚刚才的事情",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "key": {
+              "type": "string",
+              "default": "school-day:topic"
+            },
+            "text": {
+              "default": "你知道今天的社团活动吗？",
+              "type": "string"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "data": {
+                "key": "$args.key"
+              },
+              "kind": "question",
+              "text": "$args.text",
+              "to": "$target.id",
+              "type": "speech.emit"
+            }
+          ]
+        },
+        "decline-conversation": {
+          "label": "暂时不聊",
+          "roles": {
+            "invitation": {
+              "from": "invitations"
+            }
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "decline-offer": {
+          "label": "这次不能答应",
+          "roles": {
+            "offer": {
+              "from": "offers",
+              "where": {
+                "all": [
+                  {
+                    "left": "$bound.to",
+                    "op": "eq",
+                    "right": "$actor.id"
+                  },
+                  {
+                    "left": "$bound.status",
+                    "op": "eq",
+                    "right": "pending"
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.hasFloor",
+            "op": "eq",
+            "right": true
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "offer": "$offer.id",
+              "status": "declined",
+              "type": "offer.resolve"
+            }
+          ]
+        },
+        "drink": {
+          "label": "喝水",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "drink"
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.session",
+            "op": "eq",
+            "right": null
+          },
+          "duration": 1,
+          "effects": []
+        },
+        "eat": {
+          "label": "吃饭",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "eat"
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.session",
+            "op": "eq",
+            "right": null
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.servings",
+            "right": 0
+          },
+          "duration": 6,
+          "effects": []
+        },
+        "hand-over": {
+          "label": "把物品交给对方",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.id",
+                "op": "eq",
+                "right": "$offer.item"
+              }
+            },
+            "offer": {
+              "from": "offers",
+              "where": {
+                "all": [
+                  {
+                    "left": "$bound.status",
+                    "op": "eq",
+                    "right": "accepted"
+                  },
+                  {
+                    "left": "$bound.giver",
+                    "op": "eq",
+                    "right": "$actor.id"
+                  },
+                  {
+                    "left": "$bound.transferred",
+                    "op": "eq",
+                    "right": false
+                  }
+                ]
+              }
+            },
+            "target": {
+              "from": "actors",
+              "where": {
+                "left": "$bound.id",
+                "op": "eq",
+                "right": "$offer.receiver"
+              }
+            }
+          },
+          "when": {
+            "left": "$item.holder",
+            "op": "eq",
+            "right": "$actor.id"
+          },
+          "duration": 0.5,
+          "effects": []
+        },
+        "inspect": {
+          "label": "仔细查看",
+          "roles": {
+            "item": {
+              "from": "objects"
+            }
+          },
+          "duration": 1,
+          "effects": []
+        },
+        "invite-group": {
+          "label": "邀请小组一起聊",
+          "roles": {
+            "group": {
+              "from": "groups"
+            }
+          },
+          "when": {
+            "left": "$actor.session",
+            "op": "ne",
+            "right": null
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "invite-into-conversation": {
+          "label": "叫同学一起聊",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.session",
+                "op": "ne",
+                "right": null
+              },
+              {
+                "left": "$target.session",
+                "op": "ne",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "join-conversation": {
+          "label": "加入交谈",
+          "roles": {
+            "invitation": {
+              "from": "invitations"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.session",
+                "op": "eq",
+                "right": null
+              },
+              {
+                "left": "$actor.interruptible",
+                "op": "eq",
+                "right": true
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "leave-conversation": {
+          "label": "先去忙了",
+          "roles": {},
+          "when": {
+            "left": "$actor.session",
+            "op": "ne",
+            "right": null
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "make-group": {
+          "label": "组织一个学习小组",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "name": {
+              "default": "学习小组",
+              "type": "string"
+            }
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "invited": [
+                "$target.id"
+              ],
+              "name": "$args.name",
+              "type": "group.create"
+            }
+          ]
+        },
+        "offer-meeting": {
+          "label": "约个时间一起参加活动",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "due": {
+              "default": 1020,
+              "max": 100000,
+              "min": 0,
+              "type": "number"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "due": "$args.due",
+              "kind": "meeting",
+              "to": "$target.id",
+              "type": "offer.create"
+            }
+          ]
+        },
+        "pick-up": {
+          "label": "拿起物品",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "portable"
+              }
+            }
+          },
+          "when": {
+            "left": "$item.holder",
+            "op": "eq",
+            "right": null
+          },
+          "duration": 0.5,
+          "effects": []
+        },
+        "put-down": {
+          "label": "放下物品",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "portable"
+              }
+            }
+          },
+          "when": {
+            "left": "$item.holder",
+            "op": "eq",
+            "right": "$actor.id"
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "rest": {
+          "label": "躺下休息",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "rest"
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.session",
+            "op": "eq",
+            "right": null
+          },
+          "duration": 10,
+          "effects": []
+        },
+        "return-loan": {
+          "label": "按约把借来的物品还给对方",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.id",
+                "op": "eq",
+                "right": "$offer.item"
+              }
+            },
+            "offer": {
+              "from": "offers",
+              "where": {
+                "all": [
+                  {
+                    "left": "$bound.status",
+                    "op": "eq",
+                    "right": "accepted"
+                  },
+                  {
+                    "left": "$bound.receiver",
+                    "op": "eq",
+                    "right": "$actor.id"
+                  },
+                  {
+                    "left": "$bound.transferred",
+                    "op": "eq",
+                    "right": true
+                  },
+                  {
+                    "not": {
+                      "left": "$bound.returned",
+                      "op": "eq",
+                      "right": true
+                    }
+                  }
+                ]
+              }
+            },
+            "target": {
+              "from": "actors",
+              "where": {
+                "left": "$bound.id",
+                "op": "eq",
+                "right": "$offer.giver"
+              }
+            }
+          },
+          "when": {
+            "left": "$item.holder",
+            "op": "eq",
+            "right": "$actor.id"
+          },
+          "duration": 0.5,
+          "effects": []
+        },
+        "say": {
+          "label": "说说话",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "text": {
+              "type": "string",
+              "default": "今天过得怎么样？"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "text": "$args.text",
+              "to": "$target.id",
+              "type": "speech.emit"
+            }
+          ]
+        },
+        "start-conversation": {
+          "label": "过去聊聊",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "access": {
+              "default": "public",
+              "enum": [
+                "public",
+                "private"
+              ],
+              "type": "string"
+            },
+            "topic": {
+              "default": "课间聊聊",
+              "type": "string"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "op": "eq",
+                "left": "$target.session",
+                "right": null
+              }
+            ]
+          },
+          "duration": 0.1,
+          "effects": [
+            {
+              "access": "$args.access",
+              "target": "$target.id",
+              "topic": "$args.topic",
+              "type": "session.open"
+            }
+          ]
+        },
+        "study": {
+          "label": "温习功课",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "study"
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.session",
+            "op": "eq",
+            "right": null
+          },
+          "duration": 8,
+          "effects": []
+        },
+        "toilet": {
+          "label": "使用独立厕位",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "toilet"
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.session",
+            "op": "eq",
+            "right": null
+          },
+          "requires": {
+            "all": [
+              {
+                "op": "eq",
+                "left": 1,
+                "right": 1
+              },
+              {
+                "op": "gt",
+                "left": "$item.state.paper",
+                "right": 0
+              },
+              {
+                "op": "gte",
+                "left": "$item.state.cleanliness",
+                "right": 12
+              }
+            ]
+          },
+          "duration": 3,
+          "effects": []
+        },
+        "wait": {
+          "label": "等一会儿",
+          "roles": {},
+          "duration": 0,
+          "effects": []
+        },
+        "draw-poster": {
+          "label": "画社团海报",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "drawing"
+              }
+            }
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.paper",
+            "right": 0
+          },
+          "duration": 4,
+          "effects": []
+        },
+        "wash-hands": {
+          "label": "洗手",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "wash"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.soap",
+            "right": 0
+          },
+          "duration": 1.5,
+          "effects": []
+        },
+        "read-board": {
+          "label": "阅读校园公告",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "notice"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 1,
+          "effects": []
+        },
+        "read-book": {
+          "label": "阅读一本书",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "read"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 6,
+          "effects": []
+        },
+        "use-computer": {
+          "label": "查资料",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "computer"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 5,
+          "effects": []
+        },
+        "office-work": {
+          "label": "整理教案",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "office"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 10,
+          "effects": []
+        },
+        "teach": {
+          "label": "准备板书",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "teach"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 5,
+          "effects": []
+        },
+        "sit-bench": {
+          "label": "坐一会儿",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "sit"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 4,
+          "effects": []
+        },
+        "shoot-hoops": {
+          "label": "练习投篮",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "basketball"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 4,
+          "effects": []
+        },
+        "run-lap": {
+          "label": "慢跑一圈",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "run"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 5,
+          "effects": []
+        },
+        "play-guitar": {
+          "label": "练习吉他",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "music"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 5,
+          "effects": []
+        },
+        "water-plants": {
+          "label": "给花坛浇水",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "garden"
+              }
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "op": "lte",
+                "left": "$item.state.water",
+                "right": 85
+              }
+            ]
+          },
+          "duration": 2,
+          "effects": []
+        },
+        "open-locker": {
+          "label": "打开储物柜",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "locker"
+              }
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "op": "eq",
+                "left": "$item.state.open",
+                "right": false
+              }
+            ]
+          },
+          "duration": 0.5,
+          "effects": []
+        },
+        "close-locker": {
+          "label": "关好储物柜",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "locker"
+              }
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "op": "eq",
+                "left": "$item.state.open",
+                "right": true
+              }
+            ]
+          },
+          "duration": 0.5,
+          "effects": []
+        },
+        "get-lunch": {
+          "label": "刷卡领取午餐",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "serve"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.servings",
+            "right": 0
+          },
+          "duration": 1.5,
+          "effects": []
+        },
+        "walk-to": {
+          "label": "走到这里",
+          "roles": {},
+          "parameters": {
+            "room": {
+              "type": "string"
+            },
+            "x": {
+              "type": "number",
+              "min": -30,
+              "max": 30
+            },
+            "z": {
+              "type": "number",
+              "min": -30,
+              "max": 30
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "greet": {
+          "label": "聊聊今天",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.hasFloor",
+                "right": true
+              },
+              {
+                "op": "eq",
+                "left": "$target.session",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "speech.emit",
+              "to": "$target.id",
+              "text": "早上好，今天的课你准备得怎么样了？",
+              "kind": "question",
+              "data": {
+                "key": "school-day:greeting"
+              }
+            }
+          ]
+        },
+        "chat-club": {
+          "label": "聊聊社团",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.hasFloor",
+                "right": true
+              },
+              {
+                "op": "eq",
+                "left": "$target.session",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "speech.emit",
+              "to": "$target.id",
+              "text": "放学后我想去社团室看看，你有什么打算？",
+              "kind": "question",
+              "data": {
+                "key": "school-day:club"
+              }
+            }
+          ]
+        },
+        "encourage": {
+          "label": "给对方打气",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.hasFloor",
+                "right": true
+              },
+              {
+                "op": "eq",
+                "left": "$target.session",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "speech.emit",
+              "to": "$target.id",
+              "text": "刚才没做好也没关系，下次再试试。"
+            }
+          ]
+        },
+        "reply-greeting": {
+          "label": "回应同学",
+          "roles": {
+            "message": {
+              "from": "messages",
+              "where": {
+                "all": [
+                  {
+                    "op": "eq",
+                    "left": "$bound.answered",
+                    "right": false
+                  },
+                  {
+                    "any": [
+                      {
+                        "op": "eq",
+                        "left": "$bound.key",
+                        "right": "school-day:greeting"
+                      },
+                      {
+                        "op": "eq",
+                        "left": "$bound.key",
+                        "right": "school-day:club"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.hasFloor",
+            "right": true
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "speech.emit",
+              "to": "$message.actor",
+              "replyTo": "$message.uid",
+              "text": "我还在准备呢。放学后要不要去社团室看看？"
+            }
+          ]
+        },
+        "start-group-conversation": {
+          "label": "邀请小组一起聊",
+          "roles": {
+            "group": {
+              "from": "groups"
+            },
+            "target": {
+              "from": "actors",
+              "where": {
+                "op": "includes",
+                "left": "$group.invited",
+                "right": "$bound.id"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 0.1,
+          "effects": [
+            {
+              "type": "session.open",
+              "group": "$group.id",
+              "topic": "学习小组"
+            }
+          ]
+        },
+        "attend-class": {
+          "label": "在自己的座位上课",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "all": [
+                  {
+                    "op": "eq",
+                    "left": "$bound.room",
+                    "right": "classroom"
+                  },
+                  {
+                    "op": "eq",
+                    "left": "$bound.id",
+                    "right": "$actor.profile.desk"
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "op": "eq",
+                "left": "$clock.period",
+                "right": "class"
+              },
+              {
+                "op": "lt",
+                "left": "$clock.weekday",
+                "right": 5
+              }
+            ]
+          },
+          "duration": 18,
+          "effects": []
+        },
+        "teach-class": {
+          "label": "给同学们讲课",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "teach"
+              }
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "op": "eq",
+                "left": "$clock.period",
+                "right": "class"
+              },
+              {
+                "op": "lt",
+                "left": "$clock.weekday",
+                "right": 5
+              }
+            ]
+          },
+          "duration": 18,
+          "effects": []
+        },
+        "join-activity": {
+          "label": "参加这次筹备",
+          "roles": {
+            "situation": {
+              "from": "situations",
+              "where": {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "invited"
+              }
+            }
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "skip-activity": {
+          "label": "这次先不参加",
+          "roles": {
+            "situation": {
+              "from": "situations",
+              "where": {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "invited"
+              }
+            }
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "ask-project": {
+          "label": "商量招新分工",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.hasFloor",
+                "right": true
+              },
+              {
+                "op": "eq",
+                "left": "$target.session",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "offer.create",
+              "kind": "project",
+              "to": "$target.id",
+              "text": "我想画招新海报，你愿意准备一段音乐吗？你不方便的话，我先把海报做好。"
+            }
+          ]
+        },
+        "accept-project": {
+          "label": "答应准备音乐",
+          "roles": {
+            "offer": {
+              "from": "offers",
+              "where": {
+                "all": [
+                  {
+                    "all": [
+                      {
+                        "left": "$bound.to",
+                        "op": "eq",
+                        "right": "$actor.id"
+                      },
+                      {
+                        "left": "$bound.status",
+                        "op": "eq",
+                        "right": "pending"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "eq",
+                    "left": "$bound.kind",
+                    "right": "project"
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "left": "$actor.hasFloor",
+            "op": "eq",
+            "right": true
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "offer": "$offer.id",
+              "status": "accepted",
+              "type": "offer.resolve",
+              "text": "可以，我来练一段开场音乐，你先画海报。"
+            }
+          ]
+        },
+        "skip-class": {
+          "label": "这节课自行安排",
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.controlled",
+                "right": true
+              },
+              {
+                "op": "eq",
+                "left": "$clock.period",
+                "right": "class"
+              },
+              {
+                "op": "lt",
+                "left": "$clock.weekday",
+                "right": 5
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "make-up-work": {
+          "label": "补做缺课练习",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "eq",
+                "left": "$bound.id",
+                "right": "$actor.profile.desk"
+              }
+            },
+            "obligation": {
+              "from": "obligations",
+              "where": {
+                "all": [
+                  {
+                    "op": "eq",
+                    "left": "$bound.remedy",
+                    "right": "pending"
+                  },
+                  {
+                    "op": "gte",
+                    "left": "$clock.time",
+                    "right": "$bound.end"
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "op": "eq",
+                "left": "$clock.period",
+                "right": "after-school"
+              }
+            ]
+          },
+          "duration": 15,
+          "effects": []
+        },
+        "prepare-class": {
+          "label": "去教室准备上课",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "all": [
+                  {
+                    "op": "eq",
+                    "left": "$bound.room",
+                    "right": "classroom"
+                  },
+                  {
+                    "op": "eq",
+                    "left": "$bound.id",
+                    "right": "$actor.profile.desk"
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "all": [
+                  {
+                    "op": "eq",
+                    "left": "$clock.nextPeriod",
+                    "right": "class"
+                  },
+                  {
+                    "op": "lte",
+                    "left": "$clock.minutesToNext",
+                    "right": 10
+                  },
+                  {
+                    "op": "lt",
+                    "left": "$clock.weekday",
+                    "right": 5
+                  }
+                ]
+              },
+              {
+                "op": "eq",
+                "left": "$actor.role",
+                "right": "student"
+              }
+            ]
+          },
+          "duration": 20,
+          "effects": []
+        },
+        "prepare-teach": {
+          "label": "到教室准备授课",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "teach"
+              }
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "all": [
+                  {
+                    "op": "eq",
+                    "left": "$clock.nextPeriod",
+                    "right": "class"
+                  },
+                  {
+                    "op": "lte",
+                    "left": "$clock.minutesToNext",
+                    "right": 10
+                  },
+                  {
+                    "op": "lt",
+                    "left": "$clock.weekday",
+                    "right": 5
+                  }
+                ]
+              },
+              {
+                "op": "eq",
+                "left": "$actor.role",
+                "right": "teacher"
+              }
+            ]
+          },
+          "duration": 20,
+          "effects": []
+        },
+        "return-tray": {
+          "label": "归还餐盘",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "return-tray"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 0.7,
+          "effects": []
+        },
+        "clean-stall": {
+          "label": "清洁厕位",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "toilet"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "lte",
+            "left": "$item.state.cleanliness",
+            "right": 88
+          },
+          "duration": 3,
+          "effects": []
+        },
+        "refill-tissue": {
+          "label": "补充厕纸",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "left": "$bound.tags",
+                "op": "includes",
+                "right": "toilet"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "lte",
+            "left": "$item.state.paper",
+            "right": 10
+          },
+          "duration": 1,
+          "effects": []
+        },
+        "refill-soap": {
+          "label": "补充洗手液",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "wash"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "lte",
+            "left": "$item.state.soap",
+            "right": 15
+          },
+          "duration": 1,
+          "effects": []
+        },
+        "print-notes": {
+          "label": "打印研究资料",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "print"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "all": [
+              {
+                "op": "gt",
+                "left": "$item.state.paper",
+                "right": 0
+              },
+              {
+                "op": "gt",
+                "left": "$item.state.ink",
+                "right": 0
+              }
+            ]
+          },
+          "duration": 1,
+          "effects": []
+        },
+        "refill-printer": {
+          "label": "补充纸张与墨水",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "print"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "any": [
+              {
+                "op": "lte",
+                "left": "$item.state.paper",
+                "right": 10
+              },
+              {
+                "op": "lte",
+                "left": "$item.state.ink",
+                "right": 10
+              }
+            ]
+          },
+          "duration": 2,
+          "effects": []
+        },
+        "submit-homework": {
+          "label": "提交一份作业",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "submit"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 0.6,
+          "effects": []
+        },
+        "observe-sample": {
+          "label": "观察植物切片",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "microscope"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "all": [
+              {
+                "op": "gt",
+                "left": "$item.state.slides",
+                "right": 0
+              },
+              {
+                "op": "eq",
+                "left": "$item.state.clean",
+                "right": true
+              }
+            ]
+          },
+          "duration": 5,
+          "effects": []
+        },
+        "clean-microscope": {
+          "label": "整理观察台",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "microscope"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "eq",
+            "left": "$item.state.clean",
+            "right": false
+          },
+          "duration": 1,
+          "effects": []
+        },
+        "do-experiment": {
+          "label": "完成显色实验",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "experiment"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "all": [
+              {
+                "op": "gt",
+                "left": "$item.state.reagents",
+                "right": 0
+              },
+              {
+                "op": "eq",
+                "left": "$item.state.clean",
+                "right": true
+              }
+            ]
+          },
+          "duration": 6,
+          "effects": []
+        },
+        "clean-experiment": {
+          "label": "清洗实验器材",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "experiment"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "eq",
+            "left": "$item.state.clean",
+            "right": false
+          },
+          "duration": 2,
+          "effects": []
+        },
+        "buy-supplies": {
+          "label": "购买文具套装 · 4元",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "supplies"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.stock",
+            "right": 0
+          },
+          "duration": 1,
+          "effects": []
+        },
+        "restock-art": {
+          "label": "用文具套装补充画纸",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "drawing"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "lte",
+            "left": "$item.state.paper",
+            "right": 24
+          },
+          "duration": 2,
+          "effects": []
+        },
+        "paint-study": {
+          "label": "完成一幅写生",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "paint"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.canvas",
+            "right": 0
+          },
+          "duration": 8,
+          "effects": []
+        },
+        "practice-piano": {
+          "label": "练习钢琴",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "piano"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 6,
+          "effects": []
+        },
+        "read-score": {
+          "label": "研读乐谱",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "score"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 3,
+          "effects": []
+        },
+        "practice-pingpong": {
+          "label": "练习乒乓球",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "pingpong"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 5,
+          "effects": []
+        },
+        "stretch": {
+          "label": "做一组拉伸",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "stretch"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 3,
+          "effects": []
+        },
+        "buy-snack": {
+          "label": "买一份点心 · 3元",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "snack"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.stock",
+            "right": 0
+          },
+          "duration": 1.5,
+          "effects": []
+        },
+        "empty-bin": {
+          "label": "清空垃圾桶",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "bin"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.waste",
+            "right": 0
+          },
+          "duration": 2,
+          "effects": []
+        },
+        "freshen-up": {
+          "label": "取湿巾整理仪容",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "cleaning"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.cloths",
+            "right": 0
+          },
+          "duration": 1,
+          "effects": []
+        },
+        "tend-garden": {
+          "label": "浇水并照护幼苗",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "grow"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "all": [
+              {
+                "op": "lte",
+                "left": "$item.state.water",
+                "right": 75
+              },
+              {
+                "op": "lte",
+                "left": "$item.state.growth",
+                "right": 85
+              }
+            ]
+          },
+          "duration": 3,
+          "effects": []
+        },
+        "harvest-garden": {
+          "label": "采收成熟植物",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "grow"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "gte",
+            "left": "$item.state.growth",
+            "right": 85
+          },
+          "duration": 3,
+          "effects": []
+        },
+        "exhibit-work": {
+          "label": "布置一份作品",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "exhibit"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 2,
+          "effects": []
+        },
+        "solve-chess": {
+          "label": "推演棋局",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "chess"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 5,
+          "effects": []
+        },
+        "use-care-pack": {
+          "label": "使用清洁护理包",
+          "roles": {
+            "item": {
+              "from": "objects",
+              "where": {
+                "op": "includes",
+                "left": "$bound.tags",
+                "right": "first-aid"
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "requires": {
+            "op": "gt",
+            "left": "$item.state.packs",
+            "right": 0
+          },
+          "duration": 2,
+          "effects": []
+        },
+        "wait-for-activity": {
+          "label": "等候已约好的同学",
+          "roles": {
+            "situation": {
+              "from": "situations",
+              "where": {
+                "all": [
+                  {
+                    "op": "eq",
+                    "left": "$bound.status",
+                    "right": "accepted"
+                  },
+                  {
+                    "any": [
+                      {
+                        "op": "eq",
+                        "left": "$bound.phase",
+                        "right": "gather"
+                      },
+                      {
+                        "op": "eq",
+                        "left": "$bound.phase",
+                        "right": "discuss"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "eq",
+                    "left": "$bound.room",
+                    "right": "$actor.room"
+                  }
+                ]
+              }
+            }
+          },
+          "when": {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          "duration": 0,
+          "effects": []
+        },
+        "support-peer": {
+          "label": "表达支持",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "text": {
+              "type": "string",
+              "default": "我愿意和你一起做。别人怎么说，我会自己判断。"
+            },
+            "about": {
+              "type": "string",
+              "default": "none"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "speech.emit",
+              "kind": "social-act",
+              "to": "$target.id",
+              "text": "$args.text",
+              "data": {
+                "intent": "support",
+                "about": "$args.about"
+              }
+            }
+          ]
+        },
+        "apologize-peer": {
+          "label": "为自己的行为道歉",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "text": {
+              "type": "string",
+              "default": "之前那样处理让你难受了，对不起。我想听听你的想法。"
+            },
+            "about": {
+              "type": "string",
+              "default": "none"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "speech.emit",
+              "kind": "social-act",
+              "to": "$target.id",
+              "text": "$args.text",
+              "data": {
+                "intent": "apology",
+                "about": "$args.about"
+              }
+            }
+          ]
+        },
+        "exclude-peer": {
+          "label": "表达不想同行",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "text": {
+              "type": "string",
+              "default": "这次我们想自己一起，你先别跟过来了。"
+            },
+            "about": {
+              "type": "string",
+              "default": "none"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "speech.emit",
+              "kind": "social-act",
+              "to": "$target.id",
+              "text": "$args.text",
+              "data": {
+                "intent": "exclusion",
+                "about": "$args.about"
+              }
+            }
+          ]
+        },
+        "set-boundary": {
+          "label": "表明自己的界限",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "text": {
+              "type": "string",
+              "default": "我在乎我们的关系，但我不想因为这个就排斥别人。"
+            },
+            "about": {
+              "type": "string",
+              "default": "none"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "speech.emit",
+              "kind": "social-act",
+              "to": "$target.id",
+              "text": "$args.text",
+              "data": {
+                "intent": "boundary",
+                "about": "$args.about"
+              }
+            }
+          ]
+        },
+        "confide-concern": {
+          "label": "说出自己的顾虑",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "text": {
+              "type": "string",
+              "default": "我有点担心，夹在朋友之间不知道怎么处理。"
+            },
+            "about": {
+              "type": "string",
+              "default": "none"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "speech.emit",
+              "kind": "social-act",
+              "to": "$target.id",
+              "text": "$args.text",
+              "data": {
+                "intent": "confide",
+                "about": "$args.about"
+              }
+            }
+          ]
+        },
+        "propose-reconnect": {
+          "label": "提出重新来往",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "text": {
+              "type": "string",
+              "default": "我们还可以慢慢重新来往吗？你也可以先想一想。"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "offer.create",
+              "kind": "reconnect",
+              "to": "$target.id",
+              "text": "$args.text"
+            }
+          ]
+        },
+        "propose-support": {
+          "label": "征求朋友的支持",
+          "roles": {
+            "target": {
+              "from": "actors"
+            }
+          },
+          "parameters": {
+            "text": {
+              "type": "string",
+              "default": "我想按自己的想法处理这段关系，你愿意支持我吗？"
+            }
+          },
+          "when": {
+            "all": [
+              {
+                "left": "$actor.hasFloor",
+                "op": "eq",
+                "right": true
+              },
+              {
+                "left": "$target.session",
+                "op": "eq",
+                "right": "$actor.session"
+              }
+            ]
+          },
+          "duration": 0,
+          "effects": [
+            {
+              "type": "offer.create",
+              "kind": "support",
+              "to": "$target.id",
+              "text": "$args.text"
+            }
+          ]
+        },
+        "seek-contact": {
+          "label": "去上次见到对方的地方找找",
+          "roles": {
+            "target": {
+              "from": "contacts"
+            }
+          },
+          "parameters": {},
+          "when": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.session",
+                "right": null
+              },
+              {
+                "op": "eq",
+                "left": "$target.visible",
+                "right": false
+              }
+            ]
+          },
+          "duration": 0.1,
+          "effects": []
+        }
+      }
+    }
+  }
+}

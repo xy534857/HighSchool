@@ -1,0 +1,317 @@
+# Persistent, cross-day intentions. This module selects instrumental steps from
+# registered effects and forecasts; it does not prescribe a household storyline.
+sp {plan*query-intention
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^frame <f> ^goal-ready yes ^contract-ready yes)
+ (<f> ^mode plan ^self <me>) -(<c> ^intent-written yes)
+ --> (<c> ^intent-query <q>) (<q> ^type intention ^owner <me>) (<mc> ^query <q>)
+}
+sp {plan*propose-adoption
+ (state <s> ^context <c> ^smem.result.failure <q>)
+ (<c> ^frame <f> ^intent-query <q> ^planning-style <style>) (<f> ^mode plan)
+ --> (<s> ^operator <o> +) (<o> ^name adopt-intention ^style <style>)
+}
+sp {plan*adopt
+ (state <s> ^operator <o> ^context <c>) (<o> ^name adopt-intention ^style <style>)
+ (<c> ^frame <f>) -(<c> ^intent-written yes)
+ (<f> ^mode plan ^self <me> ^project <spec> ^day <day> ^time <now> ^project-uid <uid>)
+ (<spec> ^title <title> ^motive <motive> ^milestones <target> ^deadlineMinute <deadline>)
+ -->
+ (<c> ^intent-written yes ^written-intent <p> ^change adopted)
+ (<p> ^type intention ^owner <me> ^uid <uid> ^title <title> ^motive <motive> ^method <style>
+ ^created <now> ^started-day <day> ^day <day> ^milestones 0 ^target <target> ^credited-day 0
+ ^break-done no ^company-done no ^status active ^revision 1
+ ^due (+ (* (- <day> 1) 1440) <deadline>))
+}
+sp {plan*store-intention
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^written-intent <p>)
+ --> (<mc> ^store <p>)
+}
+sp {plan*ack-written
+ (state <s> ^context <c> ^smem.result.success <p> ^io.output-link <out>)
+ (<c> ^frame <f> ^written-intent <p> ^change <change>) (<f> ^mode plan ^seq <seq>)
+ --> (<out> ^command <cmd>) (<cmd> ^kind plan-updated ^seq <seq> ^plan <p> ^change <change>)
+}
+sp {plan*receive
+ (state <s> ^context <c> ^smem.result <mr>) (<c> ^frame <f> ^intent-query <q>)
+ (<f> ^mode plan) (<mr> ^success <q> ^retrieved <p>)
+ --> (<c> ^intention <p>)
+}
+# Credit completed milestones once. Unfinished goals and their due dates survive midnight.
+sp {plan*propose-credit
+ (state <s> ^context <c>) (<c> ^frame <f> ^intention <p> ^goal <g>) (<f> ^mode plan)
+ (<g> ^status done ^day <gday>) (<p> ^credited-day < <gday> ^status active)
+ --> (<s> ^operator <o> +) (<o> ^name credit-milestone ^plan <p>)
+}
+sp {plan*credit
+ (state <s> ^context <c> ^operator <o>) (<c> ^goal <g>) -(<c> ^intent-written yes)
+ (<o> ^name credit-milestone ^plan <p>) (<g> ^day <gday>) (<p> ^milestones <n> ^credited-day <old> ^revision <r>)
+ --> (<p> ^milestones <n> - ^milestones (+ <n> 1) ^credited-day <old> - ^credited-day <gday> ^revision <r> - ^revision (+ <r> 1))
+ (<c> ^intent-written yes ^written-intent <p> ^change milestone-completed)
+}
+sp {plan*mark-project-complete
+ :o-support
+ (state <s> ^context <c>) (<c> ^written-intent <p>) (<p> ^milestones <n> ^target <= <n> ^status active)
+ --> (<p> ^status active - ^status done)
+}
+sp {plan*propose-next-day
+ (state <s> ^context <c>) (<c> ^frame <f> ^intention <p> ^goal <g>)
+ (<f> ^mode plan ^day <day>) (<g> ^status active ^day <day>) (<p> ^day < <day>)
+ --> (<s> ^operator <o> +) (<o> ^name advance-plan-day ^plan <p>)
+}
+sp {plan*advance-day
+ (state <s> ^context <c> ^operator <o>) (<c> ^frame <f>) -(<c> ^intent-written yes)
+ (<o> ^name advance-plan-day ^plan <p>) (<f> ^day <day> ^project <spec>) (<spec> ^deadlineMinute <deadline>)
+ (<p> ^day <old> ^due <due> ^break-done <b> ^company-done <co> ^revision <r>)
+ --> (<p> ^day <old> - ^day <day> ^due <due> - ^due (+ (* (- <day> 1) 1440) <deadline>)
+ ^break-done <b> - ^break-done no ^company-done <co> - ^company-done no ^revision <r> - ^revision (+ <r> 1))
+ (<c> ^intent-written yes ^written-intent <p> ^change next-milestone)
+}
+# Repeat a completed personal project on the next day, retaining its history in event memory.
+sp {plan*renew-completed-project
+ :o-support
+ (state <s> ^context <c>) (<c> ^frame <f> ^written-intent <p> ^change next-milestone)
+ (<f> ^day <day> ^time <now> ^project-uid <uid>)
+ (<p> ^status done ^milestones <n> ^uid <old> ^created <created> ^started-day <sd>)
+ --> (<p> ^status done - ^status active ^milestones <n> - ^milestones 0 ^uid <old> - ^uid <uid>
+ ^created <created> - ^created <now> ^started-day <sd> - ^started-day <day>)
+}
+sp {plan*propose-close-preparation
+ (state <s> ^context <c>) (<c> ^frame <f> ^intention <p>)
+ (<f> ^mode plan ^project <spec> ^fun <fun>) (<spec> ^breakTarget <= <fun>)
+ (<p> ^method break-first ^break-done no)
+ --> (<s> ^operator <o> +) (<o> ^name finish-preparation ^plan <p> ^field break-done)
+}
+sp {plan*propose-close-company
+ (state <s> ^context <c>) (<c> ^frame <f> ^intention <p>)
+ (<f> ^mode plan ^social >= 80) (<p> ^method company-first ^company-done no)
+ --> (<s> ^operator <o> +) (<o> ^name finish-preparation ^plan <p> ^field company-done)
+}
+sp {plan*finish-preparation
+ (state <s> ^context <c> ^operator <o>) -(<c> ^intent-written yes)
+ (<o> ^name finish-preparation ^plan <p> ^field <field>) (<p> ^<field> no ^revision <r>)
+ --> (<p> ^<field> no - ^<field> yes ^revision <r> - ^revision (+ <r> 1))
+ (<c> ^intent-written yes ^written-intent <p> ^change preparation-completed)
+}
+# State updates have a deterministic precedence and finish before planning a step.
+sp {plan*prefer-credit-before-other-updates
+ (state <s> ^operator <a> + ^operator <b> +) (<a> ^name credit-milestone)
+ (<b> ^name << advance-plan-day finish-preparation >>) --> (<s> ^operator <a> > <b>)
+}
+sp {plan*prefer-day-before-preparation
+ (state <s> ^operator <a> + ^operator <b> +) (<a> ^name advance-plan-day) (<b> ^name finish-preparation)
+ --> (<s> ^operator <a> > <b>)
+}
+sp {plan*ready-for-reasoning
+ (state <s> ^context <c>) (<c> ^frame <f> ^intention <p>) (<f> ^mode plan)
+ -{ (<s> ^operator <o> +) (<o> ^name << credit-milestone advance-plan-day finish-preparation >>) }
+ --> (<c> ^planning-ready yes)
+}
+# Alternatives carry a forecast derived from the actual registered action effects.
+sp {plan*predict-method
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal <g> ^planning-ready yes)
+ (<f> ^mode plan ^capability <a>) (<g> ^kind { <kind> <> cook } ^target <target> ^progress <progress> ^status active)
+ (<a> ^goal <kind> ^goal-rate { <rate> > 0 } ^travel <travel> ^wait <wait> ^kind <action> ^available <available> ^consider yes)
+ --> (<c> ^route <r>) (<r> ^capability <a> ^kind <action> ^available <available>
+ ^minutes (+ (/ (- <target> <progress>) <rate>) <travel> <wait>))
+}
+sp {plan*mark-dominated-route
+ (state <s> ^context <c>) (<c> ^route <a> ^route <b>)
+ (<a> ^minutes <ma>) (<b> ^minutes < <ma>)
+ --> (<a> ^dominated yes)
+}
+sp {plan*tie-break-route
+ (state <s> ^context <c>) (<c> ^route <a> ^route <b>)
+ (<a> ^minutes <m> ^capability.ordinal <ia>) (<b> ^minutes <m> ^capability.ordinal < <ia>)
+ --> (<a> ^dominated yes)
+}
+sp {plan*select-feasible-route
+ (state <s> ^context <c>) (<c> ^route <r>) -(<r> ^dominated yes)
+ --> (<c> ^route-selected <r>)
+}
+sp {plan*forecast-duty-block
+ (state <s> ^context <c>) (<c> ^frame <f> ^intention <p> ^route-selected <r>)
+ (<f> ^time <now> ^hunger <h> ^energy <e> ^hunger-decay <hd> ^energy-decay <ed> ^work-budget <budget>) (<r> ^minutes <minutes>) (<p> ^due <due>)
+ --> (<c> ^forecast <fc>) (<fc> ^work-minutes <minutes> ^slack (- <budget> <minutes>) ^work-budget <budget> ^overdue (- <now> <due>)
+ ^hunger-after (- <h> (* <hd> <minutes>)) ^energy-after (- <e> (* <ed> <minutes>)))
+}
+# Backward chaining: desired progress -> prerequisites -> an available provider.
+sp {plan*need-nutrition-before-duty
+ (state <s> ^context <c>) (<c> ^frame <f> ^forecast <fc> ^planning-ready yes)
+ (<f> ^busy no ^meal-window no ^minutes-to-meal > 35 ^hunger < 30 ^project.foodReserve <reserve>) (<fc> ^hunger-after < <reserve>)
+ --> (<c> ^support nutrition ^support-reason protect-work-block)
+}
+sp {plan*need-rest-before-duty
+ (state <s> ^context <c>) (<c> ^frame <f> ^forecast <fc> ^planning-ready yes)
+ (<f> ^busy no ^project.energyReserve <reserve>) (<fc> ^energy-after < <reserve>) -(<c> ^support nutrition)
+ --> (<c> ^support rest ^support-reason protect-work-block)
+}
+sp {plan*night-is-a-planned-pause
+ (state <s> ^context <c>) (<c> ^frame <f> ^planning-ready yes) (<f> ^busy no ^night yes)
+ --> (<c> ^night-pause yes)
+}
+sp {plan*honor-outstanding-obligation
+ (state <s> ^context <c>) (<c> ^frame <f> ^commitment <pr> ^planning-ready yes)
+ (<f> ^busy no ^available <a>) (<pr> ^action <kind>) (<a> ^kind <kind>)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis commitment ^rank 850 ^depends <pr>)
+}
+sp {plan*keep-current-task
+ (state <s> ^context <c>) (<c> ^frame <f> ^planning-ready yes)
+ (<f> ^busy yes ^available <a>) (<a> ^kind continue)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis continue-step ^rank 900)
+}
+sp {plan*choose-night-sleep
+ (state <s> ^context <c>) (<c> ^frame <f> ^night-pause yes)
+ (<f> ^available <a>) (<a> ^kind sleep)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis resume-tomorrow ^rank 880)
+}
+sp {plan*choose-support-provider
+ (state <s> ^context <c>) (<c> ^frame <f> ^support <need>)
+ (<f> ^available <a>) (<a> ^satisfies <need> ^minutes <minutes> ^kind { <> eat <> sleep <> invite })
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis <need> ^rank (- 800 <minutes>))
+}
+sp {plan*derive-food-prerequisite
+ (state <s> ^context <c>) (<c> ^frame <f> ^support nutrition)
+ -{ (<f> ^available <a>) (<a> ^nutrition-gain > 0 ^kind <> eat) }
+ --> (<c> ^missing food)
+}
+sp {plan*choose-food-provider
+ (state <s> ^context <c>) (<c> ^frame <f> ^missing food)
+ (<f> ^available <a>) (<a> ^food-yield > 0 ^minutes <minutes>)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis produce-food ^rank (- 800 <minutes>))
+}
+sp {plan*derive-ingredient-prerequisite
+ (state <s> ^context <c>) (<c> ^frame <f> ^missing food)
+ -{ (<f> ^available <a>) (<a> ^food-yield > 0) }
+ --> (<c> ^missing ingredients)
+}
+sp {plan*choose-ingredient-provider
+ (state <s> ^context <c>) (<c> ^frame <f> ^missing ingredients)
+ (<f> ^available <a>) (<a> ^ingredient-yield > 0 ^minutes <minutes>)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis acquire-ingredients ^rank (- 800 <minutes>))
+}
+# A chosen break is a single preparation phase, not a recurring hunger-for-fun score.
+sp {plan*choose-preparatory-break
+ (state <s> ^context <c>) (<c> ^frame <f> ^intention <p> ^forecast <fc>)
+ (<p> ^method break-first ^break-done no) (<f> ^busy no ^available <a>)
+ (<a> ^satisfies leisure ^minutes <minutes> ^fun-gain <gain>) (<fc> ^slack > <minutes>)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis agreed-break ^rank (+ 600 (/ <gain> <minutes>)))
+}
+sp {plan*choose-company-before-play
+ (state <s> ^context <c>) (<c> ^frame <f> ^intention <p>)
+ (<p> ^method company-first ^company-done no) (<f> ^busy no ^available <a>) (<a> ^kind chat)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis seek-company ^rank 610)
+}
+sp {plan*choose-duty-route
+ (state <s> ^context <c>) (<c> ^frame <f> ^route-selected <r>) (<f> ^busy no ^work-window yes ^available <a>)
+ (<r> ^available yes ^kind <kind>) (<a> ^kind <kind>)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis advance-milestone ^rank 500)
+}
+# When a future resource is faster, use a bounded waiting step and keep the intention.
+sp {plan*wait-for-selected-resource
+ (state <s> ^context <c>) (<c> ^frame <f> ^route-selected <r>)
+ (<r> ^available no) (<f> ^busy no ^work-window yes ^available <a>) (<a> ^kind wait)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis wait-for-resource ^rank 500)
+}
+sp {plan*explicitly-blocked
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal <g> ^planning-ready yes)
+ (<g> ^status active ^kind <> cook) (<f> ^busy no ^work-window yes ^available <a>) (<a> ^kind wait)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis missing-provider ^rank 1)
+}
+sp {plan*free-time-after-milestone
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal <g> ^planning-ready yes) (<g> ^status done)
+ (<f> ^busy no)
+ --> (<c> ^free-time yes)
+}
+sp {plan*mark-inferior-choice
+ (state <s> ^context <c>) (<c> ^choice <a> ^choice <b>) (<a> ^rank <ra>) (<b> ^rank > <ra>)
+ --> (<a> ^inferior yes)
+}
+sp {plan*choice-tie-break
+ (state <s> ^context <c>) (<c> ^choice <a> ^choice <b>)
+ (<a> ^rank <r> ^candidate.ordinal <ia>) (<b> ^rank <r> ^candidate.ordinal < <ia>)
+ --> (<a> ^inferior yes)
+}
+sp {plan*emit-guidance
+ (state <s> ^context <c> ^io.output-link <out>)
+ (<c> ^frame <f> ^intention <p> ^goal <goal> ^choice <ch> ^planning-ready yes)
+ -(<ch> ^inferior yes) (<ch> ^candidate <a> ^basis <basis>) (<a> ^id <id> ^kind <kind>)
+ (<f> ^seq <seq> ^mode plan)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind planned ^plan <p> ^goal <goal> ^guidance <g>)
+ (<g> ^id <id> ^kind <kind> ^basis <basis>)
+}
+sp {plan*emit-free-time
+ (state <s> ^context <c> ^io.output-link <out>) (<c> ^frame <f> ^intention <p> ^goal <goal> ^free-time yes)
+ -(<c> ^choice <ch>) (<f> ^seq <seq> ^mode plan)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind planned ^plan <p> ^goal <goal> ^free-time yes)
+}
+sp {plan*expose-forecast
+ (state <s> ^context <c> ^io.output-link.command <cmd>) (<c> ^frame <f> ^forecast <fc>) (<f> ^seq <seq> ^mode plan) (<cmd> ^seq <seq>)
+ --> (<cmd> ^forecast <fc>)
+}
+sp {plan*expose-compared-routes
+ (state <s> ^context <c> ^io.output-link.command <cmd>) (<c> ^frame <f> ^route <r>) (<f> ^seq <seq> ^mode plan) (<cmd> ^seq <seq>)
+ --> (<cmd> ^alternatives <r>)
+}
+sp {plan*expose-support
+ (state <s> ^context <c> ^io.output-link.command <cmd>) (<c> ^frame <f> ^support <support>) (<f> ^seq <seq> ^mode plan) (<cmd> ^seq <seq>)
+ --> (<cmd> ^support <support>)
+}
+# This proposal binds physical execution to the plan. Ordinary leisure scores
+# cannot displace it; emergencies, player actions and explicit learned rules can.
+sp {plan*execute-guided-step
+ (state <s> ^context <c>) (<c> ^frame <f> ^memory-ready yes)
+ (<f> ^mode act ^guidance <g> ^available <a>) (<g> ^id <id> ^kind { <kind> <> continue } ^basis <basis>) (<a> ^id <id>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 100 ^rule plan*execute-guided-step ^reason <basis>)
+}
+sp {plan*continue-guided-step
+ (state <s> ^context <c>) (<c> ^frame <f> ^memory-ready yes)
+ (<f> ^mode act ^guidance <g> ^available <a>) (<g> ^id <id> ^kind continue) (<a> ^id <id>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 61 ^rule plan*continue-guided-step ^reason continue-step)
+}
+
+sp {plan*ordinary-family-meal
+ (state <s> ^context <c>) (<c> ^frame <f> ^planning-ready yes)
+ (<f> ^busy no ^meal-window yes ^meal-due yes ^available <a>) (<a> ^kind eat)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis family-meal ^rank 870)
+}
+sp {plan*prepare-agreed-meal
+ (state <s> ^context <c>) (<c> ^frame <f> ^planning-ready yes)
+ (<f> ^busy no ^prep-window yes ^cook-duty yes ^food-needed <required> ^food < <required> ^available <a>)
+ (<a> ^food-yield > 0)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis prepare-family-meal ^rank 860)
+}
+sp {plan*buy-before-agreed-meal
+ (state <s> ^context <c>) (<c> ^frame <f> ^planning-ready yes)
+ (<f> ^busy no ^prep-window yes ^cook-duty yes ^food-needed <required> ^food < <required> ^ingredients < 1 ^available <a>)
+ (<a> ^ingredient-yield > 0)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis acquire-ingredients ^rank 860)
+}
+sp {plan*free-time-between-work-windows
+ (state <s> ^context <c>) (<c> ^frame <f> ^planning-ready yes)
+ (<f> ^busy no ^work-window no) --> (<c> ^free-time yes)
+}
+sp {plan*free-time-around-kitchen-duty
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal <g> ^planning-ready yes)
+ (<g> ^kind cook) (<f> ^busy no) --> (<c> ^free-time yes)
+}
+
+sp {plan*leave-optional-activity-for-dinner
+ (state <s> ^context <c>) (<c> ^frame <f> ^planning-ready yes)
+ (<f> ^busy yes ^manual no ^meal-window yes ^meal-due yes ^active-task << watch read play chat rest studyTable workTable >> ^available <a>)
+ (<a> ^kind eat)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis family-meal ^rank 920)
+}
+sp {plan*leave-optional-activity-for-night
+ (state <s> ^context <c>) (<c> ^frame <f> ^planning-ready yes)
+ (<f> ^busy yes ^manual no ^night yes ^active-task << watch read play chat rest >> ^available <a>)
+ (<a> ^kind sleep)
+ --> (<c> ^choice <ch>) (<ch> ^candidate <a> ^basis resume-tomorrow ^rank 920)
+}
+# Shared transition time: do not begin a discretionary task immediately before a meal.
+sp {routine*leave-time-for-meal
+ (state <s> ^context <c> ^operator <o> +)
+ (<c> ^frame <f>) (<f> ^mode act ^busy no ^meal-window no ^minutes-to-meal { <left> < 15 } )
+ (<o> ^name choose ^priority < 200 ^choice <a>)
+ (<a> ^kind << tidy watch play read chat rest >> ^minutes > <left>)
+ --> (<s> ^operator <o> -)
+}

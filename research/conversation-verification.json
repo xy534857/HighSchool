@@ -1,0 +1,116 @@
+{
+  "kernel": "Native Soar 9.6.5",
+  "externalApiCalls": 0,
+  "evidence": [
+    {
+      "case": "1v1",
+      "turns": [
+        {
+          "speaker": "dad",
+          "act": "ask-location"
+        },
+        {
+          "speaker": "xing",
+          "act": "answer",
+          "replyTo": "conversation-1-turn-1"
+        },
+        {
+          "speaker": "dad",
+          "act": "ack",
+          "replyTo": "conversation-1-turn-2"
+        }
+      ],
+      "consentRule": "conversation*accept-compatible"
+    },
+    {
+      "case": "pause-resume",
+      "remaining": 20,
+      "originalStarted": 990
+    },
+    {
+      "case": "five-person",
+      "speakers": [
+        "dad",
+        "me",
+        "xiaoyu",
+        "xing",
+        "xue"
+      ],
+      "turnCount": 9,
+      "turns": [
+        {
+          "from": "dad",
+          "to": "me",
+          "kind": "ask-day"
+        },
+        {
+          "from": "me",
+          "to": "dad",
+          "kind": "answer"
+        },
+        {
+          "from": "xiaoyu",
+          "to": "xing",
+          "kind": "ask-day"
+        },
+        {
+          "from": "xing",
+          "to": "xiaoyu",
+          "kind": "answer"
+        },
+        {
+          "from": "xue",
+          "to": "dad",
+          "kind": "ask-day"
+        },
+        {
+          "from": "dad",
+          "to": "xue",
+          "kind": "answer"
+        },
+        {
+          "from": "xiaoyu",
+          "to": "xing",
+          "kind": "ack"
+        },
+        {
+          "from": "xue",
+          "to": "dad",
+          "kind": "ack"
+        },
+        {
+          "from": "dad",
+          "to": "me",
+          "kind": "ack"
+        }
+      ]
+    },
+    {
+      "case": "late-join",
+      "priorTurnCount": 1,
+      "retroactiveLeak": false,
+      "privateJoinBlocked": true
+    },
+    {
+      "case": "save-during-question",
+      "sameContinuation": true,
+      "uniqueTurns": 3
+    },
+    {
+      "case": "negotiation",
+      "acts": [
+        "request",
+        "respond",
+        "ask-reason",
+        "explain",
+        "ack"
+      ],
+      "response": "decline"
+    },
+    {
+      "case": "native-rule-extension",
+      "changedPerson": "xing",
+      "otherPersonStillJoined": true
+    }
+  ]
+}

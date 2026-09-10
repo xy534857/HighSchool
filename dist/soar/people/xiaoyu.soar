@@ -1,0 +1,88 @@
+# Independent xiaoyu cognitive program.
+sp {xiaoyu*snack-interest
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^hunger { <v> < 63 } ^available <a>) (<a> ^kind snack)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 113 <v>) ^rule xiaoyu*snack-interest ^reason |有点饿，看看还有什么好吃的。|)
+}
+sp {xiaoyu*play-and-company
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^fun { <v> < 80 } ^available <a>) (<a> ^kind play)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 101 <v>) ^rule xiaoyu*play-and-company ^reason |我还想接着玩这个。|)
+}
+sp {xiaoyu*recall-enjoyable-company
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal-ready yes ^contract-ready yes) (<f> ^mode << act response >> ^self <me>)
+ --> (<c> ^semantic-cue <q>) (<q> ^type event ^actor <me> ^action play)
+}
+sp {xiaoyu*follow-current-interest
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes) (<f> ^mode response ^fun < 55)
+ --> (<c> ^concern immediate-interest)
+}
+sp {xiaoyu*seek-company
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes) (<f> ^mode response ^fun >= 55)
+ --> (<c> ^concern companionship)
+}
+sp {xiaoyu*value-company-and-play
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode feedback ^request-satisfied <sat> ^social-cost <cost> ^kept-activity <kept>)
+ --> (<c> ^reward-value (- (+ (* 3 <kept>) (* 2 <sat>)) (* 2 <cost>)))
+}
+
+sp {rl*xiaoyu*immediate-interest*accommodate
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^concern immediate-interest)
+ --> (<s> ^operator <o> = 0)
+}
+
+sp {rl*xiaoyu*immediate-interest*protect-plan
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^concern immediate-interest)
+ --> (<s> ^operator <o> = 3)
+}
+
+sp {rl*xiaoyu*immediate-interest*offer-later
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^concern immediate-interest)
+ --> (<s> ^operator <o> = 1)
+}
+
+sp {rl*xiaoyu*companionship*accommodate
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^concern companionship)
+ --> (<s> ^operator <o> = 3)
+}
+
+sp {rl*xiaoyu*companionship*protect-plan
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^concern companionship)
+ --> (<s> ^operator <o> = 0)
+}
+
+sp {rl*xiaoyu*companionship*offer-later
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^concern companionship)
+ --> (<s> ^operator <o> = 1)
+}
+
+sp {xiaoyu*choose-what-to-tell
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode share ^self <me>)
+ --> (<f> ^cue <q>) (<q> ^type event ^actor <me> ^action play)
+}
+
+sp {xiaoyu*choose-project-method
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode plan)
+ --> (<c> ^planning-style company-first)
+}
+
+# Personal appraisal and coping, executed by native productions.
+sp {person*xiaoyu*appraisal
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode perceive ^self xiaoyu)
+ --> (<c> ^sensitivity 6 ^style seek-company)
+}
+
+sp {xiaoyu*conversation-interruption
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^compatibility pause ^available <a>) (<a> ^kind join)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 74 ^rule xiaoyu*conversation-interruption ^reason |我也想和大家一起说话。|)
+}

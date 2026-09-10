@@ -1,0 +1,172 @@
+# Cognition protocols operate on shared semantic structures. Character files
+# choose different cues and interpretations. No JavaScript memory lookup.
+sp {cognition*issue-semantic-cue
+ (state <s> ^context <c> ^smem.command <mc>)
+ (<c> ^goal-ready yes ^semantic-cue <q>) -(<c> ^memory-ready yes)
+ --> (<mc> ^query <q>)
+}
+sp {cognition*receive-semantic-evidence
+ :o-support
+ (state <s> ^context <c> ^smem.result <mr>)
+ (<c> ^semantic-cue <q>) -(<c> ^memory-ready yes)
+ (<mr> ^success <q> ^retrieved <r>)
+ --> (<c> ^recollection (deep-copy <r>) ^memory-ready yes ^memory-source smem)
+}
+sp {cognition*semantic-miss
+ :o-support
+ (state <s> ^context <c> ^smem.result.failure <q>)
+ (<c> ^semantic-cue <q>) -(<c> ^memory-ready yes)
+ --> (<c> ^memory-ready yes ^memory-source smem ^memory-found no)
+}
+sp {cognition*issue-episodic-cue
+ (state <s> ^context <c> ^epmem.command <ec>)
+ (<c> ^goal-ready yes ^episode-kind <kind> ^episode-actor <actor>) -(<c> ^memory-ready yes)
+ -->
+ (<c> ^episode-cue <q>) (<ec> ^query <q>)
+ (<q> ^io <io>) (<io> ^input-link <in>) (<in> ^frame <f>) (<f> ^event <event>)
+ (<event> ^kind <kind> ^actor <actor>)
+}
+sp {cognition*receive-exact-episode
+ :o-support
+ (state <s> ^context <c> ^epmem.result <r>)
+ (<c> ^episode-cue <q> ^episode-kind <kind> ^episode-actor <actor>) -(<c> ^memory-ready yes)
+ (<r> ^success <q> ^retrieved <episode>)
+ (<episode> ^io.input-link.frame.event <event>) (<event> ^kind <kind> ^actor <actor>)
+ -->
+ (<c> ^recollection (deep-copy <event>) ^memory-ready yes ^memory-source epmem)
+}
+sp {cognition*episode-miss
+ :o-support
+ (state <s> ^context <c> ^epmem.result.failure <q>)
+ (<c> ^episode-cue <q>) -(<c> ^memory-ready yes)
+ --> (<c> ^memory-ready yes ^memory-source epmem ^memory-found no)
+}
+sp {cognition*reject-partial-episode
+ :o-support
+ (state <s> ^context <c> ^epmem.result <r>)
+ (<c> ^episode-cue <q> ^episode-kind <kind> ^episode-actor <actor>) -(<c> ^memory-ready yes)
+ (<r> ^success <q> ^retrieved <episode>)
+ -{ (<episode> ^io.input-link.frame.event <event>) (<event> ^kind <kind> ^actor <actor>) }
+ --> (<c> ^memory-ready yes ^memory-source epmem ^memory-found no)
+}
+# Literal conditions from current percepts anchor a subgoal's learned result.
+sp {cognition*propose-evaluate-request
+ (state <s> ^context <c>)
+ (<c> ^frame <f> ^memory-ready yes) (<f> ^mode response) -(<c> ^evaluated yes)
+ --> (<s> ^operator <o> +) (<o> ^name evaluate-request)
+}
+sp {cognition*learn-only-evaluation-subgoal
+ (state <s> ^superstate <ss>) (<ss> ^operator <o>) (<o> ^name evaluate-request)
+ --> (force-learn <s>) (<s> ^learning-ready yes)
+}
+sp {cognition*evaluate-compatible-request
+ (state <s> ^superstate <ss> ^learning-ready yes) (<ss> ^operator <o> ^context <c>) (<o> ^name evaluate-request)
+ (<c> ^frame <f>) (<f> ^mode response ^interrupts no ^policy-version <v> ^ontology-version <ov>)
+ --> (<c> ^evaluated yes ^goal-threat no)
+}
+sp {cognition*evaluate-interruption
+ (state <s> ^superstate <ss> ^learning-ready yes) (<ss> ^operator <o> ^context <c>) (<o> ^name evaluate-request)
+ (<c> ^frame <f>) (<f> ^mode response ^interrupts yes ^policy-version <v> ^ontology-version <ov>)
+ --> (<c> ^evaluated yes ^goal-threat yes)
+}
+# RL selects reusable response methods after the character's appraisal.
+sp {cognition*propose-accommodate
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes ^concern <concern>)
+ (<f> ^mode response ^available <a>) (<a> ^kind accept)
+ --> (<s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^choice <a> ^concern <concern> ^rule cognition*accommodate ^reason |先回应眼前的需要。|)
+}
+sp {cognition*propose-protect-plan
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes ^concern <concern>)
+ (<f> ^mode response ^available <a>) (<a> ^kind decline)
+ --> (<s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^choice <a> ^concern <concern> ^rule cognition*protect-plan ^reason |我也有自己的安排，这次先不答应。|)
+}
+sp {cognition*propose-offer-later
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes ^concern <concern>)
+ (<f> ^mode response ^available <a>) (<a> ^kind defer)
+ --> (<s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^choice <a> ^concern <concern> ^rule cognition*offer-later ^reason |我先把手里的事做完，随后来帮忙。|)
+}
+sp {cognition*output-response
+ :i-support
+ (state <s> ^operator <o> ^context <c> ^io.output-link <out>)
+ (<o> ^name response-method ^method <method> ^choice <a> ^rule <rule> ^reason <reason>)
+ (<c> ^frame <f> ^concern <concern> ^goal-threat <threat>) (<f> ^seq <seq> ^available <a>) (<a> ^id <id> ^kind <kind> ^target <target>)
+ --> (<out> ^command <cmd>)
+ (<cmd> ^seq <seq> ^id <id> ^kind <kind> ^target <target> ^rule <rule> ^reason <reason> ^method <method> ^concern <concern> ^goal-threat <threat>)
+}
+sp {cognition*expose-recollection
+ (state <s> ^context <c> ^io.output-link.command <cmd>) (<c> ^frame <f> ^recollection <r> ^memory-source <source>)
+ (<f> ^seq <seq>) (<cmd> ^seq <seq>)
+ --> (<cmd> ^recollection <r> ^memory-source <source>)
+}
+sp {cognition*expose-goal
+ (state <s> ^context <c> ^io.output-link.command <cmd>) (<c> ^frame <f> ^goal <g>)
+ (<f> ^seq <seq>) (<cmd> ^seq <seq>)
+ --> (<cmd> ^goal <g>)
+}
+# World results supply measurements; personal appraisal supplies their value.
+# reward-mode replay keeps the chosen method and its original context linked
+# until the reward has been processed, including deferred outcomes.
+sp {learning*replay-evaluated-method
+ (state <s> ^context <c>) (<c> ^frame <f>)
+ (<f> ^mode feedback ^method <method> ^concern <concern>) -(<c> ^feedback-issued yes)
+ --> (<s> ^operator <o> +) (<o> ^name response-method ^method <method> ^concern <concern>)
+}
+sp {learning*apply-feedback
+ :o-support
+ (state <s> ^operator <o> ^context <c> ^reward-link <rl>)
+ (<o> ^name response-method ^method <method>) (<c> ^frame <f> ^reward-value <value>)
+ (<f> ^mode feedback ^method <method>) -(<c> ^feedback-issued yes)
+ --> (<rl> ^reward <r>) (<r> ^value <value>) (<c> ^feedback-issued yes ^reward-handle <r>)
+}
+sp {learning*ack-feedback
+ (state <s> ^operator <o> ^context <c> ^io.output-link <out>)
+ (<o> ^name feedback-complete) (<c> ^frame <f> ^reward-value <value>) (<f> ^mode feedback ^seq <seq>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind learned ^reward <value>)
+}
+sp {cognition*expose-active-study
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal <g>) (<g> ^kind study ^status active)
+ --> (<f> ^goal-study yes)
+}
+sp {cognition*expose-active-work
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal <g>) (<g> ^kind work ^status active)
+ --> (<f> ^goal-work yes)
+}
+sp {cognition*expose-known-conflict
+ (state <s> ^context <c>) (<c> ^frame <f> ^recollection <r>)
+ (<r> ^kind refuse) (<f> ^self <me>) (<r> ^actor <> <me>)
+ --> (<f> ^known-conflict yes)
+}
+
+sp {learning*propose-completion
+ (state <s> ^context <c>) (<c> ^frame <f> ^feedback-issued yes) (<f> ^mode feedback)
+ --> (<s> ^operator <o> +) (<o> ^name feedback-complete)
+}
+sp {learning*consume-reward
+ (state <s> ^operator <o> ^context <c> ^reward-link <rl>)
+ (<o> ^name feedback-complete) (<c> ^reward-handle <r>)
+ --> (<rl> ^reward <r> -)
+}
+
+sp {cognition*read-noninterrupting-effect
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode response ^contract <contract>)
+ (<contract> ^replaces-task no)
+ --> (<f> ^interrupts no)
+}
+sp {cognition*read-interrupting-effect
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode response ^busy yes ^contract <contract>)
+ (<contract> ^replaces-task yes)
+ --> (<f> ^interrupts yes)
+}
+sp {cognition*no-active-task-to-interrupt
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode response ^busy no ^contract <contract>)
+ (<contract> ^replaces-task yes)
+ --> (<f> ^interrupts no)
+}
+
+sp {cognition*expose-interpretation
+ (state <s> ^context <c> ^io.output-link.command <cmd>) (<c> ^frame <f> ^interpretation <i>)
+ (<f> ^seq <seq>) (<cmd> ^seq <seq>) --> (<cmd> ^interpretation <i>)
+}

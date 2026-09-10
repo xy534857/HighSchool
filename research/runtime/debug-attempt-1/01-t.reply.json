@@ -1,0 +1,63 @@
+{
+  "epoch": 1,
+  "baseRevision": 1,
+  "contentRevision": 1,
+  "requestId": "knowledge-1",
+  "evidence": [
+    "event-24"
+  ],
+  "rules": [
+    {
+      "id": "listen-to-m-after-exclusion",
+      "select": {
+        "action": "join-conversation",
+        "target": "m"
+      },
+      "priority": 170,
+      "reason": "我没有把沈乔的排斥等同于明远的立场，愿意听他亲口说。"
+    }
+  ],
+  "goals": [
+    {
+      "id": "t-clarify-own-boundary",
+      "title": "有机会时说明我不想被排除",
+      "motive": "先表达自己的感受，不要求别人立刻站队。",
+      "priority": 78,
+      "deadline": 5000,
+      "about": [
+        "m",
+        "f"
+      ],
+      "activeWhen": {
+        "left": "$clock.period",
+        "right": "class",
+        "op": "ne"
+      },
+      "steps": [
+        {
+          "label": "在明远主动找来时说明感受",
+          "action": "confide-concern",
+          "roles": {
+            "target": "m"
+          },
+          "args": {
+            "text": "刚才被说别跟着走，我挺难受的。我不想替你猜立场，想听你自己说。"
+          },
+          "when": {
+            "left": "$session.active",
+            "right": "m",
+            "op": "includes"
+          }
+        }
+      ]
+    }
+  ],
+  "cognition": [
+    {
+      "field": "assertiveness",
+      "delta": 2,
+      "reason": "亲身被排除让我更想把自己的界限说清楚，而不是替别人找理由。"
+    }
+  ],
+  "summary": "沈乔当着明远的面让我别跟着走，我不舒服。明远离开了谈话，但我还不知道他是不是赞同她。我先把自己的画做下去；如果明远愿意找我谈，我会听他解释，也会说明我不想被当作多余的人。"
+}

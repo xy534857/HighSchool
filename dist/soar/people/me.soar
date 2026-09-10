@@ -1,0 +1,90 @@
+# Independent me cognitive program.
+sp {me*ask-for-shared-housework
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^clean < 48 ^available <a>) (<a> ^kind askHelp)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 79 ^rule me*ask-for-shared-housework ^reason |不能全靠我一个人，叫孩子搭把手。|)
+}
+sp {me*maintain-house
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^clean < 80 ^available <a>) (<a> ^kind tidy)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 50 ^rule me*maintain-house ^reason |家里收拾舒服了，大家都自在。|)
+}
+sp {me*check-outstanding-obligations
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal-ready yes ^contract-ready yes) (<f> ^mode << act response >> ^self <me>)
+ --> (<c> ^semantic-cue <q>) (<q> ^type commitment ^creditor <me> ^status pending)
+}
+sp {me*notice-unfulfilled-duty
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes ^recollection <r>) (<f> ^mode response)
+ (<r> ^type commitment ^status pending)
+ --> (<c> ^concern accountability)
+}
+sp {me*share-the-load
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes) (<f> ^mode response)
+ -{ (<c> ^recollection <r>) (<r> ^type commitment ^status pending) }
+ --> (<c> ^concern shared-duty)
+}
+sp {me*value-shared-duty
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode feedback ^request-satisfied <sat> ^social-cost <cost> ^kept-activity <kept>)
+ --> (<c> ^reward-value (- (+ (* 4 <sat>) <kept>) (* 2 <cost>)))
+}
+
+sp {rl*me*accountability*accommodate
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^concern accountability)
+ --> (<s> ^operator <o> = 1)
+}
+
+sp {rl*me*accountability*protect-plan
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^concern accountability)
+ --> (<s> ^operator <o> = 3)
+}
+
+sp {rl*me*accountability*offer-later
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^concern accountability)
+ --> (<s> ^operator <o> = 0)
+}
+
+sp {rl*me*shared-duty*accommodate
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^concern shared-duty)
+ --> (<s> ^operator <o> = 3)
+}
+
+sp {rl*me*shared-duty*protect-plan
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^concern shared-duty)
+ --> (<s> ^operator <o> = 0)
+}
+
+sp {rl*me*shared-duty*offer-later
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^concern shared-duty)
+ --> (<s> ^operator <o> = 1)
+}
+
+sp {me*choose-what-to-tell
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode share ^self <me>)
+ --> (<f> ^cue <q>) (<q> ^type event ^actor <me> ^kind commitment)
+}
+
+sp {me*choose-project-method
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode plan)
+ --> (<c> ^planning-style provision)
+}
+
+# Personal appraisal and coping, executed by native productions.
+sp {person*me*appraisal
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode perceive ^self me)
+ --> (<c> ^sensitivity 14 ^style discuss)
+}
+
+sp {me*conversation-interruption
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^compatibility pause ^available <a>) (<a> ^kind join)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 68 ^rule me*conversation-interruption ^reason |先听你说，手头的事一会儿接着做。|)
+}

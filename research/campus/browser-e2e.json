@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "region",
+      "region": "教师办公室",
+      "passed": true
+    },
+    {
+      "check": "region",
+      "region": "卫生间",
+      "passed": true
+    },
+    {
+      "check": "region",
+      "region": "社团活动室",
+      "passed": true
+    },
+    {
+      "check": "region",
+      "region": "操场",
+      "passed": true
+    },
+    {
+      "check": "region",
+      "region": "中庭",
+      "passed": true
+    },
+    {
+      "check": "region",
+      "region": "图书馆",
+      "passed": true
+    },
+    {
+      "check": "region",
+      "region": "食堂",
+      "passed": true
+    },
+    {
+      "check": "region",
+      "region": "医务室",
+      "passed": true
+    },
+    {
+      "check": "region",
+      "region": "高一（2）班",
+      "passed": true
+    },
+    {
+      "check": "study-through-ui",
+      "passed": true
+    },
+    {
+      "check": "multi-turn-and-loan",
+      "passed": true,
+      "evidence": "课间聊聊\n林知夏 · 周明远\n结束交谈\n\n林知夏早上好，今天的课你准备得怎么样了？\n\n周明远我还在准备呢。放学后要不要去社团室看看？\n\n林知夏想借这份笔记，稍后归还\n\n周明远好，就这么说定了\n\n林知夏我们刚才说好的借阅，还作数吗？\n\n周明远我记得结果是“已经答应”。\n\n轮到你说话\n聊聊今天\n聊聊社团\n借课堂笔记\n确认借阅约定"
+    },
+    {
+      "check": "cross-room-walk",
+      "passed": true
+    },
+    {
+      "check": "wash-completion",
+      "passed": true,
+      "evidence": "知\n林知夏 你\n卫生间\n自由活动\n饱食\n72\n精力\n80\n如厕\n74\n社交\n76\n水分\n69\n清洁\n99\n乐趣\n69\n行动安排\n取消当前行动\n暂时没有安排\n▣\n随身物品\n2"
+    },
+    {
+      "check": "native-save-load-ui",
+      "passed": true
+    },
+    {
+      "check": "return-and-fulfill-ui",
+      "passed": true,
+      "evidence": "互动\n校园记录 18\n我的见闻\n记录亲历、看到和听到的事\n08:17\n林知夏 完成了按约把借来的物品还给对方。\n08:17\n林知夏 完成了约定。\n08:17\n林知夏 把明远的课堂笔记交给了周明远。\n08:13\n周明远 我记得结果是“已经答应”。\n08:12\n林知夏 完成了问清楚刚才的事情。\n08:12\n林知夏 我们刚才说好的借阅，还作数吗？\n08:09\n周明远 把明远的课堂笔记交给了林知夏。\n08:07\n周明远 记下一个 09:36 的约定。\n08:07\n周明远 好，就这么说定了\n08:06\n林知夏 完成了想借这份笔记，稍后归还。\n08:06\n林知夏 想借这份笔记，稍后归还\n08:04\n周明远 我还在准备呢。放学后要不要去社团室看看？\n08:03\n林知夏 完成了聊聊今天。\n08:03\n林知夏 早上好，今天的课你准备得怎么样了？\n08:01\n周明远 加入了交谈。\n08:01\n林知夏 完成了过去聊聊。\n08:01\n林知夏 发出交谈邀请。\n08:00\n林知夏 进入场景。"
+    }
+  ],
+  "renderer": "canvas",
+  "webglGPUValidated": false,
+  "externalModelAPICalls": 0,
+  "method": "Real browser UI to worker to native Soar to DOM; no state injection",
+  "repairs": [
+    "WebGL-unavailable compatibility",
+    "unknown resource menu",
+    "occupied candidates",
+    "moving target retries",
+    "render-independent simulation clock",
+    "stable menu nodes"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "requestId": "knowledge-1",
+  "epoch": 1,
+  "baseRevision": 0,
+  "contentRevision": 1,
+  "evidence": [
+    "event-16"
+  ],
+  "rules": [
+    {
+      "id": "agree-to-current-loan",
+      "select": {
+        "action": "accept-offer",
+        "offer-kind": "loan",
+        "item": "notes",
+        "target": "t"
+      },
+      "when": [],
+      "priority": 80,
+      "reason": "T 当面请求借用我的笔记，并提出了归还时间；我决定同意这次借阅。"
+    }
+  ],
+  "goals": [
+    {
+      "id": "complete-note-handover",
+      "title": "把同意借出的笔记实际交给 T",
+      "deadline": 500,
+      "steps": [
+        {
+          "action": "hand-over",
+          "roles": {
+            "offer": "offer-15",
+            "target": "t",
+            "item": "notes"
+          }
+        }
+      ]
+    }
+  ],
+  "source": "sp {learned*m*agree-to-current-loan\n (state <s> ^superstate nil ^io <io>)\n (<io> ^input-link <il>)\n (<il> ^frame <f>)\n (<f> ^mode foundation ^self m ^available <a>)\n (<a> ^action accept-offer)\n (<a> ^offer-kind loan)\n (<a> ^item notes)\n (<a> ^target t)\n -->\n (<s> ^operator <o> +)\n (<o> ^name choose ^choice <a> ^priority 80 ^rule learned*m*agree-to-current-loan ^reason |T 当面请求借用我的笔记，并提出了归还时间；我决定同意这次借阅。|)\n}"
+}

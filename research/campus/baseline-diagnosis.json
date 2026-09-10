@@ -1,0 +1,620 @@
+{
+  "elapsedMs": 11343.422098,
+  "frames": {
+    "t": 151,
+    "m": 209,
+    "f": 188,
+    "a": 167,
+    "teacher": 197,
+    "r": 204,
+    "q": 208,
+    "l": 207
+  },
+  "traces": [
+    {
+      "time": 480.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "classroom",
+          "action": "sit-bench",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "f",
+          "room": "classroom",
+          "action": "play-guitar",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "a",
+          "room": "library",
+          "action": "read-book",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "teacher",
+          "room": "office",
+          "action": "office-work",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "r",
+          "room": "playground",
+          "action": "shoot-hoops",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "q",
+          "room": "club",
+          "action": "draw-poster",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "l",
+          "room": "canteen",
+          "action": "sit-bench",
+          "reason": "空闲时间继续自己的活动。"
+        }
+      ]
+    },
+    {
+      "time": 485.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "courtyard",
+          "action": "sit-bench",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "f",
+          "room": "courtyard",
+          "action": "play-guitar",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "a",
+          "room": "library",
+          "action": "read-book",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "teacher",
+          "room": "office",
+          "action": "office-work",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "r",
+          "room": "playground",
+          "action": "shoot-hoops",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "q",
+          "room": "club",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "l",
+          "room": "courtyard",
+          "action": "sit-bench",
+          "reason": "空闲时间继续自己的活动。"
+        }
+      ]
+    },
+    {
+      "time": 490.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "courtyard",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "f",
+          "room": "club",
+          "action": "play-guitar",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "a",
+          "room": "library",
+          "action": "read-board",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "teacher",
+          "room": "office",
+          "action": "office-work",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "r",
+          "room": "playground",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "q",
+          "room": "club",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "l",
+          "room": "courtyard",
+          "reason": "等待可执行的安排。"
+        }
+      ]
+    },
+    {
+      "time": 495.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "courtyard",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "f",
+          "room": "club",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "a",
+          "room": "courtyard",
+          "action": "read-board",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "teacher",
+          "room": "courtyard",
+          "action": "read-board",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "r",
+          "room": "playground",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "q",
+          "room": "club",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "l",
+          "room": "courtyard",
+          "reason": "等待可执行的安排。"
+        }
+      ]
+    },
+    {
+      "time": 500.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "courtyard",
+          "action": "sit-bench",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "f",
+          "room": "club",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "a",
+          "room": "club",
+          "action": "read-board",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "teacher",
+          "room": "courtyard",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "r",
+          "room": "playground",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "q",
+          "room": "club",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "l",
+          "room": "courtyard",
+          "action": "sit-bench",
+          "reason": "空闲时间继续自己的活动。"
+        }
+      ]
+    },
+    {
+      "time": 505.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "courtyard",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "f",
+          "room": "club",
+          "action": "play-guitar",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "a",
+          "room": "club",
+          "action": "read-book",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "teacher",
+          "room": "office",
+          "action": "office-work",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "r",
+          "room": "playground",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "q",
+          "room": "club",
+          "action": "draw-poster",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "l",
+          "room": "courtyard",
+          "reason": "等待可执行的安排。"
+        }
+      ]
+    },
+    {
+      "time": 510.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "courtyard",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "f",
+          "room": "club",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "a",
+          "room": "courtyard",
+          "action": "read-book",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "teacher",
+          "room": "office",
+          "action": "office-work",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "r",
+          "room": "playground",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "q",
+          "room": "club",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "l",
+          "room": "courtyard",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        }
+      ]
+    },
+    {
+      "time": 515.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "f",
+          "room": "courtyard",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "a",
+          "room": "library",
+          "action": "read-book",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "teacher",
+          "room": "office",
+          "action": "office-work",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "r",
+          "room": "courtyard",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "q",
+          "room": "courtyard",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "l",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        }
+      ]
+    },
+    {
+      "time": 520.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "f",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "a",
+          "room": "library",
+          "action": "read-book",
+          "reason": "空闲时间继续自己的活动。"
+        },
+        {
+          "id": "teacher",
+          "room": "office",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "r",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "q",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "l",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        }
+      ]
+    },
+    {
+      "time": 525.5,
+      "actors": [
+        {
+          "id": "m",
+          "room": "classroom",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "f",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "a",
+          "room": "library",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "teacher",
+          "room": "office",
+          "reason": "等待可执行的安排。"
+        },
+        {
+          "id": "r",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "q",
+          "room": "classroom",
+          "action": "study",
+          "reason": "按身体需要与共同作息选择。"
+        },
+        {
+          "id": "l",
+          "room": "classroom",
+          "reason": "等待可执行的安排。"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "time": 485.5,
+      "actor": "q",
+      "action": "draw-poster",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 486,
+      "actor": "r",
+      "action": "shoot-hoops",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 488,
+      "actor": "m",
+      "action": "sit-bench",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 489,
+      "actor": "a",
+      "action": "read-book",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 490,
+      "actor": "l",
+      "action": "sit-bench",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 491.5,
+      "actor": "teacher",
+      "action": "office-work",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 495,
+      "actor": "f",
+      "action": "play-guitar",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 498.5,
+      "actor": "teacher",
+      "action": "read-board",
+      "kind": "action-completed",
+      "reason": "按身体需要与共同作息选择。"
+    },
+    {
+      "time": 500.5,
+      "actor": "r",
+      "action": "shoot-hoops",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 502.5,
+      "actor": "a",
+      "action": "read-board",
+      "kind": "action-completed",
+      "reason": "按身体需要与共同作息选择。"
+    },
+    {
+      "time": 502.5,
+      "actor": "m",
+      "action": "sit-bench",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 504.5,
+      "actor": "l",
+      "action": "sit-bench",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 505,
+      "actor": "r",
+      "action": "drink",
+      "kind": "action-completed",
+      "reason": "按身体需要与共同作息选择。"
+    },
+    {
+      "time": 510,
+      "actor": "q",
+      "action": "draw-poster",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 510.5,
+      "actor": "f",
+      "action": "play-guitar",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 518,
+      "actor": "teacher",
+      "action": "office-work",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 521,
+      "actor": "a",
+      "action": "read-book",
+      "kind": "action-completed",
+      "reason": "空闲时间继续自己的活动。"
+    },
+    {
+      "time": 523.5,
+      "actor": "l",
+      "action": "study",
+      "kind": "action-completed",
+      "reason": "按身体需要与共同作息选择。"
+    },
+    {
+      "time": 524,
+      "actor": "m",
+      "action": "study",
+      "kind": "action-completed",
+      "reason": "按身体需要与共同作息选择。"
+    },
+    {
+      "time": 527.5,
+      "actor": "r",
+      "action": "study",
+      "kind": "action-completed",
+      "reason": "按身体需要与共同作息选择。"
+    },
+    {
+      "time": 528.5,
+      "actor": "q",
+      "action": "study",
+      "kind": "action-completed",
+      "reason": "按身体需要与共同作息选择。"
+    },
+    {
+      "time": 528.5,
+      "actor": "f",
+      "action": "study",
+      "kind": "action-completed",
+      "reason": "按身体需要与共同作息选择。"
+    }
+  ]
+}

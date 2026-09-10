@@ -1,0 +1,206 @@
+{
+  "actors": [
+    {
+      "controlled": true,
+      "id": "t",
+      "name": "玩家 T",
+      "role": "student",
+      "room": "classroom",
+      "x": 0,
+      "z": 0
+    },
+    {
+      "controlled": false,
+      "id": "m",
+      "name": "M",
+      "role": "student",
+      "room": "classroom",
+      "x": 1,
+      "z": 0
+    },
+    {
+      "controlled": false,
+      "id": "f",
+      "name": "F",
+      "role": "student",
+      "room": "classroom",
+      "x": 2,
+      "z": 0
+    },
+    {
+      "controlled": false,
+      "id": "a",
+      "name": "A",
+      "role": "student",
+      "room": "library",
+      "x": 0,
+      "z": 0
+    },
+    {
+      "controlled": false,
+      "id": "teacher",
+      "name": "老师",
+      "role": "teacher",
+      "room": "hall",
+      "x": 0,
+      "z": 0
+    }
+  ],
+  "id": "campus-starter",
+  "objects": [
+    {
+      "holder": "m",
+      "id": "notes",
+      "room": "classroom",
+      "type": "book",
+      "x": 1,
+      "z": 0
+    },
+    {
+      "id": "desk-1",
+      "mapKnown": true,
+      "room": "classroom",
+      "type": "desk",
+      "x": -2,
+      "z": 0
+    },
+    {
+      "id": "desk-2",
+      "mapKnown": true,
+      "room": "classroom",
+      "type": "desk",
+      "x": -2,
+      "z": 2
+    },
+    {
+      "id": "library-desk",
+      "mapKnown": true,
+      "room": "library",
+      "type": "desk",
+      "x": 1,
+      "z": 0
+    },
+    {
+      "id": "lunch-table",
+      "mapKnown": true,
+      "room": "canteen",
+      "type": "meal-table",
+      "x": 0,
+      "z": 0
+    },
+    {
+      "id": "toilet-1",
+      "mapKnown": true,
+      "room": "bathroom",
+      "type": "toilet",
+      "x": 0,
+      "z": 0
+    },
+    {
+      "id": "infirmary-bed",
+      "mapKnown": true,
+      "room": "infirmary",
+      "type": "bed",
+      "x": 0,
+      "z": 0
+    },
+    {
+      "id": "water",
+      "mapKnown": true,
+      "room": "hall",
+      "type": "fountain",
+      "x": 2,
+      "z": 0
+    }
+  ],
+  "rooms": {
+    "bathroom": {
+      "links": [
+        "hall"
+      ],
+      "portals": {
+        "hall": {
+          "x": 0,
+          "z": 5
+        }
+      }
+    },
+    "canteen": {
+      "links": [
+        "hall"
+      ],
+      "portals": {
+        "hall": {
+          "x": -5,
+          "z": 0
+        }
+      }
+    },
+    "classroom": {
+      "links": [
+        "hall"
+      ],
+      "portals": {
+        "hall": {
+          "x": 5,
+          "z": 0
+        }
+      }
+    },
+    "hall": {
+      "links": [
+        "classroom",
+        "library",
+        "canteen",
+        "bathroom",
+        "infirmary"
+      ],
+      "portals": {
+        "bathroom": {
+          "x": 0,
+          "z": -5
+        },
+        "canteen": {
+          "x": 5,
+          "z": 0
+        },
+        "classroom": {
+          "x": -5,
+          "z": 0
+        },
+        "infirmary": {
+          "x": 3,
+          "z": 3
+        },
+        "library": {
+          "x": 0,
+          "z": 5
+        }
+      }
+    },
+    "infirmary": {
+      "links": [
+        "hall"
+      ],
+      "portals": {
+        "hall": {
+          "x": -3,
+          "z": -3
+        }
+      }
+    },
+    "library": {
+      "links": [
+        "hall"
+      ],
+      "portals": {
+        "hall": {
+          "x": 0,
+          "z": -5
+        }
+      }
+    }
+  },
+  "seed": 17,
+  "time": 480
+}

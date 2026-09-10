@@ -1,0 +1,10 @@
+# Authored by ChatGPT from research/cognition-verification.json.
+# Own plan was obstructed, but the cause was not known. Ask before withdrawing when rested.
+sp {learned*xing*clarify-before-withdrawing
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^self xing ^busy no ^energy > 45 ^hunger > 35 ^affect <m> ^available <a>)
+ (<m> ^status tentative ^emotion frustrated ^reason own-goal-obstructed-cause-uncertain ^coping withdraw ^active > 20 ^subject <who> ^domain <domain>)
+ (<a> ^kind chat ^target <who>)
+ --> (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 116 ^speech-act ask-reason ^topic <domain> ^rule learned*xing*clarify-before-withdrawing ^reason |原因还没问明白，精力也够；先问本人，之后再决定要不要缓一缓。|)
+}

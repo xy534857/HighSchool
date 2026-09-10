@@ -1,0 +1,29 @@
+{
+  "id": "club-materials",
+  "types": {
+    "drawing-kit": {
+      "tags": ["drawing"],
+      "state": {"paper": 2},
+      "visible": ["paper"],
+      "slots": [{"id":"artist","x":0,"z":0.3,"pose":"sitting","tags":["drawing"]}]
+    }
+  },
+  "actions": {
+    "draw-poster": {
+      "label": "画社团海报",
+      "executor": "physical",
+      "duration": 1,
+      "cooldown": 0,
+      "attention": "pause",
+      "roles": {"item":{"from":"objects","where":{"op":"includes","left":"$bound.tags","right":"drawing"}}},
+      "anchor": "$item",
+      "slot": "drawing",
+      "requires": {"op":"gt","left":"$item.state.paper","right":0},
+      "effects": [
+        {"type":"object.add","object":"$item.id","field":"paper","amount":-1,"min":0},
+        {"type":"need.change","need":"social","amount":3},
+        {"type":"event.emit","kind":"poster-drawn"}
+      ]
+    }
+  }
+}

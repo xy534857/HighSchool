@@ -1,0 +1,2944 @@
+{
+  "id": "school-playable-v1",
+  "seed": 17,
+  "time": 480,
+  "rooms": {
+    "classroom": {
+      "name": "高一（2）班",
+      "subtitle": "第一节课 · 08:30",
+      "color": "#d5e5e2",
+      "outdoor": false,
+      "surface": "tiles",
+      "bounds": {
+        "minX": -8.0,
+        "maxX": 8.0,
+        "minZ": -6.0,
+        "maxZ": 6.0
+      },
+      "links": [
+        "hall"
+      ],
+      "portals": {
+        "hall": {
+          "x": 0.0,
+          "z": 5.35
+        }
+      },
+      "map": {
+        "x": 0,
+        "z": -36,
+        "width": 16,
+        "depth": 12
+      },
+      "obstacles": [],
+      "decorations": [],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "教学区",
+      "icon": "▤",
+      "zones": [
+        {
+          "x": 0,
+          "z": -4.0,
+          "w": 14,
+          "d": 2.5,
+          "color": "#c2d6cd"
+        }
+      ],
+      "description": "第一节课 · 08:30。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "office": {
+      "name": "教师办公室",
+      "subtitle": "课业咨询与备课",
+      "color": "#e3dbcd",
+      "outdoor": false,
+      "surface": "tiles",
+      "bounds": {
+        "minX": -8.0,
+        "maxX": 8.0,
+        "minZ": -6.0,
+        "maxZ": 6.0
+      },
+      "links": [
+        "west-walk"
+      ],
+      "portals": {
+        "west-walk": {
+          "x": 0.0,
+          "z": 5.35
+        }
+      },
+      "map": {
+        "x": -45,
+        "z": -36,
+        "width": 16,
+        "depth": 12
+      },
+      "obstacles": [
+        {
+          "x": -7.0,
+          "z": -5.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 7.0,
+          "z": -5.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -7.0,
+          "z": 5.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -7.0,
+          "z": -5.0,
+          "size": 0.85
+        },
+        {
+          "x": 7.0,
+          "z": -5.0,
+          "size": 0.85
+        },
+        {
+          "x": -7.0,
+          "z": 5.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "教学区",
+      "icon": "▱",
+      "zones": [
+        {
+          "x": 0,
+          "z": -4.0,
+          "w": 14,
+          "d": 2.5,
+          "color": "#c2d6cd"
+        }
+      ],
+      "description": "课业咨询与备课。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "bathroom": {
+      "name": "无障碍卫生间",
+      "subtitle": "通用入口 · 独立隐私隔间",
+      "color": "#d5e9ee",
+      "outdoor": false,
+      "surface": "tiles",
+      "bounds": {
+        "minX": -8.0,
+        "maxX": 8.0,
+        "minZ": -6.0,
+        "maxZ": 6.0
+      },
+      "links": [
+        "west-walk"
+      ],
+      "portals": {
+        "west-walk": {
+          "x": 0.59,
+          "z": -5.35
+        }
+      },
+      "map": {
+        "x": -47,
+        "z": 0,
+        "width": 16,
+        "depth": 12
+      },
+      "obstacles": [],
+      "decorations": [],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "生活区",
+      "icon": "♿",
+      "zones": [],
+      "description": "通用入口 · 独立隐私隔间。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "club": {
+      "name": "美术社团工坊",
+      "subtitle": "海报 · 写生 · 公共作品",
+      "color": "#f0dfbc",
+      "outdoor": false,
+      "surface": "wood",
+      "bounds": {
+        "minX": -9.0,
+        "maxX": 9.0,
+        "minZ": -7.0,
+        "maxZ": 7.0
+      },
+      "links": [
+        "east-walk"
+      ],
+      "portals": {
+        "east-walk": {
+          "x": 0.0,
+          "z": -6.35
+        }
+      },
+      "map": {
+        "x": 45,
+        "z": 0,
+        "width": 18,
+        "depth": 14
+      },
+      "obstacles": [
+        {
+          "x": -8.0,
+          "z": -6.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 8.0,
+          "z": -6.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -8.0,
+          "z": 6.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -8.0,
+          "z": -6.0,
+          "size": 0.85
+        },
+        {
+          "x": 8.0,
+          "z": -6.0,
+          "size": 0.85
+        },
+        {
+          "x": -8.0,
+          "z": 6.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "社团与户外",
+      "icon": "✎",
+      "zones": [
+        {
+          "x": 0,
+          "z": 0,
+          "w": 15,
+          "d": 11,
+          "color": "#cbb997"
+        }
+      ],
+      "description": "海报 · 写生 · 公共作品。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "playground": {
+      "name": "操场",
+      "subtitle": "篮球与田径",
+      "color": "#c1dca4",
+      "outdoor": true,
+      "surface": "court",
+      "bounds": {
+        "minX": -12.0,
+        "maxX": 12.0,
+        "minZ": -9.0,
+        "maxZ": 9.0
+      },
+      "links": [
+        "courtyard",
+        "canteen",
+        "gym",
+        "garden"
+      ],
+      "portals": {
+        "courtyard": {
+          "x": 0.0,
+          "z": -8.35
+        },
+        "canteen": {
+          "x": -11.35,
+          "z": 0.0
+        },
+        "gym": {
+          "x": 11.35,
+          "z": 0.0
+        },
+        "garden": {
+          "x": -9,
+          "z": 8
+        }
+      },
+      "map": {
+        "x": 0,
+        "z": 26,
+        "width": 24,
+        "depth": 18
+      },
+      "obstacles": [
+        {
+          "x": -11.0,
+          "z": -8.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 11.0,
+          "z": -8.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -11.0,
+          "z": 8.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -11.0,
+          "z": -8.0,
+          "size": 0.85
+        },
+        {
+          "x": 11.0,
+          "z": -8.0,
+          "size": 0.85
+        },
+        {
+          "x": -11.0,
+          "z": 8.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "社团与户外",
+      "icon": "◉",
+      "zones": [],
+      "description": "篮球与田径。点选设施查看材料、空位和可执行交互。",
+      "transit": true
+    },
+    "courtyard": {
+      "name": "中庭",
+      "subtitle": "课间集合与休息",
+      "color": "#d4ddc2",
+      "outdoor": true,
+      "surface": "garden",
+      "bounds": {
+        "minX": -10.0,
+        "maxX": 10.0,
+        "minZ": -8.0,
+        "maxZ": 8.0
+      },
+      "links": [
+        "hall",
+        "bathroom-f",
+        "bathroom-m",
+        "playground"
+      ],
+      "portals": {
+        "hall": {
+          "x": 0.0,
+          "z": -7.35
+        },
+        "bathroom-f": {
+          "x": -9.35,
+          "z": 0.0
+        },
+        "bathroom-m": {
+          "x": 9.35,
+          "z": 0.0
+        },
+        "playground": {
+          "x": 0.0,
+          "z": 7.35
+        }
+      },
+      "map": {
+        "x": 0,
+        "z": 0,
+        "width": 20,
+        "depth": 16
+      },
+      "obstacles": [
+        {
+          "x": -9.0,
+          "z": -7.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 9.0,
+          "z": -7.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -9.0,
+          "z": -7.0,
+          "size": 0.85
+        },
+        {
+          "x": 9.0,
+          "z": -7.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "社团与户外",
+      "icon": "❋",
+      "zones": [],
+      "description": "课间集合与休息。点选设施查看材料、空位和可执行交互。",
+      "transit": true
+    },
+    "library": {
+      "name": "图书馆",
+      "subtitle": "阅读与自习",
+      "color": "#dfd2bc",
+      "outdoor": false,
+      "surface": "tiles",
+      "bounds": {
+        "minX": -10.0,
+        "maxX": 10.0,
+        "minZ": -7.0,
+        "maxZ": 7.0
+      },
+      "links": [
+        "hall"
+      ],
+      "portals": {
+        "hall": {
+          "x": 8.11,
+          "z": 6.35
+        }
+      },
+      "map": {
+        "x": -23,
+        "z": -36,
+        "width": 20,
+        "depth": 14
+      },
+      "obstacles": [
+        {
+          "x": -9.0,
+          "z": -6.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 9.0,
+          "z": -6.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -9.0,
+          "z": 6.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -9.0,
+          "z": -6.0,
+          "size": 0.85
+        },
+        {
+          "x": 9.0,
+          "z": -6.0,
+          "size": 0.85
+        },
+        {
+          "x": -9.0,
+          "z": 6.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "教学区",
+      "icon": "▥",
+      "zones": [
+        {
+          "x": 0,
+          "z": 0,
+          "w": 17,
+          "d": 11,
+          "color": "#cbb997"
+        }
+      ],
+      "description": "阅读与自习。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "canteen": {
+      "name": "食堂",
+      "subtitle": "午餐 · 12:00",
+      "color": "#f0d7c1",
+      "outdoor": false,
+      "surface": "tiles",
+      "bounds": {
+        "minX": -10.0,
+        "maxX": 10.0,
+        "minZ": -8.0,
+        "maxZ": 8.0
+      },
+      "links": [
+        "playground"
+      ],
+      "portals": {
+        "playground": {
+          "x": 9.35,
+          "z": 0.0
+        }
+      },
+      "map": {
+        "x": -26,
+        "z": 26,
+        "width": 20,
+        "depth": 16
+      },
+      "obstacles": [
+        {
+          "x": -9.0,
+          "z": -7.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 9.0,
+          "z": -7.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -9.0,
+          "z": 7.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -9.0,
+          "z": -7.0,
+          "size": 0.85
+        },
+        {
+          "x": 9.0,
+          "z": -7.0,
+          "size": 0.85
+        },
+        {
+          "x": -9.0,
+          "z": 7.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "生活区",
+      "icon": "♨",
+      "zones": [],
+      "description": "午餐 · 12:00。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "infirmary": {
+      "name": "医务室",
+      "subtitle": "休息 · 清洁护理 · 等候",
+      "color": "#d5e5e4",
+      "outdoor": false,
+      "surface": "tiles",
+      "bounds": {
+        "minX": -7.0,
+        "maxX": 7.0,
+        "minZ": -6.0,
+        "maxZ": 6.0
+      },
+      "links": [
+        "west-walk"
+      ],
+      "portals": {
+        "west-walk": {
+          "x": 6.35,
+          "z": 0.0
+        }
+      },
+      "map": {
+        "x": -65,
+        "z": -18,
+        "width": 14,
+        "depth": 12
+      },
+      "obstacles": [
+        {
+          "x": -6.0,
+          "z": -5.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 6.0,
+          "z": -5.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -6.0,
+          "z": 5.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -6.0,
+          "z": -5.0,
+          "size": 0.85
+        },
+        {
+          "x": 6.0,
+          "z": -5.0,
+          "size": 0.85
+        },
+        {
+          "x": -6.0,
+          "z": 5.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "教学区",
+      "icon": "✚",
+      "zones": [],
+      "description": "休息 · 清洁护理 · 等候。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "hall": {
+      "name": "教学楼走廊",
+      "subtitle": "换课 · 储物 · 公告",
+      "color": "#d4e2d8",
+      "outdoor": false,
+      "surface": "wood",
+      "map": {
+        "x": 0,
+        "z": -18,
+        "width": 54,
+        "depth": 8
+      },
+      "bounds": {
+        "minX": -27.0,
+        "maxX": 27.0,
+        "minZ": -4.0,
+        "maxZ": 4.0
+      },
+      "links": [
+        "classroom",
+        "library",
+        "science",
+        "west-walk",
+        "east-walk",
+        "courtyard"
+      ],
+      "portals": {
+        "classroom": {
+          "x": 0.0,
+          "z": -3.35
+        },
+        "library": {
+          "x": -4.28,
+          "z": -3.35
+        },
+        "science": {
+          "x": 4.28,
+          "z": -3.35
+        },
+        "west-walk": {
+          "x": -26.35,
+          "z": 0.0
+        },
+        "east-walk": {
+          "x": 26.35,
+          "z": 0.0
+        },
+        "courtyard": {
+          "x": 0.0,
+          "z": 3.35
+        }
+      },
+      "obstacles": [],
+      "decorations": [],
+      "entry": {
+        "x": 0,
+        "z": 3.0
+      },
+      "zone": "教学区",
+      "icon": "↔",
+      "zones": [],
+      "description": "换课 · 储物 · 公告。点选设施查看材料、空位和可执行交互。",
+      "transit": true
+    },
+    "bathroom-f": {
+      "name": "女生卫生间",
+      "subtitle": "女生入口 · 独立隔间",
+      "color": "#eedddd",
+      "outdoor": false,
+      "surface": "wood",
+      "map": {
+        "x": -24,
+        "z": 0,
+        "width": 16,
+        "depth": 12
+      },
+      "bounds": {
+        "minX": -8.0,
+        "maxX": 8.0,
+        "minZ": -6.0,
+        "maxZ": 6.0
+      },
+      "links": [
+        "courtyard"
+      ],
+      "portals": {
+        "courtyard": {
+          "x": 7.35,
+          "z": 0.0
+        }
+      },
+      "obstacles": [],
+      "decorations": [],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "生活区",
+      "icon": "♀",
+      "access": {
+        "when": {
+          "op": "eq",
+          "left": "$actor.profile.gender",
+          "right": "female"
+        },
+        "reason": "女生专用入口，请使用对应卫生间或无障碍卫生间。"
+      },
+      "zones": [],
+      "description": "女生入口 · 独立隔间。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "bathroom-m": {
+      "name": "男生卫生间",
+      "subtitle": "男生入口 · 独立隔间",
+      "color": "#d4e4ef",
+      "outdoor": false,
+      "surface": "wood",
+      "map": {
+        "x": 24,
+        "z": 0,
+        "width": 16,
+        "depth": 12
+      },
+      "bounds": {
+        "minX": -8.0,
+        "maxX": 8.0,
+        "minZ": -6.0,
+        "maxZ": 6.0
+      },
+      "links": [
+        "courtyard"
+      ],
+      "portals": {
+        "courtyard": {
+          "x": -7.35,
+          "z": 0.0
+        }
+      },
+      "obstacles": [],
+      "decorations": [],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "生活区",
+      "icon": "♂",
+      "access": {
+        "when": {
+          "op": "eq",
+          "left": "$actor.profile.gender",
+          "right": "male"
+        },
+        "reason": "男生专用入口，请使用对应卫生间或无障碍卫生间。"
+      },
+      "zones": [],
+      "description": "男生入口 · 独立隔间。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "science": {
+      "name": "科学实验室",
+      "subtitle": "显微观察 · 实验 · 清洁",
+      "color": "#dae4dc",
+      "outdoor": false,
+      "surface": "wood",
+      "map": {
+        "x": 23,
+        "z": -36,
+        "width": 20,
+        "depth": 14
+      },
+      "bounds": {
+        "minX": -10.0,
+        "maxX": 10.0,
+        "minZ": -7.0,
+        "maxZ": 7.0
+      },
+      "links": [
+        "hall"
+      ],
+      "portals": {
+        "hall": {
+          "x": -8.11,
+          "z": 6.35
+        }
+      },
+      "obstacles": [
+        {
+          "x": -9.0,
+          "z": -6.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 9.0,
+          "z": -6.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -9.0,
+          "z": -6.0,
+          "size": 0.85
+        },
+        {
+          "x": 9.0,
+          "z": -6.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "教学区",
+      "icon": "⚗",
+      "zones": [
+        {
+          "x": 0,
+          "z": -5.0,
+          "w": 18,
+          "d": 2.5,
+          "color": "#c2d6cd"
+        }
+      ],
+      "description": "显微观察 · 实验 · 清洁。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "music-room": {
+      "name": "音乐教室",
+      "subtitle": "钢琴 · 吉他 · 乐谱",
+      "color": "#e9d9cb",
+      "outdoor": false,
+      "surface": "wood",
+      "map": {
+        "x": 45,
+        "z": -36,
+        "width": 16,
+        "depth": 12
+      },
+      "bounds": {
+        "minX": -8.0,
+        "maxX": 8.0,
+        "minZ": -6.0,
+        "maxZ": 6.0
+      },
+      "links": [
+        "east-walk"
+      ],
+      "portals": {
+        "east-walk": {
+          "x": 0.0,
+          "z": 5.35
+        }
+      },
+      "obstacles": [
+        {
+          "x": -7.0,
+          "z": -5.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 7.0,
+          "z": -5.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -7.0,
+          "z": 5.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -7.0,
+          "z": -5.0,
+          "size": 0.85
+        },
+        {
+          "x": 7.0,
+          "z": -5.0,
+          "size": 0.85
+        },
+        {
+          "x": -7.0,
+          "z": 5.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "教学区",
+      "icon": "♫",
+      "zones": [
+        {
+          "x": 0,
+          "z": 0,
+          "w": 13,
+          "d": 9,
+          "color": "#cbb997"
+        }
+      ],
+      "description": "钢琴 · 吉他 · 乐谱。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "garden": {
+      "name": "校园种植园",
+      "subtitle": "照护 · 生长 · 采收",
+      "color": "#cadcae",
+      "outdoor": true,
+      "surface": "garden",
+      "map": {
+        "x": -49,
+        "z": 27,
+        "width": 20,
+        "depth": 18
+      },
+      "bounds": {
+        "minX": -10.0,
+        "maxX": 10.0,
+        "minZ": -9.0,
+        "maxZ": 9.0
+      },
+      "links": [
+        "playground"
+      ],
+      "portals": {
+        "playground": {
+          "x": 6,
+          "z": 8
+        }
+      },
+      "obstacles": [
+        {
+          "x": -9.0,
+          "z": -8.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 9.0,
+          "z": -8.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -9.0,
+          "z": 8.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -9.0,
+          "z": -8.0,
+          "size": 0.85
+        },
+        {
+          "x": 9.0,
+          "z": -8.0,
+          "size": 0.85
+        },
+        {
+          "x": -9.0,
+          "z": 8.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "社团与户外",
+      "icon": "❋",
+      "zones": [],
+      "description": "照护 · 生长 · 采收。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "gym": {
+      "name": "体育馆",
+      "subtitle": "乒乓练球 · 拉伸",
+      "color": "#e7d6b4",
+      "outdoor": false,
+      "surface": "wood",
+      "map": {
+        "x": 28,
+        "z": 26,
+        "width": 20,
+        "depth": 16
+      },
+      "bounds": {
+        "minX": -10.0,
+        "maxX": 10.0,
+        "minZ": -8.0,
+        "maxZ": 8.0
+      },
+      "links": [
+        "playground"
+      ],
+      "portals": {
+        "playground": {
+          "x": -9.35,
+          "z": 0.0
+        }
+      },
+      "obstacles": [
+        {
+          "x": -9.0,
+          "z": -7.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 9.0,
+          "z": -7.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -9.0,
+          "z": 7.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -9.0,
+          "z": -7.0,
+          "size": 0.85
+        },
+        {
+          "x": 9.0,
+          "z": -7.0,
+          "size": 0.85
+        },
+        {
+          "x": -9.0,
+          "z": 7.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "社团与户外",
+      "icon": "◉",
+      "zones": [],
+      "description": "乒乓练球 · 拉伸。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "student-center": {
+      "name": "学生活动中心",
+      "subtitle": "文具 · 棋艺 · 展示",
+      "color": "#eadcbd",
+      "outdoor": false,
+      "surface": "wood",
+      "map": {
+        "x": 70,
+        "z": -18,
+        "width": 18,
+        "depth": 14
+      },
+      "bounds": {
+        "minX": -9.0,
+        "maxX": 9.0,
+        "minZ": -7.0,
+        "maxZ": 7.0
+      },
+      "links": [
+        "east-walk"
+      ],
+      "portals": {
+        "east-walk": {
+          "x": -8.35,
+          "z": 0.0
+        }
+      },
+      "obstacles": [
+        {
+          "x": -8.0,
+          "z": -6.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": 8.0,
+          "z": -6.0,
+          "w": 0.65,
+          "d": 0.65
+        },
+        {
+          "x": -8.0,
+          "z": 6.0,
+          "w": 0.65,
+          "d": 0.65
+        }
+      ],
+      "decorations": [
+        {
+          "x": -8.0,
+          "z": -6.0,
+          "size": 0.85
+        },
+        {
+          "x": 8.0,
+          "z": -6.0,
+          "size": 0.85
+        },
+        {
+          "x": -8.0,
+          "z": 6.0,
+          "size": 0.85
+        }
+      ],
+      "entry": {
+        "x": 0,
+        "z": 4.5
+      },
+      "zone": "社团与户外",
+      "icon": "◇",
+      "zones": [
+        {
+          "x": 0,
+          "z": 0,
+          "w": 15,
+          "d": 11,
+          "color": "#cbb997"
+        }
+      ],
+      "description": "文具 · 棋艺 · 展示。点选设施查看材料、空位和可执行交互。",
+      "transit": false
+    },
+    "west-walk": {
+      "name": "西侧公共走廊",
+      "subtitle": "独立入口 · 双向通行",
+      "color": "#c5d5db",
+      "surface": "tile",
+      "icon": "↔",
+      "zone": "公共通道",
+      "map": {
+        "x": -45,
+        "z": -18,
+        "width": 24,
+        "depth": 8
+      },
+      "bounds": {
+        "minX": -12.0,
+        "maxX": 12.0,
+        "minZ": -4.0,
+        "maxZ": 4.0
+      },
+      "links": [
+        "hall",
+        "office",
+        "infirmary",
+        "bathroom"
+      ],
+      "portals": {
+        "hall": {
+          "x": 11.35,
+          "z": 0.0
+        },
+        "office": {
+          "x": 0.0,
+          "z": -3.35
+        },
+        "infirmary": {
+          "x": -11.35,
+          "z": 0.0
+        },
+        "bathroom": {
+          "x": -0.37,
+          "z": 3.35
+        }
+      },
+      "transit": true,
+      "obstacles": [],
+      "decorations": [],
+      "zones": [],
+      "entry": {
+        "x": 0,
+        "z": 1
+      }
+    },
+    "east-walk": {
+      "name": "东侧公共走廊",
+      "subtitle": "独立入口 · 双向通行",
+      "color": "#c5d5db",
+      "surface": "tile",
+      "icon": "↔",
+      "zone": "公共通道",
+      "map": {
+        "x": 45,
+        "z": -18,
+        "width": 24,
+        "depth": 8
+      },
+      "bounds": {
+        "minX": -12.0,
+        "maxX": 12.0,
+        "minZ": -4.0,
+        "maxZ": 4.0
+      },
+      "links": [
+        "hall",
+        "music-room",
+        "student-center",
+        "club"
+      ],
+      "portals": {
+        "hall": {
+          "x": -11.35,
+          "z": 0.0
+        },
+        "music-room": {
+          "x": 0.0,
+          "z": -3.35
+        },
+        "student-center": {
+          "x": 11.35,
+          "z": 0.0
+        },
+        "club": {
+          "x": 0.0,
+          "z": 3.35
+        }
+      },
+      "transit": true,
+      "obstacles": [],
+      "decorations": [],
+      "zones": [],
+      "entry": {
+        "x": 0,
+        "z": 1
+      }
+    }
+  },
+  "actors": [
+    {
+      "id": "t",
+      "name": "林知夏",
+      "controlled": true,
+      "role": "student",
+      "room": "classroom",
+      "x": 0,
+      "z": 3,
+      "color": "#548ee0",
+      "hair": "long",
+      "profile": {
+        "sensitivity": 18,
+        "coping": "verify",
+        "interest": "art",
+        "desk": "desk-1",
+        "gender": "female",
+        "sociability": 28,
+        "persistence": 72,
+        "projects": [
+          "illustration"
+        ],
+        "biography": "慢热、重视亲自核实；喜欢通过作品表达自己。",
+        "status-concern": 32,
+        "empathy": 75,
+        "assertiveness": 28
+      }
+    },
+    {
+      "id": "m",
+      "name": "周明远",
+      "controlled": false,
+      "role": "student",
+      "room": "classroom",
+      "x": 2.8,
+      "z": 3,
+      "color": "#edb34c",
+      "hair": "short",
+      "profile": {
+        "sensitivity": 10,
+        "coping": "discuss",
+        "interest": "sport",
+        "desk": "desk-2",
+        "gender": "male",
+        "sociability": 78,
+        "persistence": 82,
+        "projects": [
+          "basketball-practice",
+          "social-m-t"
+        ],
+        "biography": "主动、重视训练；遇到矛盾倾向当面说开。",
+        "status-concern": 72,
+        "empathy": 70,
+        "assertiveness": 48
+      }
+    },
+    {
+      "id": "f",
+      "name": "沈乔",
+      "controlled": false,
+      "role": "student",
+      "room": "classroom",
+      "x": -3,
+      "z": 4.5,
+      "color": "#cb7797",
+      "hair": "long",
+      "profile": {
+        "sensitivity": 28,
+        "coping": "withdraw",
+        "interest": "music",
+        "desk": "desk-3",
+        "gender": "female",
+        "sociability": 35,
+        "persistence": 65,
+        "projects": [
+          "piano-study"
+        ],
+        "biography": "敏感、准备充分才安心；失约后倾向先拉开距离。",
+        "status-concern": 85,
+        "empathy": 38,
+        "assertiveness": 63
+      }
+    },
+    {
+      "id": "a",
+      "name": "许安",
+      "controlled": false,
+      "role": "student",
+      "room": "library",
+      "x": 0,
+      "z": 2,
+      "color": "#73b6ac",
+      "hair": "glasses",
+      "profile": {
+        "sensitivity": 12,
+        "coping": "verify",
+        "interest": "reading",
+        "desk": "desk-4",
+        "gender": "male",
+        "sociability": 22,
+        "persistence": 86,
+        "projects": [
+          "research-notes"
+        ],
+        "biography": "谨慎、有条理；未知的信息先求证。",
+        "status-concern": 25,
+        "empathy": 65,
+        "assertiveness": 40
+      }
+    },
+    {
+      "id": "teacher",
+      "name": "陈老师",
+      "controlled": false,
+      "role": "teacher",
+      "room": "office",
+      "x": 0,
+      "z": 2,
+      "color": "#75829b",
+      "hair": "glasses",
+      "profile": {
+        "sensitivity": 8,
+        "coping": "verify",
+        "interest": "reading",
+        "gender": "female",
+        "sociability": 60,
+        "persistence": 95,
+        "projects": [
+          "teaching-prep"
+        ],
+        "biography": "先履行教学责任，对原因不明的问题先核实。",
+        "status-concern": 20,
+        "empathy": 80,
+        "assertiveness": 85
+      }
+    },
+    {
+      "id": "r",
+      "name": "陆川",
+      "controlled": false,
+      "role": "student",
+      "room": "playground",
+      "x": 0,
+      "z": 1,
+      "color": "#dc806b",
+      "hair": "short",
+      "profile": {
+        "sensitivity": 16,
+        "coping": "discuss",
+        "interest": "sport",
+        "desk": "desk-5",
+        "gender": "male",
+        "sociability": 48,
+        "persistence": 92,
+        "projects": [
+          "track-practice"
+        ],
+        "biography": "竞争心强，习惯用重复练习解决问题。",
+        "status-concern": 68,
+        "empathy": 42,
+        "assertiveness": 80
+      }
+    },
+    {
+      "id": "q",
+      "name": "苏禾",
+      "controlled": false,
+      "role": "student",
+      "room": "club",
+      "x": 0,
+      "z": 2,
+      "color": "#9788c8",
+      "hair": "long",
+      "profile": {
+        "sensitivity": 20,
+        "coping": "discuss",
+        "interest": "art",
+        "desk": "desk-6",
+        "gender": "female",
+        "sociability": 65,
+        "persistence": 88,
+        "projects": [
+          "exhibition",
+          "social-q-f"
+        ],
+        "biography": "愿意组织合作；看重承诺落成实际成果。",
+        "status-concern": 40,
+        "empathy": 82,
+        "assertiveness": 72
+      }
+    },
+    {
+      "id": "l",
+      "name": "何乐",
+      "controlled": false,
+      "role": "student",
+      "room": "canteen",
+      "x": 2,
+      "z": 2,
+      "color": "#5ea2b8",
+      "hair": "short",
+      "profile": {
+        "sensitivity": 14,
+        "coping": "seek-company",
+        "interest": "music",
+        "desk": "desk-7",
+        "gender": "male",
+        "sociability": 90,
+        "persistence": 52,
+        "projects": [
+          "guitar-study"
+        ],
+        "biography": "爱凑热闹，心情不好时更想找人聊聊。",
+        "status-concern": 50,
+        "empathy": 72,
+        "assertiveness": 56
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "desk-1",
+      "type": "desk",
+      "room": "classroom",
+      "x": -4.5,
+      "z": -1,
+      "name": "课桌 1",
+      "mapKnown": true
+    },
+    {
+      "id": "desk-2",
+      "type": "desk",
+      "room": "classroom",
+      "x": -1.5,
+      "z": -1,
+      "name": "课桌 2",
+      "mapKnown": true
+    },
+    {
+      "id": "desk-3",
+      "type": "desk",
+      "room": "classroom",
+      "x": 1.5,
+      "z": -1,
+      "name": "课桌 3",
+      "mapKnown": true
+    },
+    {
+      "id": "desk-4",
+      "type": "desk",
+      "room": "classroom",
+      "x": 4.5,
+      "z": -1,
+      "name": "课桌 4",
+      "mapKnown": true
+    },
+    {
+      "id": "desk-5",
+      "type": "desk",
+      "room": "classroom",
+      "x": -4.5,
+      "z": 2,
+      "name": "课桌 5",
+      "mapKnown": true
+    },
+    {
+      "id": "desk-6",
+      "type": "desk",
+      "room": "classroom",
+      "x": -1.5,
+      "z": 2,
+      "name": "课桌 6",
+      "mapKnown": true
+    },
+    {
+      "id": "desk-7",
+      "type": "desk",
+      "room": "classroom",
+      "x": 1.5,
+      "z": 2,
+      "name": "课桌 7",
+      "mapKnown": true
+    },
+    {
+      "id": "desk-8",
+      "type": "desk",
+      "room": "classroom",
+      "x": 4.5,
+      "z": 2,
+      "name": "课桌 8",
+      "mapKnown": true
+    },
+    {
+      "id": "blackboard",
+      "type": "whiteboard",
+      "room": "classroom",
+      "x": 0,
+      "z": -4.9,
+      "name": "教学黑板",
+      "mapKnown": true
+    },
+    {
+      "id": "class-locker",
+      "type": "locker",
+      "room": "classroom",
+      "x": -6.8,
+      "z": -3,
+      "name": "个人储物柜",
+      "mapKnown": true
+    },
+    {
+      "id": "notes",
+      "type": "book",
+      "room": "classroom",
+      "x": 2,
+      "z": 2,
+      "name": "明远的课堂笔记",
+      "mapKnown": false,
+      "holder": "m"
+    },
+    {
+      "id": "my-notebook",
+      "type": "book",
+      "room": "classroom",
+      "x": 0,
+      "z": 3,
+      "name": "我的笔记本",
+      "mapKnown": false,
+      "holder": "t"
+    },
+    {
+      "id": "office-desk-0",
+      "type": "teacher-desk",
+      "room": "office",
+      "x": -3,
+      "z": -1,
+      "name": "教师办公桌",
+      "mapKnown": true
+    },
+    {
+      "id": "office-desk-1",
+      "type": "teacher-desk",
+      "room": "office",
+      "x": 1,
+      "z": -1,
+      "name": "教师办公桌",
+      "mapKnown": true
+    },
+    {
+      "id": "staff-computer",
+      "type": "computer",
+      "room": "office",
+      "x": 4,
+      "z": -3,
+      "name": "电脑工作桌",
+      "mapKnown": true
+    },
+    {
+      "id": "office-shelf",
+      "type": "bookshelf",
+      "room": "office",
+      "x": -5,
+      "z": -4.6,
+      "name": "书架",
+      "mapKnown": true
+    },
+    {
+      "id": "toilet-1",
+      "type": "toilet",
+      "room": "bathroom",
+      "x": -4,
+      "z": -3,
+      "name": "独立厕位 1",
+      "mapKnown": true
+    },
+    {
+      "id": "toilet-2",
+      "type": "toilet",
+      "room": "bathroom",
+      "x": 0,
+      "z": -3,
+      "name": "独立厕位 2",
+      "mapKnown": true
+    },
+    {
+      "id": "toilet-3",
+      "type": "toilet",
+      "room": "bathroom",
+      "x": 4,
+      "z": -3,
+      "name": "独立厕位 3",
+      "mapKnown": true
+    },
+    {
+      "id": "sink-0",
+      "type": "sink",
+      "room": "bathroom",
+      "x": -3,
+      "z": 2,
+      "name": "洗手池",
+      "mapKnown": true
+    },
+    {
+      "id": "sink-1",
+      "type": "sink",
+      "room": "bathroom",
+      "x": 0,
+      "z": 2,
+      "name": "洗手池",
+      "mapKnown": true
+    },
+    {
+      "id": "sink-2",
+      "type": "sink",
+      "room": "bathroom",
+      "x": 3,
+      "z": 2,
+      "name": "洗手池",
+      "mapKnown": true
+    },
+    {
+      "id": "art-table",
+      "type": "drawing-kit",
+      "room": "club",
+      "x": -3,
+      "z": -1,
+      "name": "海报工作台",
+      "mapKnown": true
+    },
+    {
+      "id": "guitar-chair",
+      "type": "guitar",
+      "room": "club",
+      "x": 3,
+      "z": -1,
+      "name": "音乐练习区",
+      "mapKnown": true
+    },
+    {
+      "id": "club-computer",
+      "type": "computer",
+      "room": "club",
+      "x": -4,
+      "z": -4,
+      "name": "电脑工作桌",
+      "mapKnown": true
+    },
+    {
+      "id": "club-board",
+      "type": "noticeboard",
+      "room": "club",
+      "x": 2,
+      "z": -4.8,
+      "name": "校园公告栏",
+      "mapKnown": true
+    },
+    {
+      "id": "basketball-hoop",
+      "type": "basketball-hoop",
+      "room": "playground",
+      "x": -3,
+      "z": -3,
+      "name": "篮球架",
+      "mapKnown": true
+    },
+    {
+      "id": "running-start",
+      "type": "running-start",
+      "room": "playground",
+      "x": 4,
+      "z": 0,
+      "name": "跑道起点",
+      "mapKnown": true
+    },
+    {
+      "id": "court-bench",
+      "type": "bench",
+      "room": "playground",
+      "x": -5,
+      "z": 3,
+      "name": "长椅",
+      "mapKnown": true
+    },
+    {
+      "id": "basketball",
+      "type": "ball",
+      "room": "playground",
+      "x": -2,
+      "z": 1,
+      "name": "篮球",
+      "mapKnown": false
+    },
+    {
+      "id": "court-water",
+      "type": "fountain",
+      "room": "playground",
+      "x": 6,
+      "z": -4,
+      "name": "饮水机",
+      "mapKnown": true
+    },
+    {
+      "id": "notice",
+      "type": "noticeboard",
+      "room": "courtyard",
+      "x": 0,
+      "z": -3,
+      "name": "校园公告栏",
+      "mapKnown": true
+    },
+    {
+      "id": "garden-0",
+      "type": "planter",
+      "room": "courtyard",
+      "x": -4,
+      "z": 0,
+      "name": "花坛",
+      "mapKnown": true
+    },
+    {
+      "id": "garden-1",
+      "type": "planter",
+      "room": "courtyard",
+      "x": 4,
+      "z": 0,
+      "name": "花坛",
+      "mapKnown": true
+    },
+    {
+      "id": "yard-bench-0",
+      "type": "bench",
+      "room": "courtyard",
+      "x": -3,
+      "z": 2.5,
+      "name": "长椅",
+      "mapKnown": true
+    },
+    {
+      "id": "yard-bench-1",
+      "type": "bench",
+      "room": "courtyard",
+      "x": 3,
+      "z": 2.5,
+      "name": "长椅",
+      "mapKnown": true
+    },
+    {
+      "id": "yard-water",
+      "type": "fountain",
+      "room": "courtyard",
+      "x": -6,
+      "z": -3,
+      "name": "饮水机",
+      "mapKnown": true
+    },
+    {
+      "id": "shelf-0",
+      "type": "bookshelf",
+      "room": "library",
+      "x": -5,
+      "z": -4.5,
+      "name": "书架",
+      "mapKnown": true
+    },
+    {
+      "id": "shelf-1",
+      "type": "bookshelf",
+      "room": "library",
+      "x": 0,
+      "z": -4.5,
+      "name": "书架",
+      "mapKnown": true
+    },
+    {
+      "id": "shelf-2",
+      "type": "bookshelf",
+      "room": "library",
+      "x": 5,
+      "z": -4.5,
+      "name": "书架",
+      "mapKnown": true
+    },
+    {
+      "id": "reading-desk-0",
+      "type": "desk",
+      "room": "library",
+      "x": -3,
+      "z": 0,
+      "name": "课桌",
+      "mapKnown": true
+    },
+    {
+      "id": "reading-desk-1",
+      "type": "desk",
+      "room": "library",
+      "x": 1,
+      "z": 0,
+      "name": "课桌",
+      "mapKnown": true
+    },
+    {
+      "id": "library-book",
+      "type": "book",
+      "room": "library",
+      "x": 5,
+      "z": 0,
+      "name": "校园小说选",
+      "mapKnown": false
+    },
+    {
+      "id": "food-counter",
+      "type": "cafe-counter",
+      "room": "canteen",
+      "x": 0,
+      "z": -6,
+      "name": "食堂餐台",
+      "mapKnown": true
+    },
+    {
+      "id": "lunch-table-0",
+      "type": "meal-table",
+      "room": "canteen",
+      "x": -4,
+      "z": -1,
+      "name": "餐桌",
+      "mapKnown": true
+    },
+    {
+      "id": "lunch-table-1",
+      "type": "meal-table",
+      "room": "canteen",
+      "x": 0,
+      "z": -1,
+      "name": "餐桌",
+      "mapKnown": true
+    },
+    {
+      "id": "lunch-table-2",
+      "type": "meal-table",
+      "room": "canteen",
+      "x": 4,
+      "z": -1,
+      "name": "餐桌",
+      "mapKnown": true
+    },
+    {
+      "id": "lunch-table-3",
+      "type": "meal-table",
+      "room": "canteen",
+      "x": -4,
+      "z": 3.3,
+      "name": "餐桌",
+      "mapKnown": true
+    },
+    {
+      "id": "lunch-table-4",
+      "type": "meal-table",
+      "room": "canteen",
+      "x": 0,
+      "z": 3.3,
+      "name": "餐桌",
+      "mapKnown": true
+    },
+    {
+      "id": "canteen-water",
+      "type": "fountain",
+      "room": "canteen",
+      "x": 6,
+      "z": -3,
+      "name": "饮水机",
+      "mapKnown": true
+    },
+    {
+      "id": "rest-bed-0",
+      "type": "bed",
+      "room": "infirmary",
+      "x": -3,
+      "z": -2,
+      "name": "医务床",
+      "mapKnown": true
+    },
+    {
+      "id": "rest-bed-1",
+      "type": "bed",
+      "room": "infirmary",
+      "x": 2,
+      "z": -2,
+      "name": "医务床",
+      "mapKnown": true
+    },
+    {
+      "id": "medical-desk",
+      "type": "teacher-desk",
+      "room": "infirmary",
+      "x": -3.5,
+      "z": 2,
+      "name": "教师办公桌",
+      "mapKnown": true
+    },
+    {
+      "id": "medical-sink",
+      "type": "sink",
+      "room": "infirmary",
+      "x": 4,
+      "z": 1,
+      "name": "洗手池",
+      "mapKnown": true
+    },
+    {
+      "id": "girls-toilet-1",
+      "type": "toilet",
+      "room": "bathroom-f",
+      "x": -4,
+      "z": -3,
+      "name": "女生厕位 1",
+      "mapKnown": true
+    },
+    {
+      "id": "girls-toilet-2",
+      "type": "toilet",
+      "room": "bathroom-f",
+      "x": 0,
+      "z": -3,
+      "name": "女生厕位 2",
+      "mapKnown": true
+    },
+    {
+      "id": "girls-toilet-3",
+      "type": "toilet",
+      "room": "bathroom-f",
+      "x": 4,
+      "z": -3,
+      "name": "女生厕位 3",
+      "mapKnown": true
+    },
+    {
+      "id": "girls-sink-1",
+      "type": "sink",
+      "room": "bathroom-f",
+      "x": -3,
+      "z": 2,
+      "name": "洗手池 1",
+      "mapKnown": true
+    },
+    {
+      "id": "girls-sink-2",
+      "type": "sink",
+      "room": "bathroom-f",
+      "x": 0,
+      "z": 2,
+      "name": "洗手池 2",
+      "mapKnown": true
+    },
+    {
+      "id": "girls-sink-3",
+      "type": "sink",
+      "room": "bathroom-f",
+      "x": 3,
+      "z": 2,
+      "name": "洗手池 3",
+      "mapKnown": true
+    },
+    {
+      "id": "girls-bin",
+      "type": "bin",
+      "room": "bathroom-f",
+      "x": 6.5,
+      "z": 2,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "boys-toilet-1",
+      "type": "toilet",
+      "room": "bathroom-m",
+      "x": -4,
+      "z": -3,
+      "name": "男生厕位 1",
+      "mapKnown": true
+    },
+    {
+      "id": "boys-toilet-2",
+      "type": "toilet",
+      "room": "bathroom-m",
+      "x": 0,
+      "z": -3,
+      "name": "男生厕位 2",
+      "mapKnown": true
+    },
+    {
+      "id": "boys-toilet-3",
+      "type": "toilet",
+      "room": "bathroom-m",
+      "x": 4,
+      "z": -3,
+      "name": "男生厕位 3",
+      "mapKnown": true
+    },
+    {
+      "id": "boys-sink-1",
+      "type": "sink",
+      "room": "bathroom-m",
+      "x": -3,
+      "z": 2,
+      "name": "洗手池 1",
+      "mapKnown": true
+    },
+    {
+      "id": "boys-sink-2",
+      "type": "sink",
+      "room": "bathroom-m",
+      "x": 0,
+      "z": 2,
+      "name": "洗手池 2",
+      "mapKnown": true
+    },
+    {
+      "id": "boys-sink-3",
+      "type": "sink",
+      "room": "bathroom-m",
+      "x": 3,
+      "z": 2,
+      "name": "洗手池 3",
+      "mapKnown": true
+    },
+    {
+      "id": "boys-bin",
+      "type": "bin",
+      "room": "bathroom-m",
+      "x": 6.5,
+      "z": 2,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "accessible-care",
+      "type": "cleaning-cart",
+      "room": "bathroom",
+      "x": 6.5,
+      "z": 2,
+      "name": "清洁工具车",
+      "mapKnown": true
+    },
+    {
+      "id": "locker-t",
+      "type": "locker",
+      "room": "hall",
+      "x": -20.0,
+      "z": -2.3,
+      "name": "林知夏的储物柜",
+      "mapKnown": true,
+      "owner": "t"
+    },
+    {
+      "id": "locker-m",
+      "type": "locker",
+      "room": "hall",
+      "x": -16.6,
+      "z": -2.3,
+      "name": "周明远的储物柜",
+      "mapKnown": true,
+      "owner": "m"
+    },
+    {
+      "id": "locker-f",
+      "type": "locker",
+      "room": "hall",
+      "x": -13.2,
+      "z": -2.3,
+      "name": "沈乔的储物柜",
+      "mapKnown": true,
+      "owner": "f"
+    },
+    {
+      "id": "locker-a",
+      "type": "locker",
+      "room": "hall",
+      "x": -9.8,
+      "z": -2.3,
+      "name": "许安的储物柜",
+      "mapKnown": true,
+      "owner": "a"
+    },
+    {
+      "id": "locker-teacher",
+      "type": "locker",
+      "room": "hall",
+      "x": -6.4,
+      "z": -2.3,
+      "name": "陈老师的储物柜",
+      "mapKnown": true,
+      "owner": "teacher"
+    },
+    {
+      "id": "locker-r",
+      "type": "locker",
+      "room": "hall",
+      "x": -3.0,
+      "z": -2.3,
+      "name": "陆川的储物柜",
+      "mapKnown": true,
+      "owner": "r"
+    },
+    {
+      "id": "locker-q",
+      "type": "locker",
+      "room": "hall",
+      "x": 0.3999999999999986,
+      "z": -2.3,
+      "name": "苏禾的储物柜",
+      "mapKnown": true,
+      "owner": "q"
+    },
+    {
+      "id": "locker-l",
+      "type": "locker",
+      "room": "hall",
+      "x": 3.8000000000000007,
+      "z": -2.3,
+      "name": "何乐的储物柜",
+      "mapKnown": true,
+      "owner": "l"
+    },
+    {
+      "id": "hall-board",
+      "type": "noticeboard",
+      "room": "hall",
+      "x": 19,
+      "z": -2.3,
+      "name": "课表与校务公告",
+      "mapKnown": true
+    },
+    {
+      "id": "hall-water",
+      "type": "fountain",
+      "room": "hall",
+      "x": -22,
+      "z": 1.2,
+      "name": "饮水机",
+      "mapKnown": true
+    },
+    {
+      "id": "hall-bin",
+      "type": "bin",
+      "room": "hall",
+      "x": 22,
+      "z": 1.2,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "homework-box",
+      "type": "homework-box",
+      "room": "classroom",
+      "x": 6.2,
+      "z": -4.5,
+      "name": "作业收交箱",
+      "mapKnown": true
+    },
+    {
+      "id": "class-books",
+      "type": "bookshelf",
+      "room": "classroom",
+      "x": -5.8,
+      "z": -4.8,
+      "name": "班级图书角",
+      "mapKnown": true
+    },
+    {
+      "id": "class-display",
+      "type": "display-board",
+      "room": "classroom",
+      "x": 4,
+      "z": -4.8,
+      "name": "班级作品墙",
+      "mapKnown": true
+    },
+    {
+      "id": "class-bin",
+      "type": "bin",
+      "room": "classroom",
+      "x": -6.5,
+      "z": 4.5,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "office-printer",
+      "type": "printer",
+      "room": "office",
+      "x": 4,
+      "z": 2,
+      "name": "办公室打印机",
+      "mapKnown": true
+    },
+    {
+      "id": "office-water",
+      "type": "fountain",
+      "room": "office",
+      "x": 6.5,
+      "z": -3,
+      "name": "饮水机",
+      "mapKnown": true
+    },
+    {
+      "id": "office-chair",
+      "type": "bench",
+      "room": "office",
+      "x": -3,
+      "z": 4.3,
+      "name": "来访等候椅",
+      "mapKnown": true
+    },
+    {
+      "id": "care-cabinet",
+      "type": "first-aid",
+      "room": "infirmary",
+      "x": 4,
+      "z": -3,
+      "name": "急救用品柜",
+      "mapKnown": true
+    },
+    {
+      "id": "medical-wait",
+      "type": "bench",
+      "room": "infirmary",
+      "x": 1.5,
+      "z": 3.5,
+      "name": "医务等候椅",
+      "mapKnown": true
+    },
+    {
+      "id": "library-pc",
+      "type": "computer",
+      "room": "library",
+      "x": 6,
+      "z": 1,
+      "name": "电脑工作桌",
+      "mapKnown": true
+    },
+    {
+      "id": "library-printer",
+      "type": "printer",
+      "room": "library",
+      "x": -7,
+      "z": 1,
+      "name": "自助打印机",
+      "mapKnown": true
+    },
+    {
+      "id": "library-chess",
+      "type": "chess-table",
+      "room": "library",
+      "x": -4,
+      "z": 4,
+      "name": "棋艺桌",
+      "mapKnown": true
+    },
+    {
+      "id": "library-water",
+      "type": "fountain",
+      "room": "library",
+      "x": 7,
+      "z": -4.5,
+      "name": "饮水机",
+      "mapKnown": true
+    },
+    {
+      "id": "library-board",
+      "type": "noticeboard",
+      "room": "library",
+      "x": 0,
+      "z": 4.5,
+      "name": "借阅与自习公告",
+      "mapKnown": true
+    },
+    {
+      "id": "microscope-1",
+      "type": "microscope",
+      "room": "science",
+      "x": -5,
+      "z": -3,
+      "name": "显微观察台",
+      "mapKnown": true
+    },
+    {
+      "id": "microscope-2",
+      "type": "microscope",
+      "room": "science",
+      "x": 0,
+      "z": -3,
+      "name": "显微观察台",
+      "mapKnown": true
+    },
+    {
+      "id": "microscope-3",
+      "type": "microscope",
+      "room": "science",
+      "x": 5,
+      "z": -3,
+      "name": "显微观察台",
+      "mapKnown": true
+    },
+    {
+      "id": "experiment-1",
+      "type": "experiment",
+      "room": "science",
+      "x": -4,
+      "z": 1.5,
+      "name": "实验操作台",
+      "mapKnown": true
+    },
+    {
+      "id": "experiment-2",
+      "type": "experiment",
+      "room": "science",
+      "x": 3,
+      "z": 1.5,
+      "name": "实验操作台",
+      "mapKnown": true
+    },
+    {
+      "id": "lab-sink",
+      "type": "sink",
+      "room": "science",
+      "x": 7,
+      "z": 3.5,
+      "name": "洗手池",
+      "mapKnown": true
+    },
+    {
+      "id": "lab-shelf",
+      "type": "bookshelf",
+      "room": "science",
+      "x": -7,
+      "z": 3.8,
+      "name": "书架",
+      "mapKnown": true
+    },
+    {
+      "id": "lab-board",
+      "type": "noticeboard",
+      "room": "science",
+      "x": 0,
+      "z": -5.9,
+      "name": "实验室守则",
+      "mapKnown": true
+    },
+    {
+      "id": "lab-bin",
+      "type": "bin",
+      "room": "science",
+      "x": 8,
+      "z": -3,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "piano-1",
+      "type": "piano",
+      "room": "music-room",
+      "x": -3,
+      "z": -3,
+      "name": "立式钢琴",
+      "mapKnown": true
+    },
+    {
+      "id": "piano-2",
+      "type": "piano",
+      "room": "music-room",
+      "x": 2,
+      "z": -3,
+      "name": "立式钢琴",
+      "mapKnown": true
+    },
+    {
+      "id": "music-guitar",
+      "type": "guitar",
+      "room": "music-room",
+      "x": -4,
+      "z": 1.5,
+      "name": "音乐练习区",
+      "mapKnown": true
+    },
+    {
+      "id": "score-1",
+      "type": "music-stand",
+      "room": "music-room",
+      "x": 2,
+      "z": 1.5,
+      "name": "乐谱架",
+      "mapKnown": true
+    },
+    {
+      "id": "music-bench",
+      "type": "bench",
+      "room": "music-room",
+      "x": 5,
+      "z": 3.5,
+      "name": "长椅",
+      "mapKnown": true
+    },
+    {
+      "id": "music-board",
+      "type": "noticeboard",
+      "room": "music-room",
+      "x": 4.5,
+      "z": -4.7,
+      "name": "排练公告",
+      "mapKnown": true
+    },
+    {
+      "id": "art-easel-1",
+      "type": "easel",
+      "room": "club",
+      "x": -6,
+      "z": 2.5,
+      "name": "写生画架",
+      "mapKnown": true
+    },
+    {
+      "id": "art-easel-2",
+      "type": "easel",
+      "room": "club",
+      "x": 0,
+      "z": 3.5,
+      "name": "写生画架",
+      "mapKnown": true
+    },
+    {
+      "id": "art-display",
+      "type": "display-board",
+      "room": "club",
+      "x": 5,
+      "z": -4.8,
+      "name": "学生作品展板",
+      "mapKnown": true
+    },
+    {
+      "id": "art-sink",
+      "type": "sink",
+      "room": "club",
+      "x": 6,
+      "z": 1.5,
+      "name": "洗手池",
+      "mapKnown": true
+    },
+    {
+      "id": "art-bin",
+      "type": "bin",
+      "room": "club",
+      "x": -6,
+      "z": -4,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "stationery",
+      "type": "supply-shop",
+      "room": "student-center",
+      "x": -4,
+      "z": -4,
+      "name": "校园文具柜",
+      "mapKnown": true
+    },
+    {
+      "id": "student-vending",
+      "type": "vending-machine",
+      "room": "student-center",
+      "x": 3,
+      "z": -4,
+      "name": "自动售货机",
+      "mapKnown": true
+    },
+    {
+      "id": "student-chess",
+      "type": "chess-table",
+      "room": "student-center",
+      "x": -4,
+      "z": 1,
+      "name": "棋艺桌",
+      "mapKnown": true
+    },
+    {
+      "id": "student-bench",
+      "type": "bench",
+      "room": "student-center",
+      "x": 2,
+      "z": 2,
+      "name": "长椅",
+      "mapKnown": true
+    },
+    {
+      "id": "student-exhibit",
+      "type": "display-board",
+      "room": "student-center",
+      "x": 5,
+      "z": 4,
+      "name": "学生作品展板",
+      "mapKnown": true
+    },
+    {
+      "id": "student-notice",
+      "type": "noticeboard",
+      "room": "student-center",
+      "x": 0,
+      "z": 4,
+      "name": "学生会与社团招募",
+      "mapKnown": true
+    },
+    {
+      "id": "tray-return",
+      "type": "tray-cart",
+      "room": "canteen",
+      "x": 7,
+      "z": -0.5,
+      "name": "餐盘回收台",
+      "mapKnown": true
+    },
+    {
+      "id": "canteen-sink",
+      "type": "sink",
+      "room": "canteen",
+      "x": -7,
+      "z": 3,
+      "name": "洗手池",
+      "mapKnown": true
+    },
+    {
+      "id": "canteen-bin",
+      "type": "bin",
+      "room": "canteen",
+      "x": 7,
+      "z": 4,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "canteen-snack",
+      "type": "vending-machine",
+      "room": "canteen",
+      "x": -7,
+      "z": -4.5,
+      "name": "自动售货机",
+      "mapKnown": true
+    },
+    {
+      "id": "canteen-menu",
+      "type": "noticeboard",
+      "room": "canteen",
+      "x": -7,
+      "z": -0.5,
+      "name": "本周食堂菜单",
+      "mapKnown": true
+    },
+    {
+      "id": "second-counter",
+      "type": "cafe-counter",
+      "room": "canteen",
+      "x": 5,
+      "z": -6,
+      "name": "食堂第二取餐台",
+      "mapKnown": true
+    },
+    {
+      "id": "yard-display",
+      "type": "display-board",
+      "room": "courtyard",
+      "x": 6,
+      "z": -5,
+      "name": "学生作品展板",
+      "mapKnown": true
+    },
+    {
+      "id": "yard-bin",
+      "type": "bin",
+      "room": "courtyard",
+      "x": -7,
+      "z": 4,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "yard-chess",
+      "type": "chess-table",
+      "room": "courtyard",
+      "x": 6,
+      "z": 3,
+      "name": "棋艺桌",
+      "mapKnown": true
+    },
+    {
+      "id": "gym-table-1",
+      "type": "pingpong",
+      "room": "gym",
+      "x": -4,
+      "z": -1,
+      "name": "乒乓球训练台",
+      "mapKnown": true
+    },
+    {
+      "id": "gym-table-2",
+      "type": "pingpong",
+      "room": "gym",
+      "x": 2,
+      "z": -1,
+      "name": "乒乓球训练台",
+      "mapKnown": true
+    },
+    {
+      "id": "gym-mat",
+      "type": "exercise-mat",
+      "room": "gym",
+      "x": 6,
+      "z": 3,
+      "name": "拉伸垫",
+      "mapKnown": true
+    },
+    {
+      "id": "gym-bench",
+      "type": "bench",
+      "room": "gym",
+      "x": -5,
+      "z": 5,
+      "name": "长椅",
+      "mapKnown": true
+    },
+    {
+      "id": "gym-water",
+      "type": "fountain",
+      "room": "gym",
+      "x": 7,
+      "z": -5,
+      "name": "饮水机",
+      "mapKnown": true
+    },
+    {
+      "id": "gym-bin",
+      "type": "bin",
+      "room": "gym",
+      "x": -7,
+      "z": -5,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "sports-locker",
+      "type": "locker",
+      "room": "playground",
+      "x": -9,
+      "z": -5,
+      "name": "个人储物柜",
+      "mapKnown": true
+    },
+    {
+      "id": "sports-mat",
+      "type": "exercise-mat",
+      "room": "playground",
+      "x": 8,
+      "z": 3,
+      "name": "拉伸垫",
+      "mapKnown": true
+    },
+    {
+      "id": "sports-bench",
+      "type": "bench",
+      "room": "playground",
+      "x": -7,
+      "z": 6,
+      "name": "长椅",
+      "mapKnown": true
+    },
+    {
+      "id": "sports-bin",
+      "type": "bin",
+      "room": "playground",
+      "x": 8,
+      "z": -5,
+      "name": "分类垃圾桶",
+      "mapKnown": true
+    },
+    {
+      "id": "grow-bed-1",
+      "type": "garden-bed",
+      "room": "garden",
+      "x": -5,
+      "z": -4,
+      "name": "种植箱",
+      "mapKnown": true
+    },
+    {
+      "id": "grow-bed-2",
+      "type": "garden-bed",
+      "room": "garden",
+      "x": 0,
+      "z": -4,
+      "name": "种植箱",
+      "mapKnown": true
+    },
+    {
+      "id": "grow-bed-3",
+      "type": "garden-bed",
+      "room": "garden",
+      "x": 5,
+      "z": -4,
+      "name": "种植箱",
+      "mapKnown": true
+    },
+    {
+      "id": "grow-bed-4",
+      "type": "garden-bed",
+      "room": "garden",
+      "x": -5,
+      "z": 1,
+      "name": "种植箱",
+      "mapKnown": true
+    },
+    {
+      "id": "grow-bed-5",
+      "type": "garden-bed",
+      "room": "garden",
+      "x": 0,
+      "z": 1,
+      "name": "种植箱",
+      "mapKnown": true
+    },
+    {
+      "id": "grow-bed-6",
+      "type": "garden-bed",
+      "room": "garden",
+      "x": 5,
+      "z": 1,
+      "name": "种植箱",
+      "mapKnown": true
+    },
+    {
+      "id": "garden-bench",
+      "type": "bench",
+      "room": "garden",
+      "x": -4,
+      "z": 6,
+      "name": "长椅",
+      "mapKnown": true
+    },
+    {
+      "id": "garden-water",
+      "type": "fountain",
+      "room": "garden",
+      "x": 7,
+      "z": 5,
+      "name": "饮水机",
+      "mapKnown": true
+    },
+    {
+      "id": "garden-board",
+      "type": "noticeboard",
+      "room": "garden",
+      "x": 0,
+      "z": 6,
+      "name": "种植记录与养护指南",
+      "mapKnown": true
+    }
+  ],
+  "relationships": [
+    {
+      "owner": "m",
+      "subject": "t",
+      "values": {
+        "trust": 34,
+        "affinity": 50
+      }
+    },
+    {
+      "owner": "t",
+      "subject": "m",
+      "values": {
+        "trust": 28,
+        "affinity": 32
+      }
+    },
+    {
+      "owner": "f",
+      "subject": "m",
+      "values": {
+        "trust": 58,
+        "affinity": 65
+      }
+    },
+    {
+      "owner": "m",
+      "subject": "f",
+      "values": {
+        "trust": 48,
+        "affinity": 55
+      }
+    },
+    {
+      "owner": "f",
+      "subject": "t",
+      "values": {
+        "trust": -10,
+        "affinity": -18
+      }
+    },
+    {
+      "owner": "q",
+      "subject": "t",
+      "values": {
+        "trust": 35,
+        "affinity": 42
+      }
+    },
+    {
+      "owner": "q",
+      "subject": "f",
+      "values": {
+        "trust": 30,
+        "affinity": 20
+      }
+    },
+    {
+      "owner": "a",
+      "subject": "t",
+      "values": {
+        "trust": 30,
+        "affinity": 35
+      }
+    },
+    {
+      "owner": "r",
+      "subject": "m",
+      "values": {
+        "trust": 40,
+        "affinity": 45
+      }
+    },
+    {
+      "owner": "l",
+      "subject": "f",
+      "values": {
+        "trust": 25,
+        "affinity": 30
+      }
+    }
+  ]
+}

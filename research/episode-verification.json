@@ -1,0 +1,272 @@
+{
+  "kernel": "Soar 9.6.5 native WASM",
+  "liveModelCalls": 0,
+  "results": [
+    {
+      "case": "furniture",
+      "beds": 5,
+      "personalDesks": 5,
+      "arrivalBeforePose": true
+    },
+    {
+      "case": "weekday-episode",
+      "result": {
+        "day": 1,
+        "title": "牛已经吹出去了",
+        "template": "show",
+        "status": "completed",
+        "summary": "夏东海、刘梅、夏雪、刘星、夏雨实际参加了活动",
+        "prepared": [
+          "dad",
+          "me",
+          "xue",
+          "xing",
+          "xiaoyu"
+        ],
+        "performed": [
+          "dad",
+          "me",
+          "xue",
+          "xing",
+          "xiaoyu"
+        ],
+        "declined": [],
+        "positions": {
+          "dad": "accept",
+          "me": "accept",
+          "xiaoyu": "accept",
+          "xue": "accept",
+          "xing": "accept"
+        },
+        "revised": true,
+        "evidence": [
+          4,
+          5,
+          6,
+          35,
+          50,
+          218,
+          220,
+          222,
+          224,
+          226,
+          228,
+          230,
+          232,
+          234,
+          236,
+          238,
+          240,
+          256,
+          261,
+          271,
+          280,
+          283,
+          327,
+          332,
+          334,
+          336,
+          338,
+          361
+        ]
+      },
+      "turns": [
+        {
+          "actor": "xing",
+          "at": 1170.75,
+          "act": "scene-pitch",
+          "text": "刘星：我今天在班里报了个「全家都有绝活」的小节目，明天就要交排练记录。 我想请大家各准备一份，18分钟左右。我这叫先替咱家争取机会！就是……还缺大家点头。"
+        },
+        {
+          "actor": "dad",
+          "at": 1172.5,
+          "act": "scene-accept",
+          "text": "夏东海：我愿意试试。我来写一段开场白，大概用18分钟。"
+        },
+        {
+          "actor": "me",
+          "at": 1174.25,
+          "act": "scene-counter",
+          "text": "刘梅：全家都有绝活？我的绝活是做饭。洗碗这项绝活谁来认领？ 每人自己的那份自己准备，不能又让我包办。"
+        },
+        {
+          "actor": "xiaoyu",
+          "at": 1176,
+          "act": "scene-accept",
+          "text": "夏雨：我愿意试试。我来画一张小海报，大概用18分钟。这下我也有自己的任务啦！"
+        },
+        {
+          "actor": "xue",
+          "at": 1177.75,
+          "act": "scene-accept",
+          "text": "夏雪：我愿意试试。我来写一张节目单，大概用18分钟。"
+        },
+        {
+          "actor": "xing",
+          "at": 1179.5,
+          "act": "scene-revise",
+          "text": "刘星：行行行，豪华版改成家庭精简版！每人八分钟，各做自己的，晚上碰头。我负责道具，绝不让妈全包。"
+        },
+        {
+          "actor": "dad",
+          "at": 1181.25,
+          "act": "scene-accept",
+          "text": "夏东海：这样我可以。我来写一段开场白，大概用8分钟。"
+        },
+        {
+          "actor": "me",
+          "at": 1183,
+          "act": "scene-accept",
+          "text": "刘梅：这样我可以。我来列一张道具清单，大概用8分钟。"
+        },
+        {
+          "actor": "xiaoyu",
+          "at": 1184.75,
+          "act": "scene-accept",
+          "text": "夏雨：这样我可以。我来画一张小海报，大概用8分钟。这下我也有自己的任务啦！"
+        },
+        {
+          "actor": "xue",
+          "at": 1186.5,
+          "act": "scene-accept",
+          "text": "夏雪：这样我可以。我来写一张节目单，大概用8分钟。"
+        },
+        {
+          "actor": "xing",
+          "at": 1188.25,
+          "act": "scene-accept",
+          "text": "刘星：这样我可以。我来做一件小道具，大概用8分钟。这回可记得把我的名字写大一点。"
+        },
+        {
+          "actor": "xing",
+          "at": 1190,
+          "act": "scene-wrap",
+          "text": "刘星：就按刚才各自答应的来。先吃饭、忙完自己的事，晚点带着准备的东西再碰头。"
+        },
+        {
+          "actor": "dad",
+          "at": 1246.25,
+          "act": "scene-perform",
+          "text": "夏东海：写一段开场白，我真的做完了，给大家看看。主持人我可以当，替全家报名这项业务，下回先开个家庭会议。"
+        },
+        {
+          "actor": "me",
+          "at": 1248,
+          "act": "scene-perform",
+          "text": "刘梅：列一张道具清单，我真的做完了，给大家看看。全家都有绝活？我的绝活是做饭。洗碗这项绝活谁来认领？"
+        },
+        {
+          "actor": "xiaoyu",
+          "at": 1249.75,
+          "act": "scene-perform",
+          "text": "夏雨：画一张小海报，我真的做完了，给大家看看。我可以表演吃饼干！要是不行，我也能负责画海报。"
+        },
+        {
+          "actor": "xue",
+          "at": 1251.5,
+          "act": "scene-perform",
+          "text": "夏雪：写一张节目单，我真的做完了，给大家看看。先说清楚用多久。我的复习计划，可不是节目里的可移动道具。"
+        },
+        {
+          "actor": "xing",
+          "at": 1253.25,
+          "act": "scene-perform",
+          "text": "刘星：做一件小道具，我真的做完了，给大家看看。我这叫先替咱家争取机会！就是……还缺大家点头。"
+        }
+      ]
+    },
+    {
+      "case": "same-seed-different-policy",
+      "result": {
+        "day": 1,
+        "title": "牛已经吹出去了",
+        "template": "show",
+        "status": "unresolved",
+        "summary": "还没能聚到一起把事情说开",
+        "prepared": [],
+        "performed": [],
+        "declined": [],
+        "positions": {},
+        "revised": false,
+        "evidence": [
+          4,
+          5,
+          6,
+          35,
+          50,
+          323
+        ]
+      },
+      "nextDay": {
+        "title": "昨天的事，换个办法",
+        "effort": 8,
+        "basedOn": 1
+      }
+    },
+    {
+      "case": "weekday-calendar",
+      "departures": [
+        {
+          "who": "me",
+          "at": 464
+        },
+        {
+          "who": "xing",
+          "at": 467
+        },
+        {
+          "who": "xiaoyu",
+          "at": 475
+        },
+        {
+          "who": "xue",
+          "at": 479.75
+        },
+        {
+          "who": "dad",
+          "at": 486.75
+        }
+      ],
+      "returns": [
+        {
+          "who": "xiaoyu",
+          "at": 960
+        },
+        {
+          "who": "xing",
+          "at": 975
+        },
+        {
+          "who": "xue",
+          "at": 985
+        },
+        {
+          "who": "me",
+          "at": 1025
+        },
+        {
+          "who": "dad",
+          "at": 1050
+        }
+      ]
+    },
+    {
+      "case": "weekend",
+      "daytimeMeeting": 600,
+      "departures": 0
+    },
+    {
+      "case": "private-native-briefs",
+      "ownMemory": true,
+      "otherMemory": false,
+      "portable": true
+    },
+    {
+      "case": "async-director-interface",
+      "continuedSleeping": true,
+      "newSituationInstalled": true,
+      "lateRewriteRejected": true,
+      "runtimeProvider": "controlled fixture, not live LLM"
+    }
+  ]
+}

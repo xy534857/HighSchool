@@ -1,0 +1,654 @@
+{
+  "common": [
+    {
+      "id": "join",
+      "select": {
+        "action": "join-conversation"
+      },
+      "priority": 160,
+      "reason": "有人邀请我交谈，先回应。"
+    },
+    {
+      "id": "known",
+      "select": {
+        "action": "answer-known"
+      },
+      "priority": 140,
+      "reason": "我记得这件事，回答对方的问题。"
+    },
+    {
+      "id": "greeting",
+      "select": {
+        "action": "reply-greeting"
+      },
+      "priority": 110,
+      "reason": "同学正在问我，接着这轮话题回应。"
+    },
+    {
+      "id": "loan",
+      "select": {
+        "action": "accept-offer",
+        "offer-kind": "loan"
+      },
+      "priority": 120,
+      "reason": "借用后归还的约定可以接受。"
+    },
+    {
+      "id": "meeting",
+      "select": {
+        "action": "accept-offer",
+        "offer-kind": "meeting"
+      },
+      "priority": 120,
+      "reason": "把邀请记成约定。"
+    },
+    {
+      "id": "handover",
+      "select": {
+        "action": "hand-over"
+      },
+      "priority": 150,
+      "reason": "已经同意借出，先完成物品交接。"
+    },
+    {
+      "id": "social-greet",
+      "select": {
+        "action": "greet"
+      },
+      "when": [
+        {
+          "scope": "self",
+          "field": "activity",
+          "op": "eq",
+          "value": "free"
+        }
+      ],
+      "priority": 20,
+      "reason": "已经一起聊天，主动接起今天的话题。"
+    },
+    {
+      "id": "join-activity",
+      "select": {
+        "action": "join-activity"
+      },
+      "priority": 55,
+      "reason": "招新准备与自己的兴趣有关，愿意试着参与，仍要顾及课程与身体状态。"
+    },
+    {
+      "id": "help-project",
+      "select": {
+        "action": "accept-project"
+      },
+      "priority": 125,
+      "reason": "我愿意帮忙准备招新；接受后会按实际分工行动。"
+    },
+    {
+      "id": "decline-unavailable-invite",
+      "select": {
+        "action": "decline-conversation"
+      },
+      "priority": 1,
+      "reason": "现在不方便加入交谈，先回应邀请。"
+    },
+    {
+      "id": "sociability-gte",
+      "select": {
+        "action": "start-conversation"
+      },
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-sociability",
+          "op": "gte",
+          "value": 60
+        },
+        {
+          "scope": "self",
+          "field": "social",
+          "op": "lt",
+          "value": 75
+        },
+        {
+          "scope": "self",
+          "field": "period",
+          "op": "ne",
+          "value": "class"
+        },
+        {
+          "scope": "self",
+          "field": "activity",
+          "op": "eq",
+          "value": "free"
+        }
+      ],
+      "priority": 24,
+      "reason": "我习惯主动找身边的人说话；现在没有课程或既定活动。"
+    },
+    {
+      "id": "sociability-lt",
+      "select": {
+        "action": "start-conversation"
+      },
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-sociability",
+          "op": "lt",
+          "value": 60
+        },
+        {
+          "scope": "self",
+          "field": "social",
+          "op": "lt",
+          "value": 40
+        },
+        {
+          "scope": "self",
+          "field": "period",
+          "op": "ne",
+          "value": "class"
+        },
+        {
+          "scope": "self",
+          "field": "activity",
+          "op": "eq",
+          "value": "free"
+        }
+      ],
+      "priority": 10,
+      "reason": "我比较慢热，只有确实想交谈时才找身边的人。"
+    },
+    {
+      "id": "coping-discuss",
+      "select": {
+        "action": "start-conversation"
+      },
+      "when": [
+        {
+          "scope": "memory",
+          "key": "*",
+          "field": "coping",
+          "op": "eq",
+          "value": "discuss",
+          "matchTarget": true,
+          "minIntensity": 30
+        },
+        {
+          "scope": "self",
+          "field": "period",
+          "op": "ne",
+          "value": "class"
+        },
+        {
+          "scope": "self",
+          "field": "social",
+          "op": "lt",
+          "value": 80
+        }
+      ],
+      "priority": 54,
+      "reason": "对方确实失约，我想找当事人当面谈清楚。"
+    },
+    {
+      "id": "coping-verify",
+      "select": {
+        "action": "start-conversation"
+      },
+      "when": [
+        {
+          "scope": "memory",
+          "key": "*",
+          "field": "coping",
+          "op": "eq",
+          "value": "verify",
+          "matchTarget": true,
+          "minIntensity": 30
+        },
+        {
+          "scope": "self",
+          "field": "period",
+          "op": "ne",
+          "value": "class"
+        },
+        {
+          "scope": "self",
+          "field": "social",
+          "op": "lt",
+          "value": 80
+        }
+      ],
+      "priority": 54,
+      "reason": "这次经历让我在意，我想先向当事人核实。"
+    },
+    {
+      "id": "coping-withdraw",
+      "select": {
+        "action": "sit-bench"
+      },
+      "when": [
+        {
+          "scope": "memory",
+          "key": "*",
+          "field": "coping",
+          "op": "eq",
+          "value": "withdraw",
+          "matchTarget": false,
+          "minIntensity": 30
+        },
+        {
+          "scope": "self",
+          "field": "period",
+          "op": "ne",
+          "value": "class"
+        },
+        {
+          "scope": "self",
+          "field": "social",
+          "op": "lt",
+          "value": 80
+        }
+      ],
+      "priority": 54,
+      "reason": "这次失约让我不舒服，我想先找个地方缓一缓。"
+    },
+    {
+      "id": "coping-seek-company",
+      "select": {
+        "action": "start-conversation"
+      },
+      "when": [
+        {
+          "scope": "memory",
+          "key": "*",
+          "field": "coping",
+          "op": "eq",
+          "value": "seek-company",
+          "matchTarget": false,
+          "minIntensity": 30
+        },
+        {
+          "scope": "self",
+          "field": "period",
+          "op": "ne",
+          "value": "class"
+        },
+        {
+          "scope": "self",
+          "field": "social",
+          "op": "lt",
+          "value": 80
+        }
+      ],
+      "priority": 54,
+      "reason": "这件事让我难受，我想找身边的人聊一聊。"
+    },
+    {
+      "id": "speak-up-against-exclusion",
+      "select": {
+        "action": "set-boundary"
+      },
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-assertiveness",
+          "op": "gte",
+          "value": 50
+        },
+        {
+          "scope": "self",
+          "field": "profile-empathy",
+          "op": "gte",
+          "value": 60
+        },
+        {
+          "scope": "memory",
+          "key": "*",
+          "field": "predicate",
+          "value": "social-exclusion",
+          "matchTarget": true,
+          "maxAgeMinutes": 1440
+        }
+      ],
+      "priority": 65,
+      "reason": "我仍记得对方排斥同学的事，也愿意明确说出自己的界限。"
+    },
+    {
+      "id": "consider-reconnect",
+      "select": {
+        "action": "accept-offer",
+        "offer-kind": "reconnect"
+      },
+      "when": [
+        {
+          "scope": "candidate",
+          "field": "target-trust",
+          "op": "gte",
+          "value": 10
+        },
+        {
+          "scope": "candidate",
+          "field": "target-grievance",
+          "op": "lt",
+          "value": 40
+        }
+      ],
+      "priority": 132,
+      "reason": "我还愿意信任这个人，接受慢慢重新来往。"
+    },
+    {
+      "id": "decline-reconnect",
+      "select": {
+        "action": "decline-offer",
+        "offer-kind": "reconnect"
+      },
+      "when": [
+        {
+          "scope": "candidate",
+          "field": "target-grievance",
+          "op": "gte",
+          "value": 40
+        }
+      ],
+      "priority": 134,
+      "reason": "积累的伤害还没有消化，暂时不答应。"
+    },
+    {
+      "id": "support-friend",
+      "select": {
+        "action": "accept-offer",
+        "offer-kind": "support"
+      },
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-empathy",
+          "op": "gte",
+          "value": 60
+        },
+        {
+          "scope": "candidate",
+          "field": "target-trust",
+          "op": "gte",
+          "value": 10
+        }
+      ],
+      "priority": 132,
+      "reason": "我愿意支持信任的朋友自行处理关系。"
+    },
+    {
+      "id": "hesitate-support",
+      "select": {
+        "action": "decline-offer",
+        "offer-kind": "support"
+      },
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-status-concern",
+          "op": "gte",
+          "value": 75
+        }
+      ],
+      "priority": 133,
+      "reason": "这件事触及我在意的群体关系，现在不愿支持。"
+    }
+  ],
+  "people": {
+    "m": [
+      {
+        "id": "free-interest",
+        "select": {
+          "action": "sit-bench",
+          "item": "yard-bench-0"
+        },
+        "priority": 12,
+        "reason": "空闲时间继续自己的活动。",
+        "when": [
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "lunch"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ]
+      },
+      {
+        "id": "prefer-training",
+        "select": {
+          "action": "skip-activity",
+          "situation-role": "helper"
+        },
+        "priority": 65,
+        "reason": "这次社团筹备不是我的兴趣，我想保留时间练球。"
+      }
+    ],
+    "f": [
+      {
+        "id": "free-interest",
+        "select": {
+          "action": "play-guitar",
+          "item": "guitar-chair"
+        },
+        "priority": 12,
+        "reason": "空闲时间继续自己的活动。",
+        "when": [
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "lunch"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ]
+      }
+    ],
+    "a": [
+      {
+        "id": "free-interest",
+        "select": {
+          "action": "read-book",
+          "item": "shelf-0"
+        },
+        "priority": 12,
+        "reason": "空闲时间继续自己的活动。",
+        "when": [
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "lunch"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ]
+      }
+    ],
+    "teacher": [
+      {
+        "id": "free-interest",
+        "select": {
+          "action": "office-work",
+          "item": "office-desk-0"
+        },
+        "priority": 12,
+        "reason": "空闲时间继续自己的活动。",
+        "when": [
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "lunch"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ]
+      }
+    ],
+    "r": [
+      {
+        "id": "free-interest",
+        "select": {
+          "action": "shoot-hoops",
+          "item": "basketball-hoop"
+        },
+        "priority": 12,
+        "reason": "空闲时间继续自己的活动。",
+        "when": [
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "lunch"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ]
+      }
+    ],
+    "q": [
+      {
+        "id": "free-interest",
+        "select": {
+          "action": "draw-poster",
+          "item": "art-table"
+        },
+        "priority": 12,
+        "reason": "空闲时间继续自己的活动。",
+        "when": [
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "lunch"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ]
+      }
+    ],
+    "l": [
+      {
+        "id": "free-interest",
+        "select": {
+          "action": "sit-bench",
+          "item": "yard-bench-1"
+        },
+        "priority": 12,
+        "reason": "空闲时间继续自己的活动。",
+        "when": [
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "lunch"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ]
+      }
+    ],
+    "t": [
+      {
+        "id": "free-interest",
+        "select": {
+          "action": "draw-poster"
+        },
+        "when": [
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "class"
+          },
+          {
+            "scope": "self",
+            "field": "period",
+            "op": "ne",
+            "value": "lunch"
+          },
+          {
+            "scope": "self",
+            "field": "activity",
+            "op": "eq",
+            "value": "free"
+          }
+        ],
+        "priority": 12,
+        "reason": "现在没有课，我喜欢画画，想去美术桌继续练习。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+# Shared representation and Soar-owned long-term knowledge.
+sp {memory*context
+ (state <s> ^superstate nil ^io.input-link.frame <f>)
+ -->
+ (<s> ^context <c>) (<c> ^frame <f>)
+}
+sp {memory*encode-observation
+ (state <s> ^context <c> ^smem.command <mc>)
+ (<c> ^frame <f>) (<f> ^mode observe ^event <e>)
+ -->
+ (<c> ^encoded-copy (deep-copy <e>))
+}
+sp {memory*store-encoded-copy
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^encoded-copy <copy>)
+ --> (<mc> ^store <copy>)
+}
+sp {memory*recognize-experienced-interference
+ (state <s> ^context <c> ^smem.command <mc>)
+ (<c> ^frame <f>) (<f> ^mode observe ^self <me> ^event <e>)
+ (<e> ^kind distraction ^actor <me> ^source self ^uid <uid> ^time <t>)
+ -->
+ (<c> ^formed-belief <b>)
+ (<b> ^type belief ^owner <me> ^subject noise ^predicate disrupts-my-goal ^value yes ^evidence <uid> ^source self ^time <t>)
+ (<mc> ^store <b>)
+}
+sp {memory*recognize-social-experience
+ (state <s> ^context <c> ^smem.command <mc>)
+ (<c> ^frame <f>) (<f> ^mode observe ^self <me> ^event <e>)
+ (<e> ^kind << refuse cooperate promise brokenPromise >> ^actor <who> ^uid <uid> ^time <t> ^source <source> ^kind <outcome>)
+ -->
+ (<c> ^formed-belief <b>)
+ (<b> ^type belief ^owner <me> ^subject <who> ^predicate recent-cooperation ^value <outcome> ^evidence <uid> ^source <source> ^time <t>)
+ (<mc> ^store <b>)
+}
+sp {memory*ack-observation
+ (state <s> ^context <c> ^smem.result.success <copy> ^io.output-link <out>)
+ (<c> ^frame <f> ^encoded-copy <copy>) (<f> ^mode observe ^seq <seq> ^event <e>)
+ -->
+ (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind observed ^remember yes)
+}
+# A single persistent daily goal is retrieved and updated by productions.
+sp {memory*query-goal
+ (state <s> ^context <c> ^smem.command <mc>)
+ (<c> ^frame <f>) (<f> ^mode << goal-init progress act response plan >> ^self <me>)
+ -(<c> ^goal-ready yes)
+ -->
+ (<c> ^goal-query <q>) (<q> ^type goal ^owner <me>) (<mc> ^query <q>)
+}
+sp {memory*receive-goal-for-action
+ :o-support
+ (state <s> ^context <c> ^smem.result <mr>)
+ (<c> ^frame <f> ^goal-query <q>) (<f> ^mode << act response plan >>)
+ (<mr> ^success <q> ^retrieved <g>)
+ -->
+ (<c> ^goal (deep-copy <g>) ^goal-ready yes)
+}
+sp {memory*no-goal-for-action
+ :o-support
+ (state <s> ^context <c> ^smem.result.failure <q>)
+ (<c> ^frame <f> ^goal-query <q>) (<f> ^mode << act response plan >>)
+ -->
+ (<c> ^goal-ready yes)
+}
+sp {memory*create-first-goal
+ :o-support
+ (state <s> ^context <c> ^smem.result.failure <q> ^smem.command <mc>)
+ (<c> ^frame <f> ^goal-query <q>)
+ (<f> ^mode goal-init ^self <me> ^day <day> ^spec <spec>)
+ (<spec> ^kind <kind> ^title <title> ^target <target>)
+ -->
+ (<c> ^new-goal <g> ^goal-ready yes)
+ (<g> ^type goal ^owner <me> ^kind <kind> ^title <title> ^target <target> ^progress 0 ^status active ^day <day>)
+ }
+sp {memory*store-new-goal
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^new-goal <g>)
+ --> (<mc> ^store <g>)
+}
+sp {memory*ack-new-goal
+ (state <s> ^context <c> ^smem.result.success <g> ^io.output-link <out>)
+ (<c> ^frame <f> ^new-goal <g>) (<f> ^mode goal-init ^seq <seq>)
+ -->
+ (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind goal ^goal <g>)
+}
+sp {memory*keep-unfinished-goal
+ (state <s> ^context <c> ^smem.result <mr> ^io.output-link <out>)
+ (<c> ^frame <f> ^goal-query <q>) (<f> ^mode goal-init ^seq <seq>)
+ (<mr> ^success <q> ^retrieved <g>) (<g> ^status active)
+ -->
+ (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind goal ^goal <g>)
+}
+sp {memory*keep-todays-completed-goal
+ (state <s> ^context <c> ^smem.result <mr> ^io.output-link <out>)
+ (<c> ^frame <f> ^goal-query <q>) (<f> ^mode goal-init ^seq <seq> ^day <day>)
+ (<mr> ^success <q> ^retrieved <g>) (<g> ^status done ^day <day>)
+ -->
+ (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind goal ^goal <g>)
+}
+sp {memory*propose-renew-goal
+ (state <s> ^context <c> ^smem.result <mr>)
+ (<c> ^frame <f> ^goal-query <q>) -(<c> ^written yes)
+ (<f> ^mode goal-init ^day <day>) (<mr> ^success <q> ^retrieved <g>) (<g> ^status done ^day < <day>)
+ -->
+ (<s> ^operator <o> +) (<o> ^name renew-goal ^goal <g>)
+}
+sp {memory*renew-goal
+ (state <s> ^operator <o> ^context <c>) (<o> ^name renew-goal ^goal <g>)
+ (<c> ^frame <f>) -(<c> ^written yes) (<f> ^day <day>)
+ (<g> ^status done ^day <old-day> ^progress <old>)
+ -->
+ (<g> ^status done - ^status active ^day <old-day> - ^day <day> ^progress <old> - ^progress 0)
+ (<c> ^written yes ^written-goal <g> ^goal-ready yes)
+}
+sp {memory*propose-progress
+ (state <s> ^context <c> ^smem.result <mr>)
+ (<c> ^frame <f> ^goal-query <q>) -(<c> ^written yes)
+ (<f> ^mode progress ^action <kind>) (<mr> ^success <q> ^retrieved <g>) (<g> ^status active ^kind <kind>)
+ -->
+ (<s> ^operator <o> +) (<o> ^name advance-goal ^goal <g>)
+}
+sp {memory*advance-goal
+ (state <s> ^operator <o> ^context <c>) (<o> ^name advance-goal ^goal <g>)
+ (<c> ^frame <f>) -(<c> ^written yes) (<f> ^amount <amount>) (<g> ^progress <old>)
+ -->
+ (<g> ^progress <old> - ^progress (+ <old> <amount>))
+ (<c> ^written yes ^written-goal <g> ^goal-ready yes)
+}
+sp {memory*complete-goal
+ :o-support
+ (state <s> ^context <c>) (<c> ^written-goal <g>)
+ (<g> ^target <target> ^progress >= <target> ^status active)
+ -->
+ (<g> ^status active - ^status done)
+}
+sp {memory*store-updated-goal
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^written-goal <g>)
+ -->
+ (<mc> ^store <g>)
+}
+sp {memory*ack-updated-goal
+ (state <s> ^context <c> ^smem.result.success <g> ^io.output-link <out>)
+ (<c> ^frame <f> ^written-goal <g>) (<f> ^seq <seq>)
+ -->
+ (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind goal ^goal <g>)
+}
+sp {memory*ack-inapplicable-progress
+ (state <s> ^context <c> ^smem.result <mr> ^io.output-link <out>)
+ (<c> ^frame <f> ^goal-query <q>) (<f> ^mode progress ^seq <seq> ^action <kind>)
+ (<mr> ^success <q> ^retrieved <g>)
+ -{ (<g> ^status active ^kind <kind>) }
+ -->
+ (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind goal ^goal <g>)
+}
+# Explicit semantic recall is available to each character and the inspector.
+sp {memory*query-explicit-cue
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^frame <f>) (<f> ^mode << recall share >> ^cue <q>)
+ --> (<mc> ^query <q>)
+}
+sp {memory*ack-explicit-recall
+ (state <s> ^context <c> ^smem.result <mr> ^io.output-link <out>) (<c> ^frame <f>) (<f> ^mode << recall share >> ^seq <seq> ^cue <q>)
+ (<mr> ^success <q> ^retrieved <r>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind recalled ^memory <r>)
+}
+sp {memory*ack-explicit-miss
+ (state <s> ^context <c> ^smem.result.failure <q> ^io.output-link <out>) (<c> ^frame <f>) (<f> ^mode << recall share >> ^seq <seq> ^cue <q>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind not-found)
+}

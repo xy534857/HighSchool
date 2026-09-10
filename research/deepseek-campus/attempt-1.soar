@@ -1,0 +1,42 @@
+sp {learned*m*accept-t-private
+ (state <s> ^superstate nil ^io.input.link.frame <f>)
+ (<f> ^mode campus-choice ^self m ^from <person> ^audience private ^known <k> ^available <a>)
+ (<k> ^affection-target t ^affection yes ^peer-pressure <p>)
+ (<person> ^name t)
+ (<a> ^kind accept-prom)
+ -->
+ (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 80 ^rule learned*m*accept-t-private ^reason |喜欢T，私下场合接受邀请。|)
+}
+sp {learned*m*ask-private-public-pressure
+ (state <s> ^superstate nil ^io.input.link.frame <f>)
+ (<f> ^mode campus-choice ^self m ^from <person> ^audience public ^known <k> ^available <a>)
+ (<k> ^affection-target t ^affection yes ^peer-pressure high)
+ (<person> ^name t)
+ (<a> ^kind ask-private)
+ -->
+ (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 60 ^rule learned*m*ask-private-public-pressure ^reason |公开场合朋友压力大，先私下询问。|)
+}
+sp {learned*m*accept-other-low-pressure
+ (state <s> ^superstate nil ^io.input.link.frame <f>)
+ (<f> ^mode campus-choice ^self m ^from <person> ^audience <aud> ^known <k> ^available <a>)
+ (<k> ^affection-target t ^affection yes ^peer-pressure low)
+ (<person> ^name <p>)
+ (<p> ^name != t)
+ (<a> ^kind accept-prom)
+ -->
+ (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 50 ^rule learned*m*accept-other-low-pressure ^reason |朋友压力低，接受邀请。|)
+}
+sp {learned*m*ask-time-other-high-pressure
+ (state <s> ^superstate nil ^io.input.link.frame <f>)
+ (<f> ^mode campus-choice ^self m ^from <person> ^audience <aud> ^known <k> ^available <a>)
+ (<k> ^affection-target t ^affection yes ^peer-pressure high)
+ (<person> ^name <p>)
+ (<p> ^name != t)
+ (<a> ^kind ask-time)
+ -->
+ (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 40 ^rule learned*m*ask-time-other-high-pressure ^reason |朋友压力高，请求时间考虑。|)
+}

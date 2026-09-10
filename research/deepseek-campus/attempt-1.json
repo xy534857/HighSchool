@@ -1,0 +1,41 @@
+{
+  "request": {
+    "model": "deepseek-v4-flash-vision-exp",
+    "thinking": {
+      "type": "disabled"
+    },
+    "max_tokens": 1400,
+    "temperature": 0.2,
+    "response_format": {
+      "type": "json_object"
+    },
+    "messages": [
+      {
+        "role": "system",
+        "content": "You generate bounded Soar 9.6.5 production rules for one fictional school student's reusable social policy. Output one JSON object only with summary (Chinese), evidence (IDs), source (raw Soar productions). Do not invent observations, change world facts, prescribe a fixed story sequence, or change anyone else's mind. No CLI commands. No markdown. Each production name must start learned*m*. At most 4 productions. Use explicit source conditions; a stated reason must be supported by those conditions. No RHS functions except basic arithmetic. This is a small prototype test, not a request for an entire game."
+      },
+      {
+        "role": "user",
+        "content": "学生 M 的初始倾向：外向，愿意维护喜欢的人，也在乎朋友圈接纳。M 喜欢 T；T 不擅长当面社交。目标是跨线上线下态度连贯，但新经历可带来矛盾和策略改变。\nM 本人记得的事实：\nm-e1: M 主动在私聊中向 T 示好，双方愉快交谈。\nm-e2: 朋友 F 当着 M 的面说“你和 T 一起去，大家会笑话我们的”，随后拒绝同 M 一起午休。\nM 不知道 F 内心真正动机，也不知道 T 或其他人的秘密。\n请为 M 生成处理“收到舞会邀请”的可复用 Soar 规则。不要把社交笨拙一律解释为讨厌，不要让一次朋友压力自动抹掉好感。保留压力存在/已缓解、公开/私下环境下合理的不同应对。具体选择由你设计，不要求一定拒绝。规则应匹配邀请者和自身记录，不为不相关的人套用与 T 的关系。\n执行接口：\n(state <s> ^superstate nil ^io.input-link.frame <f>)\n(<f> ^mode campus-choice ^self m ^from <person> ^audience public-or-private ^known <k> ^available <a>)\nknown 是从 M 自己的原生记忆读取的当前值：\n(<k> ^affection-target t ^affection yes-or-no ^peer-pressure high-or-low)\n候选 available 的 kind 只可能为 accept-prom / decline-prom / ask-private / ask-time，字段为 id、kind、target、ordinal。缺失候选时该规则不能提出。\n每条规则 RHS 只能提出 operator：\n(<s> ^operator <o> +)\n(<o> ^name choose ^choice <a> ^priority NUMBER ^rule YOUR_PRODUCTION_NAME ^reason |中文简短原因|)\nNUMBER 范围 1—100。共享规则已经按最高 priority 选择，并把所选 available 作为命令输出。兜底 ask-time 的 priority=0。不要重写这些共享规则。\n有效 Soar 语法示例（仅演示语法，不是本题答案）：\nsp {learned*sample*water\n (state <s> ^superstate nil ^io.input-link.frame <f>)\n (<f> ^mode campus-choice ^self m ^known <k> ^available <a>)\n (<k> ^thirst high)\n (<a> ^kind drink)\n -->\n (<s> ^operator <o> +)\n (<o> ^name choose ^choice <a> ^priority 20 ^rule learned*sample*water ^reason |口渴了，先喝水。|)\n}\n本题不允许使用示例里的 thirst/drink；只使用执行接口已有字段。evidence 仅可引用 m-e1/m-e2。"
+      }
+    ]
+  },
+  "response": {
+    "id": "2e1f5697-30e0-4c8f-946d-5dde06dee3e7",
+    "model": "deepseek-v4-flash-vision-exp",
+    "usage": {
+      "prompt_tokens": 722,
+      "completion_tokens": 722,
+      "total_tokens": 1444,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 722
+    },
+    "finish_reason": "stop",
+    "content": "{\"summary\":\"M在收到舞会邀请时，会综合考虑对T的好感、朋友压力以及场合的公开/私下属性。若邀请者是T且私下场合，M会优先接受；若公开场合且朋友压力高，M会先私下询问；若邀请者不是T，M会基于朋友压力决定是否接受或请求时间考虑。\",\"evidence\":[\"m-e1\",\"m-e2\"],\"source\":\"sp {learned*m*accept-t-private\\n (state <s> ^superstate nil ^io.input.link.frame <f>)\\n (<f> ^mode campus-choice ^self m ^from <person> ^audience private ^known <k> ^available <a>)\\n (<k> ^affection-target t ^affection yes ^peer-pressure <p>)\\n (<person> ^name t)\\n (<a> ^kind accept-prom)\\n -->\\n (<s> ^operator <o> +)\\n (<o> ^name choose ^choice <a> ^priority 80 ^rule learned*m*accept-t-private ^reason |喜欢T，私下场合接受邀请。|)\\n}\\nsp {learned*m*ask-private-public-pressure\\n (state <s> ^superstate nil ^io.input.link.frame <f>)\\n (<f> ^mode campus-choice ^self m ^from <person> ^audience public ^known <k> ^available <a>)\\n (<k> ^affection-target t ^affection yes ^peer-pressure high)\\n (<person> ^name t)\\n (<a> ^kind ask-private)\\n -->\\n (<s> ^operator <o> +)\\n (<o> ^name choose ^choice <a> ^priority 60 ^rule learned*m*ask-private-public-pressure ^reason |公开场合朋友压力大，先私下询问。|)\\n}\\nsp {learned*m*accept-other-low-pressure\\n (state <s> ^superstate nil ^io.input.link.frame <f>)\\n (<f> ^mode campus-choice ^self m ^from <person> ^audience <aud> ^known <k> ^available <a>)\\n (<k> ^affection-target t ^affection yes ^peer-pressure low)\\n (<person> ^name <p>)\\n (<p> ^name != t)\\n (<a> ^kind accept-prom)\\n -->\\n (<s> ^operator <o> +)\\n (<o> ^name choose ^choice <a> ^priority 50 ^rule learned*m*accept-other-low-pressure ^reason |朋友压力低，接受邀请。|)\\n}\\nsp {learned*m*ask-time-other-high-pressure\\n (state <s> ^superstate nil ^io.input.link.frame <f>)\\n (<f> ^mode campus-choice ^self m ^from <person> ^audience <aud> ^known <k> ^available <a>)\\n (<k> ^affection-target t ^affection yes ^peer-pressure high)\\n (<person> ^name <p>)\\n (<p> ^name != t)\\n (<a> ^kind ask-time)\\n -->\\n (<s> ^operator <o> +)\\n (<o> ^name choose ^choice <a> ^priority 40 ^rule learned*m*ask-time-other-high-pressure ^reason |朋友压力高，请求时间考虑。|)\\n}\"}"
+  },
+  "latencySeconds": 14.786,
+  "completionRequests": 1
+}

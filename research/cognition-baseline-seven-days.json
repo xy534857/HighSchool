@@ -1,0 +1,149 @@
+{
+  "phase": "Before mind*recheck-stale-empty-stock was added",
+  "kernel": "Soar 9.6.5",
+  "result": {
+    "name": "seven-days",
+    "simulationMinutes": 10080,
+    "day": 8,
+    "mealAttendance": 0.9473684210526315,
+    "missedMeals": [
+      {
+        "day": 3,
+        "person": "dad",
+        "slot": "lunch",
+        "task": "eat",
+        "knownFood": 7
+      },
+      {
+        "day": 4,
+        "person": "xing",
+        "slot": "lunch",
+        "task": "idle",
+        "knownFood": 0
+      },
+      {
+        "day": 4,
+        "person": "xiaoyu",
+        "slot": "lunch",
+        "task": "idle",
+        "knownFood": 0
+      },
+      {
+        "day": 4,
+        "person": "xing",
+        "slot": "dinner",
+        "task": "idle",
+        "knownFood": 0
+      },
+      {
+        "day": 5,
+        "person": "xing",
+        "slot": "breakfast",
+        "task": "idle",
+        "knownFood": 0
+      }
+    ],
+    "minimumNeed": 16.4525000000075,
+    "completed": [
+      "xiaoyu",
+      "xing",
+      "dad",
+      "me",
+      "xue"
+    ],
+    "choices": [
+      "work",
+      "tidy",
+      "studyTable",
+      "play",
+      "chat",
+      "continue",
+      "watch",
+      "study",
+      "wait",
+      "workTable",
+      "inspect",
+      "askQuiet",
+      "snack",
+      "cook",
+      "read",
+      "accept",
+      "eat",
+      "rest",
+      "sleep",
+      "groceries"
+    ],
+    "eventTypes": [
+      "action",
+      "planStep",
+      "taskStarted",
+      "result",
+      "taskCompleted",
+      "daily",
+      "noise",
+      "communication",
+      "distraction",
+      "unavailable",
+      "achievement",
+      "inspection",
+      "request",
+      "cooperate",
+      "appraisal",
+      "newDay",
+      "missedMeal",
+      "refuse",
+      "missed"
+    ],
+    "decisions": 25187,
+    "elapsedMilliseconds": 340366.577812,
+    "decisionMs": {
+      "median": 5.109625999997661,
+      "p95": 8.150523000018438,
+      "max": 719.832110000003
+    },
+    "messageCount": 62,
+    "personalBeliefs": {
+      "dad": 6,
+      "me": 4,
+      "xue": 3,
+      "xing": 3,
+      "xiaoyu": 3
+    },
+    "socialAppraisals": {
+      "dad": 2,
+      "me": 0,
+      "xue": 1,
+      "xing": 0,
+      "xiaoyu": 0
+    },
+    "memoryBytes": {
+      "dad": {
+        "smem": 1392640,
+        "epmem": 1892352
+      },
+      "me": {
+        "smem": 1318912,
+        "epmem": 1433600
+      },
+      "xue": {
+        "smem": 1351680,
+        "epmem": 1253376
+      },
+      "xing": {
+        "smem": 1409024,
+        "epmem": 1327104
+      },
+      "xiaoyu": {
+        "smem": 1318912,
+        "epmem": 1220608
+      }
+    },
+    "learnedFeedback": {
+      "dad": 0,
+      "me": 1,
+      "xue": 0,
+      "xing": 2,
+      "xiaoyu": 0
+    }
+  }
+}

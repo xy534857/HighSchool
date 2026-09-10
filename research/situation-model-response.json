@@ -1,0 +1,1494 @@
+{
+  "input": {
+    "episode": {
+      "day": 1,
+      "title": "小雨急着筹钱",
+      "template": "detective",
+      "status": "completed",
+      "summary": "夏雨：谢谢姐。明天我自己跟同学说，你不用替我去。 小雨把画册放回书架，没有把它卖掉。 夏雨：车修好了，这二十块没用上，还给你。这回没有把钱花掉。",
+      "prepared": [],
+      "performed": [
+        "xiaoyu",
+        "dad",
+        "xing",
+        "me",
+        "xue"
+      ],
+      "declined": [],
+      "positions": {},
+      "revised": false,
+      "evidence": [
+        20,
+        44,
+        114,
+        116,
+        142,
+        226,
+        229,
+        232,
+        256,
+        288,
+        328,
+        335,
+        365,
+        370
+      ],
+      "caseId": "case-1-detective",
+      "events": [
+        {
+          "id": 20,
+          "time": 1012.5,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xiaoyu",
+          "text": "小雨把旧画册搬到自己桌边，想看看它能不能换到赔玩具的钱。",
+          "participants": [
+            "xiaoyu"
+          ],
+          "cause": null,
+          "action": "incident",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "put-album-aside",
+          "position": {
+            "x": 8.05,
+            "z": -2.75
+          },
+          "location": "deskYu",
+          "effects": [
+            {
+              "op": "move",
+              "object": "album",
+              "to": "deskYu"
+            }
+          ],
+          "rule": "situation*detective-add32d93*put-album-aside*act",
+          "reason": "手头的钱不够，我想先找件旧东西；还没有得到出售许可。",
+          "observedBy": [
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 44,
+          "time": 1036.5,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xiaoyu",
+          "text": "夏雨：哥，借来的小汽车让我弄坏了。你能先帮我想个办法吗？别一上来就喊妈。",
+          "participants": [
+            "xiaoyu",
+            "xing"
+          ],
+          "cause": null,
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "ask-brother",
+          "position": {
+            "x": 8.049999999999997,
+            "z": -4.549999999535211
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "remember",
+              "key": "asked-help",
+              "value": true
+            },
+            {
+              "op": "tell",
+              "key": "broken",
+              "value": true
+            },
+            {
+              "op": "tell",
+              "key": "culprit",
+              "value": "xiaoyu"
+            },
+            {
+              "op": "tell",
+              "key": "needs-money",
+              "value": true
+            }
+          ],
+          "rule": "situation*detective-add32d93*ask-brother*turn",
+          "reason": "哥哥比较好说话，我先告诉他真实原因，看看能否修好。",
+          "observedBy": [
+            "xiaoyu",
+            "xing"
+          ]
+        },
+        {
+          "id": 114,
+          "time": 1086.25,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xiaoyu",
+          "text": "夏雨：爸，我把同学的小汽车弄坏了，钱也不够。我怕挨说，刚才还想动家里的画册。",
+          "participants": [
+            "xiaoyu",
+            "dad"
+          ],
+          "cause": null,
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "confess",
+          "position": {
+            "x": -3.606119446044297,
+            "z": 2.2805159758015576
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "remember",
+              "key": "confessed",
+              "value": true
+            },
+            {
+              "op": "tell",
+              "key": "culprit",
+              "value": "xiaoyu"
+            },
+            {
+              "op": "tell",
+              "key": "broken",
+              "value": true
+            },
+            {
+              "op": "tell",
+              "key": "needs-money",
+              "value": true
+            }
+          ],
+          "rule": "situation*detective-add32d93*confess*turn",
+          "reason": "单靠自己处理不了，可以把原因讲给爸爸；坦白也是可选办法。",
+          "observedBy": [
+            "xiaoyu",
+            "dad"
+          ]
+        },
+        {
+          "id": 116,
+          "time": 1088,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "dad",
+          "text": "夏东海：我先借你二十，修不好再用来赔。钱和画册都是有主人的，用之前得商量。",
+          "participants": [
+            "dad",
+            "xiaoyu"
+          ],
+          "cause": "conversation-3-turn-1",
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "advance-money",
+          "position": {
+            "x": -3.4,
+            "z": 1.2
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "transfer",
+              "from": "dad",
+              "to": "xiaoyu",
+              "amount": 20,
+              "debt": true
+            },
+            {
+              "op": "tell",
+              "key": "needs-money",
+              "value": false
+            }
+          ],
+          "rule": "situation*detective-add32d93*advance-money*turn",
+          "reason": "孩子明确求助，我能先垫钱，但保留借款责任。",
+          "observedBy": [
+            "dad",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 142,
+          "time": 1109.25,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xing",
+          "text": "刘星：小雨那车轮掉了。你手巧，能不能看看？我负责把事情问明白。",
+          "participants": [
+            "xing",
+            "xue"
+          ],
+          "cause": null,
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "ask-sister",
+          "position": {
+            "x": -8.7,
+            "z": 2.25
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "tell",
+              "key": "broken",
+              "value": true
+            },
+            {
+              "op": "tell",
+              "key": "culprit",
+              "value": "xiaoyu"
+            },
+            {
+              "op": "remember",
+              "key": "asked-help",
+              "value": true
+            }
+          ],
+          "rule": "situation*detective-add32d93*ask-sister*turn",
+          "reason": "修理比直接凑钱更可行，我向姐姐求助。",
+          "observedBy": [
+            "xing",
+            "xue"
+          ]
+        },
+        {
+          "id": 226,
+          "time": 1164.75,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "me",
+          "text": "刘梅：画册怎么不在了？刘星，是不是你又拿去玩了？",
+          "participants": [
+            "me",
+            "xing"
+          ],
+          "cause": null,
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "suspect-xing",
+          "position": {
+            "x": 4.549999999999999,
+            "z": 4.730360548519623
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "tell",
+              "key": "accused",
+              "value": true
+            },
+            {
+              "op": "remember",
+              "key": "made-accusation",
+              "value": true
+            }
+          ],
+          "rule": "situation*detective-add32d93*suspect-xing*turn",
+          "reason": "我发现画册不在原处，先想到平时爱动东西的刘星；这只是怀疑。",
+          "observedBy": [
+            "me",
+            "xing"
+          ]
+        },
+        {
+          "id": 229,
+          "time": 1166.5,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xing",
+          "text": "刘星：怎么一少东西就找我？小雨是急着赔坏掉的玩具，我正帮他找办法呢。",
+          "participants": [
+            "xing",
+            "me"
+          ],
+          "cause": "conversation-6-turn-1",
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "defend-self",
+          "position": {
+            "x": 4.65,
+            "z": 3.8
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "tell",
+              "key": "culprit",
+              "value": "xiaoyu"
+            },
+            {
+              "op": "tell",
+              "key": "broken",
+              "value": true
+            },
+            {
+              "op": "remember",
+              "key": "cleared",
+              "value": true
+            }
+          ],
+          "rule": "situation*detective-add32d93*defend-self*turn",
+          "reason": "我被直接怀疑，愿意说出已知的真实原因来澄清。",
+          "observedBy": [
+            "xing",
+            "me"
+          ]
+        },
+        {
+          "id": 232,
+          "time": 1168.25,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "me",
+          "text": "刘梅：这回是我没问清就想到你了。帮弟弟是好事，刚才那句我收回。",
+          "participants": [
+            "me",
+            "xing"
+          ],
+          "cause": "conversation-6-turn-2",
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "apologize-for-suspicion",
+          "position": {
+            "x": 4.549999999999999,
+            "z": 4.730360548519623
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "tell",
+              "key": "cleared",
+              "value": true
+            },
+            {
+              "op": "social",
+              "value": "apology"
+            }
+          ],
+          "rule": "situation*detective-add32d93*apologize-for-suspicion*turn",
+          "reason": "新消息推翻了最初的怀疑，我需要向被怀疑的人承认这一点。",
+          "observedBy": [
+            "me",
+            "xing"
+          ]
+        },
+        {
+          "id": 256,
+          "time": 1185.5,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xue",
+          "text": "夏雪：我可以花十分钟试着修。你得在旁边帮忙，修不好就一起跟爸妈说。",
+          "participants": [
+            "xue",
+            "xiaoyu"
+          ],
+          "cause": null,
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "offer-repair",
+          "position": {
+            "x": -4.550000000000001,
+            "z": 3.51458980337503
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "remember",
+              "key": "repair-offer",
+              "value": true
+            },
+            {
+              "op": "tell",
+              "key": "repair-offer",
+              "value": true
+            }
+          ],
+          "rule": "situation*detective-add32d93*offer-repair*turn",
+          "reason": "我还有复习，但能拿出十分钟；帮助不等于替弟弟隐瞒所有后果。",
+          "observedBy": [
+            "xue",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 288,
+          "time": 1214.25,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xue",
+          "text": "夏雪检查车轴，把松掉的车轮装回去了。",
+          "participants": [
+            "xue"
+          ],
+          "cause": null,
+          "action": "incident",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "repair-toy",
+          "position": {
+            "x": 8.05,
+            "z": -2.75
+          },
+          "location": "deskYu",
+          "effects": [
+            {
+              "op": "repair",
+              "object": "toy"
+            },
+            {
+              "op": "remember",
+              "key": "repaired",
+              "value": true
+            }
+          ],
+          "rule": "situation*detective-add32d93*repair-toy*act",
+          "reason": "我已经答应帮忙，现在实际修理，完成后才算兑现。",
+          "observedBy": [
+            "xue"
+          ]
+        },
+        {
+          "id": 328,
+          "time": 1242,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xue",
+          "text": "夏雪：轮子装好了。明天还给同学时，把摔过这件事也说明白。",
+          "participants": [
+            "xue",
+            "xiaoyu"
+          ],
+          "cause": null,
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "report-repair",
+          "position": {
+            "x": -8.049981962486632,
+            "z": 2.4499999999999993
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "tell",
+              "key": "repaired",
+              "value": true
+            },
+            {
+              "op": "social",
+              "value": "cooperate"
+            }
+          ],
+          "rule": "situation*detective-add32d93*report-repair*turn",
+          "reason": "修理结束了，要把结果交代给借东西的人。",
+          "observedBy": [
+            "xue",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 335,
+          "time": 1243.75,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xiaoyu",
+          "text": "夏雨：谢谢姐。明天我自己跟同学说，你不用替我去。",
+          "participants": [
+            "xiaoyu",
+            "xue"
+          ],
+          "cause": "conversation-9-turn-1",
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "thank-sister",
+          "position": {
+            "x": -8.956119446044298,
+            "z": 3.1805159758015575
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "social",
+              "value": "cooperate"
+            }
+          ],
+          "rule": "situation*detective-add32d93*thank-sister*turn",
+          "reason": "得到实际帮助后，我愿意自己承担归还和说明的责任。",
+          "observedBy": [
+            "xiaoyu",
+            "xue"
+          ]
+        },
+        {
+          "id": 365,
+          "time": 1281.5,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xiaoyu",
+          "text": "小雨把画册放回书架，没有把它卖掉。",
+          "participants": [
+            "xiaoyu"
+          ],
+          "cause": null,
+          "action": "incident",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "return-album",
+          "position": {
+            "x": -3.4,
+            "z": 1.2
+          },
+          "location": "book",
+          "effects": [
+            {
+              "op": "move",
+              "object": "album",
+              "to": "book"
+            },
+            {
+              "op": "remember",
+              "key": "returned",
+              "value": true
+            }
+          ],
+          "rule": "situation*detective-add32d93*return-album*act",
+          "reason": "玩具修好了，不需要动用别人的东西，把画册归还。",
+          "observedBy": [
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 370,
+          "time": 1284.25,
+          "day": 1,
+          "type": "incident-event",
+          "actor": "xiaoyu",
+          "text": "夏雨：车修好了，这二十块没用上，还给你。这回没有把钱花掉。",
+          "participants": [
+            "xiaoyu",
+            "dad"
+          ],
+          "cause": null,
+          "action": "idle",
+          "episode": "episode-1",
+          "caseId": "case-1-detective",
+          "token": "repay-dad",
+          "position": {
+            "x": -3.4,
+            "z": 1.2
+          },
+          "location": null,
+          "effects": [
+            {
+              "op": "transfer",
+              "from": "xiaoyu",
+              "to": "dad",
+              "amount": 20,
+              "repayment": true
+            }
+          ],
+          "rule": "situation*detective-add32d93*repay-dad*turn",
+          "reason": "借款用途已经消失，归還钱才能结束债务。",
+          "observedBy": [
+            "xiaoyu",
+            "dad"
+          ]
+        }
+      ],
+      "openThreads": [],
+      "followup": "玩具是否修好、借款是否归还和被误会的人是否得到道歉，分别继续记录。"
+    },
+    "evidence": {
+      "id": 116,
+      "time": 1088,
+      "day": 1,
+      "type": "incident-event",
+      "actor": "dad",
+      "text": "夏东海：我先借你二十，修不好再用来赔。钱和画册都是有主人的，用之前得商量。",
+      "participants": [
+        "dad",
+        "xiaoyu"
+      ],
+      "cause": "conversation-3-turn-1",
+      "action": "idle",
+      "episode": "episode-1",
+      "caseId": "case-1-detective",
+      "token": "advance-money",
+      "position": {
+        "x": -3.4,
+        "z": 1.2
+      },
+      "location": null,
+      "effects": [
+        {
+          "op": "transfer",
+          "from": "dad",
+          "to": "xiaoyu",
+          "amount": 20,
+          "debt": true
+        },
+        {
+          "op": "tell",
+          "key": "needs-money",
+          "value": false
+        }
+      ],
+      "rule": "situation*detective-add32d93*advance-money*turn",
+      "reason": "孩子明确求助，我能先垫钱，但保留借款责任。",
+      "observedBy": [
+        "dad",
+        "xiaoyu"
+      ]
+    }
+  },
+  "response": {
+    "schemaVersion": 1,
+    "requestId": "reflection-123-1-962171ac",
+    "baseRuleVersion": 1,
+    "author": "ChatGPT 根据自主运行结果编写",
+    "summary": "根据实际垫款事件，安排家务验收与报酬的新情景。",
+    "changes": [],
+    "nextEpisode": {
+      "continuation": null,
+      "schemaVersion": 1,
+      "id": "episode-2",
+      "day": 2,
+      "template": "repayment-and-work",
+      "situation": {
+        "version": 1,
+        "id": "repayment-and-work",
+        "title": "借钱以后，家务怎么算",
+        "premise": "昨天家里垫过一笔赔偿钱，爸爸想把今天的家务和零用钱也说清楚。",
+        "source": {
+          "title": "第一部第48集《给家里打工》",
+          "url": "https://tv.cctv.com/2010/06/11/VIDE1354275395402484.shtml"
+        },
+        "roles": {
+          "dad": {
+            "want": "试行一个孩子愿意参与、家长也能兑现的家务制度。",
+            "memory": "昨天我给小雨垫过赔玩具的钱，今天希望把家里的钱与责任讲清楚。",
+            "job": "按自己的判断处理",
+            "line": "试行一个孩子愿意参与、家长也能兑现的家务制度。"
+          },
+          "me": {
+            "want": "家里真正变干净，不能只是卡片数字好看。",
+            "memory": "家里真正变干净，不能只是卡片数字好看。",
+            "job": "按自己的判断处理",
+            "line": "家里真正变干净，不能只是卡片数字好看。"
+          },
+          "xing": {
+            "want": "想用比较省力的办法挣零用钱，觉得规则应该讲清楚。",
+            "memory": "想用比较省力的办法挣零用钱，觉得规则应该讲清楚。",
+            "job": "按自己的判断处理",
+            "line": "想用比较省力的办法挣零用钱，觉得规则应该讲清楚。"
+          },
+          "xue": {
+            "want": "愿意劳动，但希望质量和工作量得到公平对待。",
+            "memory": "愿意劳动，但希望质量和工作量得到公平对待。",
+            "job": "按自己的判断处理",
+            "line": "愿意劳动，但希望质量和工作量得到公平对待。"
+          },
+          "xiaoyu": {
+            "want": "想和哥哥一起干，也想得到自己那份。",
+            "memory": "想和哥哥一起干，也想得到自己那份。",
+            "job": "按自己的判断处理",
+            "line": "想和哥哥一起干，也想得到自己那份。"
+          }
+        },
+        "facts": {
+          "announced": false,
+          "worked": false,
+          "submitted": false,
+          "inspected": false,
+          "approved": false,
+          "rework": false,
+          "paid": false,
+          "quality-rule": false,
+          "split-proposal": false,
+          "shared-job": false,
+          "cash": 0,
+          "energy": 0,
+          "goal-left": 0,
+          "submitted-xing": 0,
+          "approved-xing": false,
+          "rework-xing": false,
+          "submitted-xue": 0,
+          "approved-xue": false,
+          "rework-xue": false,
+          "submitted-xiaoyu": 0,
+          "approved-xiaoyu": false,
+          "rework-xiaoyu": false
+        },
+        "seeds": {
+          "dad": {
+            "announced": true
+          }
+        },
+        "objects": [],
+        "observations": [],
+        "actions": [
+          {
+            "id": "announce-xing",
+            "actor": "dad",
+            "target": "xing",
+            "label": "商量家务卡",
+            "when": [
+              [
+                "announced",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "tell",
+                "key": "announced",
+                "value": true
+              }
+            ],
+            "text": "今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+            "reason": "只有实际听到规则的人，才知道怎样参与。",
+            "priority": 190,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "announce-xue",
+            "actor": "dad",
+            "target": "xue",
+            "label": "商量家务卡",
+            "when": [
+              [
+                "announced",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "tell",
+                "key": "announced",
+                "value": true
+              }
+            ],
+            "text": "今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+            "reason": "只有实际听到规则的人，才知道怎样参与。",
+            "priority": 190,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "announce-xiaoyu",
+            "actor": "dad",
+            "target": "xiaoyu",
+            "label": "商量家务卡",
+            "when": [
+              [
+                "announced",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "tell",
+                "key": "announced",
+                "value": true
+              }
+            ],
+            "text": "今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+            "reason": "只有实际听到规则的人，才知道怎样参与。",
+            "priority": 190,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "announce-me",
+            "actor": "dad",
+            "target": "me",
+            "label": "商量家务卡",
+            "when": [
+              [
+                "announced",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "tell",
+                "key": "announced",
+                "value": true
+              }
+            ],
+            "text": "今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+            "reason": "只有实际听到规则的人，才知道怎样参与。",
+            "priority": 190,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "quick-job",
+            "actor": "xing",
+            "spot": "clean",
+            "label": "快速擦桌边",
+            "when": [
+              [
+                "announced",
+                "eq",
+                true
+              ],
+              [
+                "quality-rule",
+                "eq",
+                false
+              ],
+              [
+                "worked",
+                "eq",
+                false
+              ]
+            ],
+            "effects": [
+              {
+                "op": "clean",
+                "quality": 1,
+                "amount": 5
+              },
+              {
+                "op": "remember",
+                "key": "worked",
+                "value": true
+              }
+            ],
+            "text": "刘星很快擦了一圈桌边，角落还留着污渍。",
+            "reason": "规则只说一份活，我想先试试最省时间的做法。",
+            "priority": 210,
+            "mode": "physical",
+            "minutes": 3
+          },
+          {
+            "id": "proper-job",
+            "actor": "xing",
+            "spot": "clean",
+            "label": "按上次说清的标准做家务",
+            "when": [
+              [
+                "announced",
+                "eq",
+                true
+              ],
+              [
+                "quality-rule",
+                "eq",
+                true
+              ],
+              [
+                "worked",
+                "eq",
+                false
+              ]
+            ],
+            "effects": [
+              {
+                "op": "clean",
+                "quality": 3,
+                "amount": 12
+              },
+              {
+                "op": "remember",
+                "key": "worked",
+                "value": true
+              }
+            ],
+            "text": "刘星这次先把边角擦干净，再准备申请家务卡。",
+            "reason": "记得以前返工和争论过，先达到已经讲清楚的标准。",
+            "priority": 220,
+            "mode": "physical",
+            "minutes": 8
+          },
+          {
+            "id": "careful-job",
+            "actor": "xue",
+            "spot": "clean",
+            "label": "认真收拾桌面",
+            "when": [
+              [
+                "announced",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "clean",
+                "quality": 3,
+                "amount": 14
+              },
+              {
+                "op": "remember",
+                "key": "worked",
+                "value": true
+              }
+            ],
+            "text": "夏雪把桌面和边角都擦过，再把东西摆齐。",
+            "reason": "我希望做出的活能经得起验收。",
+            "priority": 205,
+            "mode": "physical",
+            "minutes": 9
+          },
+          {
+            "id": "join-brother",
+            "actor": "xiaoyu",
+            "target": "xing",
+            "label": "请求一起做家务",
+            "when": [
+              [
+                "announced",
+                "eq",
+                true
+              ],
+              [
+                "worked",
+                "eq",
+                false
+              ]
+            ],
+            "effects": [
+              {
+                "op": "tell",
+                "key": "shared-job",
+                "value": true
+              },
+              {
+                "op": "remember",
+                "key": "shared-job",
+                "value": true
+              }
+            ],
+            "text": "哥，我也想挣两块。我帮你拿抹布，咱们能一起干吗？",
+            "reason": "我想参与，又希望哥哥带着我。",
+            "priority": 210,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "small-job",
+            "actor": "xiaoyu",
+            "spot": "clean",
+            "label": "整理自己的玩具",
+            "when": [
+              [
+                "announced",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "clean",
+                "quality": 2,
+                "amount": 8
+              },
+              {
+                "op": "remember",
+                "key": "worked",
+                "value": true
+              }
+            ],
+            "text": "小雨把自己散着的玩具收进盒里。",
+            "reason": "先完成自己做得到的一份活，才有理由申请家务卡。",
+            "priority": 200,
+            "mode": "physical",
+            "minutes": 6
+          },
+          {
+            "id": "submit-xing",
+            "actor": "xing",
+            "target": "me",
+            "label": "请妈妈验收",
+            "when": [
+              [
+                "worked",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "remember",
+                "key": "submitted",
+                "value": true
+              },
+              {
+                "op": "tell",
+                "key": "submitted-xing",
+                "value": 0,
+                "valueFrom": "work-version"
+              }
+            ],
+            "text": "我的那份干完了，你来看看，能不能算一张卡？",
+            "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+            "priority": 220,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "submit-xue",
+            "actor": "xue",
+            "target": "me",
+            "label": "请妈妈验收",
+            "when": [
+              [
+                "worked",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "remember",
+                "key": "submitted",
+                "value": true
+              },
+              {
+                "op": "tell",
+                "key": "submitted-xue",
+                "value": 0,
+                "valueFrom": "work-version"
+              }
+            ],
+            "text": "我的那份干完了，你来看看，能不能算一张卡？",
+            "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+            "priority": 220,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "submit-xiaoyu",
+            "actor": "xiaoyu",
+            "target": "me",
+            "label": "请妈妈验收",
+            "when": [
+              [
+                "worked",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "remember",
+                "key": "submitted",
+                "value": true
+              },
+              {
+                "op": "tell",
+                "key": "submitted-xiaoyu",
+                "value": 0,
+                "valueFrom": "work-version"
+              }
+            ],
+            "text": "我的那份干完了，你来看看，能不能算一张卡？",
+            "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+            "priority": 220,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "inspect-xing",
+            "actor": "me",
+            "spot": "clean",
+            "label": "检查刘星的劳动",
+            "when": [
+              [
+                "submitted-xing",
+                "gt",
+                0
+              ]
+            ],
+            "effects": [
+              {
+                "op": "inspect-work",
+                "actor": "xing"
+              }
+            ],
+            "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+            "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+            "priority": 230,
+            "mode": "physical",
+            "minutes": 3,
+            "repeatWork": "xing"
+          },
+          {
+            "id": "inspect-xue",
+            "actor": "me",
+            "spot": "clean",
+            "label": "检查夏雪的劳动",
+            "when": [
+              [
+                "submitted-xue",
+                "gt",
+                0
+              ]
+            ],
+            "effects": [
+              {
+                "op": "inspect-work",
+                "actor": "xue"
+              }
+            ],
+            "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+            "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+            "priority": 230,
+            "mode": "physical",
+            "minutes": 3,
+            "repeatWork": "xue"
+          },
+          {
+            "id": "inspect-xiaoyu",
+            "actor": "me",
+            "spot": "clean",
+            "label": "检查小雨的劳动",
+            "when": [
+              [
+                "submitted-xiaoyu",
+                "gt",
+                0
+              ]
+            ],
+            "effects": [
+              {
+                "op": "inspect-work",
+                "actor": "xiaoyu"
+              }
+            ],
+            "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+            "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+            "priority": 230,
+            "mode": "physical",
+            "minutes": 3,
+            "repeatWork": "xiaoyu"
+          },
+          {
+            "id": "pay-xing",
+            "actor": "me",
+            "target": "xing",
+            "label": "发放验收合格的家务报酬",
+            "when": [
+              [
+                "approved-xing",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "transfer",
+                "from": "family",
+                "to": "xing",
+                "amount": 2
+              },
+              {
+                "op": "tell",
+                "key": "paid",
+                "value": true
+              }
+            ],
+            "text": "这份验收合格，两块钱给你。只算这次实际做过的活。",
+            "reason": "这份劳动已经合格且未付款，兑现报酬。",
+            "priority": 240,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "pay-xue",
+            "actor": "me",
+            "target": "xue",
+            "label": "发放验收合格的家务报酬",
+            "when": [
+              [
+                "approved-xue",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "transfer",
+                "from": "family",
+                "to": "xue",
+                "amount": 2
+              },
+              {
+                "op": "tell",
+                "key": "paid",
+                "value": true
+              }
+            ],
+            "text": "这份验收合格，两块钱给你。只算这次实际做过的活。",
+            "reason": "这份劳动已经合格且未付款，兑现报酬。",
+            "priority": 240,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "pay-xiaoyu",
+            "actor": "me",
+            "target": "xiaoyu",
+            "label": "发放验收合格的家务报酬",
+            "when": [
+              [
+                "approved-xiaoyu",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "transfer",
+                "from": "family",
+                "to": "xiaoyu",
+                "amount": 2
+              },
+              {
+                "op": "tell",
+                "key": "paid",
+                "value": true
+              }
+            ],
+            "text": "这份验收合格，两块钱给你。只算这次实际做过的活。",
+            "reason": "这份劳动已经合格且未付款，兑现报酬。",
+            "priority": 240,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "reject-quick-job",
+            "actor": "me",
+            "target": "xing",
+            "label": "指出需要返工的地方",
+            "when": [
+              [
+                "rework-xing",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "tell",
+                "key": "rework",
+                "value": true
+              }
+            ],
+            "text": "桌沿是擦了，角落还脏着。现在这份不能算合格，你回来补一下。",
+            "reason": "检查到实际质量不足，解释拒付原因，而不是只扣一个分数。",
+            "priority": 250,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "argue-count",
+            "actor": "xing",
+            "target": "dad",
+            "label": "向爸爸争论怎样计数",
+            "when": [
+              [
+                "rework",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "tell",
+                "key": "split-proposal",
+                "value": true
+              },
+              {
+                "op": "tell",
+                "key": "quality-rule",
+                "value": true
+              }
+            ],
+            "text": "你说做一份算一张，可没说边角另算不算。我补擦一遍，能不能算两份？",
+            "reason": "我不想白做，尝试利用计数规则讨价还价。",
+            "priority": 245,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "revise-quality",
+            "actor": "dad",
+            "target": "xing",
+            "label": "明确质量与重复计分",
+            "when": [
+              [
+                "quality-rule",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "policy",
+                "key": "chore-quality",
+                "value": 2
+              },
+              {
+                "op": "tell",
+                "key": "quality-rule",
+                "value": true
+              }
+            ],
+            "text": "补完还是原来那份。以后说清楚：达到约定质量才算，返工不能再领一张。",
+            "reason": "这次争议说明计分条件不清楚，修改未来的验收规则。",
+            "priority": 260,
+            "mode": "talk",
+            "minutes": 1
+          },
+          {
+            "id": "redo-job",
+            "actor": "xing",
+            "spot": "clean",
+            "label": "把没擦好的角落补完",
+            "when": [
+              [
+                "quality-rule",
+                "eq",
+                true
+              ],
+              [
+                "rework",
+                "eq",
+                true
+              ]
+            ],
+            "effects": [
+              {
+                "op": "clean",
+                "quality": 3,
+                "amount": 10
+              },
+              {
+                "op": "remember",
+                "key": "rework",
+                "value": false
+              }
+            ],
+            "text": "刘星把漏掉的角落补擦干净。",
+            "reason": "规则和拒付原因已经明确；补好以后仍能拿到原先的报酬。",
+            "priority": 240,
+            "mode": "physical",
+            "minutes": 7
+          },
+          {
+            "id": "resubmit",
+            "actor": "xing",
+            "target": "me",
+            "label": "请妈妈重新验收",
+            "when": [
+              [
+                "quality-rule",
+                "eq",
+                true
+              ],
+              [
+                "rework",
+                "eq",
+                false
+              ],
+              [
+                "paid",
+                "eq",
+                false
+              ]
+            ],
+            "effects": [
+              {
+                "op": "tell",
+                "key": "submitted-xing",
+                "value": 0,
+                "valueFrom": "work-version"
+              },
+              {
+                "op": "remember",
+                "key": "submitted",
+                "value": true
+              }
+            ],
+            "text": "这回边角也干净了。还是原来那张卡，你再看一眼。",
+            "reason": "我完成了返工，请同一个验收者重新检查。",
+            "priority": 245,
+            "mode": "talk",
+            "minutes": 1
+          }
+        ],
+        "carry": [
+          "quality-rule"
+        ],
+        "end": [
+          "pay-xing",
+          "pay-xue",
+          "pay-xiaoyu"
+        ],
+        "followup": "家务报酬保存在各人的钱包里，修订后的质量门槛以后继续生效。"
+      },
+      "title": "借钱以后，家务怎么算",
+      "premise": "昨天家里垫过一笔赔偿钱，爸爸想把今天的家务和零用钱也说清楚。",
+      "lead": "xiaoyu",
+      "roles": {
+        "dad": {
+          "want": "试行一个孩子愿意参与、家长也能兑现的家务制度。",
+          "memory": "昨天我给小雨垫过赔玩具的钱，今天希望把家里的钱与责任讲清楚。",
+          "job": "按自己的判断处理",
+          "line": "试行一个孩子愿意参与、家长也能兑现的家务制度。"
+        },
+        "me": {
+          "want": "家里真正变干净，不能只是卡片数字好看。",
+          "memory": "家里真正变干净，不能只是卡片数字好看。",
+          "job": "按自己的判断处理",
+          "line": "家里真正变干净，不能只是卡片数字好看。"
+        },
+        "xing": {
+          "want": "想用比较省力的办法挣零用钱，觉得规则应该讲清楚。",
+          "memory": "想用比较省力的办法挣零用钱，觉得规则应该讲清楚。",
+          "job": "按自己的判断处理",
+          "line": "想用比较省力的办法挣零用钱，觉得规则应该讲清楚。"
+        },
+        "xue": {
+          "want": "愿意劳动，但希望质量和工作量得到公平对待。",
+          "memory": "愿意劳动，但希望质量和工作量得到公平对待。",
+          "job": "按自己的判断处理",
+          "line": "愿意劳动，但希望质量和工作量得到公平对待。"
+        },
+        "xiaoyu": {
+          "want": "想和哥哥一起干，也想得到自己那份。",
+          "memory": "想和哥哥一起干，也想得到自己那份。",
+          "job": "按自己的判断处理",
+          "line": "想和哥哥一起干，也想得到自己那份。"
+        }
+      },
+      "effort": 8,
+      "meet": 1160,
+      "finale": 1230,
+      "deadline": 1275,
+      "origin": "ChatGPT 编写情景与 Soar 规则 · 人物自主执行",
+      "basedOn": 1,
+      "evidence": [
+        116
+      ]
+    }
+  }
+}

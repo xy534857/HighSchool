@@ -1,0 +1,317 @@
+{
+  "source": "Actual native-Soar household run",
+  "physicalEvents": [
+    {
+      "id": 2,
+      "time": 990,
+      "day": 1,
+      "type": "action",
+      "actor": "xing",
+      "text": "刘星打算在餐桌写作业。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "studyTable",
+      "observedBy": []
+    },
+    {
+      "id": 3,
+      "time": 990,
+      "day": 1,
+      "type": "taskStarted",
+      "actor": "xing",
+      "text": "刘星开始在餐桌写作业。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "studyTable",
+      "task": "studyTable",
+      "meal": null,
+      "why": "player-command",
+      "rule": "player-command",
+      "observedBy": []
+    },
+    {
+      "id": 14,
+      "time": 992.25,
+      "day": 1,
+      "type": "planStep",
+      "actor": "xing",
+      "text": "正在完成玩家安排的行动；自己的计划保留，结束后继续。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "studyTable",
+      "project": "project-xing-1",
+      "basis": "core*honor-player-action",
+      "kind": "continue",
+      "goal": "study",
+      "observedBy": []
+    },
+    {
+      "id": 26,
+      "time": 1014,
+      "day": 1,
+      "type": "distraction",
+      "actor": "xing",
+      "text": "刘星亲身体会到电视声会拖慢进度。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "studyTable",
+      "observedBy": [
+        "xing"
+      ]
+    },
+    {
+      "id": 27,
+      "time": 1014,
+      "day": 1,
+      "type": "result",
+      "actor": "xing",
+      "text": "刘星做完一段学习，被电视声分了心，进度慢了一些。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "studyTable",
+      "observedBy": [
+        "me",
+        "xing",
+        "xiaoyu"
+      ]
+    },
+    {
+      "id": 28,
+      "time": 1014,
+      "day": 1,
+      "type": "taskCompleted",
+      "actor": "xing",
+      "text": "刘星完成在餐桌写作业。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "studyTable",
+      "task": "studyTable",
+      "meal": null,
+      "project": "project-xing-1",
+      "observedBy": []
+    },
+    {
+      "id": 29,
+      "time": 1015,
+      "day": 1,
+      "type": "planStep",
+      "actor": "xing",
+      "text": "这次计划先休息一轮，余下时间预计还够完成「把作业交代完」；休息结束后就接着做。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "idle",
+      "project": "project-xing-1",
+      "basis": "agreed-break",
+      "kind": "play",
+      "goal": "study",
+      "observedBy": []
+    },
+    {
+      "id": 30,
+      "time": 1015,
+      "day": 1,
+      "type": "action",
+      "actor": "xing",
+      "text": "刘星打算玩一会儿。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "play",
+      "observedBy": []
+    },
+    {
+      "id": 31,
+      "time": 1015,
+      "day": 1,
+      "type": "action",
+      "actor": "xing",
+      "text": "刘星打算看电视。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "watch",
+      "observedBy": []
+    },
+    {
+      "id": 32,
+      "time": 1015,
+      "day": 1,
+      "type": "player",
+      "actor": "xing",
+      "text": "你让刘星看电视。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "watch",
+      "observedBy": [
+        "xue",
+        "xing",
+        "xiaoyu"
+      ]
+    },
+    {
+      "id": 33,
+      "time": 1015,
+      "day": 1,
+      "type": "taskStarted",
+      "actor": "xing",
+      "text": "刘星开始看电视。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "watch",
+      "task": "watch",
+      "meal": null,
+      "project": "project-xing-1",
+      "why": "player-command",
+      "rule": "player-command",
+      "observedBy": []
+    },
+    {
+      "id": 34,
+      "time": 1015,
+      "day": 1,
+      "type": "noise",
+      "actor": "xing",
+      "text": "刘星打开了电视，声音传到附近。",
+      "participants": [
+        "xing"
+      ],
+      "cause": null,
+      "action": "watch",
+      "observedBy": [
+        "xue",
+        "xing",
+        "xiaoyu"
+      ]
+    }
+  ],
+  "nativeMemory": "(@1 ^day 1 ^kind study ^owner xing ^progress 8.022857142857145 ^status active ^target 65 ^title |把作业交代完| ^type goal [+49.000])\n(@2 ^action watch ^actor television ^day 1 ^id 7 ^kind noise ^observedBy xing xue dad ^participants xue ^source heard ^target none ^text |夏雪打开了电视，声音传到附近。| ^time 990 ^type event ^uid event-7 [+1.000])\n(@3 ^break-done no ^company-done no ^created 992.2500000000000000 ^credited-day 0 ^day 1 ^due 1320 ^method break-first ^milestones 0 ^motive |想保住自己的娱乐时间，也不想作业一直拖着| ^owner xing ^revision 1 ^started-day 1 ^status active ^target 2 ^title |把这两天的作业交代完，晚上安心看电视| ^type intention ^uid project-xing-1 [+48.000])\n(@4 ^evidence event-26 ^owner xing ^predicate disrupts-my-goal ^source self ^subject noise ^time 1014 ^type belief ^value yes [+47.000])\n(@5 ^action studyTable ^actor xing ^day 1 ^id 26 ^kind distraction ^observedBy xing ^participants xing ^source self ^target none ^text |刘星亲身体会到电视声会拖慢进度。| ^time 1014 ^type event ^uid event-26 [+50.000])\n(@6 ^action studyTable ^actor xing ^day 1 ^id 27 ^kind result ^observedBy xing me ^participants xing ^source self ^target none ^text |刘星做完一段学习，被电视声分了心，进度慢了一些。| ^time 1014 ^type event ^uid event-27 [+47.000])\n(@7 ^action watch ^actor xing ^day 1 ^id 32 ^kind player ^observedBy xing xue ^participants xing ^source self ^target none ^text |你让刘星看电视。| ^time 1015 ^type event ^uid event-32 [+51.000])\n(@8 ^action watch ^actor xing ^day 1 ^id 34 ^kind noise ^observedBy xing xue ^participants xing ^source self ^target none ^text |刘星打开了电视，声音传到附近。| ^time 1015 ^type event ^uid event-34 [+51.000])\n",
+  "nativeEpisode": "========================================\n               Episode 1                \n========================================\n(<id0> ^context <id2> ^io <id1> ^reward-link <id3> ^superstate nil ^type state)\n(<id1> ^input-link <id5> ^output-link <id4>)\n(<id2> ^encoded-copy @2 ^frame <id7>)\n(<id4> ^command <id8>)\n(<id5> ^frame <id7>)\n(@2 ^action watch ^actor television ^day 1 ^id 7 ^kind noise ^observedBy xing xue dad ^participants xue ^source heard ^target none ^text 夏雪打开了电视，声音传到附近。 ^time 990 ^type event ^uid event-7)\n(<id7> ^event <id9> ^mode observe ^ontology-version 2 ^policy-version 0 ^self xing ^seq 2)\n(<id8> ^kind observed ^remember yes ^seq 2)\n(<id9> ^action watch ^actor television ^day 1 ^id 7 ^kind noise ^observedBy xing xue dad ^participants xue ^source heard ^target none ^text 夏雪打开了电视，声音传到附近。 ^time 990 ^type event ^uid event-7)\n\n",
+  "currentFacts": {
+    "self": "xing",
+    "mode": "act",
+    "scene": {
+      "enabled": false,
+      "ready": false,
+      "prepare": false
+    },
+    "label": "上学",
+    "place": "学校",
+    "leave": 465,
+    "return": 975,
+    "weekday": 0,
+    "day": 1,
+    "weekend": false,
+    "workday": false,
+    "departure-due": false,
+    "away": false,
+    "storyWindow": false,
+    "busy": true,
+    "manual": true,
+    "active-task": "watch",
+    "activity-purpose": "leisure",
+    "hunger": 55.409179307520674,
+    "energy": 82.87367242742278,
+    "fun": 27.35292433388514,
+    "social": 74.4838996344248,
+    "food": 1,
+    "ingredients": 1,
+    "clean": 60,
+    "affect": [],
+    "seeking": "none",
+    "stock-unknown": true,
+    "ingredients-known": false,
+    "hunger-decay": 0.075,
+    "energy-decay": 0.052,
+    "hunger-urgent": 18,
+    "energy-urgent": 12,
+    "time": 1015,
+    "minute": 1015,
+    "project": {
+      "title": "把这两天的作业交代完，晚上安心看电视",
+      "motive": "想保住自己的娱乐时间，也不想作业一直拖着",
+      "milestones": 2,
+      "deadlineMinute": 1320,
+      "style": "break-first",
+      "breakTarget": 65,
+      "foodReserve": 23,
+      "energyReserve": 20
+    },
+    "project-uid": "project-xing-1",
+    "meal-window": false,
+    "meal-due": false,
+    "meal-id": "none",
+    "meal-end": 0,
+    "minutes-to-meal": 95,
+    "meal-title": "晚饭",
+    "prep-window": false,
+    "cook-duty": false,
+    "prep-meal": "none",
+    "food-needed": 5,
+    "work-window": true,
+    "work-budget": 125,
+    "night": false,
+    "wake-at": 420,
+    "routine-period": "work",
+    "conversation-holding": false,
+    "hear-tv": true,
+    "noise-minutes": 0,
+    "food-task": false,
+    "rest-task": false,
+    "request": "none",
+    "from": "none",
+    "contract": {},
+    "observed": [
+      {
+        "id": "xue",
+        "action": "idle",
+        "location": {
+          "x": -8.1,
+          "z": 2.55
+        }
+      },
+      {
+        "id": "xiaoyu",
+        "action": "play",
+        "location": {
+          "x": -4.4,
+          "z": 4.7
+        }
+      }
+    ]
+  },
+  "ownInterference": {
+    "observedBy": "xing",
+    "id": 26,
+    "action": "studyTable",
+    "time": 1014,
+    "uid": "event-26",
+    "source": "self",
+    "actor": "xing",
+    "participants": "xing",
+    "text": "刘星亲身体会到电视声会拖慢进度。",
+    "target": "none",
+    "day": 1,
+    "kind": "distraction",
+    "type": "event"
+  }
+}

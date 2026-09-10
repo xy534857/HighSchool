@@ -1,0 +1,13 @@
+# Participation in situated conversations still belongs to each actor.
+sp {situation*hear-a-personal-request
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^topic.kind incident ^available <a>) (<a> ^kind join)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 80 ^rule situation*hear-a-personal-request ^reason |对方有一件具体的事找我，先听清楚，再决定是否答应。|)
+}
+sp {situation*finish-this-exchange
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase participation ^topic.kind incident ^available <a>) (<a> ^kind stay)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 75 ^rule situation*finish-this-exchange ^reason |先把眼前这轮交涉说清楚，再接着自己的生活。|)
+}
+sp {situation*continue-a-chosen-action
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^active-task incident ^available <a>) (<a> ^kind continue)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 300 ^rule situation*continue-a-chosen-action ^reason |正在完成刚才选择的具体事情，遇到饭点或紧急需要时仍会暂停。|)
+}

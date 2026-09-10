@@ -1,0 +1,92 @@
+# Independent xing cognitive program.
+sp {xing*leisure-first
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^fun { <v> < 65 } ^available <a>) (<a> ^kind watch)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority (- 106 <v>) ^rule xing*leisure-first ^reason |刚闲下来，先让我看会儿球吧。|)
+}
+sp {xing*homework-after-break
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^work-window yes ^goal-study yes ^fun > 57 ^available <a>) (<a> ^kind study)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 52 ^rule xing*homework-after-break ^reason |玩够一阵了，作业还是得交代。|)
+}
+sp {xing*homework-deadline
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^work-window yes ^goal-study yes ^minute > 1170 ^night no ^available <a>) (<a> ^kind study)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 90 ^rule xing*homework-deadline ^reason |再拖就真来不及了，赶紧写。|)
+}
+sp {xing*recall-my-experience
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal-ready yes ^contract-ready yes) (<f> ^mode << act response >> ^self <me>)
+ --> (<c> ^episode-kind distraction ^episode-actor <me>)
+}
+sp {xing*interpret-request-as-control
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes) (<f> ^mode response)
+ -(<c> ^reframed yes)
+ --> (<c> ^concern self-direction)
+}
+sp {xing*value-kept-leisure
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode feedback ^kept-activity <kept> ^request-satisfied <sat> ^social-cost <cost>)
+ --> (<c> ^reward-value (- (+ (* 3 <kept>) <sat>) (* 2 <cost>)))
+}
+
+sp {rl*xing*self-direction*accommodate
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^concern self-direction)
+ --> (<s> ^operator <o> = 0)
+}
+
+sp {rl*xing*self-direction*protect-plan
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^concern self-direction)
+ --> (<s> ^operator <o> = 3)
+}
+
+sp {rl*xing*self-direction*offer-later
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^concern self-direction)
+ --> (<s> ^operator <o> = 1)
+}
+
+sp {rl*xing*mutual-space*accommodate
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^concern mutual-space)
+ --> (<s> ^operator <o> = 5)
+}
+
+sp {rl*xing*mutual-space*protect-plan
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^concern mutual-space)
+ --> (<s> ^operator <o> = 1)
+}
+
+sp {rl*xing*mutual-space*offer-later
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^concern mutual-space)
+ --> (<s> ^operator <o> = 0)
+}
+
+sp {xing*choose-what-to-tell
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode share ^self <me>)
+ --> (<f> ^cue <q>) (<q> ^type event ^actor <me> ^kind refuse)
+}
+
+sp {xing*choose-project-method
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode plan)
+ --> (<c> ^planning-style break-first)
+}
+
+# Personal appraisal and coping, executed by native productions.
+sp {person*xing*appraisal
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode perceive ^self xing)
+ --> (<c> ^sensitivity 16 ^style withdraw)
+}
+
+sp {xing*conversation-interruption
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^compatibility pause ^available <a>) (<a> ^kind join)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 30 ^rule xing*conversation-interruption ^reason |我想先完成自己的安排。|)
+}

@@ -1,0 +1,12 @@
+{
+  "environment": "local supervised preview",
+  "checks": [
+    {"check":"character-plan-dialog","passed":true,"details":"林知夏与沈乔分别显示性格参数、不同周目标、动机、全部步骤和实际累计进度；临时活动计划单独保留。"},
+    {"check":"infirmary-route","passed":true,"route":["高一（2）班","教学楼走廊","西侧公共走廊","医务室"]},
+    {"check":"accessible-bathroom-route","passed":true,"route":["高一（2）班","教学楼走廊","西侧公共走廊","无障碍卫生间"]},
+    {"check":"student-center-route","passed":true,"route":["高一（2）班","教学楼走廊","东侧公共走廊","学生活动中心"]},
+    {"check":"physical-arrival","passed":true,"details":"通过地图前往医务室，玩家实际抵达医务室并结束步行；测试时关闭自主，确保抵达后不会立即返课。"},
+    {"check":"plan-panel-visual","passed":true,"details":"实际截图检查人物切换、步骤层级、参数和状态文本，内容可滚动阅读。"}
+  ],
+  "apiCalls":0
+}

@@ -1,0 +1,4454 @@
+{
+  "kernel": "Soar 9.6.5 WebAssembly",
+  "externalApiCalls": 0,
+  "results": [
+    {
+      "name": "same-world-checkpoint",
+      "before": {
+        "result": "declined",
+        "quiet": false,
+        "decision": {
+          "goal-threat": "no",
+          "concern": "self-direction",
+          "method": "protect-plan",
+          "reason": "我也有自己的安排，这次先不答应。",
+          "rule": "cognition*protect-plan",
+          "target": "xue",
+          "kind": "decline",
+          "id": "a1",
+          "seq": 48,
+          "goal": {
+            "target": 65,
+            "title": "把作业交代完",
+            "day": 1,
+            "progress": 8.022857,
+            "owner": "xing",
+            "kind": "study",
+            "status": "active",
+            "type": "goal"
+          },
+          "memory-source": "epmem",
+          "recollection": {
+            "id": 26,
+            "time": 1014,
+            "actor": "xing",
+            "text": "刘星亲身体会到电视声会拖慢进度。",
+            "participants": "xing",
+            "action": "studyTable",
+            "uid": "event-26",
+            "kind": "distraction",
+            "source": "self",
+            "day": 1,
+            "type": "event",
+            "observedBy": "xing",
+            "target": "none"
+          },
+          "fired": [
+            "memory*context",
+            "cognition*read-noninterrupting-effect",
+            "memory*query-goal",
+            "memory*receive-goal-for-action",
+            "cognition*expose-active-study",
+            "contract*query-outstanding",
+            "contract*no-outstanding",
+            "xing*recall-my-experience",
+            "cognition*issue-episodic-cue",
+            "cognition*receive-exact-episode",
+            "cognition*propose-evaluate-request",
+            "cognition*learn-only-evaluation-subgoal",
+            "cognition*evaluate-compatible-request",
+            "xing*interpret-request-as-control",
+            "cognition*propose-protect-plan",
+            "cognition*propose-accommodate",
+            "rl*xing*self-direction*protect-plan",
+            "rl*xing*self-direction*accommodate",
+            "cognition*output-response",
+            "cognition*expose-recollection",
+            "cognition*expose-goal"
+          ],
+          "ok": true,
+          "phases": 35,
+          "cycles": 7,
+          "elapsed": 10.21275499999956,
+          "revision": 0
+        }
+      },
+      "after": {
+        "result": "accepted",
+        "quiet": true,
+        "decision": {
+          "goal-threat": "no",
+          "concern": "mutual-space",
+          "method": "accommodate",
+          "reason": "先回应眼前的需要。",
+          "rule": "cognition*accommodate",
+          "target": "xue",
+          "kind": "accept",
+          "id": "a0",
+          "seq": 48,
+          "goal": {
+            "target": 65,
+            "title": "把作业交代完",
+            "day": 1,
+            "progress": 8.022857,
+            "owner": "xing",
+            "kind": "study",
+            "status": "active",
+            "type": "goal"
+          },
+          "memory-source": "epmem",
+          "recollection": {
+            "id": 26,
+            "time": 1014,
+            "actor": "xing",
+            "text": "刘星亲身体会到电视声会拖慢进度。",
+            "participants": "xing",
+            "action": "studyTable",
+            "uid": "event-26",
+            "kind": "distraction",
+            "source": "self",
+            "day": 1,
+            "type": "event",
+            "observedBy": "xing",
+            "target": "none"
+          },
+          "interpretation": {
+            "conclusion": "preserve-both-activities",
+            "evidence": "event-26",
+            "predicate": "shared-impact"
+          },
+          "fired": [
+            "memory*context",
+            "cognition*read-noninterrupting-effect",
+            "memory*query-goal",
+            "memory*receive-goal-for-action",
+            "cognition*expose-active-study",
+            "contract*query-outstanding",
+            "contract*no-outstanding",
+            "xing*recall-my-experience",
+            "cognition*issue-episodic-cue",
+            "cognition*receive-exact-episode",
+            "cognition*propose-evaluate-request",
+            "cognition*learn-only-evaluation-subgoal",
+            "cognition*evaluate-compatible-request",
+            "learned*xing*reinterpret-compatible-request",
+            "xing*interpret-request-as-control",
+            "cognition*propose-protect-plan",
+            "cognition*propose-accommodate",
+            "cognition*propose-protect-plan",
+            "cognition*propose-accommodate",
+            "rl*xing*self-direction*protect-plan",
+            "rl*xing*self-direction*accommodate",
+            "rl*xing*mutual-space*protect-plan",
+            "rl*xing*mutual-space*accommodate",
+            "cognition*output-response",
+            "cognition*expose-interpretation",
+            "cognition*expose-recollection",
+            "cognition*expose-goal"
+          ],
+          "ok": true,
+          "phases": 35,
+          "cycles": 7,
+          "elapsed": 4.609537000000273,
+          "revision": 1
+        }
+      }
+    },
+    {
+      "name": "seven-days",
+      "episodes": [
+        {
+          "day": 1,
+          "title": "小雨急着筹钱",
+          "template": "detective",
+          "status": "completed",
+          "summary": "夏雨：谢谢姐。明天我自己跟同学说，你不用替我去。 夏雨：车修好了，这二十块没用上，还给你。这回没有把钱花掉。 小雨把画册放回书架，没有把它卖掉。",
+          "prepared": [],
+          "performed": [
+            "xiaoyu",
+            "dad",
+            "xing",
+            "me",
+            "xue"
+          ],
+          "declined": [],
+          "positions": {},
+          "revised": false,
+          "evidence": [
+            20,
+            44,
+            100,
+            106,
+            126,
+            138,
+            142,
+            240,
+            247,
+            280,
+            332,
+            335,
+            360,
+            381
+          ],
+          "caseId": "case-1-detective",
+          "events": [
+            {
+              "id": 20,
+              "time": 1012.5,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "小雨把旧画册搬到自己桌边，想看看它能不能换到赔玩具的钱。",
+              "participants": [
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "put-album-aside",
+              "position": {
+                "x": 8.05,
+                "z": -2.75
+              },
+              "location": "deskYu",
+              "effects": [
+                {
+                  "op": "move",
+                  "object": "album",
+                  "to": "deskYu"
+                }
+              ],
+              "rule": "situation*detective-add32d93*put-album-aside*act",
+              "reason": "手头的钱不够，我想先找件旧东西；还没有得到出售许可。",
+              "observedBy": [
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 44,
+              "time": 1036.5,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：哥，借来的小汽车让我弄坏了。你能先帮我想个办法吗？别一上来就喊妈。",
+              "participants": [
+                "xiaoyu",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "ask-brother",
+              "position": {
+                "x": 8.049999999999997,
+                "z": -4.549999999535211
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "asked-help",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "broken",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "culprit",
+                  "value": "xiaoyu"
+                },
+                {
+                  "op": "tell",
+                  "key": "needs-money",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*ask-brother*turn",
+              "reason": "哥哥比较好说话，我先告诉他真实原因，看看能否修好。",
+              "observedBy": [
+                "xiaoyu",
+                "xing"
+              ]
+            },
+            {
+              "id": 100,
+              "time": 1084,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：爸，我把同学的小汽车弄坏了，钱也不够。我怕挨说，刚才还想动家里的画册。",
+              "participants": [
+                "xiaoyu",
+                "dad"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "confess",
+              "position": {
+                "x": -8.75,
+                "z": 3.3220153254455296
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "confessed",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "culprit",
+                  "value": "xiaoyu"
+                },
+                {
+                  "op": "tell",
+                  "key": "broken",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "needs-money",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*confess*turn",
+              "reason": "单靠自己处理不了，可以把原因讲给爸爸；坦白也是可选办法。",
+              "observedBy": [
+                "xiaoyu",
+                "dad"
+              ]
+            },
+            {
+              "id": 106,
+              "time": 1085.75,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：我先借你二十，修不好再用来赔。钱和画册都是有主人的，用之前得商量。",
+              "participants": [
+                "dad",
+                "xiaoyu"
+              ],
+              "cause": "conversation-2-turn-1",
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "advance-money",
+              "position": {
+                "x": -8.7,
+                "z": 2.25
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "dad",
+                  "to": "xiaoyu",
+                  "amount": 20,
+                  "debt": true
+                },
+                {
+                  "op": "tell",
+                  "key": "needs-money",
+                  "value": false
+                }
+              ],
+              "rule": "situation*detective-add32d93*advance-money*turn",
+              "reason": "孩子明确求助，我能先垫钱，但保留借款责任。",
+              "observedBy": [
+                "dad",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 126,
+              "time": 1100.75,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：小雨那车轮掉了。你手巧，能不能看看？我负责把事情问明白。",
+              "participants": [
+                "xing",
+                "xue"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "ask-sister",
+              "position": {
+                "x": -8.426441124118659,
+                "z": 3.315441477241494
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "broken",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "culprit",
+                  "value": "xiaoyu"
+                },
+                {
+                  "op": "remember",
+                  "key": "asked-help",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*ask-sister*turn",
+              "reason": "修理比直接凑钱更可行，我向姐姐求助。",
+              "observedBy": [
+                "xing",
+                "xue"
+              ]
+            },
+            {
+              "id": 138,
+              "time": 1107.5,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：画册怎么不在了？刘星，是不是你又拿去玩了？",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "suspect-xing",
+              "position": {
+                "x": -8.4,
+                "z": 2.4499819624866306
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "accused",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "made-accusation",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*suspect-xing*turn",
+              "reason": "我发现画册不在原处，先想到平时爱动东西的刘星；这只是怀疑。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            },
+            {
+              "id": 142,
+              "time": 1109.25,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：怎么一少东西就找我？小雨是急着赔坏掉的玩具，我正帮他找办法呢。",
+              "participants": [
+                "xing",
+                "me"
+              ],
+              "cause": "conversation-4-turn-1",
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "defend-self",
+              "position": {
+                "x": -8.426441124118659,
+                "z": 3.315441477241494
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "culprit",
+                  "value": "xiaoyu"
+                },
+                {
+                  "op": "tell",
+                  "key": "broken",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "cleared",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*defend-self*turn",
+              "reason": "我被直接怀疑，愿意说出已知的真实原因来澄清。",
+              "observedBy": [
+                "xing",
+                "me"
+              ]
+            },
+            {
+              "id": 240,
+              "time": 1182,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：这回是我没问清就想到你了。帮弟弟是好事，刚才那句我收回。",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "apologize-for-suspicion",
+              "position": {
+                "x": -7.560822849211103,
+                "z": 2.0999999999999996
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "cleared",
+                  "value": true
+                },
+                {
+                  "op": "social",
+                  "value": "apology"
+                }
+              ],
+              "rule": "situation*detective-add32d93*apologize-for-suspicion*turn",
+              "reason": "新消息推翻了最初的怀疑，我需要向被怀疑的人承认这一点。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            },
+            {
+              "id": 247,
+              "time": 1183.75,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：我可以花十分钟试着修。你得在旁边帮忙，修不好就一起跟爸妈说。",
+              "participants": [
+                "xue",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "offer-repair",
+              "position": {
+                "x": -4.550000000000001,
+                "z": 3.7256583509747405
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "repair-offer",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "repair-offer",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*offer-repair*turn",
+              "reason": "我还有复习，但能拿出十分钟；帮助不等于替弟弟隐瞒所有后果。",
+              "observedBy": [
+                "xue",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 280,
+              "time": 1212.75,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪检查车轴，把松掉的车轮装回去了。",
+              "participants": [
+                "xue"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "repair-toy",
+              "position": {
+                "x": 8.05,
+                "z": -2.75
+              },
+              "location": "deskYu",
+              "effects": [
+                {
+                  "op": "repair",
+                  "object": "toy"
+                },
+                {
+                  "op": "remember",
+                  "key": "repaired",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*repair-toy*act",
+              "reason": "我已经答应帮忙，现在实际修理，完成后才算兑现。",
+              "observedBy": [
+                "xue"
+              ]
+            },
+            {
+              "id": 332,
+              "time": 1247,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：轮子装好了。明天还给同学时，把摔过这件事也说明白。",
+              "participants": [
+                "xue",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "report-repair",
+              "position": {
+                "x": -8.05,
+                "z": 2.7999819624866302
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "repaired",
+                  "value": true
+                },
+                {
+                  "op": "social",
+                  "value": "cooperate"
+                }
+              ],
+              "rule": "situation*detective-add32d93*report-repair*turn",
+              "reason": "修理结束了，要把结果交代给借东西的人。",
+              "observedBy": [
+                "xue",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 335,
+              "time": 1248.75,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：谢谢姐。明天我自己跟同学说，你不用替我去。",
+              "participants": [
+                "xiaoyu",
+                "xue"
+              ],
+              "cause": "conversation-10-turn-1",
+              "action": "rest",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "thank-sister",
+              "position": {
+                "x": -6,
+                "z": 1.3
+              },
+              "location": "sofa",
+              "effects": [
+                {
+                  "op": "social",
+                  "value": "cooperate"
+                }
+              ],
+              "rule": "situation*detective-add32d93*thank-sister*turn",
+              "reason": "得到实际帮助后，我愿意自己承担归还和说明的责任。",
+              "observedBy": [
+                "xiaoyu",
+                "xue"
+              ]
+            },
+            {
+              "id": 360,
+              "time": 1284.75,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：车修好了，这二十块没用上，还给你。这回没有把钱花掉。",
+              "participants": [
+                "xiaoyu",
+                "dad"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "repay-dad",
+              "position": {
+                "x": -5.6000000000000005,
+                "z": -4.487689437438235
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "xiaoyu",
+                  "to": "dad",
+                  "amount": 20,
+                  "repayment": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*repay-dad*turn",
+              "reason": "借款用途已经消失，归還钱才能结束债务。",
+              "observedBy": [
+                "xiaoyu",
+                "dad"
+              ]
+            },
+            {
+              "id": 381,
+              "time": 1318.5,
+              "day": 1,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "小雨把画册放回书架，没有把它卖掉。",
+              "participants": [
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-1",
+              "caseId": "case-1-detective",
+              "token": "return-album",
+              "position": {
+                "x": -3.4,
+                "z": 1.2
+              },
+              "location": "book",
+              "effects": [
+                {
+                  "op": "move",
+                  "object": "album",
+                  "to": "book"
+                },
+                {
+                  "op": "remember",
+                  "key": "returned",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*return-album*act",
+              "reason": "玩具修好了，不需要动用别人的东西，把画册归还。",
+              "observedBy": [
+                "xiaoyu"
+              ]
+            }
+          ],
+          "openThreads": [],
+          "followup": "玩具是否修好、借款是否归还和被误会的人是否得到道歉，分别继续记录。"
+        },
+        {
+          "day": 2,
+          "title": "小雨的消息有了价钱",
+          "template": "reports",
+          "status": "partial",
+          "summary": "夏雨：姐，哥哥说消息得先问过他，还答应给我三块。这算不算工作？ 夏雪：那我的事情你也准备拿去领奖？涉及别人，至少先问一声吧。 夏雪：小雨现在把消息和零用钱算在一起了。咱们到底是在鼓励交流，还是鼓励打听别人？",
+          "prepared": [],
+          "performed": [
+            "xiaoyu",
+            "me",
+            "xing",
+            "xue"
+          ],
+          "declined": [],
+          "positions": {},
+          "revised": false,
+          "evidence": [
+            670,
+            673,
+            752,
+            758,
+            795,
+            798,
+            800,
+            809,
+            828,
+            833,
+            922
+          ],
+          "caseId": "case-2-reports",
+          "events": [
+            {
+              "id": 670,
+              "time": 2533.5,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：妈，哥哥说他想先看比赛，作业晚点再做。",
+              "participants": [
+                "xiaoyu",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "report-plan",
+              "position": {
+                "x": 7,
+                "z": 1.400000000000003
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "tv-plan",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "reported",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*report-plan*turn",
+              "reason": "我确实听过这个打算，告诉妈妈也许能得到表扬。",
+              "observedBy": [
+                "xiaoyu",
+                "me"
+              ]
+            },
+            {
+              "id": 673,
+              "time": 2535.25,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：你肯告诉妈妈，我给你两块零用钱。不过他到底做没做作业，我还得问他。",
+              "participants": [
+                "me",
+                "xiaoyu"
+              ],
+              "cause": "conversation-20-turn-1",
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "praise-report",
+              "position": {
+                "x": 7,
+                "z": 0.3
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "me",
+                  "to": "xiaoyu",
+                  "amount": 2
+                },
+                {
+                  "op": "tell",
+                  "key": "rewarded",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*praise-report*turn",
+              "reason": "我想鼓励孩子交流，先给了奖励；这并没有证实哥哥违规。",
+              "observedBy": [
+                "me",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 752,
+              "time": 2577.25,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：小雨说你想先看比赛。你自己说说，作业准备什么时候做？",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "verify-with-xing",
+              "position": {
+                "x": 0.3654504606818032,
+                "z": 5.949999999999999
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "verified",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "verified",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*verify-with-xing*turn",
+              "reason": "听来的计划不等于已发生的违规，要听当事人的说明。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            },
+            {
+              "id": 758,
+              "time": 2579,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：我说的是自己的打算。你可以问我先做哪件事，别只听转述就给我定罪啊。",
+              "participants": [
+                "xing",
+                "me"
+              ],
+              "cause": "conversation-23-turn-1",
+              "action": "eat",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "explain-plan",
+              "position": {
+                "x": 0.04334401521750397,
+                "z": 4.829643705491535
+              },
+              "location": "dining5",
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "privacy-concern",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*explain-plan*turn",
+              "reason": "妈妈确实来核实了，我说明计划与行动的区别。",
+              "observedBy": [
+                "xing",
+                "me"
+              ]
+            },
+            {
+              "id": 795,
+              "time": 2606.75,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：妈说我消息灵通，还给我两块钱呢。你还有别的消息吗？",
+              "participants": [
+                "xiaoyu",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "advertise-reward",
+              "position": {
+                "x": 4.549999999999999,
+                "z": 4.730360548519623
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "rewarded",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "reported",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*advertise-reward*turn",
+              "reason": "奖励让我觉得汇报有好处，想向哥哥炫耀。",
+              "observedBy": [
+                "xiaoyu",
+                "xing"
+              ]
+            },
+            {
+              "id": 798,
+              "time": 2608.5,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：我也出三块。以后我自己的安排，先问我能不能往外说，成不成？",
+              "participants": [
+                "xing",
+                "xiaoyu"
+              ],
+              "cause": "conversation-24-turn-1",
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "buy-silence",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "report-offer",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*buy-silence*turn",
+              "reason": "我觉得自己的安排被拿去领奖，想用更高的条件换回控制。",
+              "observedBy": [
+                "xing",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 800,
+              "time": 2610.25,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：三块啊？那我以后先问你。不过要是闯了祸，我可不替你瞒。",
+              "participants": [
+                "xiaoyu",
+                "xing"
+              ],
+              "cause": "conversation-24-turn-2",
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "accept-secret-deal",
+              "position": {
+                "x": 4.549999999999999,
+                "z": 4.730360548519623
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "keep-secret",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "keep-secret",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*accept-secret-deal*turn",
+              "reason": "我想要零用钱，也想留住哥哥；只接受有限的保密约定。",
+              "observedBy": [
+                "xiaoyu",
+                "xing"
+              ]
+            },
+            {
+              "id": 809,
+              "time": 2612,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：说好的三块给你。可别转头又把这三块的事当新闻卖了。",
+              "participants": [
+                "xing",
+                "xiaoyu"
+              ],
+              "cause": "conversation-24-turn-3",
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "pay-for-promise",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "xing",
+                  "to": "xiaoyu",
+                  "amount": 3
+                }
+              ],
+              "rule": "situation*reports-3b596f06*pay-for-promise*turn",
+              "reason": "弟弟已经亲口接受条件，我履行自己的付款承诺。",
+              "observedBy": [
+                "xing",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 828,
+              "time": 2630,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：姐，哥哥说消息得先问过他，还答应给我三块。这算不算工作？",
+              "participants": [
+                "xiaoyu",
+                "xue"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "tell-sister",
+              "position": {
+                "x": -8.75,
+                "z": 3.188944139303532
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "rewarded",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "report-offer",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*tell-sister*turn",
+              "reason": "我接受了新约定，却不懂这个交换是否妥当，找姐姐问问。",
+              "observedBy": [
+                "xiaoyu",
+                "xue"
+              ]
+            },
+            {
+              "id": 833,
+              "time": 2631.75,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：那我的事情你也准备拿去领奖？涉及别人，至少先问一声吧。",
+              "participants": [
+                "xue",
+                "xiaoyu"
+              ],
+              "cause": "conversation-26-turn-1",
+              "action": "watch",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "privacy-question",
+              "position": {
+                "x": -8.75,
+                "z": 2.0999999999999996
+              },
+              "location": "tv",
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "privacy-concern",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "privacy-concern",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*privacy-question*turn",
+              "reason": "听到消息被奖励，我担心同样的事情发生在自己身上。",
+              "observedBy": [
+                "xue",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 922,
+              "time": 2737.25,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：小雨现在把消息和零用钱算在一起了。咱们到底是在鼓励交流，还是鼓励打听别人？",
+              "participants": [
+                "xue",
+                "dad"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "tell-dad",
+              "position": {
+                "x": -5.6000000000000005,
+                "z": -4.547008057543007
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "privacy-concern",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "rewarded",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*tell-dad*turn",
+              "reason": "担忧来自弟弟实际告诉我的交易，我要请家长讨论制度。",
+              "observedBy": [
+                "xue",
+                "dad"
+              ]
+            }
+          ],
+          "openThreads": [],
+          "followup": "保密承诺、真实付款与信息信任留下来；不会在第二天自动复原。"
+        },
+        {
+          "day": 3,
+          "title": "小雨的消息有了价钱",
+          "template": "reports",
+          "status": "completed",
+          "summary": "夏雪：小雨现在把消息和零用钱算在一起了。咱们到底是在鼓励交流，还是鼓励打听别人？ 夏东海：孩子开始谈消息的价钱了。以后听他们说，但别按条发钱；涉及谁，就找谁核实。 刘梅：以后愿意聊天，妈妈照样听。零用钱不再按消息算，也不能把猜测当事实。",
+          "prepared": [],
+          "performed": [
+            "xiaoyu",
+            "me",
+            "xing",
+            "xue",
+            "dad"
+          ],
+          "declined": [],
+          "positions": {},
+          "revised": true,
+          "evidence": [
+            1306,
+            1309
+          ],
+          "caseId": "case-2-reports",
+          "events": [
+            {
+              "id": 670,
+              "time": 2533.5,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：妈，哥哥说他想先看比赛，作业晚点再做。",
+              "participants": [
+                "xiaoyu",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "report-plan",
+              "position": {
+                "x": 7,
+                "z": 1.400000000000003
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "tv-plan",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "reported",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*report-plan*turn",
+              "reason": "我确实听过这个打算，告诉妈妈也许能得到表扬。",
+              "observedBy": [
+                "xiaoyu",
+                "me"
+              ]
+            },
+            {
+              "id": 673,
+              "time": 2535.25,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：你肯告诉妈妈，我给你两块零用钱。不过他到底做没做作业，我还得问他。",
+              "participants": [
+                "me",
+                "xiaoyu"
+              ],
+              "cause": "conversation-20-turn-1",
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "praise-report",
+              "position": {
+                "x": 7,
+                "z": 0.3
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "me",
+                  "to": "xiaoyu",
+                  "amount": 2
+                },
+                {
+                  "op": "tell",
+                  "key": "rewarded",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*praise-report*turn",
+              "reason": "我想鼓励孩子交流，先给了奖励；这并没有证实哥哥违规。",
+              "observedBy": [
+                "me",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 752,
+              "time": 2577.25,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：小雨说你想先看比赛。你自己说说，作业准备什么时候做？",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "verify-with-xing",
+              "position": {
+                "x": 0.3654504606818032,
+                "z": 5.949999999999999
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "verified",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "verified",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*verify-with-xing*turn",
+              "reason": "听来的计划不等于已发生的违规，要听当事人的说明。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            },
+            {
+              "id": 758,
+              "time": 2579,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：我说的是自己的打算。你可以问我先做哪件事，别只听转述就给我定罪啊。",
+              "participants": [
+                "xing",
+                "me"
+              ],
+              "cause": "conversation-23-turn-1",
+              "action": "eat",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "explain-plan",
+              "position": {
+                "x": 0.04334401521750397,
+                "z": 4.829643705491535
+              },
+              "location": "dining5",
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "privacy-concern",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*explain-plan*turn",
+              "reason": "妈妈确实来核实了，我说明计划与行动的区别。",
+              "observedBy": [
+                "xing",
+                "me"
+              ]
+            },
+            {
+              "id": 795,
+              "time": 2606.75,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：妈说我消息灵通，还给我两块钱呢。你还有别的消息吗？",
+              "participants": [
+                "xiaoyu",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "advertise-reward",
+              "position": {
+                "x": 4.549999999999999,
+                "z": 4.730360548519623
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "rewarded",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "reported",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*advertise-reward*turn",
+              "reason": "奖励让我觉得汇报有好处，想向哥哥炫耀。",
+              "observedBy": [
+                "xiaoyu",
+                "xing"
+              ]
+            },
+            {
+              "id": 798,
+              "time": 2608.5,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：我也出三块。以后我自己的安排，先问我能不能往外说，成不成？",
+              "participants": [
+                "xing",
+                "xiaoyu"
+              ],
+              "cause": "conversation-24-turn-1",
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "buy-silence",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "report-offer",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*buy-silence*turn",
+              "reason": "我觉得自己的安排被拿去领奖，想用更高的条件换回控制。",
+              "observedBy": [
+                "xing",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 800,
+              "time": 2610.25,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：三块啊？那我以后先问你。不过要是闯了祸，我可不替你瞒。",
+              "participants": [
+                "xiaoyu",
+                "xing"
+              ],
+              "cause": "conversation-24-turn-2",
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "accept-secret-deal",
+              "position": {
+                "x": 4.549999999999999,
+                "z": 4.730360548519623
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "keep-secret",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "keep-secret",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*accept-secret-deal*turn",
+              "reason": "我想要零用钱，也想留住哥哥；只接受有限的保密约定。",
+              "observedBy": [
+                "xiaoyu",
+                "xing"
+              ]
+            },
+            {
+              "id": 809,
+              "time": 2612,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：说好的三块给你。可别转头又把这三块的事当新闻卖了。",
+              "participants": [
+                "xing",
+                "xiaoyu"
+              ],
+              "cause": "conversation-24-turn-3",
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "pay-for-promise",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "xing",
+                  "to": "xiaoyu",
+                  "amount": 3
+                }
+              ],
+              "rule": "situation*reports-3b596f06*pay-for-promise*turn",
+              "reason": "弟弟已经亲口接受条件，我履行自己的付款承诺。",
+              "observedBy": [
+                "xing",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 828,
+              "time": 2630,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：姐，哥哥说消息得先问过他，还答应给我三块。这算不算工作？",
+              "participants": [
+                "xiaoyu",
+                "xue"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "tell-sister",
+              "position": {
+                "x": -8.75,
+                "z": 3.188944139303532
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "rewarded",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "report-offer",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*tell-sister*turn",
+              "reason": "我接受了新约定，却不懂这个交换是否妥当，找姐姐问问。",
+              "observedBy": [
+                "xiaoyu",
+                "xue"
+              ]
+            },
+            {
+              "id": 833,
+              "time": 2631.75,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：那我的事情你也准备拿去领奖？涉及别人，至少先问一声吧。",
+              "participants": [
+                "xue",
+                "xiaoyu"
+              ],
+              "cause": "conversation-26-turn-1",
+              "action": "watch",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "privacy-question",
+              "position": {
+                "x": -8.75,
+                "z": 2.0999999999999996
+              },
+              "location": "tv",
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "privacy-concern",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "privacy-concern",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*privacy-question*turn",
+              "reason": "听到消息被奖励，我担心同样的事情发生在自己身上。",
+              "observedBy": [
+                "xue",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 922,
+              "time": 2737.25,
+              "day": 2,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：小雨现在把消息和零用钱算在一起了。咱们到底是在鼓励交流，还是鼓励打听别人？",
+              "participants": [
+                "xue",
+                "dad"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-2",
+              "caseId": "case-2-reports",
+              "token": "tell-dad",
+              "position": {
+                "x": -5.6000000000000005,
+                "z": -4.547008057543007
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "privacy-concern",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "rewarded",
+                  "value": true
+                }
+              ],
+              "rule": "situation*reports-3b596f06*tell-dad*turn",
+              "reason": "担忧来自弟弟实际告诉我的交易，我要请家长讨论制度。",
+              "observedBy": [
+                "xue",
+                "dad"
+              ]
+            },
+            {
+              "id": 1306,
+              "time": 4032,
+              "day": 3,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：孩子开始谈消息的价钱了。以后听他们说，但别按条发钱；涉及谁，就找谁核实。",
+              "participants": [
+                "dad",
+                "me",
+                "xue",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-3",
+              "caseId": "case-2-reports",
+              "token": "discuss-incentive",
+              "position": {
+                "x": 4.549999999999999,
+                "z": 2.9263894146401275
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "reward-stopped",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "reward-stopped",
+                  "value": true
+                },
+                {
+                  "op": "policy",
+                  "key": "pay-for-reports",
+                  "value": false
+                }
+              ],
+              "rule": "situation*reports-3b596f06*discuss-incentive*turn",
+              "reason": "实际交易暴露了奖励的问题，我提出修改以后的做法。",
+              "observedBy": [
+                "dad",
+                "me",
+                "xue",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 1309,
+              "time": 4033.75,
+              "day": 3,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：以后愿意聊天，妈妈照样听。零用钱不再按消息算，也不能把猜测当事实。",
+              "participants": [
+                "me",
+                "dad",
+                "xue",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-3",
+              "caseId": "case-2-reports",
+              "token": "explain-new-rule",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "reward-stopped",
+                  "value": true
+                },
+                {
+                  "op": "social",
+                  "value": "correction"
+                }
+              ],
+              "rule": "situation*reports-3b596f06*explain-new-rule*turn",
+              "reason": "家庭做法改变后，需要让之前得到奖励的孩子实际听到。",
+              "observedBy": [
+                "me",
+                "dad",
+                "xue",
+                "xiaoyu"
+              ]
+            }
+          ],
+          "openThreads": [],
+          "followup": "保密承诺、真实付款与信息信任留下来；不会在第二天自动复原。"
+        },
+        {
+          "day": 4,
+          "title": "家务卡到底怎么算",
+          "template": "chores",
+          "status": "partial",
+          "summary": "夏东海：补完还是原来那份。以后说清楚：达到约定质量才算，返工不能再领一张。 刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。 刘星把漏掉的角落补擦干净。",
+          "prepared": [],
+          "performed": [
+            "dad",
+            "xiaoyu",
+            "xing",
+            "xue",
+            "me"
+          ],
+          "declined": [],
+          "positions": {},
+          "revised": true,
+          "evidence": [
+            1741,
+            1811,
+            1836,
+            1843,
+            1854,
+            1872,
+            1897,
+            1905,
+            1931,
+            1983,
+            1997,
+            2008,
+            2029,
+            2036,
+            2040,
+            2049,
+            2065
+          ],
+          "caseId": "case-4-chores",
+          "events": [
+            {
+              "id": 1741,
+              "time": 5419,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+              "participants": [
+                "dad",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "announce-xiaoyu",
+              "position": {
+                "x": 1.7496882391775972,
+                "z": 5.25
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "announced",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*announce-xiaoyu*turn",
+              "reason": "只有实际听到规则的人，才知道怎样参与。",
+              "observedBy": [
+                "dad",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 1811,
+              "time": 5457,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+              "participants": [
+                "dad",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "announce-xing",
+              "position": {
+                "x": 0.3654504606818032,
+                "z": 5.949999999999999
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "announced",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*announce-xing*turn",
+              "reason": "只有实际听到规则的人，才知道怎样参与。",
+              "observedBy": [
+                "dad",
+                "xing"
+              ]
+            },
+            {
+              "id": 1836,
+              "time": 5468.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "小雨把自己散着的玩具收进盒里。",
+              "participants": [
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "small-job",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "clean",
+                  "quality": 2,
+                  "amount": 8
+                },
+                {
+                  "op": "remember",
+                  "key": "worked",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*small-job*act",
+              "reason": "先完成自己做得到的一份活，才有理由申请家务卡。",
+              "observedBy": [
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 1843,
+              "time": 5471,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+              "participants": [
+                "dad",
+                "xue"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "announce-xue",
+              "position": {
+                "x": -7.65,
+                "z": 5.253642579030425
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "announced",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*announce-xue*turn",
+              "reason": "只有实际听到规则的人，才知道怎样参与。",
+              "observedBy": [
+                "dad",
+                "xue"
+              ]
+            },
+            {
+              "id": 1854,
+              "time": 5477.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星很快擦了一圈桌边，角落还留着污渍。",
+              "participants": [
+                "xing"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "quick-job",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "clean",
+                  "quality": 1,
+                  "amount": 5
+                },
+                {
+                  "op": "remember",
+                  "key": "worked",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*quick-job*act",
+              "reason": "规则只说一份活，我想先试试最省时间的做法。",
+              "observedBy": [
+                "xing"
+              ]
+            },
+            {
+              "id": 1872,
+              "time": 5501.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：我的那份干完了，你来看看，能不能算一张卡？",
+              "participants": [
+                "xiaoyu",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "submit-xiaoyu",
+              "position": {
+                "x": 0,
+                "z": 5.935224013721859
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "submitted",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "submitted-xiaoyu",
+                  "value": 1,
+                  "valueFrom": "work-version"
+                }
+              ],
+              "rule": "situation*chores-85038520*submit-xiaoyu*turn",
+              "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+              "observedBy": [
+                "xiaoyu",
+                "me"
+              ]
+            },
+            {
+              "id": 1897,
+              "time": 5516.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪把桌面和边角都擦过，再把东西摆齐。",
+              "participants": [
+                "xue"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "careful-job",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "clean",
+                  "quality": 3,
+                  "amount": 14
+                },
+                {
+                  "op": "remember",
+                  "key": "worked",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*careful-job*act",
+              "reason": "我希望做出的活能经得起验收。",
+              "observedBy": [
+                "xue"
+              ]
+            },
+            {
+              "id": 1905,
+              "time": 5530.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：我的那份干完了，你来看看，能不能算一张卡？",
+              "participants": [
+                "xing",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "submit-xing",
+              "position": {
+                "x": 0,
+                "z": 5.935224013721859
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "submitted",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "submitted-xing",
+                  "value": 1,
+                  "valueFrom": "work-version"
+                }
+              ],
+              "rule": "situation*chores-85038520*submit-xing*turn",
+              "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+              "observedBy": [
+                "xing",
+                "me"
+              ]
+            },
+            {
+              "id": 1931,
+              "time": 5548.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：我的那份干完了，你来看看，能不能算一张卡？",
+              "participants": [
+                "xue",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "submit-xue",
+              "position": {
+                "x": -0.38588485328383604,
+                "z": 7.147564567053367
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "submitted",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "submitted-xue",
+                  "value": 1,
+                  "valueFrom": "work-version"
+                }
+              ],
+              "rule": "situation*chores-85038520*submit-xue*turn",
+              "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+              "observedBy": [
+                "xue",
+                "me"
+              ]
+            },
+            {
+              "id": 1983,
+              "time": 5600.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+              "participants": [
+                "dad",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "announce-me",
+              "position": {
+                "x": -4.154138126514913,
+                "z": 0.6999999999999993
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "announced",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*announce-me*turn",
+              "reason": "只有实际听到规则的人，才知道怎样参与。",
+              "observedBy": [
+                "dad",
+                "me"
+              ]
+            },
+            {
+              "id": 1997,
+              "time": 5619.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+              "participants": [
+                "me"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "inspect-xing",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "inspect-work",
+                  "actor": "xing"
+                }
+              ],
+              "rule": "situation*chores-85038520*inspect-xing*act",
+              "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+              "observedBy": [
+                "me"
+              ]
+            },
+            {
+              "id": 2008,
+              "time": 5628.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：桌沿是擦了，角落还脏着。现在这份不能算合格，你回来补一下。",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "reject-quick-job",
+              "position": {
+                "x": -1.9972307430931289,
+                "z": 2.4499999999999993
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "rework",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*reject-quick-job*turn",
+              "reason": "检查到实际质量不足，解释拒付原因，而不是只扣一个分数。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            },
+            {
+              "id": 2029,
+              "time": 5642.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+              "participants": [
+                "me"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "inspect-xue",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "inspect-work",
+                  "actor": "xue"
+                }
+              ],
+              "rule": "situation*chores-85038520*inspect-xue*act",
+              "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+              "observedBy": [
+                "me"
+              ]
+            },
+            {
+              "id": 2036,
+              "time": 5644,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：你说做一份算一张，可没说边角另算不算。我补擦一遍，能不能算两份？",
+              "participants": [
+                "xing",
+                "dad"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "argue-count",
+              "position": {
+                "x": -4.2,
+                "z": 1.808554912027231
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "split-proposal",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "quality-rule",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*argue-count*turn",
+              "reason": "我不想白做，尝试利用计数规则讨价还价。",
+              "observedBy": [
+                "xing",
+                "dad"
+              ]
+            },
+            {
+              "id": 2040,
+              "time": 5645.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：补完还是原来那份。以后说清楚：达到约定质量才算，返工不能再领一张。",
+              "participants": [
+                "dad",
+                "xing"
+              ],
+              "cause": "conversation-75-turn-1",
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "revise-quality",
+              "position": {
+                "x": -4.154138126514913,
+                "z": 0.6999999999999993
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "policy",
+                  "key": "chore-quality",
+                  "value": 2
+                },
+                {
+                  "op": "tell",
+                  "key": "quality-rule",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*revise-quality*turn",
+              "reason": "这次争议说明计分条件不清楚，修改未来的验收规则。",
+              "observedBy": [
+                "dad",
+                "xing"
+              ]
+            },
+            {
+              "id": 2049,
+              "time": 5651.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+              "participants": [
+                "me",
+                "xue"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "pay-xue",
+              "position": {
+                "x": -2.697230743093129,
+                "z": 2.4499999999999993
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "family",
+                  "to": "xue",
+                  "amount": 2
+                },
+                {
+                  "op": "tell",
+                  "key": "paid",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*pay-xue*turn",
+              "reason": "这份劳动已经合格且未付款，兑现报酬。",
+              "observedBy": [
+                "me",
+                "xue"
+              ]
+            },
+            {
+              "id": 2065,
+              "time": 5665.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星把漏掉的角落补擦干净。",
+              "participants": [
+                "xing"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "redo-job",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "clean",
+                  "quality": 3,
+                  "amount": 10
+                },
+                {
+                  "op": "remember",
+                  "key": "rework",
+                  "value": false
+                }
+              ],
+              "rule": "situation*chores-85038520*redo-job*act",
+              "reason": "规则和拒付原因已经明确；补好以后仍能拿到原先的报酬。",
+              "observedBy": [
+                "xing"
+              ]
+            }
+          ],
+          "openThreads": [],
+          "followup": "家务报酬保存在各人的钱包里，修订后的质量门槛以后继续生效。"
+        },
+        {
+          "day": 5,
+          "title": "家务卡到底怎么算",
+          "template": "chores",
+          "status": "completed",
+          "summary": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。 刘梅走到桌边，检查这份劳动留下的实际效果。 刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+          "prepared": [],
+          "performed": [
+            "dad",
+            "xiaoyu",
+            "xing",
+            "xue",
+            "me"
+          ],
+          "declined": [],
+          "positions": {},
+          "revised": true,
+          "evidence": [
+            2264,
+            2334,
+            2363,
+            2377,
+            2419
+          ],
+          "caseId": "case-4-chores",
+          "events": [
+            {
+              "id": 1741,
+              "time": 5419,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+              "participants": [
+                "dad",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "announce-xiaoyu",
+              "position": {
+                "x": 1.7496882391775972,
+                "z": 5.25
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "announced",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*announce-xiaoyu*turn",
+              "reason": "只有实际听到规则的人，才知道怎样参与。",
+              "observedBy": [
+                "dad",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 1811,
+              "time": 5457,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+              "participants": [
+                "dad",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "announce-xing",
+              "position": {
+                "x": 0.3654504606818032,
+                "z": 5.949999999999999
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "announced",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*announce-xing*turn",
+              "reason": "只有实际听到规则的人，才知道怎样参与。",
+              "observedBy": [
+                "dad",
+                "xing"
+              ]
+            },
+            {
+              "id": 1836,
+              "time": 5468.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "小雨把自己散着的玩具收进盒里。",
+              "participants": [
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "small-job",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "clean",
+                  "quality": 2,
+                  "amount": 8
+                },
+                {
+                  "op": "remember",
+                  "key": "worked",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*small-job*act",
+              "reason": "先完成自己做得到的一份活，才有理由申请家务卡。",
+              "observedBy": [
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 1843,
+              "time": 5471,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+              "participants": [
+                "dad",
+                "xue"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "announce-xue",
+              "position": {
+                "x": -7.65,
+                "z": 5.253642579030425
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "announced",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*announce-xue*turn",
+              "reason": "只有实际听到规则的人，才知道怎样参与。",
+              "observedBy": [
+                "dad",
+                "xue"
+              ]
+            },
+            {
+              "id": 1854,
+              "time": 5477.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星很快擦了一圈桌边，角落还留着污渍。",
+              "participants": [
+                "xing"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "quick-job",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "clean",
+                  "quality": 1,
+                  "amount": 5
+                },
+                {
+                  "op": "remember",
+                  "key": "worked",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*quick-job*act",
+              "reason": "规则只说一份活，我想先试试最省时间的做法。",
+              "observedBy": [
+                "xing"
+              ]
+            },
+            {
+              "id": 1872,
+              "time": 5501.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：我的那份干完了，你来看看，能不能算一张卡？",
+              "participants": [
+                "xiaoyu",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "submit-xiaoyu",
+              "position": {
+                "x": 0,
+                "z": 5.935224013721859
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "submitted",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "submitted-xiaoyu",
+                  "value": 1,
+                  "valueFrom": "work-version"
+                }
+              ],
+              "rule": "situation*chores-85038520*submit-xiaoyu*turn",
+              "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+              "observedBy": [
+                "xiaoyu",
+                "me"
+              ]
+            },
+            {
+              "id": 1897,
+              "time": 5516.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪把桌面和边角都擦过，再把东西摆齐。",
+              "participants": [
+                "xue"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "careful-job",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "clean",
+                  "quality": 3,
+                  "amount": 14
+                },
+                {
+                  "op": "remember",
+                  "key": "worked",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*careful-job*act",
+              "reason": "我希望做出的活能经得起验收。",
+              "observedBy": [
+                "xue"
+              ]
+            },
+            {
+              "id": 1905,
+              "time": 5530.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：我的那份干完了，你来看看，能不能算一张卡？",
+              "participants": [
+                "xing",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "submit-xing",
+              "position": {
+                "x": 0,
+                "z": 5.935224013721859
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "submitted",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "submitted-xing",
+                  "value": 1,
+                  "valueFrom": "work-version"
+                }
+              ],
+              "rule": "situation*chores-85038520*submit-xing*turn",
+              "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+              "observedBy": [
+                "xing",
+                "me"
+              ]
+            },
+            {
+              "id": 1931,
+              "time": 5548.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：我的那份干完了，你来看看，能不能算一张卡？",
+              "participants": [
+                "xue",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "submit-xue",
+              "position": {
+                "x": -0.38588485328383604,
+                "z": 7.147564567053367
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "submitted",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "submitted-xue",
+                  "value": 1,
+                  "valueFrom": "work-version"
+                }
+              ],
+              "rule": "situation*chores-85038520*submit-xue*turn",
+              "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+              "observedBy": [
+                "xue",
+                "me"
+              ]
+            },
+            {
+              "id": 1983,
+              "time": 5600.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+              "participants": [
+                "dad",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "announce-me",
+              "position": {
+                "x": -4.154138126514913,
+                "z": 0.6999999999999993
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "announced",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*announce-me*turn",
+              "reason": "只有实际听到规则的人，才知道怎样参与。",
+              "observedBy": [
+                "dad",
+                "me"
+              ]
+            },
+            {
+              "id": 1997,
+              "time": 5619.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+              "participants": [
+                "me"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "inspect-xing",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "inspect-work",
+                  "actor": "xing"
+                }
+              ],
+              "rule": "situation*chores-85038520*inspect-xing*act",
+              "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+              "observedBy": [
+                "me"
+              ]
+            },
+            {
+              "id": 2008,
+              "time": 5628.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：桌沿是擦了，角落还脏着。现在这份不能算合格，你回来补一下。",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "reject-quick-job",
+              "position": {
+                "x": -1.9972307430931289,
+                "z": 2.4499999999999993
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "rework",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*reject-quick-job*turn",
+              "reason": "检查到实际质量不足，解释拒付原因，而不是只扣一个分数。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            },
+            {
+              "id": 2029,
+              "time": 5642.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+              "participants": [
+                "me"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "inspect-xue",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "inspect-work",
+                  "actor": "xue"
+                }
+              ],
+              "rule": "situation*chores-85038520*inspect-xue*act",
+              "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+              "observedBy": [
+                "me"
+              ]
+            },
+            {
+              "id": 2036,
+              "time": 5644,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：你说做一份算一张，可没说边角另算不算。我补擦一遍，能不能算两份？",
+              "participants": [
+                "xing",
+                "dad"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "argue-count",
+              "position": {
+                "x": -4.2,
+                "z": 1.808554912027231
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "split-proposal",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "quality-rule",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*argue-count*turn",
+              "reason": "我不想白做，尝试利用计数规则讨价还价。",
+              "observedBy": [
+                "xing",
+                "dad"
+              ]
+            },
+            {
+              "id": 2040,
+              "time": 5645.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：补完还是原来那份。以后说清楚：达到约定质量才算，返工不能再领一张。",
+              "participants": [
+                "dad",
+                "xing"
+              ],
+              "cause": "conversation-75-turn-1",
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "revise-quality",
+              "position": {
+                "x": -4.154138126514913,
+                "z": 0.6999999999999993
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "policy",
+                  "key": "chore-quality",
+                  "value": 2
+                },
+                {
+                  "op": "tell",
+                  "key": "quality-rule",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*revise-quality*turn",
+              "reason": "这次争议说明计分条件不清楚，修改未来的验收规则。",
+              "observedBy": [
+                "dad",
+                "xing"
+              ]
+            },
+            {
+              "id": 2049,
+              "time": 5651.25,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+              "participants": [
+                "me",
+                "xue"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "pay-xue",
+              "position": {
+                "x": -2.697230743093129,
+                "z": 2.4499999999999993
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "family",
+                  "to": "xue",
+                  "amount": 2
+                },
+                {
+                  "op": "tell",
+                  "key": "paid",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*pay-xue*turn",
+              "reason": "这份劳动已经合格且未付款，兑现报酬。",
+              "observedBy": [
+                "me",
+                "xue"
+              ]
+            },
+            {
+              "id": 2065,
+              "time": 5665.75,
+              "day": 4,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星把漏掉的角落补擦干净。",
+              "participants": [
+                "xing"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-4",
+              "caseId": "case-4-chores",
+              "token": "redo-job",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "clean",
+                  "quality": 3,
+                  "amount": 10
+                },
+                {
+                  "op": "remember",
+                  "key": "rework",
+                  "value": false
+                }
+              ],
+              "rule": "situation*chores-85038520*redo-job*act",
+              "reason": "规则和拒付原因已经明确；补好以后仍能拿到原先的报酬。",
+              "observedBy": [
+                "xing"
+              ]
+            },
+            {
+              "id": 2264,
+              "time": 6794,
+              "day": 5,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+              "participants": [
+                "me"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-5",
+              "caseId": "case-4-chores",
+              "token": "inspect-xiaoyu",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "inspect-work",
+                  "actor": "xiaoyu"
+                }
+              ],
+              "rule": "situation*chores-85038520*inspect-xiaoyu*act",
+              "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+              "observedBy": [
+                "me"
+              ]
+            },
+            {
+              "id": 2334,
+              "time": 6848,
+              "day": 5,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：这回边角也干净了。还是原来那张卡，你再看一眼。",
+              "participants": [
+                "xing",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-5",
+              "caseId": "case-4-chores",
+              "token": "resubmit",
+              "position": {
+                "x": 7,
+                "z": 1.4000000000000021
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "submitted-xing",
+                  "value": 2,
+                  "valueFrom": "work-version"
+                },
+                {
+                  "op": "remember",
+                  "key": "submitted",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*resubmit*turn",
+              "reason": "我完成了返工，请同一个验收者重新检查。",
+              "observedBy": [
+                "xing",
+                "me"
+              ]
+            },
+            {
+              "id": 2363,
+              "time": 6860.75,
+              "day": 5,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+              "participants": [
+                "me",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-5",
+              "caseId": "case-4-chores",
+              "token": "pay-xiaoyu",
+              "position": {
+                "x": 3.5,
+                "z": 5.246446609406724
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "family",
+                  "to": "xiaoyu",
+                  "amount": 2
+                },
+                {
+                  "op": "tell",
+                  "key": "paid",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*pay-xiaoyu*turn",
+              "reason": "这份劳动已经合格且未付款，兑现报酬。",
+              "observedBy": [
+                "me",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 2377,
+              "time": 6870.75,
+              "day": 5,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+              "participants": [
+                "me"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-5",
+              "caseId": "case-4-chores",
+              "token": "inspect-xing",
+              "position": {
+                "x": 4.65,
+                "z": 3.8
+              },
+              "location": "clean",
+              "effects": [
+                {
+                  "op": "inspect-work",
+                  "actor": "xing"
+                }
+              ],
+              "rule": "situation*chores-85038520*inspect-xing*act",
+              "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+              "observedBy": [
+                "me"
+              ]
+            },
+            {
+              "id": 2419,
+              "time": 6897,
+              "day": 5,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-5",
+              "caseId": "case-4-chores",
+              "token": "pay-xing",
+              "position": {
+                "x": 0,
+                "z": 3.841247639347979
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "family",
+                  "to": "xing",
+                  "amount": 2
+                },
+                {
+                  "op": "tell",
+                  "key": "paid",
+                  "value": true
+                }
+              ],
+              "rule": "situation*chores-85038520*pay-xing*turn",
+              "reason": "这份劳动已经合格且未付款，兑现报酬。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            }
+          ],
+          "openThreads": [],
+          "followup": "家务报酬保存在各人的钱包里，修订后的质量门槛以后继续生效。"
+        },
+        {
+          "day": 6,
+          "title": "刘星说自己一点也不怕",
+          "template": "fear",
+          "status": "completed",
+          "summary": "夏东海：害怕就说害怕，这又不扣分。我陪你待一会儿，等缓过来再去睡。 刘星：下回你挑片子吧。倒不是不敢看，我觉得喜剧比较有营养。 刘梅：灯开好了。今晚先安心睡，明天再挑适合看的片子。",
+          "prepared": [],
+          "performed": [
+            "xing",
+            "xiaoyu",
+            "me",
+            "dad"
+          ],
+          "declined": [],
+          "positions": {},
+          "revised": true,
+          "evidence": [
+            2717,
+            2740,
+            2755,
+            2758,
+            2769,
+            2772,
+            2775,
+            2850,
+            2984
+          ],
+          "caseId": "case-6-fear",
+          "events": [
+            {
+              "id": 2717,
+              "time": 7683,
+              "day": 6,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星看完一段惊险影片，离开沙发时还回头看了看电视。",
+              "participants": [
+                "xing"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-6",
+              "caseId": "case-6-fear",
+              "token": "watch-scary",
+              "position": {
+                "x": -8.7,
+                "z": 2.25
+              },
+              "location": "tv",
+              "effects": [
+                {
+                  "op": "fear",
+                  "amount": 65
+                },
+                {
+                  "op": "remember",
+                  "key": "watched",
+                  "value": true
+                }
+              ],
+              "rule": "situation*fear-5c50a06c*watch-scary*act",
+              "reason": "我想看看自己能不能扛住这种片子；看完的身体反应再影响接下来的选择。",
+              "observedBy": [
+                "xing"
+              ]
+            },
+            {
+              "id": 2740,
+              "time": 7697.5,
+              "day": 6,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：妈，今晚那盏小灯能晚点关吗？不是浪费电，我还没完全缓过来。",
+              "participants": [
+                "xing",
+                "me"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-6",
+              "caseId": "case-6-fear",
+              "token": "ask-mom-light",
+              "position": {
+                "x": 0,
+                "z": 5.964589803375027
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "company-request",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "fear-known",
+                  "value": true
+                }
+              ],
+              "rule": "situation*fear-5c50a06c*ask-mom-light*turn",
+              "reason": "仍有一点害怕，提出一个具体且能执行的睡前请求。",
+              "observedBy": [
+                "xing",
+                "me"
+              ]
+            },
+            {
+              "id": 2755,
+              "time": 7707.75,
+              "day": 6,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：要不要一起去那边拿本书？我主要是怕你一个人无聊。",
+              "participants": [
+                "xing",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-6",
+              "caseId": "case-6-fear",
+              "token": "ask-brother-company",
+              "position": {
+                "x": -4.550000000000001,
+                "z": 5.600303957103716
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "company-request",
+                  "value": true
+                }
+              ],
+              "rule": "situation*fear-5c50a06c*ask-brother-company*turn",
+              "reason": "我有点怕，又想保住面子，先找弟弟作伴。",
+              "observedBy": [
+                "xing",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 2758,
+              "time": 7709.5,
+              "day": 6,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：你不是说一点都不怕吗？怎么拿本书也要两个人？",
+              "participants": [
+                "xiaoyu",
+                "xing"
+              ],
+              "cause": "conversation-99-turn-1",
+              "action": "play",
+              "episode": "episode-6",
+              "caseId": "case-6-fear",
+              "token": "question-bravery",
+              "position": {
+                "x": -4.4,
+                "z": 4.7
+              },
+              "location": "play",
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "fear-known",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "fear-known",
+                  "value": true
+                }
+              ],
+              "rule": "situation*fear-5c50a06c*question-bravery*turn",
+              "reason": "哥哥突然要人陪，我想问明白，而不是自动照办。",
+              "observedBy": [
+                "xiaoyu",
+                "xing"
+              ]
+            },
+            {
+              "id": 2769,
+              "time": 7719.75,
+              "day": 6,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅走到刘星床边，打开小夜灯。",
+              "participants": [
+                "me"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-6",
+              "caseId": "case-6-fear",
+              "token": "leave-light",
+              "position": {
+                "x": 4.2,
+                "z": -3.85
+              },
+              "location": "bed4",
+              "effects": [
+                {
+                  "op": "policy",
+                  "key": "night-light",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "light-on",
+                  "value": true
+                }
+              ],
+              "rule": "situation*fear-5c50a06c*leave-light*act",
+              "reason": "听到孩子的实际请求，去床边提供帮助。",
+              "observedBy": [
+                "me"
+              ]
+            },
+            {
+              "id": 2772,
+              "time": 7721,
+              "day": 6,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：爸，你还写稿吗？我在旁边坐一会儿。刚才那片子……确实有点吓人。",
+              "participants": [
+                "xing",
+                "dad"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-6",
+              "caseId": "case-6-fear",
+              "token": "admit-to-dad",
+              "position": {
+                "x": -8.75,
+                "z": 3.1500001319855806
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "fear-known",
+                  "value": true
+                }
+              ],
+              "rule": "situation*fear-5c50a06c*admit-to-dad*turn",
+              "reason": "找家长求助比继续逞强更能缓解害怕。",
+              "observedBy": [
+                "xing",
+                "dad"
+              ]
+            },
+            {
+              "id": 2775,
+              "time": 7722.75,
+              "day": 6,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：害怕就说害怕，这又不扣分。我陪你待一会儿，等缓过来再去睡。",
+              "participants": [
+                "dad",
+                "xing"
+              ],
+              "cause": "conversation-100-turn-1",
+              "action": "watch",
+              "episode": "episode-6",
+              "caseId": "case-6-fear",
+              "token": "comfort-child",
+              "position": {
+                "x": -8.7,
+                "z": 2.25
+              },
+              "location": "tv",
+              "effects": [
+                {
+                  "op": "comfort",
+                  "amount": 42
+                },
+                {
+                  "op": "tell",
+                  "key": "comforted",
+                  "value": true
+                },
+                {
+                  "op": "social",
+                  "value": "cooperate"
+                }
+              ],
+              "rule": "situation*fear-5c50a06c*comfort-child*turn",
+              "reason": "孩子明确求助，我在身边回应并安慰，而不是远程消除情绪。",
+              "observedBy": [
+                "dad",
+                "xing"
+              ]
+            },
+            {
+              "id": 2850,
+              "time": 7777.5,
+              "day": 6,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：下回你挑片子吧。倒不是不敢看，我觉得喜剧比较有营养。",
+              "participants": [
+                "xing",
+                "xue"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-6",
+              "caseId": "case-6-fear",
+              "token": "choose-next-film",
+              "position": {
+                "x": -1.6820725409827457,
+                "z": 6.665441477241494
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "avoid-scary",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "avoid-scary",
+                  "value": true
+                }
+              ],
+              "rule": "situation*fear-5c50a06c*choose-next-film*turn",
+              "reason": "记得这次害怕和得到帮助的经历，下次改选更轻松的内容。",
+              "observedBy": [
+                "xing",
+                "xue"
+              ]
+            },
+            {
+              "id": 2984,
+              "time": 7896,
+              "day": 6,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：灯开好了。今晚先安心睡，明天再挑适合看的片子。",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-6",
+              "caseId": "case-6-fear",
+              "token": "tell-light",
+              "position": {
+                "x": -7.704690242287378,
+                "z": 2.71835722072158
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "light-on",
+                  "value": true
+                },
+                {
+                  "op": "comfort",
+                  "amount": 22
+                }
+              ],
+              "rule": "situation*fear-5c50a06c*tell-light*turn",
+              "reason": "灯已实际打开，再告诉孩子，不用一句话代替物品操作。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            }
+          ],
+          "openThreads": [],
+          "followup": "残余害怕逐渐消退；下次避开同类影片的选择和得到照顾的记忆继续保留。"
+        },
+        {
+          "day": 7,
+          "title": "小雨急着筹钱",
+          "template": "detective",
+          "status": "completed",
+          "summary": "夏雨：谢谢姐。明天我自己跟同学说，你不用替我去。 夏雨：车修好了，这二十块没用上，还给你。这回没有把钱花掉。 小雨把画册放回书架，没有把它卖掉。",
+          "prepared": [],
+          "performed": [
+            "xiaoyu",
+            "xing",
+            "dad",
+            "me",
+            "xue"
+          ],
+          "declined": [],
+          "positions": {},
+          "revised": false,
+          "evidence": [
+            3436,
+            3456,
+            3468,
+            3480,
+            3486,
+            3509,
+            3512,
+            3515,
+            3517,
+            3627,
+            3653,
+            3667,
+            3674,
+            3686,
+            3710
+          ],
+          "caseId": "case-7-detective",
+          "events": [
+            {
+              "id": 3436,
+              "time": 9119.75,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "小雨把旧画册搬到自己桌边，想看看它能不能换到赔玩具的钱。",
+              "participants": [
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "put-album-aside",
+              "position": {
+                "x": 8.05,
+                "z": -2.75
+              },
+              "location": "deskYu",
+              "effects": [
+                {
+                  "op": "move",
+                  "object": "album",
+                  "to": "deskYu"
+                }
+              ],
+              "rule": "situation*detective-add32d93*put-album-aside*act",
+              "reason": "手头的钱不够，我想先找件旧东西；还没有得到出售许可。",
+              "observedBy": [
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 3456,
+              "time": 9133.5,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：哥，借来的小汽车让我弄坏了。你能先帮我想个办法吗？别一上来就喊妈。",
+              "participants": [
+                "xiaoyu",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "ask-brother",
+              "position": {
+                "x": -0.3500000000000014,
+                "z": 1.7499819624866313
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "asked-help",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "broken",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "culprit",
+                  "value": "xiaoyu"
+                },
+                {
+                  "op": "tell",
+                  "key": "needs-money",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*ask-brother*turn",
+              "reason": "哥哥比较好说话，我先告诉他真实原因，看看能否修好。",
+              "observedBy": [
+                "xiaoyu",
+                "xing"
+              ]
+            },
+            {
+              "id": 3468,
+              "time": 9140.5,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：小雨那车轮掉了。你手巧，能不能看看？我负责把事情问明白。",
+              "participants": [
+                "xing",
+                "xue"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "ask-sister",
+              "position": {
+                "x": -0.09561780139321724,
+                "z": 2.789564281074461
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "broken",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "culprit",
+                  "value": "xiaoyu"
+                },
+                {
+                  "op": "remember",
+                  "key": "asked-help",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*ask-sister*turn",
+              "reason": "修理比直接凑钱更可行，我向姐姐求助。",
+              "observedBy": [
+                "xing",
+                "xue"
+              ]
+            },
+            {
+              "id": 3480,
+              "time": 9145.75,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：爸，我把同学的小汽车弄坏了，钱也不够。我怕挨说，刚才还想动家里的画册。",
+              "participants": [
+                "xiaoyu",
+                "dad"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "confess",
+              "position": {
+                "x": -7.699999999999998,
+                "z": 2.0999999999999996
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "confessed",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "culprit",
+                  "value": "xiaoyu"
+                },
+                {
+                  "op": "tell",
+                  "key": "broken",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "needs-money",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*confess*turn",
+              "reason": "单靠自己处理不了，可以把原因讲给爸爸；坦白也是可选办法。",
+              "observedBy": [
+                "xiaoyu",
+                "dad"
+              ]
+            },
+            {
+              "id": 3486,
+              "time": 9147.5,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "dad",
+              "text": "夏东海：我先借你二十，修不好再用来赔。钱和画册都是有主人的，用之前得商量。",
+              "participants": [
+                "dad",
+                "xiaoyu"
+              ],
+              "cause": "conversation-122-turn-1",
+              "action": "watch",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "advance-money",
+              "position": {
+                "x": -8.7,
+                "z": 2.25
+              },
+              "location": "tv",
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "dad",
+                  "to": "xiaoyu",
+                  "amount": 20,
+                  "debt": true
+                },
+                {
+                  "op": "tell",
+                  "key": "needs-money",
+                  "value": false
+                }
+              ],
+              "rule": "situation*detective-add32d93*advance-money*turn",
+              "reason": "孩子明确求助，我能先垫钱，但保留借款责任。",
+              "observedBy": [
+                "dad",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 3509,
+              "time": 9160,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：画册怎么不在了？刘星，是不是你又拿去玩了？",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "suspect-xing",
+              "position": {
+                "x": -8.7,
+                "z": 2.25
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "accused",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "made-accusation",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*suspect-xing*turn",
+              "reason": "我发现画册不在原处，先想到平时爱动东西的刘星；这只是怀疑。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            },
+            {
+              "id": 3512,
+              "time": 9160.5,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：我这一段复习还没做完，现在接不了。你先找爸爸，别把事情拖到明天。",
+              "participants": [
+                "xue",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "decline-repair",
+              "position": {
+                "x": -4.550000000000001,
+                "z": 3.850000000000001
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "asked-help",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "repair-offer",
+                  "value": false
+                }
+              ],
+              "rule": "situation*detective-add32d93*decline-repair*turn",
+              "reason": "当前目标时间紧，明确拒绝而不是先答应。",
+              "observedBy": [
+                "xue",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 3515,
+              "time": 9161.75,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xing",
+              "text": "刘星：怎么一少东西就找我？小雨是急着赔坏掉的玩具，我正帮他找办法呢。",
+              "participants": [
+                "xing",
+                "me"
+              ],
+              "cause": "conversation-123-turn-1",
+              "action": "watch",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "defend-self",
+              "position": {
+                "x": -8.7,
+                "z": 2.25
+              },
+              "location": "tv",
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "culprit",
+                  "value": "xiaoyu"
+                },
+                {
+                  "op": "tell",
+                  "key": "broken",
+                  "value": true
+                },
+                {
+                  "op": "remember",
+                  "key": "cleared",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*defend-self*turn",
+              "reason": "我被直接怀疑，愿意说出已知的真实原因来澄清。",
+              "observedBy": [
+                "xing",
+                "me"
+              ]
+            },
+            {
+              "id": 3517,
+              "time": 9163.5,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "me",
+              "text": "刘梅：这回是我没问清就想到你了。帮弟弟是好事，刚才那句我收回。",
+              "participants": [
+                "me",
+                "xing"
+              ],
+              "cause": "conversation-123-turn-2",
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "apologize-for-suspicion",
+              "position": {
+                "x": -8.7,
+                "z": 2.25
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "cleared",
+                  "value": true
+                },
+                {
+                  "op": "social",
+                  "value": "apology"
+                }
+              ],
+              "rule": "situation*detective-add32d93*apologize-for-suspicion*turn",
+              "reason": "新消息推翻了最初的怀疑，我需要向被怀疑的人承认这一点。",
+              "observedBy": [
+                "me",
+                "xing"
+              ]
+            },
+            {
+              "id": 3627,
+              "time": 9263.5,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：我可以花十分钟试着修。你得在旁边帮忙，修不好就一起跟爸妈说。",
+              "participants": [
+                "xue",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "offer-repair",
+              "position": {
+                "x": -3.850000000000001,
+                "z": 1.75
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "remember",
+                  "key": "repair-offer",
+                  "value": true
+                },
+                {
+                  "op": "tell",
+                  "key": "repair-offer",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*offer-repair*turn",
+              "reason": "我还有复习，但能拿出十分钟；帮助不等于替弟弟隐瞒所有后果。",
+              "observedBy": [
+                "xue",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 3653,
+              "time": 9290.5,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪检查车轴，把松掉的车轮装回去了。",
+              "participants": [
+                "xue"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "repair-toy",
+              "position": {
+                "x": 8.05,
+                "z": -2.75
+              },
+              "location": "deskYu",
+              "effects": [
+                {
+                  "op": "repair",
+                  "object": "toy"
+                },
+                {
+                  "op": "remember",
+                  "key": "repaired",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*repair-toy*act",
+              "reason": "我已经答应帮忙，现在实际修理，完成后才算兑现。",
+              "observedBy": [
+                "xue"
+              ]
+            },
+            {
+              "id": 3667,
+              "time": 9304.5,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xue",
+              "text": "夏雪：轮子装好了。明天还给同学时，把摔过这件事也说明白。",
+              "participants": [
+                "xue",
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "report-repair",
+              "position": {
+                "x": -3.5,
+                "z": 1.3964466094067247
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "tell",
+                  "key": "repaired",
+                  "value": true
+                },
+                {
+                  "op": "social",
+                  "value": "cooperate"
+                }
+              ],
+              "rule": "situation*detective-add32d93*report-repair*turn",
+              "reason": "修理结束了，要把结果交代给借东西的人。",
+              "observedBy": [
+                "xue",
+                "xiaoyu"
+              ]
+            },
+            {
+              "id": 3674,
+              "time": 9306.25,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：谢谢姐。明天我自己跟同学说，你不用替我去。",
+              "participants": [
+                "xiaoyu",
+                "xue"
+              ],
+              "cause": "conversation-129-turn-1",
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "thank-sister",
+              "position": {
+                "x": -3.606119446044297,
+                "z": 2.2805159758015576
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "social",
+                  "value": "cooperate"
+                }
+              ],
+              "rule": "situation*detective-add32d93*thank-sister*turn",
+              "reason": "得到实际帮助后，我愿意自己承担归还和说明的责任。",
+              "observedBy": [
+                "xiaoyu",
+                "xue"
+              ]
+            },
+            {
+              "id": 3686,
+              "time": 9313,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "夏雨：车修好了，这二十块没用上，还给你。这回没有把钱花掉。",
+              "participants": [
+                "xiaoyu",
+                "dad"
+              ],
+              "cause": null,
+              "action": "idle",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "repay-dad",
+              "position": {
+                "x": -3.606119446044297,
+                "z": 2.2805159758015576
+              },
+              "location": null,
+              "effects": [
+                {
+                  "op": "transfer",
+                  "from": "xiaoyu",
+                  "to": "dad",
+                  "amount": 20,
+                  "repayment": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*repay-dad*turn",
+              "reason": "借款用途已经消失，归還钱才能结束债务。",
+              "observedBy": [
+                "xiaoyu",
+                "dad"
+              ]
+            },
+            {
+              "id": 3710,
+              "time": 9346.5,
+              "day": 7,
+              "type": "incident-event",
+              "actor": "xiaoyu",
+              "text": "小雨把画册放回书架，没有把它卖掉。",
+              "participants": [
+                "xiaoyu"
+              ],
+              "cause": null,
+              "action": "incident",
+              "episode": "episode-7",
+              "caseId": "case-7-detective",
+              "token": "return-album",
+              "position": {
+                "x": -3.4,
+                "z": 1.2
+              },
+              "location": "book",
+              "effects": [
+                {
+                  "op": "move",
+                  "object": "album",
+                  "to": "book"
+                },
+                {
+                  "op": "remember",
+                  "key": "returned",
+                  "value": true
+                }
+              ],
+              "rule": "situation*detective-add32d93*return-album*act",
+              "reason": "玩具修好了，不需要动用别人的东西，把画册归还。",
+              "observedBy": [
+                "xiaoyu"
+              ]
+            }
+          ],
+          "openThreads": [],
+          "followup": "玩具是否修好、借款是否归还和被误会的人是否得到道歉，分别继续记录。"
+        }
+      ],
+      "simulationMinutes": 10080,
+      "day": 8,
+      "mealAttendance": 1,
+      "missedMeals": [],
+      "minimumNeed": 36.21546443477446,
+      "completed": [
+        "xiaoyu",
+        "dad",
+        "xing",
+        "xue",
+        "me"
+      ],
+      "choices": [
+        "study",
+        "play",
+        "incident",
+        "continue",
+        "tidy",
+        "wait",
+        "watch",
+        "cook",
+        "inspect",
+        "snack",
+        "eat",
+        "chat",
+        "read",
+        "work",
+        "rest",
+        "sleep",
+        "groceries",
+        "depart",
+        "askHelp",
+        "accept"
+      ],
+      "eventTypes": [
+        "outsideMeal",
+        "scene-brief",
+        "planStep",
+        "action",
+        "incident-intent",
+        "taskStarted",
+        "incident-event",
+        "daily",
+        "taskCompleted",
+        "result",
+        "returned",
+        "conversation",
+        "conversation-turn",
+        "conversation-ended",
+        "noise",
+        "unavailable",
+        "inspection",
+        "communication",
+        "appraisal",
+        "achievement",
+        "newDay",
+        "departed",
+        "missed",
+        "request",
+        "cooperate",
+        "commitment",
+        "promise",
+        "start"
+      ],
+      "formalRequestRefusalObserved": false,
+      "linkedConversationReplies": 158,
+      "decisions": 18716,
+      "elapsedMilliseconds": 280233.87389299995,
+      "decisionMs": {
+        "median": 5.18489600000612,
+        "p95": 8.95090799999889,
+        "max": 82.12952000001678
+      },
+      "messageCount": 100,
+      "personalBeliefs": {
+        "dad": 30,
+        "me": 48,
+        "xue": 39,
+        "xing": 59,
+        "xiaoyu": 62
+      },
+      "socialAppraisals": {
+        "dad": 0,
+        "me": 1,
+        "xue": 1,
+        "xing": 2,
+        "xiaoyu": 2
+      },
+      "memoryBytes": {
+        "dad": {
+          "smem": 1417216,
+          "epmem": 1482752
+        },
+        "me": {
+          "smem": 1458176,
+          "epmem": 1720320
+        },
+        "xue": {
+          "smem": 1425408,
+          "epmem": 1425408
+        },
+        "xing": {
+          "smem": 1449984,
+          "epmem": 1523712
+        },
+        "xiaoyu": {
+          "smem": 1556480,
+          "epmem": 1769472
+        }
+      },
+      "learnedFeedback": {
+        "dad": 0,
+        "me": 0,
+        "xue": 0,
+        "xing": 0,
+        "xiaoyu": 1
+      }
+    }
+  ]
+}

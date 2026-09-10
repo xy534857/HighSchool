@@ -1,0 +1,145 @@
+{
+  "epoch": 1,
+  "baseRevision": 1,
+  "contentRevision": 1,
+  "requestId": "knowledge-2",
+  "evidence": [
+    "event-24"
+  ],
+  "rules": [],
+  "goals": [
+    {
+      "id": "m-hold-two-friendships",
+      "title": "分别和两位朋友说清楚，争取恢复来往",
+      "motive": "珍惜沈乔的友谊，也不愿用排斥知夏来维持它。",
+      "priority": 85,
+      "deadline": 5000,
+      "about": [
+        "f",
+        "t"
+      ],
+      "activeWhen": {
+        "left": "$clock.period",
+        "right": "class",
+        "op": "ne"
+      },
+      "steps": [
+        {
+          "label": "先向沈乔说明界限",
+          "action": "set-boundary",
+          "roles": {
+            "target": "f"
+          },
+          "args": {
+            "text": "我还把你当朋友。但刚才让知夏别跟来的话，我不同意，我想自己决定和谁相处。"
+          },
+          "alternatives": [
+            {
+              "action": "start-conversation",
+              "roles": {
+                "target": "f"
+              },
+              "args": {
+                "access": "private",
+                "topic": "把今天的顾虑说清楚"
+              }
+            },
+            {
+              "action": "seek-contact",
+              "roles": {
+                "target": "f"
+              }
+            }
+          ]
+        },
+        {
+          "action": "leave-conversation",
+          "label": "给沈乔留一点时间"
+        },
+        {
+          "label": "为自己的沉默道歉",
+          "action": "apologize-peer",
+          "roles": {
+            "target": "t"
+          },
+          "args": {
+            "text": "刚才我直接走开，没有把话说清楚。不是我也想排斥你，对不起。"
+          },
+          "alternatives": [
+            {
+              "action": "start-conversation",
+              "roles": {
+                "target": "t"
+              },
+              "args": {
+                "access": "private",
+                "topic": "把今天的顾虑说清楚"
+              }
+            },
+            {
+              "action": "seek-contact",
+              "roles": {
+                "target": "t"
+              }
+            }
+          ]
+        },
+        {
+          "label": "询问知夏是否愿意重新来往",
+          "action": "propose-reconnect",
+          "roles": {
+            "target": "t"
+          },
+          "args": {
+            "text": "以后放学我们还可以聊聊吗？你不想的话，也可以直接告诉我。"
+          },
+          "alternatives": [
+            {
+              "action": "start-conversation",
+              "roles": {
+                "target": "t"
+              },
+              "args": {
+                "access": "private",
+                "topic": "把今天的顾虑说清楚"
+              }
+            },
+            {
+              "action": "seek-contact",
+              "roles": {
+                "target": "t"
+              }
+            }
+          ]
+        },
+        {
+          "label": "等知夏自己的回答",
+          "until": {
+            "key": "t:response-reconnect",
+            "value": "accepted"
+          }
+        },
+        {
+          "action": "leave-conversation",
+          "label": "说清楚后继续各自的日常"
+        }
+      ],
+      "abandonWhen": {
+        "left": "$knownByKey.t:response-reconnect",
+        "right": "declined",
+        "op": "eq"
+      }
+    }
+  ],
+  "cognition": [
+    {
+      "field": "assertiveness",
+      "delta": 3,
+      "reason": "亲眼看见朋友因群体关系排斥知夏，我需要更明确地表达自己的选择。"
+    }
+  ],
+  "summary": "我听见沈乔把知夏排除在外，又直接离开了谈话。这样容易让知夏以为我也同意。我在意沈乔这个朋友，也喜欢和知夏相处；先单独向沈乔表明界限，再向知夏说明我自己的立场，能不能重新来往要让她决定。",
+  "cancelGoals": [
+    "project-social-m-t-0-m"
+  ]
+}

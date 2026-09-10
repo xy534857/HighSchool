@@ -1,0 +1,1720 @@
+{
+  "kernel": "Soar 9.6.5 native WASM",
+  "liveAPICalls": 0,
+  "author": "ChatGPT",
+  "observation": "unattended simulation with the same world engine used by the browser",
+  "results": [
+    {
+      "label": "detective",
+      "events": [
+        {
+          "id": 20,
+          "time": 1012.5,
+          "actor": "xiaoyu",
+          "token": "put-album-aside",
+          "text": "小雨把旧画册搬到自己桌边，想看看它能不能换到赔玩具的钱。",
+          "reason": "手头的钱不够，我想先找件旧东西；还没有得到出售许可。",
+          "rule": "situation*detective-add32d93*put-album-aside*act",
+          "heardBy": [
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 44,
+          "time": 1036.5,
+          "actor": "xiaoyu",
+          "token": "ask-brother",
+          "text": "夏雨：哥，借来的小汽车让我弄坏了。你能先帮我想个办法吗？别一上来就喊妈。",
+          "reason": "哥哥比较好说话，我先告诉他真实原因，看看能否修好。",
+          "rule": "situation*detective-add32d93*ask-brother*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xing"
+          ]
+        },
+        {
+          "id": 114,
+          "time": 1086.25,
+          "actor": "xiaoyu",
+          "token": "confess",
+          "text": "夏雨：爸，我把同学的小汽车弄坏了，钱也不够。我怕挨说，刚才还想动家里的画册。",
+          "reason": "单靠自己处理不了，可以把原因讲给爸爸；坦白也是可选办法。",
+          "rule": "situation*detective-add32d93*confess*turn",
+          "heardBy": [
+            "xiaoyu",
+            "dad"
+          ]
+        },
+        {
+          "id": 116,
+          "time": 1088,
+          "actor": "dad",
+          "token": "advance-money",
+          "text": "夏东海：我先借你二十，修不好再用来赔。钱和画册都是有主人的，用之前得商量。",
+          "reason": "孩子明确求助，我能先垫钱，但保留借款责任。",
+          "rule": "situation*detective-add32d93*advance-money*turn",
+          "heardBy": [
+            "dad",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 142,
+          "time": 1109.25,
+          "actor": "xing",
+          "token": "ask-sister",
+          "text": "刘星：小雨那车轮掉了。你手巧，能不能看看？我负责把事情问明白。",
+          "reason": "修理比直接凑钱更可行，我向姐姐求助。",
+          "rule": "situation*detective-add32d93*ask-sister*turn",
+          "heardBy": [
+            "xing",
+            "xue"
+          ]
+        },
+        {
+          "id": 226,
+          "time": 1164.75,
+          "actor": "me",
+          "token": "suspect-xing",
+          "text": "刘梅：画册怎么不在了？刘星，是不是你又拿去玩了？",
+          "reason": "我发现画册不在原处，先想到平时爱动东西的刘星；这只是怀疑。",
+          "rule": "situation*detective-add32d93*suspect-xing*turn",
+          "heardBy": [
+            "me",
+            "xing"
+          ]
+        },
+        {
+          "id": 229,
+          "time": 1166.5,
+          "actor": "xing",
+          "token": "defend-self",
+          "text": "刘星：怎么一少东西就找我？小雨是急着赔坏掉的玩具，我正帮他找办法呢。",
+          "reason": "我被直接怀疑，愿意说出已知的真实原因来澄清。",
+          "rule": "situation*detective-add32d93*defend-self*turn",
+          "heardBy": [
+            "xing",
+            "me"
+          ]
+        },
+        {
+          "id": 232,
+          "time": 1168.25,
+          "actor": "me",
+          "token": "apologize-for-suspicion",
+          "text": "刘梅：这回是我没问清就想到你了。帮弟弟是好事，刚才那句我收回。",
+          "reason": "新消息推翻了最初的怀疑，我需要向被怀疑的人承认这一点。",
+          "rule": "situation*detective-add32d93*apologize-for-suspicion*turn",
+          "heardBy": [
+            "me",
+            "xing"
+          ]
+        },
+        {
+          "id": 256,
+          "time": 1185.5,
+          "actor": "xue",
+          "token": "offer-repair",
+          "text": "夏雪：我可以花十分钟试着修。你得在旁边帮忙，修不好就一起跟爸妈说。",
+          "reason": "我还有复习，但能拿出十分钟；帮助不等于替弟弟隐瞒所有后果。",
+          "rule": "situation*detective-add32d93*offer-repair*turn",
+          "heardBy": [
+            "xue",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 288,
+          "time": 1214.25,
+          "actor": "xue",
+          "token": "repair-toy",
+          "text": "夏雪检查车轴，把松掉的车轮装回去了。",
+          "reason": "我已经答应帮忙，现在实际修理，完成后才算兑现。",
+          "rule": "situation*detective-add32d93*repair-toy*act",
+          "heardBy": [
+            "xue"
+          ]
+        },
+        {
+          "id": 328,
+          "time": 1242,
+          "actor": "xue",
+          "token": "report-repair",
+          "text": "夏雪：轮子装好了。明天还给同学时，把摔过这件事也说明白。",
+          "reason": "修理结束了，要把结果交代给借东西的人。",
+          "rule": "situation*detective-add32d93*report-repair*turn",
+          "heardBy": [
+            "xue",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 335,
+          "time": 1243.75,
+          "actor": "xiaoyu",
+          "token": "thank-sister",
+          "text": "夏雨：谢谢姐。明天我自己跟同学说，你不用替我去。",
+          "reason": "得到实际帮助后，我愿意自己承担归还和说明的责任。",
+          "rule": "situation*detective-add32d93*thank-sister*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xue"
+          ]
+        },
+        {
+          "id": 365,
+          "time": 1281.5,
+          "actor": "xiaoyu",
+          "token": "return-album",
+          "text": "小雨把画册放回书架，没有把它卖掉。",
+          "reason": "玩具修好了，不需要动用别人的东西，把画册归还。",
+          "rule": "situation*detective-add32d93*return-album*act",
+          "heardBy": [
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 370,
+          "time": 1284.25,
+          "actor": "xiaoyu",
+          "token": "repay-dad",
+          "text": "夏雨：车修好了，这二十块没用上，还给你。这回没有把钱花掉。",
+          "reason": "借款用途已经消失，归還钱才能结束债务。",
+          "rule": "situation*detective-add32d93*repay-dad*turn",
+          "heardBy": [
+            "xiaoyu",
+            "dad"
+          ]
+        }
+      ],
+      "objects": [
+        {
+          "id": "toy",
+          "name": "借来的小汽车",
+          "location": "deskYu",
+          "condition": "repaired",
+          "owner": "xiaoyu",
+          "private": true
+        },
+        {
+          "id": "album",
+          "name": "家里的旧画册",
+          "location": "book",
+          "condition": "intact",
+          "owner": "family"
+        }
+      ],
+      "economy": {
+        "wallets": {
+          "dad": 50,
+          "me": 48,
+          "xue": 12,
+          "xing": 5,
+          "xiaoyu": 7
+        },
+        "policies": {
+          "chore-quality": 1,
+          "pay-for-reports": false,
+          "night-light": false
+        },
+        "ledger": [
+          {
+            "caseId": "case-1-detective",
+            "event": 116,
+            "from": "dad",
+            "to": "xiaoyu",
+            "amount": 20,
+            "at": 1088
+          },
+          {
+            "caseId": "case-1-detective",
+            "event": 370,
+            "from": "xiaoyu",
+            "to": "dad",
+            "amount": 20,
+            "at": 1284.25
+          },
+          {
+            "caseId": "case-2-reports",
+            "event": 678,
+            "from": "me",
+            "to": "xiaoyu",
+            "amount": 2,
+            "at": 2535.25
+          },
+          {
+            "caseId": "case-2-reports",
+            "event": 798,
+            "from": "xing",
+            "to": "xiaoyu",
+            "amount": 3,
+            "at": 2612.25
+          }
+        ]
+      },
+      "debts": [
+        {
+          "debtor": "xiaoyu",
+          "creditor": "dad",
+          "amount": 20,
+          "paid": true,
+          "event": 116,
+          "repaidAt": 1284.25
+        }
+      ],
+      "needs": [
+        {
+          "id": "dad",
+          "hunger": 80.96650000000241,
+          "energy": 68.67400000000163
+        },
+        {
+          "id": "me",
+          "hunger": 82.30150000000148,
+          "energy": 69.27400000000159
+        },
+        {
+          "id": "xue",
+          "hunger": 82.28275000000149,
+          "energy": 69.65900000000035
+        },
+        {
+          "id": "xing",
+          "hunger": 81.54525000000235,
+          "energy": 67.84899999999894
+        },
+        {
+          "id": "xiaoyu",
+          "hunger": 85.03699999999964,
+          "energy": 72.34700000000045
+        }
+      ],
+      "missedMeals": []
+    },
+    {
+      "label": "reports",
+      "events": [
+        {
+          "id": 259,
+          "time": 1214.5,
+          "actor": "xiaoyu",
+          "token": "report-plan",
+          "text": "夏雨：妈，哥哥说他想先看比赛，作业晚点再做。",
+          "reason": "我确实听过这个打算，告诉妈妈也许能得到表扬。",
+          "rule": "situation*reports-3b596f06*report-plan*turn",
+          "heardBy": [
+            "xiaoyu",
+            "me"
+          ]
+        },
+        {
+          "id": 261,
+          "time": 1216.25,
+          "actor": "me",
+          "token": "praise-report",
+          "text": "刘梅：你肯告诉妈妈，我给你两块零用钱。不过他到底做没做作业，我还得问他。",
+          "reason": "我想鼓励孩子交流，先给了奖励；这并没有证实哥哥违规。",
+          "rule": "situation*reports-3b596f06*praise-report*turn",
+          "heardBy": [
+            "me",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 349,
+          "time": 1287.5,
+          "actor": "xiaoyu",
+          "token": "advertise-reward",
+          "text": "夏雨：妈说我消息灵通，还给我两块钱呢。你还有别的消息吗？",
+          "reason": "奖励让我觉得汇报有好处，想向哥哥炫耀。",
+          "rule": "situation*reports-3b596f06*advertise-reward*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xing"
+          ]
+        },
+        {
+          "id": 353,
+          "time": 1289.25,
+          "actor": "xing",
+          "token": "buy-silence",
+          "text": "刘星：我也出三块。以后我自己的安排，先问我能不能往外说，成不成？",
+          "reason": "我觉得自己的安排被拿去领奖，想用更高的条件换回控制。",
+          "rule": "situation*reports-3b596f06*buy-silence*turn",
+          "heardBy": [
+            "xing",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 365,
+          "time": 1302,
+          "actor": "me",
+          "token": "verify-with-xing",
+          "text": "刘梅：小雨说你想先看比赛。你自己说说，作业准备什么时候做？",
+          "reason": "听来的计划不等于已发生的违规，要听当事人的说明。",
+          "rule": "situation*reports-3b596f06*verify-with-xing*turn",
+          "heardBy": [
+            "me",
+            "xing"
+          ]
+        },
+        {
+          "id": 368,
+          "time": 1303.75,
+          "actor": "xing",
+          "token": "explain-plan",
+          "text": "刘星：我说的是自己的打算。你可以问我先做哪件事，别只听转述就给我定罪啊。",
+          "reason": "妈妈确实来核实了，我说明计划与行动的区别。",
+          "rule": "situation*reports-3b596f06*explain-plan*turn",
+          "heardBy": [
+            "xing",
+            "me"
+          ]
+        },
+        {
+          "id": 700,
+          "time": 2577,
+          "actor": "xiaoyu",
+          "token": "accept-secret-deal",
+          "text": "夏雨：三块啊？那我以后先问你。不过要是闯了祸，我可不替你瞒。",
+          "reason": "我想要零用钱，也想留住哥哥；只接受有限的保密约定。",
+          "rule": "situation*reports-3b596f06*accept-secret-deal*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xing"
+          ]
+        },
+        {
+          "id": 704,
+          "time": 2578.75,
+          "actor": "xing",
+          "token": "pay-for-promise",
+          "text": "刘星：说好的三块给你。可别转头又把这三块的事当新闻卖了。",
+          "reason": "弟弟已经亲口接受条件，我履行自己的付款承诺。",
+          "rule": "situation*reports-3b596f06*pay-for-promise*turn",
+          "heardBy": [
+            "xing",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 737,
+          "time": 2612,
+          "actor": "xiaoyu",
+          "token": "tell-sister",
+          "text": "夏雨：姐，哥哥说消息得先问过他，还答应给我三块。这算不算工作？",
+          "reason": "我接受了新约定，却不懂这个交换是否妥当，找姐姐问问。",
+          "rule": "situation*reports-3b596f06*tell-sister*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xue"
+          ]
+        },
+        {
+          "id": 741,
+          "time": 2613.75,
+          "actor": "xue",
+          "token": "privacy-question",
+          "text": "夏雪：那我的事情你也准备拿去领奖？涉及别人，至少先问一声吧。",
+          "reason": "听到消息被奖励，我担心同样的事情发生在自己身上。",
+          "rule": "situation*reports-3b596f06*privacy-question*turn",
+          "heardBy": [
+            "xue",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 786,
+          "time": 2665,
+          "actor": "xue",
+          "token": "tell-dad",
+          "text": "夏雪：小雨现在把消息和零用钱算在一起了。咱们到底是在鼓励交流，还是鼓励打听别人？",
+          "reason": "担忧来自弟弟实际告诉我的交易，我要请家长讨论制度。",
+          "rule": "situation*reports-3b596f06*tell-dad*turn",
+          "heardBy": [
+            "xue",
+            "dad"
+          ]
+        },
+        {
+          "id": 882,
+          "time": 2770.75,
+          "actor": "dad",
+          "token": "discuss-incentive",
+          "text": "夏东海：孩子开始谈消息的价钱了。以后听他们说，但别按条发钱；涉及谁，就找谁核实。",
+          "reason": "实际交易暴露了奖励的问题，我提出修改以后的做法。",
+          "rule": "situation*reports-3b596f06*discuss-incentive*turn",
+          "heardBy": [
+            "dad",
+            "me",
+            "xue"
+          ]
+        }
+      ],
+      "objects": [],
+      "economy": {
+        "wallets": {
+          "dad": 50,
+          "me": 48,
+          "xue": 12,
+          "xing": 5,
+          "xiaoyu": 7
+        },
+        "policies": {
+          "chore-quality": 1,
+          "pay-for-reports": false,
+          "night-light": false
+        },
+        "ledger": [
+          {
+            "caseId": "case-1-reports",
+            "event": 261,
+            "from": "me",
+            "to": "xiaoyu",
+            "amount": 2,
+            "at": 1216.25
+          },
+          {
+            "caseId": "case-1-reports",
+            "event": 704,
+            "from": "xing",
+            "to": "xiaoyu",
+            "amount": 3,
+            "at": 2578.75
+          }
+        ]
+      },
+      "debts": [],
+      "needs": [
+        {
+          "id": "dad",
+          "hunger": 80.60325000000246,
+          "energy": 68.69200000000164
+        },
+        {
+          "id": "me",
+          "hunger": 82.13025000000154,
+          "energy": 69.15400000000146
+        },
+        {
+          "id": "xue",
+          "hunger": 82.13025000000154,
+          "energy": 69.43900000000002
+        },
+        {
+          "id": "xing",
+          "hunger": 81.61575000000231,
+          "energy": 68.06699999999924
+        },
+        {
+          "id": "xiaoyu",
+          "hunger": 84.89874999999965,
+          "energy": 72.66000000000103
+        }
+      ],
+      "missedMeals": []
+    },
+    {
+      "label": "chores",
+      "events": [
+        {
+          "id": 85,
+          "time": 1077,
+          "actor": "dad",
+          "token": "announce-xiaoyu",
+          "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+          "reason": "只有实际听到规则的人，才知道怎样参与。",
+          "rule": "situation*chores-85038520*announce-xiaoyu*turn",
+          "heardBy": [
+            "dad",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 117,
+          "time": 1098.75,
+          "actor": "xiaoyu",
+          "token": "small-job",
+          "text": "小雨把自己散着的玩具收进盒里。",
+          "reason": "先完成自己做得到的一份活，才有理由申请家务卡。",
+          "rule": "situation*chores-85038520*small-job*act",
+          "heardBy": [
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 129,
+          "time": 1105.25,
+          "actor": "dad",
+          "token": "announce-xue",
+          "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+          "reason": "只有实际听到规则的人，才知道怎样参与。",
+          "rule": "situation*chores-85038520*announce-xue*turn",
+          "heardBy": [
+            "dad",
+            "xue"
+          ]
+        },
+        {
+          "id": 145,
+          "time": 1111.25,
+          "actor": "xiaoyu",
+          "token": "submit-xiaoyu",
+          "text": "夏雨：我的那份干完了，你来看看，能不能算一张卡？",
+          "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+          "rule": "situation*chores-85038520*submit-xiaoyu*turn",
+          "heardBy": [
+            "xiaoyu",
+            "me"
+          ]
+        },
+        {
+          "id": 180,
+          "time": 1140.75,
+          "actor": "dad",
+          "token": "announce-xing",
+          "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+          "reason": "只有实际听到规则的人，才知道怎样参与。",
+          "rule": "situation*chores-85038520*announce-xing*turn",
+          "heardBy": [
+            "dad",
+            "xing"
+          ]
+        },
+        {
+          "id": 213,
+          "time": 1155.25,
+          "actor": "xue",
+          "token": "careful-job",
+          "text": "夏雪把桌面和边角都擦过，再把东西摆齐。",
+          "reason": "我希望做出的活能经得起验收。",
+          "rule": "situation*chores-85038520*careful-job*act",
+          "heardBy": [
+            "xue"
+          ]
+        },
+        {
+          "id": 224,
+          "time": 1165.5,
+          "actor": "xing",
+          "token": "quick-job",
+          "text": "刘星很快擦了一圈桌边，角落还留着污渍。",
+          "reason": "规则只说一份活，我想先试试最省时间的做法。",
+          "rule": "situation*chores-85038520*quick-job*act",
+          "heardBy": [
+            "xing"
+          ]
+        },
+        {
+          "id": 270,
+          "time": 1199.5,
+          "actor": "xing",
+          "token": "submit-xing",
+          "text": "刘星：我的那份干完了，你来看看，能不能算一张卡？",
+          "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+          "rule": "situation*chores-85038520*submit-xing*turn",
+          "heardBy": [
+            "xing",
+            "me"
+          ]
+        },
+        {
+          "id": 287,
+          "time": 1210.75,
+          "actor": "me",
+          "token": "inspect-xiaoyu",
+          "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+          "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+          "rule": "situation*chores-85038520*inspect-xiaoyu*act",
+          "heardBy": [
+            "me"
+          ]
+        },
+        {
+          "id": 297,
+          "time": 1220.25,
+          "actor": "me",
+          "token": "pay-xiaoyu",
+          "text": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+          "reason": "这份劳动已经合格且未付款，兑现报酬。",
+          "rule": "situation*chores-85038520*pay-xiaoyu*turn",
+          "heardBy": [
+            "me",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 316,
+          "time": 1235.25,
+          "actor": "me",
+          "token": "inspect-xing",
+          "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+          "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+          "rule": "situation*chores-85038520*inspect-xing*act",
+          "heardBy": [
+            "me"
+          ]
+        },
+        {
+          "id": 407,
+          "time": 1312.5,
+          "actor": "dad",
+          "token": "announce-me",
+          "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+          "reason": "只有实际听到规则的人，才知道怎样参与。",
+          "rule": "situation*chores-85038520*announce-me*turn",
+          "heardBy": [
+            "dad",
+            "me"
+          ]
+        },
+        {
+          "id": 434,
+          "time": 1343,
+          "actor": "xue",
+          "token": "submit-xue",
+          "text": "夏雪：我的那份干完了，你来看看，能不能算一张卡？",
+          "reason": "把实际完成的劳动交给验收者，不能自己给自己发钱。",
+          "rule": "situation*chores-85038520*submit-xue*turn",
+          "heardBy": [
+            "xue",
+            "me"
+          ]
+        },
+        {
+          "id": 644,
+          "time": 2478,
+          "actor": "me",
+          "token": "inspect-xue",
+          "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+          "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+          "rule": "situation*chores-85038520*inspect-xue*act",
+          "heardBy": [
+            "me"
+          ]
+        },
+        {
+          "id": 666,
+          "time": 2490,
+          "actor": "me",
+          "token": "pay-xue",
+          "text": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+          "reason": "这份劳动已经合格且未付款，兑现报酬。",
+          "rule": "situation*chores-85038520*pay-xue*turn",
+          "heardBy": [
+            "me",
+            "xue"
+          ]
+        },
+        {
+          "id": 814,
+          "time": 2603.5,
+          "actor": "me",
+          "token": "reject-quick-job",
+          "text": "刘梅：桌沿是擦了，角落还脏着。现在这份不能算合格，你回来补一下。",
+          "reason": "检查到实际质量不足，解释拒付原因，而不是只扣一个分数。",
+          "rule": "situation*chores-85038520*reject-quick-job*turn",
+          "heardBy": [
+            "me",
+            "xing"
+          ]
+        },
+        {
+          "id": 840,
+          "time": 2620.75,
+          "actor": "xing",
+          "token": "argue-count",
+          "text": "刘星：你说做一份算一张，可没说边角另算不算。我补擦一遍，能不能算两份？",
+          "reason": "我不想白做，尝试利用计数规则讨价还价。",
+          "rule": "situation*chores-85038520*argue-count*turn",
+          "heardBy": [
+            "xing",
+            "dad"
+          ]
+        },
+        {
+          "id": 843,
+          "time": 2622.5,
+          "actor": "dad",
+          "token": "revise-quality",
+          "text": "夏东海：补完还是原来那份。以后说清楚：达到约定质量才算，返工不能再领一张。",
+          "reason": "这次争议说明计分条件不清楚，修改未来的验收规则。",
+          "rule": "situation*chores-85038520*revise-quality*turn",
+          "heardBy": [
+            "dad",
+            "xing"
+          ]
+        },
+        {
+          "id": 864,
+          "time": 2645.75,
+          "actor": "xing",
+          "token": "redo-job",
+          "text": "刘星把漏掉的角落补擦干净。",
+          "reason": "规则和拒付原因已经明确；补好以后仍能拿到原先的报酬。",
+          "rule": "situation*chores-85038520*redo-job*act",
+          "heardBy": [
+            "xing"
+          ]
+        },
+        {
+          "id": 879,
+          "time": 2660.25,
+          "actor": "xing",
+          "token": "resubmit",
+          "text": "刘星：这回边角也干净了。还是原来那张卡，你再看一眼。",
+          "reason": "我完成了返工，请同一个验收者重新检查。",
+          "rule": "situation*chores-85038520*resubmit*turn",
+          "heardBy": [
+            "xing",
+            "me"
+          ]
+        },
+        {
+          "id": 927,
+          "time": 2722.25,
+          "actor": "me",
+          "token": "inspect-xing",
+          "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+          "reason": "收到验收请求后，亲自检查劳动记录和质量。",
+          "rule": "situation*chores-85038520*inspect-xing*act",
+          "heardBy": [
+            "me"
+          ]
+        },
+        {
+          "id": 936,
+          "time": 2735.5,
+          "actor": "me",
+          "token": "pay-xing",
+          "text": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+          "reason": "这份劳动已经合格且未付款，兑现报酬。",
+          "rule": "situation*chores-85038520*pay-xing*turn",
+          "heardBy": [
+            "me",
+            "xing"
+          ]
+        }
+      ],
+      "objects": [],
+      "economy": {
+        "wallets": {
+          "dad": 50,
+          "me": 50,
+          "xue": 14,
+          "xing": 10,
+          "xiaoyu": 4
+        },
+        "policies": {
+          "chore-quality": 2,
+          "pay-for-reports": true,
+          "night-light": false
+        },
+        "ledger": [
+          {
+            "caseId": "case-1-chores",
+            "event": 297,
+            "from": "family",
+            "to": "xiaoyu",
+            "amount": 2,
+            "at": 1220.25
+          },
+          {
+            "caseId": "case-1-chores",
+            "event": 666,
+            "from": "family",
+            "to": "xue",
+            "amount": 2,
+            "at": 2490
+          },
+          {
+            "caseId": "case-1-chores",
+            "event": 936,
+            "from": "family",
+            "to": "xing",
+            "amount": 2,
+            "at": 2735.5
+          }
+        ]
+      },
+      "debts": [],
+      "needs": [
+        {
+          "id": "dad",
+          "hunger": 80.89625000000241,
+          "energy": 68.67000000000158
+        },
+        {
+          "id": "me",
+          "hunger": 82.47500000000144,
+          "energy": 69.18500000000138
+        },
+        {
+          "id": "xue",
+          "hunger": 83.10775000000136,
+          "energy": 69.5840000000002
+        },
+        {
+          "id": "xing",
+          "hunger": 81.59225000000232,
+          "energy": 67.83599999999883
+        },
+        {
+          "id": "xiaoyu",
+          "hunger": 84.99949999999964,
+          "energy": 72.64700000000103
+        }
+      ],
+      "missedMeals": []
+    },
+    {
+      "label": "fear",
+      "events": [
+        {
+          "id": 19,
+          "time": 1007.5,
+          "actor": "xing",
+          "token": "watch-scary",
+          "text": "刘星看完一段惊险影片，离开沙发时还回头看了看电视。",
+          "reason": "我想看看自己能不能扛住这种片子；看完的身体反应再影响接下来的选择。",
+          "rule": "situation*fear-5c50a06c*watch-scary*act",
+          "heardBy": [
+            "xing"
+          ]
+        },
+        {
+          "id": 50,
+          "time": 1041.75,
+          "actor": "xing",
+          "token": "ask-brother-company",
+          "text": "刘星：要不要一起去那边拿本书？我主要是怕你一个人无聊。",
+          "reason": "我有点怕，又想保住面子，先找弟弟作伴。",
+          "rule": "situation*fear-5c50a06c*ask-brother-company*turn",
+          "heardBy": [
+            "xing",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 53,
+          "time": 1043.5,
+          "actor": "xiaoyu",
+          "token": "question-bravery",
+          "text": "夏雨：你不是说一点都不怕吗？怎么拿本书也要两个人？",
+          "reason": "哥哥突然要人陪，我想问明白，而不是自动照办。",
+          "rule": "situation*fear-5c50a06c*question-bravery*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xing"
+          ]
+        },
+        {
+          "id": 223,
+          "time": 1172,
+          "actor": "xing",
+          "token": "ask-mom-light",
+          "text": "刘星：妈，今晚那盏小灯能晚点关吗？不是浪费电，我还没完全缓过来。",
+          "reason": "仍有一点害怕，提出一个具体且能执行的睡前请求。",
+          "rule": "situation*fear-5c50a06c*ask-mom-light*turn",
+          "heardBy": [
+            "xing",
+            "me"
+          ]
+        },
+        {
+          "id": 291,
+          "time": 1227.5,
+          "actor": "xing",
+          "token": "admit-to-dad",
+          "text": "刘星：爸，你还写稿吗？我在旁边坐一会儿。刚才那片子……确实有点吓人。",
+          "reason": "找家长求助比继续逞强更能缓解害怕。",
+          "rule": "situation*fear-5c50a06c*admit-to-dad*turn",
+          "heardBy": [
+            "xing",
+            "dad"
+          ]
+        },
+        {
+          "id": 296,
+          "time": 1229.25,
+          "actor": "dad",
+          "token": "comfort-child",
+          "text": "夏东海：害怕就说害怕，这又不扣分。我陪你待一会儿，等缓过来再去睡。",
+          "reason": "孩子明确求助，我在身边回应并安慰，而不是远程消除情绪。",
+          "rule": "situation*fear-5c50a06c*comfort-child*turn",
+          "heardBy": [
+            "dad",
+            "xing"
+          ]
+        },
+        {
+          "id": 335,
+          "time": 1256.25,
+          "actor": "me",
+          "token": "leave-light",
+          "text": "刘梅走到刘星床边，打开小夜灯。",
+          "reason": "听到孩子的实际请求，去床边提供帮助。",
+          "rule": "situation*fear-5c50a06c*leave-light*act",
+          "heardBy": [
+            "me"
+          ]
+        },
+        {
+          "id": 341,
+          "time": 1262.25,
+          "actor": "me",
+          "token": "tell-light",
+          "text": "刘梅：灯开好了。今晚先安心睡，明天再挑适合看的片子。",
+          "reason": "灯已实际打开，再告诉孩子，不用一句话代替物品操作。",
+          "rule": "situation*fear-5c50a06c*tell-light*turn",
+          "heardBy": [
+            "me",
+            "xing"
+          ]
+        },
+        {
+          "id": 410,
+          "time": 1338.75,
+          "actor": "xing",
+          "token": "choose-next-film",
+          "text": "刘星：下回你挑片子吧。倒不是不敢看，我觉得喜剧比较有营养。",
+          "reason": "记得这次害怕和得到帮助的经历，下次改选更轻松的内容。",
+          "rule": "situation*fear-5c50a06c*choose-next-film*turn",
+          "heardBy": [
+            "xing",
+            "xue"
+          ]
+        }
+      ],
+      "objects": [],
+      "economy": {
+        "wallets": {
+          "dad": 50,
+          "me": 50,
+          "xue": 12,
+          "xing": 8,
+          "xiaoyu": 2
+        },
+        "policies": {
+          "chore-quality": 1,
+          "pay-for-reports": true,
+          "night-light": true
+        },
+        "ledger": [
+          {
+            "caseId": "case-2-detective",
+            "event": 821,
+            "from": "dad",
+            "to": "xiaoyu",
+            "amount": 20,
+            "at": 2627
+          },
+          {
+            "caseId": "case-2-detective",
+            "event": 902,
+            "from": "xiaoyu",
+            "to": "dad",
+            "amount": 20,
+            "at": 2701.5
+          }
+        ]
+      },
+      "debts": [],
+      "needs": [
+        {
+          "id": "dad",
+          "hunger": 80.89850000000243,
+          "energy": 68.63600000000157
+        },
+        {
+          "id": "me",
+          "hunger": 82.00850000000153,
+          "energy": 69.26100000000159
+        },
+        {
+          "id": "xue",
+          "hunger": 82.12800000000152,
+          "energy": 69.47800000000004
+        },
+        {
+          "id": "xing",
+          "hunger": 81.17975000000239,
+          "energy": 68.19599999999953
+        },
+        {
+          "id": "xiaoyu",
+          "hunger": 85.04649999999961,
+          "energy": 72.44400000000056
+        }
+      ],
+      "missedMeals": []
+    },
+    {
+      "label": "assistant-rule-variant",
+      "events": [
+        {
+          "id": 20,
+          "time": 999.75,
+          "actor": "xiaoyu",
+          "token": "ask-brother",
+          "text": "夏雨：哥，借来的小汽车让我弄坏了。你能先帮我想个办法吗？别一上来就喊妈。",
+          "reason": "哥哥比较好说话，我先告诉他真实原因，看看能否修好。",
+          "rule": "situation*detective-ecba6a36*ask-brother*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xing"
+          ]
+        },
+        {
+          "id": 122,
+          "time": 1085.5,
+          "actor": "xiaoyu",
+          "token": "confess",
+          "text": "夏雨：爸，我把同学的小汽车弄坏了，钱也不够。我怕挨说，刚才还想动家里的画册。",
+          "reason": "单靠自己处理不了，可以把原因讲给爸爸；坦白也是可选办法。",
+          "rule": "situation*detective-ecba6a36*confess*turn",
+          "heardBy": [
+            "xiaoyu",
+            "dad"
+          ]
+        },
+        {
+          "id": 124,
+          "time": 1087.25,
+          "actor": "dad",
+          "token": "advance-money",
+          "text": "夏东海：我先借你二十，修不好再用来赔。钱和画册都是有主人的，用之前得商量。",
+          "reason": "孩子明确求助，我能先垫钱，但保留借款责任。",
+          "rule": "situation*detective-ecba6a36*advance-money*turn",
+          "heardBy": [
+            "dad",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 146,
+          "time": 1103.75,
+          "actor": "xing",
+          "token": "ask-sister",
+          "text": "刘星：小雨那车轮掉了。你手巧，能不能看看？我负责把事情问明白。",
+          "reason": "修理比直接凑钱更可行，我向姐姐求助。",
+          "rule": "situation*detective-ecba6a36*ask-sister*turn",
+          "heardBy": [
+            "xing",
+            "xue"
+          ]
+        },
+        {
+          "id": 242,
+          "time": 1185.5,
+          "actor": "xue",
+          "token": "offer-repair",
+          "text": "夏雪：我可以花十分钟试着修。你得在旁边帮忙，修不好就一起跟爸妈说。",
+          "reason": "我还有复习，但能拿出十分钟；帮助不等于替弟弟隐瞒所有后果。",
+          "rule": "situation*detective-ecba6a36*offer-repair*turn",
+          "heardBy": [
+            "xue",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 265,
+          "time": 1208,
+          "actor": "xue",
+          "token": "repair-toy",
+          "text": "夏雪检查车轴，把松掉的车轮装回去了。",
+          "reason": "我已经答应帮忙，现在实际修理，完成后才算兑现。",
+          "rule": "situation*detective-ecba6a36*repair-toy*act",
+          "heardBy": [
+            "xue"
+          ]
+        },
+        {
+          "id": 329,
+          "time": 1262.5,
+          "actor": "xue",
+          "token": "report-repair",
+          "text": "夏雪：轮子装好了。明天还给同学时，把摔过这件事也说明白。",
+          "reason": "修理结束了，要把结果交代给借东西的人。",
+          "rule": "situation*detective-ecba6a36*report-repair*turn",
+          "heardBy": [
+            "xue",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 338,
+          "time": 1264.25,
+          "actor": "xiaoyu",
+          "token": "thank-sister",
+          "text": "夏雨：谢谢姐。明天我自己跟同学说，你不用替我去。",
+          "reason": "得到实际帮助后，我愿意自己承担归还和说明的责任。",
+          "rule": "situation*detective-ecba6a36*thank-sister*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xue"
+          ]
+        },
+        {
+          "id": 681,
+          "time": 2545,
+          "actor": "xiaoyu",
+          "token": "repay-dad",
+          "text": "夏雨：车修好了，这二十块没用上，还给你。这回没有把钱花掉。",
+          "reason": "借款用途已经消失，归還钱才能结束债务。",
+          "rule": "situation*detective-ecba6a36*repay-dad*turn",
+          "heardBy": [
+            "xiaoyu",
+            "dad"
+          ]
+        }
+      ],
+      "objects": [
+        {
+          "id": "toy",
+          "name": "借来的小汽车",
+          "location": "deskYu",
+          "condition": "repaired",
+          "owner": "xiaoyu",
+          "private": true
+        },
+        {
+          "id": "album",
+          "name": "家里的旧画册",
+          "location": "book",
+          "condition": "intact",
+          "owner": "family"
+        }
+      ],
+      "economy": {
+        "wallets": {
+          "dad": 50,
+          "me": 48,
+          "xue": 12,
+          "xing": 5,
+          "xiaoyu": 7
+        },
+        "policies": {
+          "chore-quality": 1,
+          "pay-for-reports": false,
+          "night-light": false
+        },
+        "ledger": [
+          {
+            "caseId": "case-1-detective",
+            "event": 124,
+            "from": "dad",
+            "to": "xiaoyu",
+            "amount": 20,
+            "at": 1087.25
+          },
+          {
+            "caseId": "case-2-reports",
+            "event": 660,
+            "from": "me",
+            "to": "xiaoyu",
+            "amount": 2,
+            "at": 2535.25
+          },
+          {
+            "caseId": "case-1-detective",
+            "event": 681,
+            "from": "xiaoyu",
+            "to": "dad",
+            "amount": 20,
+            "at": 2545
+          },
+          {
+            "caseId": "case-2-reports",
+            "event": 752,
+            "from": "xing",
+            "to": "xiaoyu",
+            "amount": 3,
+            "at": 2581
+          }
+        ]
+      },
+      "debts": [
+        {
+          "debtor": "xiaoyu",
+          "creditor": "dad",
+          "amount": 20,
+          "paid": true,
+          "event": 124,
+          "repaidAt": 2545
+        }
+      ],
+      "needs": [
+        {
+          "id": "dad",
+          "hunger": 80.94075000000241,
+          "energy": 68.6670000000016
+        },
+        {
+          "id": "me",
+          "hunger": 82.05075000000151,
+          "energy": 69.2870000000016
+        },
+        {
+          "id": "xue",
+          "hunger": 82.13275000000151,
+          "energy": 69.53900000000012
+        },
+        {
+          "id": "xing",
+          "hunger": 81.61575000000231,
+          "energy": 67.91699999999895
+        },
+        {
+          "id": "xiaoyu",
+          "hunger": 84.81899999999968,
+          "energy": 72.48900000000074
+        }
+      ],
+      "missedMeals": []
+    },
+    {
+      "label": "resume",
+      "events": [
+        {
+          "id": 20,
+          "time": 1012.5,
+          "actor": "xiaoyu",
+          "token": "put-album-aside",
+          "text": "小雨把旧画册搬到自己桌边，想看看它能不能换到赔玩具的钱。",
+          "reason": "手头的钱不够，我想先找件旧东西；还没有得到出售许可。",
+          "rule": "situation*detective-add32d93*put-album-aside*act",
+          "heardBy": [
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 44,
+          "time": 1036.5,
+          "actor": "xiaoyu",
+          "token": "ask-brother",
+          "text": "夏雨：哥，借来的小汽车让我弄坏了。你能先帮我想个办法吗？别一上来就喊妈。",
+          "reason": "哥哥比较好说话，我先告诉他真实原因，看看能否修好。",
+          "rule": "situation*detective-add32d93*ask-brother*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xing"
+          ]
+        },
+        {
+          "id": 114,
+          "time": 1086.25,
+          "actor": "xiaoyu",
+          "token": "confess",
+          "text": "夏雨：爸，我把同学的小汽车弄坏了，钱也不够。我怕挨说，刚才还想动家里的画册。",
+          "reason": "单靠自己处理不了，可以把原因讲给爸爸；坦白也是可选办法。",
+          "rule": "situation*detective-add32d93*confess*turn",
+          "heardBy": [
+            "xiaoyu",
+            "dad"
+          ]
+        },
+        {
+          "id": 116,
+          "time": 1088,
+          "actor": "dad",
+          "token": "advance-money",
+          "text": "夏东海：我先借你二十，修不好再用来赔。钱和画册都是有主人的，用之前得商量。",
+          "reason": "孩子明确求助，我能先垫钱，但保留借款责任。",
+          "rule": "situation*detective-add32d93*advance-money*turn",
+          "heardBy": [
+            "dad",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 142,
+          "time": 1109.25,
+          "actor": "xing",
+          "token": "ask-sister",
+          "text": "刘星：小雨那车轮掉了。你手巧，能不能看看？我负责把事情问明白。",
+          "reason": "修理比直接凑钱更可行，我向姐姐求助。",
+          "rule": "situation*detective-add32d93*ask-sister*turn",
+          "heardBy": [
+            "xing",
+            "xue"
+          ]
+        },
+        {
+          "id": 226,
+          "time": 1164.75,
+          "actor": "me",
+          "token": "suspect-xing",
+          "text": "刘梅：画册怎么不在了？刘星，是不是你又拿去玩了？",
+          "reason": "我发现画册不在原处，先想到平时爱动东西的刘星；这只是怀疑。",
+          "rule": "situation*detective-add32d93*suspect-xing*turn",
+          "heardBy": [
+            "me",
+            "xing"
+          ]
+        },
+        {
+          "id": 229,
+          "time": 1166.5,
+          "actor": "xing",
+          "token": "defend-self",
+          "text": "刘星：怎么一少东西就找我？小雨是急着赔坏掉的玩具，我正帮他找办法呢。",
+          "reason": "我被直接怀疑，愿意说出已知的真实原因来澄清。",
+          "rule": "situation*detective-add32d93*defend-self*turn",
+          "heardBy": [
+            "xing",
+            "me"
+          ]
+        },
+        {
+          "id": 232,
+          "time": 1168.25,
+          "actor": "me",
+          "token": "apologize-for-suspicion",
+          "text": "刘梅：这回是我没问清就想到你了。帮弟弟是好事，刚才那句我收回。",
+          "reason": "新消息推翻了最初的怀疑，我需要向被怀疑的人承认这一点。",
+          "rule": "situation*detective-add32d93*apologize-for-suspicion*turn",
+          "heardBy": [
+            "me",
+            "xing"
+          ]
+        },
+        {
+          "id": 256,
+          "time": 1185.5,
+          "actor": "xue",
+          "token": "offer-repair",
+          "text": "夏雪：我可以花十分钟试着修。你得在旁边帮忙，修不好就一起跟爸妈说。",
+          "reason": "我还有复习，但能拿出十分钟；帮助不等于替弟弟隐瞒所有后果。",
+          "rule": "situation*detective-add32d93*offer-repair*turn",
+          "heardBy": [
+            "xue",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 288,
+          "time": 1214.25,
+          "actor": "xue",
+          "token": "repair-toy",
+          "text": "夏雪检查车轴，把松掉的车轮装回去了。",
+          "reason": "我已经答应帮忙，现在实际修理，完成后才算兑现。",
+          "rule": "situation*detective-add32d93*repair-toy*act",
+          "heardBy": [
+            "xue"
+          ]
+        },
+        {
+          "id": 328,
+          "time": 1242,
+          "actor": "xue",
+          "token": "report-repair",
+          "text": "夏雪：轮子装好了。明天还给同学时，把摔过这件事也说明白。",
+          "reason": "修理结束了，要把结果交代给借东西的人。",
+          "rule": "situation*detective-add32d93*report-repair*turn",
+          "heardBy": [
+            "xue",
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 335,
+          "time": 1243.75,
+          "actor": "xiaoyu",
+          "token": "thank-sister",
+          "text": "夏雨：谢谢姐。明天我自己跟同学说，你不用替我去。",
+          "reason": "得到实际帮助后，我愿意自己承担归还和说明的责任。",
+          "rule": "situation*detective-add32d93*thank-sister*turn",
+          "heardBy": [
+            "xiaoyu",
+            "xue"
+          ]
+        },
+        {
+          "id": 365,
+          "time": 1281.5,
+          "actor": "xiaoyu",
+          "token": "return-album",
+          "text": "小雨把画册放回书架，没有把它卖掉。",
+          "reason": "玩具修好了，不需要动用别人的东西，把画册归还。",
+          "rule": "situation*detective-add32d93*return-album*act",
+          "heardBy": [
+            "xiaoyu"
+          ]
+        },
+        {
+          "id": 370,
+          "time": 1284.25,
+          "actor": "xiaoyu",
+          "token": "repay-dad",
+          "text": "夏雨：车修好了，这二十块没用上，还给你。这回没有把钱花掉。",
+          "reason": "借款用途已经消失，归還钱才能结束债务。",
+          "rule": "situation*detective-add32d93*repay-dad*turn",
+          "heardBy": [
+            "xiaoyu",
+            "dad"
+          ]
+        }
+      ],
+      "objects": [
+        {
+          "id": "toy",
+          "name": "借来的小汽车",
+          "location": "deskYu",
+          "condition": "repaired",
+          "owner": "xiaoyu",
+          "private": true
+        },
+        {
+          "id": "album",
+          "name": "家里的旧画册",
+          "location": "book",
+          "condition": "intact",
+          "owner": "family"
+        }
+      ],
+      "economy": {
+        "wallets": {
+          "dad": 50,
+          "me": 48,
+          "xue": 12,
+          "xing": 5,
+          "xiaoyu": 7
+        },
+        "policies": {
+          "chore-quality": 1,
+          "pay-for-reports": false,
+          "night-light": false
+        },
+        "ledger": [
+          {
+            "caseId": "case-1-detective",
+            "event": 116,
+            "from": "dad",
+            "to": "xiaoyu",
+            "amount": 20,
+            "at": 1088
+          },
+          {
+            "caseId": "case-1-detective",
+            "event": 370,
+            "from": "xiaoyu",
+            "to": "dad",
+            "amount": 20,
+            "at": 1284.25
+          },
+          {
+            "caseId": "case-2-reports",
+            "event": 678,
+            "from": "me",
+            "to": "xiaoyu",
+            "amount": 2,
+            "at": 2535.25
+          },
+          {
+            "caseId": "case-2-reports",
+            "event": 798,
+            "from": "xing",
+            "to": "xiaoyu",
+            "amount": 3,
+            "at": 2612.25
+          }
+        ]
+      },
+      "debts": [
+        {
+          "debtor": "xiaoyu",
+          "creditor": "dad",
+          "amount": 20,
+          "paid": true,
+          "event": 116,
+          "repaidAt": 1284.25
+        }
+      ],
+      "needs": [
+        {
+          "id": "dad",
+          "hunger": 75.08649999999821,
+          "energy": 68.67400000000163
+        },
+        {
+          "id": "me",
+          "hunger": 76.42149999999728,
+          "energy": 69.27400000000159
+        },
+        {
+          "id": "xue",
+          "hunger": 76.40274999999728,
+          "energy": 69.65900000000035
+        },
+        {
+          "id": "xing",
+          "hunger": 75.66524999999815,
+          "energy": 67.84899999999894
+        },
+        {
+          "id": "xiaoyu",
+          "hunger": 79.15699999999543,
+          "energy": 72.34700000000045
+        }
+      ],
+      "missedMeals": []
+    },
+    {
+      "label": "actual-day-to-new-package",
+      "basedOn": 116,
+      "package": "repayment-and-work",
+      "status": "applied",
+      "events": [
+        {
+          "actor": "dad",
+          "time": 2503.25,
+          "token": "announce-xiaoyu",
+          "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+          "rule": "situation*repayment-and-work-af5b3976*announce-xiaoyu*turn"
+        },
+        {
+          "actor": "dad",
+          "time": 2530.5,
+          "token": "announce-xue",
+          "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+          "rule": "situation*repayment-and-work-af5b3976*announce-xue*turn"
+        },
+        {
+          "actor": "xiaoyu",
+          "time": 2531.25,
+          "token": "small-job",
+          "text": "小雨把自己散着的玩具收进盒里。",
+          "rule": "situation*repayment-and-work-af5b3976*small-job*act"
+        },
+        {
+          "actor": "dad",
+          "time": 2540,
+          "token": "announce-xing",
+          "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+          "rule": "situation*repayment-and-work-af5b3976*announce-xing*turn"
+        },
+        {
+          "actor": "xue",
+          "time": 2585.75,
+          "token": "careful-job",
+          "text": "夏雪把桌面和边角都擦过，再把东西摆齐。",
+          "rule": "situation*repayment-and-work-af5b3976*careful-job*act"
+        },
+        {
+          "actor": "xing",
+          "time": 2595.25,
+          "token": "quick-job",
+          "text": "刘星很快擦了一圈桌边，角落还留着污渍。",
+          "rule": "situation*repayment-and-work-af5b3976*quick-job*act"
+        },
+        {
+          "actor": "xue",
+          "time": 2615.75,
+          "token": "submit-xue",
+          "text": "夏雪：我的那份干完了，你来看看，能不能算一张卡？",
+          "rule": "situation*repayment-and-work-af5b3976*submit-xue*turn"
+        },
+        {
+          "actor": "xiaoyu",
+          "time": 2627.75,
+          "token": "submit-xiaoyu",
+          "text": "夏雨：我的那份干完了，你来看看，能不能算一张卡？",
+          "rule": "situation*repayment-and-work-af5b3976*submit-xiaoyu*turn"
+        },
+        {
+          "actor": "me",
+          "time": 2634.5,
+          "token": "inspect-xue",
+          "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+          "rule": "situation*repayment-and-work-af5b3976*inspect-xue*act"
+        },
+        {
+          "actor": "dad",
+          "time": 2647.5,
+          "token": "announce-me",
+          "text": "夏东海：今天试试家务卡：一份活两块钱，做完找妈妈验收。我负责把承诺的钱付出来。",
+          "rule": "situation*repayment-and-work-af5b3976*announce-me*turn"
+        },
+        {
+          "actor": "xing",
+          "time": 2658.5,
+          "token": "submit-xing",
+          "text": "刘星：我的那份干完了，你来看看，能不能算一张卡？",
+          "rule": "situation*repayment-and-work-af5b3976*submit-xing*turn"
+        },
+        {
+          "actor": "me",
+          "time": 2664,
+          "token": "inspect-xiaoyu",
+          "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+          "rule": "situation*repayment-and-work-af5b3976*inspect-xiaoyu*act"
+        },
+        {
+          "actor": "me",
+          "time": 2676,
+          "token": "pay-xue",
+          "text": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+          "rule": "situation*repayment-and-work-af5b3976*pay-xue*turn"
+        },
+        {
+          "actor": "me",
+          "time": 2692.5,
+          "token": "pay-xiaoyu",
+          "text": "刘梅：这份验收合格，两块钱给你。只算这次实际做过的活。",
+          "rule": "situation*repayment-and-work-af5b3976*pay-xiaoyu*turn"
+        },
+        {
+          "actor": "me",
+          "time": 2701.75,
+          "token": "inspect-xing",
+          "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+          "rule": "situation*repayment-and-work-af5b3976*inspect-xing*act"
+        },
+        {
+          "actor": "me",
+          "time": 2716.5,
+          "token": "reject-quick-job",
+          "text": "刘梅：桌沿是擦了，角落还脏着。现在这份不能算合格，你回来补一下。",
+          "rule": "situation*repayment-and-work-af5b3976*reject-quick-job*turn"
+        },
+        {
+          "actor": "xing",
+          "time": 2723.25,
+          "token": "argue-count",
+          "text": "刘星：你说做一份算一张，可没说边角另算不算。我补擦一遍，能不能算两份？",
+          "rule": "situation*repayment-and-work-af5b3976*argue-count*turn"
+        },
+        {
+          "actor": "dad",
+          "time": 2725,
+          "token": "revise-quality",
+          "text": "夏东海：补完还是原来那份。以后说清楚：达到约定质量才算，返工不能再领一张。",
+          "rule": "situation*repayment-and-work-af5b3976*revise-quality*turn"
+        },
+        {
+          "actor": "xing",
+          "time": 2748,
+          "token": "redo-job",
+          "text": "刘星把漏掉的角落补擦干净。",
+          "rule": "situation*repayment-and-work-af5b3976*redo-job*act"
+        },
+        {
+          "actor": "xing",
+          "time": 2760.5,
+          "token": "resubmit",
+          "text": "刘星：这回边角也干净了。还是原来那张卡，你再看一眼。",
+          "rule": "situation*repayment-and-work-af5b3976*resubmit*turn"
+        },
+        {
+          "actor": "me",
+          "time": 2779.5,
+          "token": "inspect-xing",
+          "text": "刘梅走到桌边，检查这份劳动留下的实际效果。",
+          "rule": "situation*repayment-and-work-af5b3976*inspect-xing*act"
+        }
+      ]
+    }
+  ]
+}

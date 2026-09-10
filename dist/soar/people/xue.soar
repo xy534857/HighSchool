@@ -1,0 +1,112 @@
+# Independent xue cognitive program.
+sp {xue*protect-study-time
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^work-window yes ^goal-study yes ^available <a>) (<a> ^kind study)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 70 ^rule xue*protect-study-time ^reason |今天的复习有安排，先把这一段做完。|)
+}
+sp {xue*negotiate-noise
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^goal-study yes ^hear-tv yes ^noise-minutes > 3 ^available <a>) (<a> ^kind askQuiet)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 84 ^rule xue*negotiate-noise ^reason |电视声打断思路，先去商量小声些。|)
+}
+sp {xue*recall-evidence-about-requester
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal-ready yes ^contract-ready yes) (<f> ^mode << act response >> ^self <me> ^from <who>)
+ --> (<c> ^semantic-cue <q>) (<q> ^type belief ^owner <me> ^subject <who> ^predicate recent-cooperation)
+}
+sp {xue*protect-concentration
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes ^goal-threat yes) (<f> ^mode response ^active-task study)
+ -{ (<c> ^recollection <r>) (<r> ^value << cooperate promise >>) }
+ --> (<c> ^concern concentration)
+}
+sp {xue*check-reciprocity
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes) (<f> ^mode response)
+ -{ (<c> ^goal-threat yes) (<f> ^active-task study) }
+ --> (<c> ^concern reciprocity)
+}
+sp {xue*value-progress-and-fulfilment
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode feedback ^kept-activity <kept> ^request-satisfied <sat> ^social-cost <cost>)
+ --> (<c> ^reward-value (- (+ (* 4 <kept>) (* 2 <sat>)) <cost>))
+}
+
+sp {rl*xue*concentration*accommodate
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^concern concentration)
+ --> (<s> ^operator <o> = -1)
+}
+
+sp {rl*xue*concentration*protect-plan
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^concern concentration)
+ --> (<s> ^operator <o> = 2)
+}
+
+sp {rl*xue*concentration*offer-later
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^concern concentration)
+ --> (<s> ^operator <o> = 4)
+}
+
+sp {rl*xue*reciprocity*accommodate
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^concern reciprocity)
+ --> (<s> ^operator <o> = 3)
+}
+
+sp {rl*xue*reciprocity*protect-plan
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^concern reciprocity)
+ --> (<s> ^operator <o> = 1)
+}
+
+sp {rl*xue*reciprocity*offer-later
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^concern reciprocity)
+ --> (<s> ^operator <o> = 2)
+}
+
+sp {xue*choose-what-to-tell
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode share ^self <me>)
+ --> (<f> ^cue <q>) (<q> ^type event ^actor <me> ^kind achievement)
+}
+
+sp {xue*repay-evidenced-help
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes ^goal-threat yes ^recollection <r>)
+ (<f> ^mode response ^active-task study) (<r> ^value << cooperate promise >> ^evidence <uid>)
+ --> (<c> ^concern return-help ^interpretation <i>)
+ (<i> ^predicate help-was-reciprocated ^evidence <uid> ^conclusion accept-this-interruption)
+}
+
+sp {rl*xue*return-help*accommodate
+ (state <s> ^operator <o> +) (<o> ^name response-method ^method accommodate ^concern return-help)
+ --> (<s> ^operator <o> = 5)
+}
+
+sp {rl*xue*return-help*protect-plan
+ (state <s> ^operator <o> +) (<o> ^name response-method ^method protect-plan ^concern return-help)
+ --> (<s> ^operator <o> = 0)
+}
+
+sp {rl*xue*return-help*offer-later
+ (state <s> ^operator <o> +) (<o> ^name response-method ^method offer-later ^concern return-help)
+ --> (<s> ^operator <o> = 2)
+}
+
+sp {xue*choose-project-method
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode plan)
+ --> (<c> ^planning-style focus)
+}
+
+# Personal appraisal and coping, executed by native productions.
+sp {person*xue*appraisal
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode perceive ^self xue)
+ --> (<c> ^sensitivity 10 ^style verify)
+}
+
+sp {xue*conversation-interruption
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^compatibility pause ^available <a>) (<a> ^kind join)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 38 ^rule xue*conversation-interruption ^reason |这段复习还没做完，我等会儿加入。|)
+}

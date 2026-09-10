@@ -1,0 +1,44 @@
+sp {learned*m*accept-private-low
+ (state <s> ^superstate nil ^io <io>)
+ (<io> ^input-link <il>)
+ (<il> ^frame <f>)
+ (<f> ^mode campus-choice ^self m ^from <who> ^audience private ^known <k> ^available <a>)
+ (<k> ^affection-target <who> ^affection yes ^peer-pressure low)
+ (<a> ^kind accept-prom ^target <who>)
+ -->
+ (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 80 ^rule learned*m*accept-private-low ^reason |私下且压力低，接受邀请。|)
+}
+sp {learned*m*ask-private-high
+ (state <s> ^superstate nil ^io <io>)
+ (<io> ^input-link <il>)
+ (<il> ^frame <f>)
+ (<f> ^mode campus-choice ^self m ^from <who> ^audience private ^known <k> ^available <a>)
+ (<k> ^affection-target <who> ^affection yes ^peer-pressure high)
+ (<a> ^kind ask-private ^target <who>)
+ -->
+ (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 60 ^rule learned*m*ask-private-high ^reason |私下但压力高，先私聊确认。|)
+}
+sp {learned*m*ask-time-public-low
+ (state <s> ^superstate nil ^io <io>)
+ (<io> ^input-link <il>)
+ (<il> ^frame <f>)
+ (<f> ^mode campus-choice ^self m ^from <who> ^audience public ^known <k> ^available <a>)
+ (<k> ^affection-target <who> ^affection yes ^peer-pressure low)
+ (<a> ^kind ask-time ^target <who>)
+ -->
+ (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 40 ^rule learned*m*ask-time-public-low ^reason |公开但压力低，先考虑时间。|)
+}
+sp {learned*m*ask-time-public-high
+ (state <s> ^superstate nil ^io <io>)
+ (<io> ^input-link <il>)
+ (<il> ^frame <f>)
+ (<f> ^mode campus-choice ^self m ^from <who> ^audience public ^known <k> ^available <a>)
+ (<k> ^affection-target <who> ^affection yes ^peer-pressure high)
+ (<a> ^kind ask-time ^target <who>)
+ -->
+ (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 20 ^rule learned*m*ask-time-public-high ^reason |公开且压力高，先拖延考虑。|)
+}

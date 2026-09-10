@@ -1,0 +1,94 @@
+# Independent dad cognitive program.
+sp {dad*finish-manuscript
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^work-window yes ^goal-work yes ^available <a>) (<a> ^kind work)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 57 ^rule dad*finish-manuscript ^reason |稿子还欠一段，趁现在写下去。|)
+}
+sp {dad*mediate-known-conflict
+ (state <s> ^superstate nil ^io.input-link.frame <f> ^context <ctx>)
+ (<ctx> ^frame <f> ^goal-ready yes ^memory-ready yes)
+ (<ctx> ^recollection <r>) (<r> ^uid <uid>)
+ (<f> ^mode act ^busy no ^known-conflict yes ^available <a>) (<a> ^kind mediate ^cause <uid>)
+ -->
+ (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 82 ^rule dad*mediate-known-conflict ^reason |刚才那些话我听到了，先帮他们说开。|)
+}
+sp {dad*recall-the-other-side
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal-ready yes ^contract-ready yes) (<f> ^mode response ^from <who>)
+ --> (<c> ^episode-kind refuse ^episode-actor <who>)
+}
+sp {dad*look-for-common-ground
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes) (<f> ^mode response)
+ -{ (<c> ^recollection <r>) (<r> ^kind refuse) }
+ --> (<c> ^concern common-ground)
+}
+sp {dad*value-settlement
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode feedback ^request-satisfied <sat> ^social-cost <cost> ^kept-activity <kept>)
+ --> (<c> ^reward-value (- (+ (* 3 <sat>) <kept>) (* 4 <cost>)))
+}
+
+sp {rl*dad*common-ground*accommodate
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method accommodate ^concern common-ground)
+ --> (<s> ^operator <o> = 3)
+}
+
+sp {rl*dad*common-ground*protect-plan
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method protect-plan ^concern common-ground)
+ --> (<s> ^operator <o> = 0)
+}
+
+sp {rl*dad*common-ground*offer-later
+ (state <s> ^operator <o> +)
+ (<o> ^name response-method ^method offer-later ^concern common-ground)
+ --> (<s> ^operator <o> = 2)
+}
+
+sp {dad*choose-what-to-tell
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode share ^self <me>)
+ --> (<f> ^cue <q>) (<q> ^type event ^actor <me> ^kind cooperate)
+}
+
+sp {dad*recall-conflict-he-witnessed
+ (state <s> ^context <c>) (<c> ^frame <f> ^goal-ready yes ^contract-ready yes) (<f> ^mode act)
+ --> (<c> ^semantic-cue <q>) (<q> ^type event ^kind refuse ^source seen)
+}
+sp {dad*ask-for-a-pause-after-refusal
+ (state <s> ^context <c>) (<c> ^frame <f> ^evaluated yes ^recollection <r>)
+ (<f> ^mode response) (<r> ^kind refuse ^uid <uid>)
+ --> (<c> ^concern repair-trust ^interpretation <i>)
+ (<i> ^predicate unresolved-refusal ^evidence <uid> ^conclusion negotiate-timing)
+}
+
+sp {rl*dad*repair-trust*accommodate
+ (state <s> ^operator <o> +) (<o> ^name response-method ^method accommodate ^concern repair-trust)
+ --> (<s> ^operator <o> = 2)
+}
+
+sp {rl*dad*repair-trust*protect-plan
+ (state <s> ^operator <o> +) (<o> ^name response-method ^method protect-plan ^concern repair-trust)
+ --> (<s> ^operator <o> = 0)
+}
+
+sp {rl*dad*repair-trust*offer-later
+ (state <s> ^operator <o> +) (<o> ^name response-method ^method offer-later ^concern repair-trust)
+ --> (<s> ^operator <o> = 4)
+}
+
+sp {dad*choose-project-method
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode plan)
+ --> (<c> ^planning-style steady)
+}
+
+# Personal appraisal and coping, executed by native productions.
+sp {person*dad*appraisal
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^mode perceive ^self dad)
+ --> (<c> ^sensitivity 2 ^style verify)
+}
+
+sp {dad*conversation-interruption
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^compatibility pause ^available <a>) (<a> ^kind join)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 72 ^rule dad*conversation-interruption ^reason |我先停一下，听听家里人的事。|)
+}

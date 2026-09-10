@@ -1,0 +1,291 @@
+# Native personal evidence revision, attribution and affect. The host supplies sensed events only.
+sp {mind*query
+ (state <s> ^context <c> ^smem.command <mc>)
+ (<c> ^frame <f>) (<f> ^mode << perceive mind-read >> ^self <me> ^key <key>)
+ -(<c> ^mind-ready yes)
+ --> (<c> ^mind-query <q>) (<q> ^type mental-record ^owner <me> ^key <key>) (<mc> ^query <q>)
+}
+sp {mind*retrieve
+ :o-support
+ (state <s> ^context <c> ^smem.result <mr>) (<c> ^mind-query <q>)
+ (<mr> ^success <q> ^retrieved <r>)
+ --> (<c> ^mind-ready yes ^mental-record <r>)
+}
+sp {mind*create
+ :o-support
+ (state <s> ^context <c> ^smem.result.failure <q>)
+ (<c> ^mind-query <q> ^frame <f>) (<f> ^self <me> ^key <key> ^subject <subject> ^predicate <predicate> ^domain <domain>)
+ --> (<c> ^mind-ready yes ^mental-record <r>)
+ (<r> ^type mental-record ^owner <me> ^key <key> ^subject <subject> ^predicate <predicate> ^domain <domain> ^value unknown ^status unknown ^provenance none ^informant none ^at 0 ^emotion neutral ^intensity 0 ^tension 0 ^judgment 50 ^reason no-evidence ^source none ^prior unknown ^coping continue ^conflict none)
+}
+sp {mind*same-origin-is-not-new-evidence
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r>)
+ (<f> ^mode perceive ^evidence <e>) (<e> ^provenance <root>) (<r> ^origin <root>) -(<c> ^mind-written yes)
+ --> (<c> ^duplicate yes)
+}
+sp {mind*init-next
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r>)
+ (<f> ^mode perceive ^evidence <e>) -(<c> ^duplicate yes) -(<c> ^mind-written yes)
+ --> (<c> ^next (deep-copy <r>))
+}
+sp {mind*first-or-direct-evidence
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class belief ^source << seen self >> ^value <value> ^provenance <root> ^speaker <speaker> ^time <t>) (<n> ^value <prior>)
+ --> (<c> ^revision <v>)
+ (<v> ^value <value> ^status known ^provenance <root> ^informant <speaker> ^at <t> ^source seen ^prior <prior> ^emotion neutral ^intensity 0 ^tension 0 ^reason direct-observation ^coping continue ^conflict none)
+}
+sp {mind*direct-interaction-result
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class interaction-result ^source << seen self heard >> ^value <value> ^provenance <root> ^speaker <speaker> ^time <t>) (<n> ^value <prior>)
+ --> (<c> ^revision <v>)
+ (<v> ^value <value> ^status known ^provenance <root> ^informant <speaker> ^at <t> ^source heard ^prior <prior> ^emotion neutral ^intensity 0 ^tension 0 ^reason witnessed-interaction-result ^coping continue ^conflict none)
+}
+sp {mind*new-testimony
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class belief ^source heard ^value <value> ^provenance <root> ^speaker <speaker> ^time <t>) (<n> ^status unknown)
+ --> (<c> ^revision <v>)
+ (<v> ^value <value> ^status tentative ^provenance <root> ^informant <speaker> ^at <t> ^source heard ^reason single-source ^coping verify ^conflict none ^emotion uncertain ^intensity 20 ^tension 8)
+}
+sp {mind*consistent-testimony
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class belief ^source heard ^value <value> ^provenance <root> ^speaker <speaker> ^time <t>) (<n> ^status <> unknown ^value <value>)
+ --> (<c> ^revision <v>)
+ (<v> ^reason same-claim-no-proof)
+}
+sp {mind*conflicting-testimony
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class belief ^source heard ^value <value> ^provenance <root> ^speaker <speaker> ^time <t>) (<n> ^status <> unknown ^value <> <value>)
+ --> (<c> ^revision <v>)
+ (<v> ^status disputed ^conflict <value> ^reason conflicting-evidence ^coping verify ^emotion uncertain ^intensity 30 ^tension 12)
+}
+sp {mind*cooperation
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class social ^value << cooperate promise praise >> ^value <value> ^provenance <root> ^speaker <speaker> ^time <t>) (<n> ^judgment <j>)
+ --> (<c> ^revision <v>)
+ (<v> ^value <value> ^status known ^provenance <root> ^informant <speaker> ^at <t> ^source heard ^reason observed-cooperation ^emotion grateful ^intensity 28 ^tension 0 ^trust-value (+ <j> 3) ^coping reciprocate ^conflict none)
+}
+sp {mind*broken-promise
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class social ^value brokenPromise ^provenance <root> ^speaker <speaker> ^time <t>) (<n> ^judgment <j>) (<c> ^sensitivity <sen> ^style <style>)
+ --> (<c> ^revision <v>)
+ (<v> ^value brokenPromise ^status known ^provenance <root> ^informant <speaker> ^at <t> ^source heard ^reason explicit-commitment-broken ^emotion angry ^intensity (+ 38 <sen>) ^tension 35 ^trust-value (- <j> 8) ^coping <style> ^conflict none)
+}
+sp {mind*refusal-with-known-reason
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class social ^value refuse ^explanation constrained ^provenance <root> ^speaker <speaker> ^time <t>)
+ --> (<c> ^revision <v>)
+ (<v> ^value refuse ^status known ^provenance <root> ^informant <speaker> ^at <t> ^source heard ^reason known-conflicting-duty ^emotion disappointed ^intensity 12 ^tension 5 ^coping defer ^conflict none)
+}
+sp {mind*refusal-uncertain-attribution
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class social ^value refuse ^explanation unknown ^provenance <root> ^speaker <speaker> ^time <t>) (<f> ^goal-relevant no)
+ --> (<c> ^revision <v>)
+ (<v> ^value refuse ^status tentative ^provenance <root> ^informant <speaker> ^at <t> ^source heard ^reason cause-not-known ^emotion uncertain ^intensity 15 ^tension 8 ^coping verify ^conflict none)
+}
+sp {mind*refusal-threatens-goal
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class social ^value refuse ^explanation unknown ^provenance <root> ^speaker <speaker> ^time <t>) (<f> ^goal-relevant yes ^energy <energy>) (<n> ^judgment <j>) (<c> ^sensitivity <sen> ^style <style>)
+ --> (<c> ^revision <v>)
+ (<v> ^value refuse ^status tentative ^provenance <root> ^informant <speaker> ^at <t> ^source heard ^reason own-goal-obstructed-cause-uncertain ^emotion frustrated ^intensity (+ 20 <sen> (/ (- 100 <energy>) 10)) ^tension 25 ^trust-value (- <j> 2) ^coping <style> ^conflict none)
+}
+sp {mind*correct-attribution
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class social ^value correction ^provenance <root> ^speaker <speaker> ^time <t>) (<n> ^judgment <j> ^reason <old> ^value <prior>)
+ --> (<c> ^revision <v>)
+ (<v> ^value correction ^status known ^provenance <root> ^informant <speaker> ^at <t> ^source heard ^prior <prior> ^reason new-explanation-reappraised ^emotion relieved ^intensity 15 ^tension 6 ^trust-value (+ <j> 2) ^coping repair ^conflict none)
+}
+sp {mind*apology-specific
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r> ^next <n>)
+ (<f> ^mode perceive ^evidence <e>)
+ (<e> ^class social ^value apology ^provenance <root> ^speaker <speaker> ^time <t>) (<n> ^judgment <j> ^value <prior>)
+ --> (<c> ^revision <v>)
+ (<v> ^value apology ^status known ^provenance <root> ^informant <speaker> ^at <t> ^source heard ^prior <prior> ^reason acknowledged-specific-harm ^emotion relieved ^intensity 18 ^tension 10 ^trust-value (+ <j> 2) ^coping continue ^conflict none)
+}
+sp {mind*propose-revise
+ (state <s> ^context <c>) (<c> ^revision <v> ^mental-record <r> ^frame <f>)
+ -(<c> ^mind-written yes) -(<c> ^duplicate yes)
+ --> (<s> ^operator <o> +) (<o> ^name revise-mind ^record <r> ^revision <v>)
+}
+sp {mind*apply-value
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^value <new>) (<r> ^value { <old> <> <new> })
+ --> (<r> ^value <old> - ^value <new>)
+}
+sp {mind*apply-status
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^status <new>) (<r> ^status { <old> <> <new> })
+ --> (<r> ^status <old> - ^status <new>)
+}
+sp {mind*apply-root
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^provenance <new>) (<r> ^provenance { <old> <> <new> })
+ --> (<r> ^provenance <old> - ^provenance <new>)
+}
+sp {mind*apply-informant
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^informant <new>) (<r> ^informant { <old> <> <new> })
+ --> (<r> ^informant <old> - ^informant <new>)
+}
+sp {mind*apply-at
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^at <new>) (<r> ^at { <old> <> <new> })
+ --> (<r> ^at <old> - ^at <new>)
+}
+sp {mind*apply-emotion
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^emotion <new>) (<r> ^emotion { <old> <> <new> })
+ --> (<r> ^emotion <old> - ^emotion <new>)
+}
+sp {mind*apply-intensity
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^intensity <new>) (<r> ^intensity { <old> <> <new> })
+ --> (<r> ^intensity <old> - ^intensity <new>)
+}
+sp {mind*apply-tension
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^tension <new>) (<r> ^tension { <old> <> <new> })
+ --> (<r> ^tension <old> - ^tension <new>)
+}
+sp {mind*apply-judgment
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^judgment <new>) (<r> ^judgment { <old> <> <new> })
+ --> (<r> ^judgment <old> - ^judgment <new>)
+}
+sp {mind*apply-reason
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^reason <new>) (<r> ^reason { <old> <> <new> })
+ --> (<r> ^reason <old> - ^reason <new>)
+}
+sp {mind*apply-source
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^source <new>) (<r> ^source { <old> <> <new> })
+ --> (<r> ^source <old> - ^source <new>)
+}
+sp {mind*apply-prior
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^prior <new>) (<r> ^prior { <old> <> <new> })
+ --> (<r> ^prior <old> - ^prior <new>)
+}
+sp {mind*apply-coping
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^coping <new>) (<r> ^coping { <old> <> <new> })
+ --> (<r> ^coping <old> - ^coping <new>)
+}
+sp {mind*apply-conflict
+ (state <s> ^operator <o>) (<o> ^name revise-mind ^record <r> ^revision <v>)
+ (<v> ^conflict <new>) (<r> ^conflict { <old> <> <new> })
+ --> (<r> ^conflict <old> - ^conflict <new>)
+}
+sp {mind*mark-revision
+ (state <s> ^operator <o> ^context <c>) (<o> ^name revise-mind ^record <r>)
+ (<c> ^frame.evidence.provenance <root>)
+ --> (<c> ^mind-written yes) (<r> ^origin <root>)
+}
+sp {mind*store
+ (state <s> ^context <c> ^smem.command <mc>) (<c> ^mind-written yes ^mental-record <r>)
+ --> (<mc> ^store <r>)
+}
+sp {mind*ack-write
+ (state <s> ^context <c> ^smem.result.success <r> ^io.output-link <out>)
+ (<c> ^frame <f> ^mental-record <r> ^mind-written yes) (<f> ^seq <seq>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind interpreted ^record (deep-copy <r>) ^remember yes)
+}
+sp {mind*ack-duplicate
+ (state <s> ^context <c> ^io.output-link <out>)
+ (<c> ^frame <f> ^mental-record <r> ^duplicate yes) (<f> ^seq <seq>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind duplicate ^record (deep-copy <r>))
+}
+sp {mind*decay
+ (state <s> ^context <c>) (<c> ^frame <f> ^mental-record <r>)
+ (<f> ^mode mind-read ^time <now> ^emotion-decay <ed> ^mood-decay <md>)
+ (<r> ^at <at> ^intensity <i> ^tension <t>)
+ --> (<c> ^remaining (- <i> (* (- <now> <at>) <ed>)) ^background (- <t> (* (- <now> <at>) <md>)))
+}
+sp {mind*positive-emotion
+ (state <s> ^context <c>) (<c> ^remaining { <r> > 0 }) --> (<c> ^active <r>)
+}
+sp {mind*quiet-emotion
+ (state <s> ^context <c>) (<c> ^remaining <= 0) --> (<c> ^active 0)
+}
+sp {mind*positive-mood
+ (state <s> ^context <c>) (<c> ^background { <r> > 0 }) --> (<c> ^mood <r>)
+}
+sp {mind*quiet-mood
+ (state <s> ^context <c>) (<c> ^background <= 0) --> (<c> ^mood 0)
+}
+sp {mind*read-out
+ (state <s> ^context <c> ^io.output-link <out>)
+ (<c> ^frame <f> ^mental-record <r> ^active <a> ^mood <m>) (<f> ^seq <seq>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^kind mind ^record (deep-copy <r>) ^active <a> ^mood <m>)
+}
+# Epistemic actions use the same native operator competition as ordinary tasks.
+sp {mind*seek-last-known-place
+ (state <s> ^context <c> ^io.input-link.frame <f>)
+ (<c> ^goal-ready yes ^memory-ready yes) (<f> ^mode act ^busy no ^seeking <> none ^available <a>)
+ (<a> ^kind inspect ^last-known yes)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 135 ^rule mind*seek-last-known-place ^reason |先去上次记得的位置找，不能凭空知道东西被挪去哪了。|)
+}
+sp {mind*search-other-places
+ (state <s> ^context <c> ^io.input-link.frame <f>)
+ (<c> ^goal-ready yes ^memory-ready yes) (<f> ^mode act ^busy no ^available <a>)
+ (<a> ^kind inspect ^inspection-reason <> stale-empty)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 125 ^rule mind*search-other-places ^reason |先查看实际物品，再接着安排手头的事。|)
+}
+sp {mind*verify-with-person
+ (state <s> ^context <c> ^io.input-link.frame <f>)
+ (<c> ^goal-ready yes ^memory-ready yes) (<f> ^mode act ^busy no ^affect <m> ^available <a>)
+ (<m> ^coping verify ^active > 18 ^subject <who> ^domain <domain>) (<a> ^kind chat ^target <who>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 112 ^speech-act ask-reason ^topic <domain> ^rule mind*verify-with-person ^reason |我还不清楚对方的原因，找本人把情况问清楚。|)
+}
+sp {mind*withdraw-briefly
+ (state <s> ^context <c> ^io.input-link.frame <f>)
+ (<c> ^goal-ready yes ^memory-ready yes) (<f> ^mode act ^busy no ^affect <m> ^available <a>)
+ (<m> ^coping withdraw ^active > 30) (<a> ^kind rest)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 110 ^rule mind*withdraw-briefly ^reason |我现在有点顶着劲，先歇一下，原来的打算还留着。|)
+}
+sp {mind*discuss-specific-harm
+ (state <s> ^context <c> ^io.input-link.frame <f>)
+ (<c> ^goal-ready yes ^memory-ready yes) (<f> ^mode act ^busy no ^affect <m> ^available <a>)
+ (<m> ^coping << discuss seek-company repair reciprocate >> ^active > 18 ^subject <who>) (<a> ^kind chat ^target <who>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 110 ^rule mind*discuss-specific-harm ^reason |这件事影响了我对他的感受，想和本人说说，再继续自己的安排。|)
+}
+
+sp {mind*bound-trust-high
+ (state <s> ^context.revision <v>) (<v> ^trust-value > 100) --> (<v> ^judgment 100)
+}
+sp {mind*bound-trust-low
+ (state <s> ^context.revision <v>) (<v> ^trust-value < 0) --> (<v> ^judgment 0)
+}
+sp {mind*bounded-trust
+ (state <s> ^context.revision <v>) (<v> ^trust-value { <j> >= 0 <= 100 }) --> (<v> ^judgment <j>)
+}
+# A slower mood state still affects self-regulation after the acute emotion fades.
+sp {mind*recover-from-lingering-tension
+ (state <s> ^context <c> ^io.input-link.frame <f>)
+ (<c> ^goal-ready yes ^memory-ready yes)
+ (<f> ^mode act ^busy no ^energy < 65 ^meal-window no ^night no ^affect <m> ^available <a>)
+ (<m> ^mood > 18 ^active < 10) (<a> ^kind rest)
+ --> (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 106 ^rule mind*recover-from-lingering-tension ^reason |已经没那么激动了，但余下的紧张还在，精力也不够。先休息一下，再接着原来的安排。|)
+}
+
+# ChatGPT revision from the seven-day run: Xing skipped three meals while remembering stock=0.
+# Empty stock is a dated observation, not a permanent prohibition on checking the kitchen.
+sp {mind*recheck-stale-empty-stock
+ (state <s> ^context <c> ^io.input-link.frame <f>)
+ (<c> ^goal-ready yes ^memory-ready yes) (<f> ^mode act ^busy no ^available <a>)
+ (<a> ^kind inspect ^inspection-reason stale-empty ^known-age > 15)
+ --> (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 126 ^rule mind*recheck-stale-empty-stock ^reason |上次看见没饭已经过了一阵，先去厨房重新确认，不能一直凭旧印象等着。|)
+}

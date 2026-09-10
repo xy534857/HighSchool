@@ -1,0 +1,35 @@
+[
+  {
+    "check": "male-entry",
+    "blocked": true,
+    "reason": true
+  },
+  {
+    "check": "female-entry",
+    "allowed": true
+  },
+  {
+    "check": "toilet-completed",
+    "state": "可在场景中走近使用；位置由占用规则管理。\n\n可用位置\n1 / 1\n位置\n女生卫生间\n清洁度\n88\n剩余纸张\n11\n\n后勤服务：06:30 补给或整理",
+    "player": "知\n林知夏 你\n女生卫生间\n自由活动\n饱食\n67\n精力\n76\n如厕\n93\n社交\n69\n水分\n63\n清洁\n68\n乐趣\n67\n行动安排\n自主：关\n取消当前行动\n暂时没有安排\n▣\n随身物品\n1"
+  },
+  {
+    "check": "paused-room-switch",
+    "blocked": true
+  },
+  {
+    "check": "microscope-completed",
+    "state": "消耗一份样本并留下待清理的镜台。整理后才能继续观察。\n\n可用位置\n1 / 1\n位置\n科学实验室\n切片样本\n7\n已清理\n否\n\n后勤服务：06:30 补给或整理",
+    "repeatDisabled": true,
+    "cleanupAvailable": true
+  },
+  {
+    "check": "cleanup-completed",
+    "state": "消耗一份样本并留下待清理的镜台。整理后才能继续观察。\n\n可用位置\n1 / 1\n位置\n科学实验室\n切片样本\n7\n已清理\n是\n\n后勤服务：06:30 补给或整理",
+    "reusable": true
+  },
+  {
+    "check": "personal-resources",
+    "text": "×\n随身物品与个人积累\n校园卡余额\n30 元\n已领取餐食\n0\n待归还餐盘\n0\n文具套装\n0\n研究积累\n5\n创作积累\n0\n音乐熟练\n0\n运动积累\n0\n已完成习题\n0\n打印资料\n0\n采收成果\n0\n▣\n我的笔记本\n查看"
+  }
+]

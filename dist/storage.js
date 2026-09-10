@@ -1,0 +1,9 @@
+// Structured-clone storage preserves native SQLite bytes without JSON arrays.
+export function encodeSave(state){return JSON.stringify(state,(_k,value)=>value instanceof Uint8Array?{$binary:'u8',base64:toBase64(value)}:value);}
+export function decodeSave(text){const state=JSON.parse(text,(_k,v)=>v?.$binary==='u8'?fromBase64(v.base64):v);validateSave(state);return state;}
+function toBase64(bytes){let s='';for(let i=0;i<bytes.length;i+=32768)s+=String.fromCharCode(...bytes.subarray(i,i+32768));return btoa(s);}
+function fromBase64(s){if(typeof s!=='string')throw Error('存档二进制格式错误');return Uint8Array.from(atob(s),c=>c.charCodeAt(0));}
+export function validateSave(s){if(s?.version!==4||s.cognition?.version!==2||!Array.isArray(s.people)||s.people.length!==5)throw Error('这份存档不包含当前版本的完整认知状态');for(const p of s.people){const n=s.cognition.people[p.id]?.native;if(!(n?.smem instanceof Uint8Array)||!(n.epmem instanceof Uint8Array)||typeof n.productions!=='string')throw Error('人物记忆或规则缺失');}return s;}
+function openDB(){return new Promise((resolve,reject)=>{const r=indexedDB.open('summer-family-cognition',1);r.onupgradeneeded=()=>r.result.createObjectStore('saves');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
+export async function storeSave(state){validateSave(state);const db=await openDB();try{await new Promise((resolve,reject)=>{const tx=db.transaction('saves','readwrite');tx.objectStore('saves').put(state,'current');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}finally{db.close();}}
+export async function loadSave(){const db=await openDB();try{return await new Promise((resolve,reject)=>{const r=db.transaction('saves').objectStore('saves').get('current');r.onsuccess=()=>resolve(r.result?validateSave(r.result):null);r.onerror=()=>reject(r.error);});}finally{db.close();}}

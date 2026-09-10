@@ -1,0 +1,47 @@
+# Generic foundation operations. Content-specific choices are separate productions.
+sp {foundation*prefer
+ (state <s> ^operator <a> + ^operator <b> +)
+ (<a> ^name choose ^priority <pa>) (<b> ^name choose ^priority { <pb> < <pa> })
+ --> (<s> ^operator <a> > <b>)
+}
+sp {foundation*tie
+ (state <s> ^operator <a> + ^operator <b> +)
+ (<a> ^name choose ^priority <p> ^choice <ca>) (<b> ^name choose ^priority <p> ^choice <cb>)
+ (<ca> ^ordinal <ia>) (<cb> ^ordinal { <ib> > <ia> })
+ --> (<s> ^operator <a> > <b>)
+}
+sp {foundation*equivalent
+ (state <s> ^operator <a> + ^operator { <b> <> <a> } +)
+ (<a> ^name choose ^priority <p> ^choice <c>) (<b> ^name choose ^priority <p> ^choice <c>)
+ --> (<s> ^operator <a> = <b>)
+}
+sp {foundation*wait
+ (state <s> ^superstate nil ^io.input-link.frame <f>)
+ (<f> ^mode foundation ^available <a>) (<a> ^fallback yes)
+ --> (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority 0 ^rule foundation*wait ^reason |等待可执行的安排。|)
+}
+sp {foundation*utility
+ (state <s> ^superstate nil ^io.input-link.frame <f>)
+ (<f> ^mode foundation ^available <a>) (<a> ^utility { <u> > 0 } ^utility-reason <why>)
+ --> (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority <u> ^rule foundation*utility ^reason <why>)
+}
+sp {foundation*goal
+ (state <s> ^superstate nil ^io.input-link.frame <f>)
+ (<f> ^mode foundation ^available <a>) (<a> ^goal-step yes ^goal-priority <p> ^goal-title <why>)
+ --> (<s> ^operator <o> +)
+ (<o> ^name choose ^choice <a> ^priority <p> ^rule foundation*goal ^reason <why>)
+}
+sp {foundation*emit
+ :i-support
+ (state <s> ^superstate nil ^operator <o> ^io.input-link.frame <f> ^io.output-link <out>)
+ (<o> ^name choose ^choice <a> ^rule <rule> ^reason <reason>)
+ (<f> ^mode foundation ^seq <seq> ^available <a>) (<a> ^id <id> ^kind <kind> ^target <target>)
+ --> (<out> ^command <cmd>)
+ (<cmd> ^seq <seq> ^id <id> ^kind <kind> ^target <target> ^rule <rule> ^reason <reason>)
+}
+sp {foundation*mind-style
+ (state <s> ^context <c>) (<c> ^frame <f>) (<f> ^sensitivity <n> ^coping <style>)
+ --> (<c> ^sensitivity <n> ^style <style>)
+}

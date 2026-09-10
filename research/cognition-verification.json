@@ -1,0 +1,134 @@
+{
+  "kernel": "native Soar 9.6.5",
+  "apiCalls": 0,
+  "results": [
+    {
+      "case": "hidden-stock",
+      "sameCandidates": true,
+      "discoveredAtExecution": 0
+    },
+    {
+      "case": "perception-boundary",
+      "heardSoundWithoutContent": true,
+      "sleepBlocksMessages": true
+    },
+    {
+      "case": "search-from-belief",
+      "first": "desk",
+      "found": "book",
+      "rule": "mind*seek-last-known-place"
+    },
+    {
+      "case": "provenance",
+      "repeatConfidence": "tentative",
+      "conflictPreserved": true,
+      "directCorrection": "desk"
+    },
+    {
+      "case": "personality-and-body",
+      "xing": {
+        "conflict": "none",
+        "coping": "withdraw",
+        "prior": "unknown",
+        "source": "heard",
+        "reason": "own-goal-obstructed-cause-uncertain",
+        "judgment": 48,
+        "tension": 25,
+        "intensity": 37,
+        "emotion": "frustrated",
+        "at": 990,
+        "informant": "me",
+        "provenance": "xing-me-refuse-help",
+        "status": "tentative",
+        "value": "refuse",
+        "domain": "help",
+        "predicate": "reliability",
+        "subject": "me",
+        "key": "me:reliability:help",
+        "owner": "xing",
+        "type": "mental-record",
+        "origin": "xing-me-refuse-help"
+      },
+      "dad": {
+        "conflict": "none",
+        "coping": "verify",
+        "prior": "unknown",
+        "source": "heard",
+        "reason": "own-goal-obstructed-cause-uncertain",
+        "judgment": 48,
+        "tension": 25,
+        "intensity": 23,
+        "emotion": "frustrated",
+        "at": 990,
+        "informant": "me",
+        "provenance": "dad-me-refuse-help",
+        "status": "tentative",
+        "value": "refuse",
+        "domain": "help",
+        "predicate": "reliability",
+        "subject": "me",
+        "key": "me:reliability:help",
+        "owner": "dad",
+        "type": "mental-record",
+        "origin": "dad-me-refuse-help"
+      },
+      "tiredIntensity": 44,
+      "actualCoping": "rest"
+    },
+    {
+      "case": "domain-specific-reappraisal",
+      "validTrust": 50,
+      "breachTrust": 42,
+      "afterFiveHours": {
+        "emotion": 0,
+        "tension": 27.5,
+        "judgment": 42
+      }
+    },
+    {
+      "case": "portable-native-mind",
+      "sameIntent": "project-xing-1",
+      "retainedAffect": true
+    },
+    {
+      "case": "reflection-privacy",
+      "separatePersonContexts": true
+    },
+    {
+      "case": "actual-authored-coping-rule",
+      "sameCheckpoint": true,
+      "rows": [
+        {
+          "patched": false,
+          "energy": 90,
+          "action": "rest",
+          "rule": "mind*withdraw-briefly"
+        },
+        {
+          "patched": true,
+          "energy": 90,
+          "action": "chat",
+          "rule": "learned*xing*clarify-before-withdrawing"
+        },
+        {
+          "patched": true,
+          "energy": 25,
+          "action": "rest",
+          "rule": "mind*withdraw-briefly"
+        }
+      ]
+    },
+    {
+      "case": "question-to-reappraisal",
+      "response": "decline",
+      "reason": "new-explanation-reappraised",
+      "emotion": "relieved"
+    },
+    {
+      "case": "recheck-stale-empty-stock",
+      "oldBelief": 0,
+      "actualFood": 5,
+      "mealStarted": true
+    }
+  ]
+}

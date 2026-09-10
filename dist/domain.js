@@ -1,0 +1,796 @@
+/* Generated from domain/family.json. */
+export const DOMAIN = {
+  "version": 2,
+  "types": {
+    "Observation": {
+      "required": [
+        "uid",
+        "kind",
+        "actor",
+        "time",
+        "source"
+      ],
+      "source": [
+        "self",
+        "seen",
+        "heard"
+      ],
+      "optional": [
+        "target",
+        "topic",
+        "outcome",
+        "cause",
+        "action",
+        "amount"
+      ]
+    },
+    "Belief": {
+      "required": [
+        "owner",
+        "subject",
+        "predicate",
+        "value",
+        "source",
+        "evidence"
+      ]
+    },
+    "Commitment": {
+      "required": [
+        "uid",
+        "debtor",
+        "creditor",
+        "action",
+        "deadline",
+        "status",
+        "evidence"
+      ],
+      "status": [
+        "pending",
+        "fulfilled",
+        "broken",
+        "cancelled"
+      ]
+    },
+    "Goal": {
+      "required": [
+        "owner",
+        "kind",
+        "target",
+        "progress",
+        "status",
+        "day"
+      ],
+      "status": [
+        "active",
+        "done"
+      ]
+    },
+    "Method": {
+      "required": [
+        "id",
+        "requires",
+        "effects"
+      ]
+    },
+    "Assessment": {
+      "required": [
+        "about",
+        "predicate",
+        "evidence"
+      ]
+    },
+    "MentalRecord": {
+      "identity": [
+        "owner",
+        "key"
+      ],
+      "fields": [
+        "subject",
+        "predicate",
+        "domain",
+        "value",
+        "status",
+        "provenance",
+        "origin",
+        "informant",
+        "at",
+        "emotion",
+        "intensity",
+        "tension",
+        "judgment",
+        "reason",
+        "coping"
+      ],
+      "status": [
+        "unknown",
+        "tentative",
+        "known",
+        "disputed"
+      ]
+    }
+  },
+  "actions": {
+    "eat": {
+      "label": "吃饭",
+      "duration": 16,
+      "resource": [
+        "dining1",
+        "dining2",
+        "dining3",
+        "dining4",
+        "dining5"
+      ],
+      "requires": {
+        "home.food": 1
+      },
+      "start": {
+        "home.food": -1
+      },
+      "finish": {
+        "self.hunger": 67,
+        "home.clean": -3
+      },
+      "satisfies": "nutrition",
+      "conversation": "parallel"
+    },
+    "snack": {
+      "label": "找点吃的",
+      "duration": 7,
+      "resource": [
+        "fridge"
+      ],
+      "requires": {
+        "home.snacks": 1
+      },
+      "start": {
+        "home.snacks": -1
+      },
+      "finish": {
+        "self.hunger": 35,
+        "self.fun": 8,
+        "home.clean": -2
+      },
+      "satisfies": "nutrition",
+      "conversation": "parallel"
+    },
+    "cook": {
+      "label": "做一锅饭",
+      "duration": 28,
+      "resource": [
+        "stove"
+      ],
+      "requires": {
+        "home.ingredients": 1
+      },
+      "exclude": [
+        "xiaoyu"
+      ],
+      "start": {
+        "home.ingredients": -1
+      },
+      "finish": {
+        "home.food": 5,
+        "home.clean": -8,
+        "self.fun": -7
+      },
+      "satisfies": "provision",
+      "goal": "cook",
+      "progress": 1,
+      "conversation": "finish"
+    },
+    "study": {
+      "label": "写作业",
+      "duration": 24,
+      "resource": [
+        "own-desk"
+      ],
+      "exclude": [
+        "xiaoyu"
+      ],
+      "finish": {
+        "self.fun": -9
+      },
+      "satisfies": "achievement",
+      "goal": "study",
+      "rate": 1.1666666666666667,
+      "interference": "noise",
+      "conversation": "pause"
+    },
+    "work": {
+      "label": "写稿子",
+      "duration": 26,
+      "resource": [
+        "own-desk"
+      ],
+      "only": [
+        "dad"
+      ],
+      "finish": {
+        "self.fun": -9
+      },
+      "satisfies": "achievement",
+      "goal": "work",
+      "rate": 1.0769230769230769,
+      "interference": "noise",
+      "conversation": "pause"
+    },
+    "read": {
+      "label": "看书",
+      "duration": 20,
+      "resource": [
+        "book",
+        "own-bed"
+      ],
+      "finish": {
+        "self.fun": 27
+      },
+      "satisfies": "leisure",
+      "conversation": "pause"
+    },
+    "watch": {
+      "label": "看电视",
+      "duration": 26,
+      "resource": [
+        "tv"
+      ],
+      "finish": {
+        "self.fun": 36
+      },
+      "satisfies": "leisure",
+      "emits": "noise",
+      "conversation": "parallel"
+    },
+    "play": {
+      "label": "玩一会儿",
+      "duration": 20,
+      "resource": [
+        "play",
+        "sofa",
+        "book"
+      ],
+      "finish": {
+        "self.fun": 30,
+        "home.clean": -4
+      },
+      "satisfies": "leisure",
+      "goal": "play",
+      "progress": 30,
+      "conversation": "parallel"
+    },
+    "rest": {
+      "label": "休息",
+      "duration": 32,
+      "resource": [
+        "sofa",
+        "own-bed"
+      ],
+      "finish": {
+        "self.energy": 42
+      },
+      "satisfies": "rest",
+      "conversation": "parallel"
+    },
+    "sleep": {
+      "label": "睡觉",
+      "duration": 100,
+      "resource": [
+        "own-bed"
+      ],
+      "finish": {
+        "self.energy": 82
+      },
+      "satisfies": "rest",
+      "conversation": "unavailable"
+    },
+    "tidy": {
+      "label": "收拾屋子",
+      "duration": 18,
+      "resource": [
+        "clean"
+      ],
+      "finish": {
+        "home.clean": 30,
+        "self.fun": -5
+      },
+      "satisfies": "household",
+      "conversation": "finish"
+    },
+    "groceries": {
+      "label": "收食材配送",
+      "duration": 35,
+      "resource": [
+        "delivery"
+      ],
+      "only": [
+        "dad",
+        "me"
+      ],
+      "requires": {
+        "home.money": 30
+      },
+      "start": {
+        "home.money": -30
+      },
+      "finish": {
+        "home.ingredients": 4,
+        "home.snacks": 4
+      },
+      "satisfies": "provision",
+      "conversation": "finish"
+    },
+    "chat": {
+      "label": "找家人聊聊",
+      "duration": 8,
+      "social": true,
+      "satisfies": "affiliation",
+      "goal": "play",
+      "progress": 15,
+      "conversation": "finish"
+    },
+    "askQuiet": {
+      "label": "商量小声一点",
+      "duration": 4,
+      "social": true,
+      "satisfies": "noise",
+      "conversation": "finish"
+    },
+    "askHelp": {
+      "label": "请人帮忙",
+      "duration": 4,
+      "social": true,
+      "satisfies": "household",
+      "conversation": "finish"
+    },
+    "mediate": {
+      "label": "劝一劝",
+      "duration": 8,
+      "social": true,
+      "satisfies": "conflict",
+      "conversation": "finish"
+    },
+    "apologize": {
+      "label": "主动和好",
+      "duration": 5,
+      "social": true,
+      "satisfies": "repair",
+      "conversation": "finish"
+    },
+    "invite": {
+      "label": "叫家人吃饭",
+      "duration": 3,
+      "social": true,
+      "satisfies": "nutrition",
+      "conversation": "finish"
+    },
+    "praise": {
+      "label": "夸一句",
+      "duration": 3,
+      "social": true,
+      "satisfies": "recognition",
+      "conversation": "finish"
+    },
+    "studyTable": {
+      "label": "在餐桌写作业",
+      "duration": 24,
+      "resource": [
+        "dining1",
+        "dining2",
+        "dining3",
+        "dining4",
+        "dining5"
+      ],
+      "exclude": [
+        "xiaoyu"
+      ],
+      "finish": {
+        "self.fun": -9
+      },
+      "satisfies": "achievement",
+      "goal": "study",
+      "rate": 0.72,
+      "interference": "noise",
+      "conversation": "pause"
+    },
+    "workTable": {
+      "label": "在餐桌写稿",
+      "duration": 26,
+      "resource": [
+        "dining1",
+        "dining2",
+        "dining3",
+        "dining4",
+        "dining5"
+      ],
+      "only": [
+        "dad"
+      ],
+      "finish": {
+        "self.fun": -9
+      },
+      "satisfies": "achievement",
+      "goal": "work",
+      "rate": 0.66,
+      "interference": "noise",
+      "conversation": "pause"
+    },
+    "inspect": {
+      "label": "查看物品",
+      "duration": 2,
+      "resource": [
+        "fridge",
+        "stove",
+        "desk",
+        "book",
+        "clean"
+      ],
+      "satisfies": "information",
+      "finish": {},
+      "conversation": "finish"
+    },
+    "depart": {
+      "label": "出门上学／上班",
+      "duration": 0.25,
+      "resource": [
+        "delivery"
+      ],
+      "satisfies": "attendance",
+      "finish": {},
+      "conversation": "unavailable"
+    },
+    "prepareScene": {
+      "label": "准备家庭活动",
+      "duration": 18,
+      "resource": [
+        "own-desk"
+      ],
+      "satisfies": "commitment",
+      "finish": {
+        "self.fun": 8
+      },
+      "conversation": "pause"
+    },
+    "gatherScene": {
+      "label": "去客厅碰头",
+      "duration": 0.25,
+      "resource": [
+        "own-gather"
+      ],
+      "satisfies": "affiliation",
+      "finish": {},
+      "conversation": "pause"
+    },
+    "incident": {
+      "label": "处理自己惦记的事",
+      "duration": 1,
+      "resource": [
+        "own-desk"
+      ],
+      "conversation": "pause"
+    }
+  },
+  "contracts": {
+    "quiet": {
+      "topic": "noise",
+      "accept": "reduce-noise",
+      "preserves": "leisure",
+      "replaces-task": false
+    },
+    "help": {
+      "topic": "household",
+      "accept": "tidy",
+      "deadlineMinutes": 38,
+      "replaces-task": true
+    },
+    "meal": {
+      "topic": "nutrition",
+      "accept": "eat",
+      "replaces-task": true
+    },
+    "apology": {
+      "topic": "repair",
+      "accept": "settle",
+      "replaces-task": false
+    },
+    "mediate": {
+      "topic": "conflict",
+      "accept": "settle",
+      "replaces-task": false
+    }
+  },
+  "needs": {
+    "hunger": {
+      "decay": 0.075,
+      "sleepDecay": 0.028,
+      "urgentBelow": 18
+    },
+    "energy": {
+      "decay": 0.052,
+      "sleepDecay": 0,
+      "urgentBelow": 12
+    },
+    "fun": {
+      "decay": 0.055,
+      "sleepDecay": 0.006
+    },
+    "social": {
+      "decay": 0.034,
+      "sleepDecay": 0.034
+    }
+  },
+  "methods": {
+    "accommodate": {
+      "requires": [
+        "request"
+      ],
+      "effects": [
+        "request-satisfied"
+      ]
+    },
+    "protect-plan": {
+      "requires": [
+        "request"
+      ],
+      "effects": [
+        "activity-preserved",
+        "request-unfulfilled"
+      ]
+    },
+    "offer-later": {
+      "requires": [
+        "request",
+        "deferrable"
+      ],
+      "effects": [
+        "commitment-created",
+        "activity-preserved"
+      ]
+    }
+  },
+  "goals": {
+    "dad": {
+      "kind": "work",
+      "title": "写完今天的稿子",
+      "target": 100
+    },
+    "me": {
+      "kind": "cook",
+      "title": "让家人吃上饭",
+      "target": 2
+    },
+    "xue": {
+      "kind": "study",
+      "title": "完成今天的复习",
+      "target": 100
+    },
+    "xing": {
+      "kind": "study",
+      "title": "把作业交代完",
+      "target": 65
+    },
+    "xiaoyu": {
+      "kind": "play",
+      "title": "找人一起玩",
+      "target": 65
+    }
+  },
+  "projects": {
+    "dad": {
+      "title": "连续写完两份稿子，留出家用",
+      "motive": "想把收入安排好，家里需要时也能腾出手",
+      "milestones": 2,
+      "deadlineMinute": 1320,
+      "style": "steady",
+      "breakTarget": 65,
+      "foodReserve": 27,
+      "energyReserve": 22
+    },
+    "me": {
+      "title": "把接下来几顿饭安排妥当",
+      "motive": "希望家里有热饭，也给自己留点不用操心的时间",
+      "milestones": 2,
+      "deadlineMinute": 1110,
+      "style": "provision",
+      "breakTarget": 65,
+      "foodReserve": 27,
+      "energyReserve": 24
+    },
+    "xue": {
+      "title": "按计划完成两轮复习，留出完整的休息时间",
+      "motive": "想把复习做扎实，不愿一直被打断重来",
+      "milestones": 2,
+      "deadlineMinute": 1290,
+      "style": "focus",
+      "breakTarget": 65,
+      "foodReserve": 28,
+      "energyReserve": 25
+    },
+    "xing": {
+      "title": "把这两天的作业交代完，晚上安心看电视",
+      "motive": "想保住自己的娱乐时间，也不想作业一直拖着",
+      "milestones": 2,
+      "deadlineMinute": 1320,
+      "style": "break-first",
+      "breakTarget": 65,
+      "foodReserve": 23,
+      "energyReserve": 20
+    },
+    "xiaoyu": {
+      "title": "这两天多和家人在一起，把好玩的事玩够",
+      "motive": "想玩，也希望有人陪着自己",
+      "milestones": 2,
+      "deadlineMinute": 1140,
+      "style": "company-first",
+      "breakTarget": 70,
+      "foodReserve": 25,
+      "energyReserve": 23
+    }
+  },
+  "routine": {
+    "preparationMinutes": 55,
+    "servings": 5,
+    "meals": {
+      "breakfast": {
+        "title": "早饭",
+        "start": 435,
+        "end": 465,
+        "cook": "me"
+      },
+      "lunch": {
+        "title": "午饭",
+        "start": 735,
+        "end": 780,
+        "cook": "dad"
+      },
+      "dinner": {
+        "title": "晚饭",
+        "start": 1110,
+        "end": 1155,
+        "cook": "me"
+      }
+    },
+    "work": [
+      [
+        540,
+        690
+      ],
+      [
+        840,
+        1050
+      ],
+      [
+        1200,
+        1290
+      ]
+    ],
+    "sleep": {
+      "dad": {
+        "bed": 1380,
+        "wake": 405
+      },
+      "me": {
+        "bed": 1350,
+        "wake": 390
+      },
+      "xue": {
+        "bed": 1350,
+        "wake": 415
+      },
+      "xing": {
+        "bed": 1380,
+        "wake": 420
+      },
+      "xiaoyu": {
+        "bed": 1290,
+        "wake": 420
+      }
+    },
+    "maxResourceWait": 12,
+    "attendance": {
+      "dad": {
+        "label": "上班",
+        "place": "单位",
+        "leave": 480,
+        "return": 1050
+      },
+      "me": {
+        "label": "上班",
+        "place": "医院",
+        "leave": 475,
+        "return": 1025
+      },
+      "xue": {
+        "label": "上学",
+        "place": "学校",
+        "leave": 465,
+        "return": 985
+      },
+      "xing": {
+        "label": "上学",
+        "place": "学校",
+        "leave": 465,
+        "return": 975
+      },
+      "xiaoyu": {
+        "label": "上学",
+        "place": "学校",
+        "leave": 465,
+        "return": 960
+      }
+    }
+  },
+  "perception": {
+    "vision": 8.5,
+    "speech": 5.5,
+    "sound": 11,
+    "closedDoorSpeech": 0.18,
+    "closedDoorSound": 0.55
+  },
+  "affect": {
+    "emotion": 0.18,
+    "mood": 0.025
+  },
+  "conversation": {
+    "inviteMinutes": 18,
+    "joinMinutes": 12,
+    "turnMinutes": 1.6,
+    "responseMinutes": 7,
+    "maxMinutes": 28,
+    "maxTurns": 24,
+    "maxParticipants": 5,
+    "range": 4.8,
+    "cooldownMinutes": 35,
+    "groups": [
+      {
+        "id": "family",
+        "name": "一家人",
+        "members": [
+          "dad",
+          "me",
+          "xue",
+          "xing",
+          "xiaoyu"
+        ]
+      },
+      {
+        "id": "parents",
+        "name": "爸妈",
+        "members": [
+          "dad",
+          "me"
+        ]
+      },
+      {
+        "id": "siblings",
+        "name": "姐弟仨",
+        "members": [
+          "xue",
+          "xing",
+          "xiaoyu"
+        ]
+      }
+    ],
+    "topics": {
+      "notebook": {
+        "label": "练习本在哪儿",
+        "kind": "object",
+        "subject": "notebook",
+        "predicate": "location"
+      },
+      "help": {
+        "label": "一起分担家务",
+        "kind": "request",
+        "domain": "help"
+      },
+      "quiet": {
+        "label": "电视声音",
+        "kind": "request",
+        "domain": "quiet"
+      },
+      "day": {
+        "label": "聊聊各自的安排",
+        "kind": "day"
+      }
+    }
+  }
+};
+export const ACTIONS = DOMAIN.actions;

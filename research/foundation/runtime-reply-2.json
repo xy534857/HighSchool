@@ -1,0 +1,39 @@
+{
+  "requestId": "knowledge-2",
+  "epoch": 1,
+  "baseRevision": 1,
+  "contentRevision": 1,
+  "evidence": [
+    "event-19",
+    "event-23",
+    "event-26"
+  ],
+  "rules": [
+    {
+      "id": "confirm-the-agreed-loan",
+      "select": {
+        "action": "answer-known",
+        "message-key": "offer-15:status"
+      },
+      "when": [
+        {
+          "scope": "memory",
+          "key": "offer-15:status",
+          "op": "eq",
+          "value": "accepted",
+          "status": "known"
+        },
+        {
+          "scope": "memory",
+          "key": "notes:holder",
+          "op": "eq",
+          "value": "t"
+        }
+      ],
+      "priority": 80,
+      "reason": "我记得已经答应借阅，也亲手把笔记交给了 T；直接告诉他已达成的约定。"
+    }
+  ],
+  "goals": [],
+  "source": "sp {learned*m*confirm-the-agreed-loan\n (state <s> ^superstate nil ^io <io>)\n (<io> ^input-link <il>)\n (<il> ^frame <f>)\n (<f> ^mode foundation ^self m ^available <a>)\n (<a> ^action answer-known)\n (<a> ^message-key offer-15:status)\n (<f> ^known <m0>)\n (<m0> ^key offer-15:status ^value accepted)\n (<m0> ^status known)\n (<f> ^known <m1>)\n (<m1> ^key notes:holder ^value t)\n -->\n (<s> ^operator <o> +)\n (<o> ^name choose ^choice <a> ^priority 80 ^rule learned*m*confirm-the-agreed-loan ^reason |我记得已经答应借阅，也亲手把笔记交给了 T；直接告诉他已达成的约定。|)\n}"
+}

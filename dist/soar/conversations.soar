@@ -1,0 +1,74 @@
+# Joint activity decisions. The host supplies executable affordances and only this
+# participant's delivered conversation history; preferences remain native Soar.
+sp {conversation*emit
+ :i-support
+ (state <s> ^superstate nil ^operator <o> ^io.input-link.frame <f> ^io.output-link <out>)
+ (<f> ^mode conversation ^seq <seq> ^available <a>)
+ (<o> ^name choose ^choice <a> ^rule <rule> ^reason <reason>)
+ (<a> ^id <id> ^kind <kind> ^target <target>)
+ --> (<out> ^command <cmd>) (<cmd> ^seq <seq> ^id <id> ^kind <kind> ^target <target> ^rule <rule> ^reason <reason>)
+}
+sp {conversation*default
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^available <a>) (<a> ^kind << wait decline pass >>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 0 ^rule conversation*default ^reason |先不接话。|)
+}
+sp {conversation*accept-compatible
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^compatibility parallel ^available <a>) (<a> ^kind join)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 40 ^rule conversation*accept-compatible ^reason |这会儿可以一起聊，不耽误手头的事。|)
+}
+sp {conversation*finish-current-step
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^compatibility << finish pause >> ^available <a>) (<a> ^kind defer)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 50 ^rule conversation*finish-current-step ^reason |等我把手里这一段做完。|)
+}
+sp {conversation*do-not-double-book
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase invitation ^engaged yes ^available <a>) (<a> ^kind decline)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 950 ^rule conversation*do-not-double-book ^reason |我正和别人说话，稍后再聊。|)
+}
+sp {conversation*urgent-needs
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^urgent yes ^available <a>) (<a> ^kind << decline leave >>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 1000 ^rule conversation*urgent-needs ^reason |得先照顾身体，待会儿再聊。|)
+}
+sp {conversation*stay
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase participation ^available <a>) (<a> ^kind stay)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 20 ^rule conversation*stay ^reason |听听大家接着说什么。|)
+}
+sp {conversation*return-to-routine
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase participation ^routine-due yes ^available <a>) (<a> ^kind leave)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 90 ^rule conversation*return-to-routine ^reason |该吃饭或休息了，这里先聊到这儿。|)
+}
+sp {conversation*enough-for-now
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase participation ^elapsed > 16 ^social > 80 ^available <a>) (<a> ^kind leave)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 60 ^rule conversation*enough-for-now ^reason |聊得差不多了，我接着忙自己的。|)
+}
+sp {conversation*keep-turn-promise
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind << answer explain respond >>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 90 ^rule conversation*keep-turn-promise ^reason |先回答刚才向我提出的问题。|)
+}
+sp {conversation*admit-unknown
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind unknown)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 85 ^rule conversation*admit-unknown ^reason |这件事我并不知道，不能乱说。|)
+}
+sp {conversation*clarify-evidence
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind << challenge ask-source ask-reason >>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 75 ^rule conversation*clarify-evidence ^reason |这点还没弄清楚，接着问一下。|)
+}
+sp {conversation*acknowledge
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind ack)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 65 ^rule conversation*acknowledge ^reason |听到了，先记下这个说法。|)
+}
+sp {conversation*open-topic
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind << ask-location request ask-day >>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 55 ^rule conversation*open-topic ^reason |说说这次想弄清楚的事。|)
+}
+sp {conversation*add-own-evidence
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind contribute)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 45 ^rule conversation*add-own-evidence ^reason |我也有相关的亲身经历，可以补充。|)
+}
+sp {conversation*propose-next-topic
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode conversation ^phase turn ^available <a>) (<a> ^kind propose-topic)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 50 ^rule conversation*propose-next-topic ^reason |这件事说过了，还想问问另一件事。|)
+}
+sp {conversation*honor-one-speaker
+ (state <s> ^io.input-link.frame <f>) (<f> ^mode act ^conversation-holding yes ^available <a>) (<a> ^kind << continue wait >>)
+ --> (<s> ^operator <o> +) (<o> ^name choose ^choice <a> ^priority 920 ^rule conversation*honor-one-speaker ^reason |已经答应这次交谈，先听对方把话说完。|)
+}

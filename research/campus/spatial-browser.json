@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-09",
+  "browser": "Cloud Chrome / Canvas fallback",
+  "externalModelCalls": 0,
+  "checks": [
+    {
+      "name": "map",
+      "regions": 9,
+      "route": "中庭 → 教师办公室 → 医务室",
+      "selectDestination": true,
+      "walkViaMapToBathroom": true,
+      "screenshot": "spatial-map.jpg"
+    },
+    {
+      "name": "autonomous-art",
+      "renderedClip": "draw",
+      "seatedAtWorktable": true,
+      "screenshot": "spatial-art.jpg"
+    },
+    {
+      "name": "rest",
+      "manualCommand": "躺下休息",
+      "pose": "lying on infirmary bed",
+      "verifiedVisually": true
+    },
+    {
+      "name": "toilet",
+      "capacity": "0 / 1 while occupied",
+      "closedDoor": true,
+      "actorPrivate": true,
+      "screenshot": "spatial-toilet.jpg"
+    },
+    {
+      "name": "wash",
+      "renderedClip": "wash",
+      "hygieneAfterCompletion": 100,
+      "screenshot": "spatial-wash.jpg"
+    },
+    {
+      "name": "classroom",
+      "studentsSeated": 6,
+      "teacherTeaching": true
+    }
+  ],
+  "regression": {
+    "command": "npm test",
+    "tests": 26,
+    "passed": 26,
+    "failed": 0
+  },
+  "limitations": [
+    "Procedural cartoon animation; no finger IK or facial animation set.",
+    "Canvas depth ordering is an approximation; WebGL uses depth buffering.",
+    "Rooms are linked via doorways; no traversable corridor scene was added."
+  ]
+}
