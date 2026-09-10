@@ -37,8 +37,9 @@ export function samplePose(clip,time=0){
  }
  return p;
 }
-export function animateCharacter(c,clip,time,dt,{blend=1,from='idle',render={}}={}){
+export function animateCharacter(c,clip,time,dt,{blend=1,from='idle',render={},gesture}={}){
  const p=samplePose(clip,time);
+ if(gesture){const upper=samplePose(gesture,time);for(const key of ['arms','armZ','elbows','headX','headY'])p[key]=upper[key];}
  if(blend<1){const a=samplePose(from,time);for(const k of ['bodyY','bodyZ','bodyX','headX','headY','jump'])p[k]=a[k]+(p[k]-a[k])*blend;for(const k of ['arms','armZ','elbows','legs','knees'])p[k]=p[k].map((v,i)=>a[k][i]+(v-a[k][i])*blend);p.prop=null;}
  for(const [k,v] of Object.entries(render))if(['y','z'].includes(k))p[k==='y'?'bodyY':'bodyZ']=v*blend;
  c.body.position.set(0,p.bodyY+p.jump,p.bodyZ);c.body.rotation.x=p.bodyX;c.head.rotation.set(p.headX,p.headY,0);

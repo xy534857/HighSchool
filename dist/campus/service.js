@@ -5,6 +5,8 @@ import {createFoundation,compilePolicy,encodeFoundationSave,decodeFoundationSave
 import {controlState} from '../foundation/autonomy.js';
 import {upgradeSpatialSave} from './spatial-upgrade.js';
 import {upgradeCampusSave} from './campus-upgrade.js';
+import {upgradeClassroomSave} from './classroom-upgrade.js';
+import {allowsDuringTask} from '../foundation/participation.js';
 import {accessReason,requirementReason} from '../foundation/environment.js';
 import {resolve,test} from '../foundation/tuning.js';
 
@@ -31,10 +33,11 @@ export class SchoolService {
   }
   const campusUpgraded=upgradeCampusSave(restored,content,scenario);
   const spatialUpgraded=upgradeSpatialSave(restored,content,scenario)||campusUpgraded;
+  const classroomUpgraded=upgradeClassroomSave(restored,content);
   const world=await createFoundation({read,wasmBinary,content,scenario,saved:restored});
   if(spatialUpgraded)for(const a of Object.values(world.state.actors))for(const o of Object.values(world.state.objects).filter(o=>o.mapKnown))for(const key of ['room','x','z'])world.mind.write(a.id,{subject:o.id,predicate:key,value:o[key],root:'map:'+o.id+':'+key});
-  for(const p of scenario.actors.filter(a=>!saved||campusUpgraded||socialUpgraded||!world.policyRules[a.id]?.length)){
-   const authored=policies.common.concat(policies.people[p.id]||[]);
+  for(const p of scenario.actors.filter(a=>!saved||campusUpgraded||socialUpgraded||classroomUpgraded||!world.policyRules[a.id]?.length)){
+   const authored=saved&&classroomUpgraded&&!campusUpgraded&&!socialUpgraded&&world.policyRules[p.id]?.length?policies.common.filter(r=>r.id.startsWith('classroom-')):policies.common.concat(policies.people[p.id]||[]);
    const rules=authored.concat((world.policyRules[p.id]||[]).filter(r=>!authored.some(n=>n.id===r.id)&&r.id!=='social-initiate'));
    await world.brain.install(p.id,compilePolicy(p.id,rules,world.tuning),{source:'authored-school-policy'});world.policyRules[p.id]=rules;
   }
@@ -49,9 +52,9 @@ export class SchoolService {
  pump(){
   const w=this.world,owner=this.player,c=controlState(w,owner);
   c.queued=this.queue.length;if(!this.queue.length)return;
-  const active=w.state.tasks[owner]||w.state.suspended[owner];
-  if(active){if(active.decision?.rule==='player'||active.attention==='block')return;w.cancel(owner,'玩家接管了当前自主行动。');if(w.state.tasks[owner])return;}
   const command=this.queue[0],spec=w.tuning.pack.actions[command.action];
+  const active=w.state.tasks[owner]||w.state.suspended[owner];
+  if(active&&!allowsDuringTask(spec,active)){if(active.decision?.rule==='player'||active.attention==='block')return;w.cancel(owner,'玩家接管了当前自主行动。');if(w.state.tasks[owner])return;}
   if(spec.executor==='physical'&&w.state.actors[owner].session){w.perform(owner,'leave-conversation');c.manualSession=null;}
   if(spec.executor==='speech'&&w.state.actors[owner].session&&!w.view(owner).actor.hasFloor)return;
   const r=w.control(owner,command.action,{roles:command.roles,args:command.args},command.id);this.queue.shift();
@@ -99,10 +102,17 @@ export class SchoolService {
   }return rows.filter((r,i,a)=>a.findIndex(x=>x.action===r.action&&JSON.stringify(x.roles)===JSON.stringify(r.roles))===i);
  }
  claimInference(){let request=[...this.world.inbox.pending.values()].find(r=>!this.world.inbox.claimed.has(r.id));request??=claimReflection(this.world);if(request)this.world.inbox.claimed.add(request.id);return request;}
+ situationView(){
+  const w=this.world,owner=this.player,observed=new Set(w.state.observed[owner]||[]);
+  const runs=Object.values(w.state.situations),local=runs.some(r=>r.ambient&&r.status==='active'&&r.participants[owner]?.status==='present');
+  const choices=local?w.candidates(owner,{advanceGoals:false}).filter(c=>w.tuning.pack.actions[c.action].ui?.situation).map(c=>({situation:c.situation,action:c.action,label:w.tuning.pack.actions[c.action].label,roles:c.roles,args:c.args})):[];
+  return runs.map(run=>{const spec=w.tuning.pack.situations.find(s=>s.id===run.spec);return {...run,room:spec?.phases?.[run.phase]?.room||run.room,phaseLabel:spec?.phases?.[run.phase]?.label,
+   choices:choices.filter(c=>c.situation===run.id),turns:run.ambient?w.state.events.filter(e=>e.situation===run.id&&e.delivery==='room'&&observed.has(e.uid)).slice(-6).map(e=>({id:e.uid,actor:e.actor,text:e.text,time:e.time})):[]};});
+ }
  snapshot({staticContent=true}={}){
   const w=this.world,s=w.state,p=s.actors[this.player],observed=new Set(s.observed[this.player]);
   const taskView=t=>t?{id:t.id,action:t.candidate.action,label:w.tuning.pack.actions[t.candidate.action].label,phase:t.phase,remaining:t.remaining,duration:w.tuning.pack.actions[t.candidate.action].duration,anchor:t.anchor,approach:t.approach,blockedBy:t.blockedBy,privateUse:t.privateUse,performedAt:t.performedAt,animation:w.tuning.pack.actions[t.candidate.action].animation,reason:t.decision?.reason,source:t.decision?.rule==='player'?'player':'autonomy'}:null;
-  return {reflection:reflectionState(w),relationshipTypes:w.tuning.pack.relationships||{},evolution:s.social.evolution,cognitionTypes:w.tuning.pack.cognition||{},resourceTypes:w.tuning.pack.resources||{},navigation:s.navigation,control:{...controlState(w,this.player)},attendance:Object.values(s.obligations||{}).filter(r=>r.owner===this.player).filter((r,i,a)=>r.remedy==='pending'||i>=a.length-12),schoolUI:w.tuning.pack.schoolUI,clock:w.view(this.player).clock,time:s.time,player:this.player,actors:Object.values(s.actors).map(a=>({...a,waiting:s.waiting?.[a.id],task:taskView(s.tasks[a.id]),suspended:taskView(s.suspended[a.id]),reason:s.tasks[a.id]?.decision?.reason||w.brain.traces[a.id]?.reason||'',plans:this.planView(a.id,staticContent),relationships:Object.values(s.actors).filter(b=>a.id!==b.id).map(b=>relationship(w,a.id,b.id)),emotions:w.mind.affects(a.id).map(m=>({subject:m.subject,emotion:m.emotion,intensity:m.intensity,coping:m.coping,reason:m.reason,status:m.status,provenance:m.provenance})),nativeDecisions:w.brain.frames.get(a.id)||0})),objects:Object.values(s.objects),...(staticContent?{rooms:s.rooms,types:w.tuning.pack.types,actions:Object.fromEntries(Object.entries(w.tuning.pack.actions).map(([id,a])=>[id,{label:a.label,duration:a.duration}]))}:{}),performance:{...w.metrics},situations:Object.values(s.situations).map(a=>({...a,room:w.tuning.pack.situations.find(x=>x.id===a.spec)?.phases?.[a.phase]?.room||a.room,phaseLabel:w.tuning.pack.situations.find(x=>x.id===a.spec)?.phases?.[a.phase]?.label})),leases:s.leases,session:p.session?s.sessions[p.session]:null,offers:w.view(this.player).offers,groups:w.view(this.player).groups,queue:this.queue.map(c=>({...c,label:w.tuning.pack.actions[c.action].label})),ambient:s.events.filter(e=>e.text&&e.time>s.time-4&&['speech','question','cooperate','refuse','proposal','information','social-act'].includes(e.kind)&&s.sessions[e.session]?.access==='public').map(({recipients,claim,...e})=>e),events:s.events.filter(e=>observed.has(e.uid)).slice(-45),appointments:Object.values(s.appointments).filter(a=>a.participants.includes(this.player)),pending:[...w.inbox.pending.values()].map(r=>({id:r.id,owner:r.owner,reason:r.reason})),notices:this.notices.splice(0),memory:w.mind.all(this.player).filter(m=>!['x','z','room'].includes(m.predicate)).slice(-20),goals:w.mind.goals(this.player)};
+  return {reflection:reflectionState(w),relationshipTypes:w.tuning.pack.relationships||{},evolution:s.social.evolution,cognitionTypes:w.tuning.pack.cognition||{},resourceTypes:w.tuning.pack.resources||{},navigation:s.navigation,control:{...controlState(w,this.player)},attendance:Object.values(s.obligations||{}).filter(r=>r.owner===this.player).filter((r,i,a)=>r.remedy==='pending'||i>=a.length-12),schoolUI:w.tuning.pack.schoolUI,clock:w.view(this.player).clock,time:s.time,player:this.player,actors:Object.values(s.actors).map(a=>({...a,waiting:s.waiting?.[a.id],task:taskView(s.tasks[a.id]),suspended:taskView(s.suspended[a.id]),reason:s.tasks[a.id]?.decision?.reason||w.brain.traces[a.id]?.reason||'',plans:this.planView(a.id,staticContent),relationships:Object.values(s.actors).filter(b=>a.id!==b.id).map(b=>relationship(w,a.id,b.id)),emotions:w.mind.affects(a.id).map(m=>({subject:m.subject,emotion:m.emotion,intensity:m.intensity,coping:m.coping,reason:m.reason,status:m.status,provenance:m.provenance})),nativeDecisions:w.brain.frames.get(a.id)||0})),objects:Object.values(s.objects),...(staticContent?{rooms:s.rooms,types:w.tuning.pack.types,actions:Object.fromEntries(Object.entries(w.tuning.pack.actions).map(([id,a])=>[id,{label:a.label,duration:a.duration}]))}:{}),performance:{...w.metrics},situations:this.situationView(),leases:s.leases,session:p.session?s.sessions[p.session]:null,offers:w.view(this.player).offers,groups:w.view(this.player).groups,queue:this.queue.map(c=>({...c,label:w.tuning.pack.actions[c.action].label})),ambient:s.events.filter(e=>e.text&&e.time>s.time-4&&['speech','question','cooperate','refuse','proposal','information','social-act','situation-act'].includes(e.kind)&&(s.sessions[e.session]?.access==='public'||e.delivery==='room')).map(({recipients,claim,...e})=>e),events:s.events.filter(e=>observed.has(e.uid)).slice(-45),appointments:Object.values(s.appointments).filter(a=>a.participants.includes(this.player)),pending:[...w.inbox.pending.values()].map(r=>({id:r.id,owner:r.owner,reason:r.reason})),notices:this.notices.splice(0),memory:w.mind.all(this.player).filter(m=>!['x','z','room'].includes(m.predicate)).slice(-20),goals:w.mind.goals(this.player)};
  }
  planView(owner,force){this.planCache??=new Map();const key=Math.floor(this.world.state.time/3)+'|'+this.world.brain.rev[owner];let entry=this.planCache.get(owner);if(force||entry?.key!==key){entry={key,value:describePlans(this.world,owner)};this.planCache.set(owner,entry);}return entry.value;}
  save(){const save=JSON.parse(encodeFoundationSave(this.world));save.playerQueue=this.queue;save.commandSerial=this.serial;return JSON.stringify(save);}

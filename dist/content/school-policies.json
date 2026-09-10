@@ -391,6 +391,147 @@
       ],
       "priority": 133,
       "reason": "这件事触及我在意的群体关系，现在不愿支持。"
+    },
+    {
+      "id": "classroom-open",
+      "select": {
+        "action": "classroom-open"
+      },
+      "priority": 145,
+      "reason": "留一点课堂时间，让同学把自己的思路说出来。",
+      "when": []
+    },
+    {
+      "id": "classroom-share-prepared",
+      "select": {
+        "action": "classroom-share-prepared"
+      },
+      "priority": 142,
+      "reason": "我有实际练习或研究积累，愿意拿出来讨论。",
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-assertiveness",
+          "op": "gte",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "id": "classroom-try",
+      "select": {
+        "action": "classroom-try"
+      },
+      "priority": 138,
+      "reason": "我愿意先尝试表达，即使目前准备还不充分。",
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-sociability",
+          "op": "gte",
+          "value": 65
+        }
+      ]
+    },
+    {
+      "id": "classroom-question",
+      "select": {
+        "action": "classroom-question"
+      },
+      "priority": 144,
+      "reason": "我想知道这一步的依据，直接向发言的人提出疑问。",
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-assertiveness",
+          "op": "gte",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "id": "classroom-encourage",
+      "select": {
+        "action": "classroom-encourage"
+      },
+      "priority": 145,
+      "reason": "我愿意给正在发言的同学一点支持。",
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-empathy",
+          "op": "gte",
+          "value": 70
+        }
+      ]
+    },
+    {
+      "id": "classroom-offer-evidence",
+      "select": {
+        "action": "classroom-offer-evidence"
+      },
+      "priority": 146,
+      "reason": "我有可以核对的准备，也愿意帮助对方把问题讲清楚。",
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-empathy",
+          "op": "gte",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "id": "classroom-explain",
+      "select": {
+        "action": "classroom-explain"
+      },
+      "priority": 148,
+      "reason": "有实际准备，就把被追问的依据补充清楚。",
+      "when": []
+    },
+    {
+      "id": "classroom-admit",
+      "select": {
+        "action": "classroom-admit"
+      },
+      "priority": 140,
+      "reason": "我愿意承认暂时不知道，并把补做变成自己的安排。",
+      "when": []
+    },
+    {
+      "id": "classroom-deflect",
+      "select": {
+        "action": "classroom-deflect"
+      },
+      "priority": 147,
+      "reason": "我很在意当众被追问，先维护自己的立场。",
+      "when": [
+        {
+          "scope": "self",
+          "field": "profile-status-concern",
+          "op": "gte",
+          "value": 65
+        }
+      ]
+    },
+    {
+      "id": "classroom-close-clear",
+      "select": {
+        "action": "classroom-close-clear"
+      },
+      "priority": 145,
+      "reason": "根据同学实际拿出的依据收束讨论。",
+      "when": []
+    },
+    {
+      "id": "classroom-close-open",
+      "select": {
+        "action": "classroom-close-open"
+      },
+      "priority": 145,
+      "reason": "没有核对清楚，就保留问题，不替同学认定答案或和解。",
+      "when": []
     }
   ],
   "people": {

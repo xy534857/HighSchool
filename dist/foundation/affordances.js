@@ -1,6 +1,7 @@
 import {roomPath} from './space.js';
 import {goalMethods,stepReady} from './projects.js';
 import {allowsAutomatic} from './autonomy.js';
+import {allowsDuringTask} from './participation.js';
 import {accessReason,requirementReason} from './environment.js';
 import {clone,fail,resolve,test,orderedRoles} from './tuning.js';
 
@@ -20,7 +21,7 @@ export function candidates(world,owner,{action,roles,args,ignoreBusy=false,advan
   for(const [name,spec] of Object.entries(world.tuning.pack.actions)){
    if(action&&name!==action)continue;
    if(!action&&!allowsAutomatic(world,owner,spec))continue;
-   if(s.tasks[owner]&&!ignoreBusy&&spec.category!=='invitation'&&!(spec.interruptWhen&&s.tasks[owner].attention!=='block'&&s.tasks[owner].candidate.action!==name&&test(spec.interruptWhen,view)))continue;
+   if(s.tasks[owner]&&!ignoreBusy&&!spec.fallback&&spec.category!=='invitation'&&!allowsDuringTask(spec,s.tasks[owner])&&!(spec.interruptWhen&&s.tasks[owner].attention!=='block'&&s.tasks[owner].candidate.action!==name&&test(spec.interruptWhen,view)))continue;
    if(p.session&&spec.executor==='physical'&&spec.attention!=='none')continue;
    const variants=[{roles,args},...goals.filter(g=>g.status==='active'&&test(g.activeWhen,view)&&stepReady(world,owner,g)).flatMap(g=>goalMethods(g).filter(m=>m.action===name&&test(m.when,view)).map(m=>({roles:m.roles,args:m.args,goal:g})))];
    for(const variant of variants)for(const bindings of world.roleBindings(owner,spec,variant.roles,view)){

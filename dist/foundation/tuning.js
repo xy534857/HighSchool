@@ -68,6 +68,7 @@ export class Tuning {
    fail(Number.isFinite(spec.duration)&&spec.duration>=0&&spec.duration<=480,'Invalid duration');
    fail(Number.isFinite(spec.cooldown||0)&&(spec.cooldown||0)>=0,'Invalid cooldown');
    fail(['none','pause','block'].includes(spec.attention||'none'),'Invalid attention mode');
+   if(spec.during)fail(spec.executor==='instant'&&Array.isArray(spec.during)&&spec.during.length>0&&spec.during.every(id=>p.actions[id]?.executor==='physical'),'Invalid concurrent contribution');
    for(const [role,b] of Object.entries(spec.roles||{})){
     fail(['target','item','offer','invitation','group','message','situation','obligation'].includes(role),'Unknown role '+role);
     fail(['actors','objects','offers','invitations','groups','messages','situations','obligations','contacts'].includes(b.from),'Unknown binding source');
@@ -93,13 +94,16 @@ export class Tuning {
   for(const s of p.situations||[]){
    fail(idOK(s.id)&&Number.isFinite(s.at),'Invalid situation');
    if(!s.phases){fail(Array.isArray(s.seeds),'Invalid situation seed');for(const seed of s.seeds)fail(idOK(seed.actor)&&seed.claim&&typeof seed.claim.subject==='string'&&typeof seed.claim.predicate==='string','Invalid private situation fact');continue;}
-   fail(s.duration>0&&s.duration<=480&&s.phases[s.initial]&&s.cast&&typeof s.room==='string','Invalid situation lifecycle');
+   fail(s.duration>0&&s.duration<=480&&s.phases[s.initial]&&(s.cast||s.members)&&typeof s.room==='string','Invalid situation lifecycle');
+   if(s.members){validateExpression(s.members);fail(s.turnMinutes>=1&&s.turnMinutes<=30&&Array.isArray(s.during)&&s.during.every(id=>p.actions[id]?.executor==='physical'),'Invalid ambient situation');}
+   if(s.weekdays)fail(s.weekdays.every(n=>Number.isInteger(n)&&n>=0&&n<7),'Invalid situation weekdays');
+   if(s.state)fail(Object.entries(s.state).length<=24&&Object.entries(s.state).every(([k,v])=>idOK(k)&&(['string','boolean'].includes(typeof v)||typeof v==='number'&&Number.isFinite(v))),'Invalid situation state');
    if(s.repeat!==undefined)fail(s.repeat>=s.duration,'Invalid situation recurrence');
-   for(const r of Object.values(s.cast))fail(idOK(r.actor),'Invalid cast');
+   for(const r of Object.values(s.cast||{}))fail(idOK(r.actor),'Invalid cast');
    for(const e of Object.values(s.signals||{}))validateExpression(e);
    for(const phase of Object.values(s.phases)){
     for(const t of phase.transitions||[]){validateExpression(t.when);fail(t.result||s.phases[t.next],'Unknown situation phase');}
-    for(const [role,plan] of Object.entries(phase.plans||{})){fail(s.cast[role]&&Array.isArray(plan.steps)&&plan.steps.length<=24&&typeof plan.title==='string','Invalid role plan');for(const step of plan.steps){fail(p.actions[step.action]||step.until,'Unknown situation action');if(step.skipWhen)validateExpression(step.skipWhen);}}
+    for(const [role,plan] of Object.entries(phase.plans||{})){fail(s.cast?.[role]&&Array.isArray(plan.steps)&&plan.steps.length<=24&&typeof plan.title==='string','Invalid role plan');for(const step of plan.steps){fail(p.actions[step.action]||step.until,'Unknown situation action');if(step.skipWhen)validateExpression(step.skipWhen);}}
    }
   }
   fail((p.clock?.step||.5)>0&&(p.clock?.step||.5)<=1,'Clock step must be in (0,1]');

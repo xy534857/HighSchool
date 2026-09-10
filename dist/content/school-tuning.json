@@ -5091,6 +5091,1041 @@
         "clip": "greet",
         "speed": 1
       }
+    },
+    "classroom-open": {
+      "label": "请同学讲解思路",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "opening"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "teacher"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "这道练习谁愿意说说自己的思路？不确定的地方也可以直接说。",
+          "set": {
+            "opened": true
+          }
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "这道练习谁愿意说说自己的思路？不确定的地方也可以直接说。",
+      "animation": {
+        "clip": "talk"
+      }
+    },
+    "classroom-share-prepared": {
+      "label": "用做过的练习讲解",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "volunteer"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "student"
+          },
+          {
+            "any": [
+              {
+                "op": "gte",
+                "left": "$actor.resources.homework",
+                "right": 2
+              },
+              {
+                "op": "gte",
+                "left": "$actor.resources.research",
+                "right": 2
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "这类题我做过练习。我想讲一下自己的做法，大家帮我看看有没有漏掉的条件。",
+          "set": {
+            "presenter": "$actor.id",
+            "evidence": true
+          }
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "这类题我做过练习。我想讲一下自己的做法，大家帮我看看有没有漏掉的条件。",
+      "animation": {
+        "clip": "talk"
+      }
+    },
+    "classroom-try": {
+      "label": "先说说自己的猜想",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "volunteer"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "student"
+          },
+          {
+            "not": {
+              "any": [
+                {
+                  "op": "gte",
+                  "left": "$actor.resources.homework",
+                  "right": 2
+                },
+                {
+                  "op": "gte",
+                  "left": "$actor.resources.research",
+                  "right": 2
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "我还没完整做过，不过我觉得可以这样试。先说出来，大家一起看看。",
+          "set": {
+            "presenter": "$actor.id",
+            "evidence": false
+          }
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "我还没完整做过，不过我觉得可以这样试。先说出来，大家一起看看。",
+      "animation": {
+        "clip": "talk"
+      }
+    },
+    "classroom-question": {
+      "label": "追问依据",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        },
+        "target": {
+          "from": "actors",
+          "where": {
+            "op": "eq",
+            "left": "$bound.id",
+            "right": "$situation.state.presenter"
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "student"
+          },
+          {
+            "op": "ne",
+            "left": "$actor.id",
+            "right": "$situation.state.presenter"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "这一步为什么成立？你有做过的例子，还是现在猜的？",
+          "set": {
+            "challenger": "$actor.id"
+          },
+          "to": "$target.id",
+          "intent": "classroom-question"
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "这一步为什么成立？你有做过的例子，还是现在猜的？",
+      "animation": {
+        "clip": "talk"
+      }
+    },
+    "classroom-encourage": {
+      "label": "让同学慢慢说",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        },
+        "target": {
+          "from": "actors",
+          "where": {
+            "op": "eq",
+            "left": "$bound.id",
+            "right": "$situation.state.presenter"
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "student"
+          },
+          {
+            "op": "ne",
+            "left": "$actor.id",
+            "right": "$situation.state.presenter"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.state.helper",
+            "right": "none"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "先别急，让你把思路说完。不确定的地方我们可以一起查。",
+          "set": {
+            "helper": "$actor.id"
+          },
+          "to": "$target.id",
+          "intent": "support"
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "先别急，让你把思路说完。不确定的地方我们可以一起查。",
+      "animation": {
+        "clip": "talk"
+      }
+    },
+    "classroom-offer-evidence": {
+      "label": "拿自己的练习一起核对",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "response"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        },
+        "target": {
+          "from": "actors",
+          "where": {
+            "op": "eq",
+            "left": "$bound.id",
+            "right": "$situation.state.presenter"
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "student"
+          },
+          {
+            "op": "ne",
+            "left": "$actor.id",
+            "right": "$situation.state.presenter"
+          },
+          {
+            "all": [
+              {
+                "any": [
+                  {
+                    "op": "gte",
+                    "left": "$actor.resources.homework",
+                    "right": 2
+                  },
+                  {
+                    "op": "gte",
+                    "left": "$actor.resources.research",
+                    "right": 2
+                  }
+                ]
+              },
+              {
+                "op": "ne",
+                "left": "$actor.id",
+                "right": "$situation.state.challenger"
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "我这里做过类似的练习。我们把两种做法放一起核对，看看差在哪一步。",
+          "set": {
+            "response": "supported",
+            "evidence": true
+          },
+          "to": "$target.id",
+          "intent": "support"
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "我这里做过类似的练习。我们把两种做法放一起核对，看看差在哪一步。",
+      "animation": {
+        "clip": "talk"
+      }
+    },
+    "classroom-explain": {
+      "label": "说明练习中的依据",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "response"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        },
+        "target": {
+          "from": "actors",
+          "where": {
+            "op": "eq",
+            "left": "$bound.id",
+            "right": "$situation.state.challenger"
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "student"
+          },
+          {
+            "op": "ne",
+            "left": "$actor.id",
+            "right": "$situation.state.challenger"
+          },
+          {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$actor.id",
+                "right": "$situation.state.presenter"
+              },
+              {
+                "op": "eq",
+                "left": "$situation.state.evidence",
+                "right": true
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "我按做过的练习重新核对了一遍，这一步需要前面的条件，刚才我没交代清楚。",
+          "set": {
+            "response": "explained"
+          },
+          "to": "$target.id",
+          "intent": "classroom-explanation"
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "我按做过的练习重新核对了一遍，这一步需要前面的条件，刚才我没交代清楚。",
+      "animation": {
+        "clip": "talk"
+      }
+    },
+    "classroom-admit": {
+      "label": "承认没准备好，约定补做",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "response"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        },
+        "target": {
+          "from": "actors",
+          "where": {
+            "op": "eq",
+            "left": "$bound.id",
+            "right": "$situation.state.challenger"
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "student"
+          },
+          {
+            "op": "ne",
+            "left": "$actor.id",
+            "right": "$situation.state.challenger"
+          },
+          {
+            "op": "eq",
+            "left": "$actor.id",
+            "right": "$situation.state.presenter"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "你问得对，这一步我还没验证。我下课补做一遍，再把弄明白的地方说清楚。",
+          "set": {
+            "response": "admitted"
+          },
+          "to": "$target.id",
+          "intent": "classroom-admission"
+        },
+        {
+          "type": "goal.commit",
+          "withinMinutes": 1440,
+          "project": "classroom-followup"
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "你问得对，这一步我还没验证。我下课补做一遍，再把弄明白的地方说清楚。",
+      "animation": {
+        "clip": "talk"
+      }
+    },
+    "classroom-deflect": {
+      "label": "坚持猜想，暂不补充依据",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "response"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        },
+        "target": {
+          "from": "actors",
+          "where": {
+            "op": "eq",
+            "left": "$bound.id",
+            "right": "$situation.state.challenger"
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "student"
+          },
+          {
+            "op": "ne",
+            "left": "$actor.id",
+            "right": "$situation.state.challenger"
+          },
+          {
+            "op": "eq",
+            "left": "$actor.id",
+            "right": "$situation.state.presenter"
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "我说的是一种思路，又没说已经证明了。为什么非得现在追着我问？",
+          "set": {
+            "response": "disputed"
+          },
+          "to": "$target.id",
+          "intent": "classroom-deflection"
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "我说的是一种思路，又没说已经证明了。为什么非得现在追着我问？",
+      "animation": {
+        "clip": "argue"
+      }
+    },
+    "classroom-close-clear": {
+      "label": "确认依据并继续讲课",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "review"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "teacher"
+          },
+          {
+            "any": [
+              {
+                "op": "eq",
+                "left": "$situation.state.response",
+                "right": "explained"
+              },
+              {
+                "op": "eq",
+                "left": "$situation.state.response",
+                "right": "supported"
+              }
+            ]
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "现在有可以核对的练习依据了。我们把用到的条件写清楚，再往下讲。",
+          "set": {
+            "outcome": "clarified"
+          }
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "现在有可以核对的练习依据了。我们把用到的条件写清楚，再往下讲。",
+      "animation": {
+        "clip": "talk"
+      }
+    },
+    "classroom-close-open": {
+      "label": "保留疑问，继续课程",
+      "executor": "instant",
+      "duration": 0,
+      "cooldown": 0,
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "roles": {
+        "situation": {
+          "from": "situations",
+          "where": {
+            "all": [
+              {
+                "op": "eq",
+                "left": "$bound.spec",
+                "right": "classroom-discussion"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.phase",
+                "right": "review"
+              },
+              {
+                "op": "eq",
+                "left": "$bound.status",
+                "right": "present"
+              }
+            ]
+          }
+        }
+      },
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$actor.room",
+            "right": "$situation.room"
+          },
+          {
+            "op": "eq",
+            "left": "$situation.ready",
+            "right": true
+          },
+          {
+            "op": "eq",
+            "left": "$actor.session",
+            "right": null
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "teacher"
+          },
+          {
+            "not": {
+              "any": [
+                {
+                  "op": "eq",
+                  "left": "$situation.state.response",
+                  "right": "explained"
+                },
+                {
+                  "op": "eq",
+                  "left": "$situation.state.response",
+                  "right": "supported"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "effects": [
+        {
+          "type": "situation.contribute",
+          "text": "这个疑问先留着，还没有说清楚的部分别当成定论。课后可以接着核对，我们先继续。",
+          "set": {
+            "outcome": "unresolved"
+          }
+        }
+      ],
+      "ui": {
+        "visible": false,
+        "situation": true
+      },
+      "reason": "这个疑问先留着，还没有说清楚的部分别当成定论。课后可以接着核对，我们先继续。",
+      "animation": {
+        "clip": "talk"
+      }
     }
   },
   "clock": {
@@ -6469,6 +7504,163 @@
         }
       },
       "expiredText": "筹备时间结束，按实际完成情况保留进度；没有自动演出结局。"
+    },
+    {
+      "id": "classroom-discussion",
+      "label": "课堂讨论 · 这一步凭什么成立",
+      "at": 524,
+      "repeat": 1440,
+      "weekdays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "duration": 68,
+      "room": "classroom",
+      "initial": "opening",
+      "members": {
+        "any": [
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "student"
+          },
+          {
+            "op": "eq",
+            "left": "$actor.role",
+            "right": "teacher"
+          }
+        ]
+      },
+      "during": [
+        "attend-class",
+        "teach-class"
+      ],
+      "turnMinutes": 3,
+      "state": {
+        "opened": false,
+        "presenter": "none",
+        "challenger": "none",
+        "helper": "none",
+        "evidence": false,
+        "response": "none",
+        "outcome": "none"
+      },
+      "phases": {
+        "opening": {
+          "label": "老师可以邀请同学讲解；也可能没有人开启讨论。",
+          "transitions": [
+            {
+              "when": {
+                "op": "eq",
+                "left": "$situation.state.opened",
+                "right": true
+              },
+              "next": "volunteer"
+            },
+            {
+              "when": {
+                "op": "gte",
+                "left": "$metrics.phaseMinutes",
+                "right": 15
+              },
+              "result": "expired",
+              "text": "没有开启课堂讨论，课程照常进行。"
+            }
+          ]
+        },
+        "volunteer": {
+          "label": "谁愿意说说自己的思路？也可以继续听课。",
+          "transitions": [
+            {
+              "when": {
+                "op": "ne",
+                "left": "$situation.state.presenter",
+                "right": "none"
+              },
+              "next": "discussion"
+            },
+            {
+              "when": {
+                "op": "gte",
+                "left": "$metrics.phaseMinutes",
+                "right": 12
+              },
+              "result": "completed",
+              "text": "没有同学主动讲解，这次留白后继续课程。"
+            }
+          ]
+        },
+        "discussion": {
+          "label": "同学正在讲解，旁人可以支持，也可以追问依据。",
+          "transitions": [
+            {
+              "when": {
+                "op": "ne",
+                "left": "$situation.state.challenger",
+                "right": "none"
+              },
+              "next": "response"
+            },
+            {
+              "when": {
+                "op": "gte",
+                "left": "$metrics.phaseMinutes",
+                "right": 12
+              },
+              "next": "review"
+            }
+          ]
+        },
+        "response": {
+          "label": "有人提出了疑问：发言者可以解释、承认没准备好，或坚持原来的说法。",
+          "transitions": [
+            {
+              "when": {
+                "op": "ne",
+                "left": "$situation.state.response",
+                "right": "none"
+              },
+              "next": "review"
+            },
+            {
+              "when": {
+                "op": "gte",
+                "left": "$metrics.phaseMinutes",
+                "right": 12
+              },
+              "next": "review"
+            }
+          ]
+        },
+        "review": {
+          "label": "老师根据已经发生的讨论收束，未解决的问题仍会保留。",
+          "transitions": [
+            {
+              "when": {
+                "op": "eq",
+                "left": "$situation.state.outcome",
+                "right": "clarified"
+              },
+              "result": "completed",
+              "text": "同学拿出了练习依据，课堂疑问得到澄清；各自的感受仍保留。"
+            },
+            {
+              "when": {
+                "op": "eq",
+                "left": "$situation.state.outcome",
+                "right": "unresolved"
+              },
+              "result": "completed",
+              "text": "课程继续，疑问尚未解决；说过的话和个人承诺已经留下记录。"
+            }
+          ]
+        }
+      },
+      "notice": "课堂留出一段讨论时间，发言和回应都由在场的人自己决定。",
+      "expiredText": "讨论时间结束，未说清楚的部分没有自动解决。"
     }
   ],
   "types": {
@@ -9388,6 +10580,26 @@
           }
         }
       ]
+    },
+    "classroom-followup": {
+      "title": "把课堂上没弄明白的练习补一遍",
+      "motive": "我在讨论里承认了准备不足，答应课后亲自核对。",
+      "priority": 58,
+      "activeWhen": {
+        "op": "ne",
+        "left": "$clock.period",
+        "right": "class"
+      },
+      "windowLabel": "下课后找自己的课桌补做，身体需要仍可优先。",
+      "steps": [
+        {
+          "action": "study",
+          "roles": {
+            "item": "$actor.profile.desk"
+          },
+          "label": "课后实际完成一次练习"
+        }
+      ]
     }
   },
   "socialRevision": 1,
@@ -9693,6 +10905,126 @@
       },
       "reason": "这次请求被拒绝，不等于对方永远拒绝我。",
       "subject": "speaker"
+    },
+    {
+      "id": "classroom-explanation",
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$event.kind",
+            "right": "social-act"
+          },
+          {
+            "op": "eq",
+            "left": "$event.intent",
+            "right": "classroom-explanation"
+          },
+          {
+            "op": "eq",
+            "left": "$event.to",
+            "right": "$observer"
+          }
+        ]
+      },
+      "changes": {
+        "respect": 4,
+        "trust": 2
+      },
+      "reason": "对方拿出了可以核对的依据。"
+    },
+    {
+      "id": "classroom-admission",
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$event.kind",
+            "right": "social-act"
+          },
+          {
+            "op": "eq",
+            "left": "$event.intent",
+            "right": "classroom-admission"
+          },
+          {
+            "op": "eq",
+            "left": "$event.to",
+            "right": "$observer"
+          }
+        ]
+      },
+      "changes": {
+        "respect": 3
+      },
+      "reason": "对方坦率承认了暂时不知道。"
+    },
+    {
+      "id": "classroom-deflection",
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$event.kind",
+            "right": "social-act"
+          },
+          {
+            "op": "eq",
+            "left": "$event.intent",
+            "right": "classroom-deflection"
+          },
+          {
+            "op": "eq",
+            "left": "$event.to",
+            "right": "$observer"
+          }
+        ]
+      },
+      "changes": {
+        "affinity": -3,
+        "grievance": 4
+      },
+      "reason": "我的疑问被当作针对个人，讨论没有得到回应。"
+    },
+    {
+      "id": "classroom-sensitive-question",
+      "when": {
+        "all": [
+          {
+            "op": "eq",
+            "left": "$event.intent",
+            "right": "classroom-question"
+          },
+          {
+            "op": "eq",
+            "left": "$event.to",
+            "right": "$observer"
+          },
+          {
+            "op": "gte",
+            "left": "$actor.profile.status-concern",
+            "right": 65
+          }
+        ]
+      },
+      "changes": {
+        "grievance": 3
+      },
+      "reason": "当众被追问使我感到难堪；这不代表对方真的有恶意。"
     }
+  ],
+  "classroomRevision": 1,
+  "classroomActions": [
+    "classroom-open",
+    "classroom-share-prepared",
+    "classroom-try",
+    "classroom-question",
+    "classroom-encourage",
+    "classroom-offer-evidence",
+    "classroom-explain",
+    "classroom-admit",
+    "classroom-deflect",
+    "classroom-close-clear",
+    "classroom-close-open"
   ]
 }

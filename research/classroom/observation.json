@@ -1,0 +1,227 @@
+{
+  "method": "Original people and Soar policies; start at 08:20; skip the earlier club event; no actor/decision/result injection; regular decisionBudget=2.",
+  "run": {
+    "id": "classroom-discussion:0",
+    "spec": "classroom-discussion",
+    "label": "课堂讨论 · 这一步凭什么成立",
+    "room": "classroom",
+    "status": "completed",
+    "phase": "review",
+    "phaseStarted": 538.5,
+    "started": 524,
+    "ends": 592,
+    "participants": {
+      "t": {
+        "role": "student",
+        "status": "present"
+      },
+      "m": {
+        "role": "student",
+        "status": "present"
+      },
+      "f": {
+        "role": "student",
+        "status": "present"
+      },
+      "a": {
+        "role": "student",
+        "status": "present"
+      },
+      "teacher": {
+        "role": "teacher",
+        "status": "present"
+      },
+      "r": {
+        "role": "student",
+        "status": "present"
+      },
+      "q": {
+        "role": "student",
+        "status": "present"
+      },
+      "l": {
+        "role": "student",
+        "status": "present"
+      }
+    },
+    "audience": [
+      "t",
+      "m",
+      "f",
+      "a",
+      "teacher",
+      "r",
+      "q",
+      "l"
+    ],
+    "ambient": true,
+    "state": {
+      "opened": true,
+      "presenter": "q",
+      "challenger": "f",
+      "helper": "l",
+      "evidence": false,
+      "response": "admitted",
+      "outcome": "unresolved"
+    },
+    "nextTurnAt": 545,
+    "lastEvent": "event-113",
+    "result": "课程继续，疑问尚未解决；说过的话和个人承诺已经留下记录。",
+    "finished": 542.5
+  },
+  "timeline": [
+    {
+      "minute": 525,
+      "actor": "陈老师",
+      "intent": "contribution",
+      "to": "all",
+      "text": "这道练习谁愿意说说自己的思路？不确定的地方也可以直接说。"
+    },
+    {
+      "minute": 528,
+      "actor": "苏禾",
+      "intent": "contribution",
+      "to": "all",
+      "text": "我还没完整做过，不过我觉得可以这样试。先说出来，大家一起看看。"
+    },
+    {
+      "minute": 531,
+      "actor": "何乐",
+      "intent": "support",
+      "to": "苏禾",
+      "text": "先别急，让你把思路说完。不确定的地方我们可以一起查。"
+    },
+    {
+      "minute": 534.5,
+      "actor": "沈乔",
+      "intent": "classroom-question",
+      "to": "苏禾",
+      "text": "这一步为什么成立？你有做过的例子，还是现在猜的？"
+    },
+    {
+      "minute": 538,
+      "actor": "苏禾",
+      "intent": "classroom-admission",
+      "to": "沈乔",
+      "text": "你问得对，这一步我还没验证。我下课补做一遍，再把弄明白的地方说清楚。"
+    },
+    {
+      "minute": 542,
+      "actor": "陈老师",
+      "intent": "contribution",
+      "to": "all",
+      "text": "这个疑问先留着，还没有说清楚的部分别当成定论。课后可以接着核对，我们先继续。"
+    }
+  ],
+  "decisions": 72,
+  "timingMs": {
+    "scope": "SchoolService.advance(.5), including observation snapshot; local process, not browser FPS or model latency",
+    "p50": 6.079322000001412,
+    "p95": 104.5508910000026,
+    "max": 653.9685260000006
+  },
+  "relationships": {
+    "t": [],
+    "m": [],
+    "f": [
+      {
+        "before": {
+          "id": "q",
+          "trust": 0,
+          "affinity": 0,
+          "grievance": 0,
+          "respect": 0
+        },
+        "after": {
+          "id": "q",
+          "trust": 0,
+          "affinity": 0,
+          "grievance": 0,
+          "respect": 3
+        }
+      }
+    ],
+    "a": [],
+    "teacher": [],
+    "r": [],
+    "q": [
+      {
+        "before": {
+          "id": "l",
+          "trust": 0,
+          "affinity": 0,
+          "grievance": 0,
+          "respect": 0
+        },
+        "after": {
+          "id": "l",
+          "trust": 5,
+          "affinity": 6,
+          "grievance": 0,
+          "respect": 0
+        }
+      }
+    ],
+    "l": []
+  },
+  "commitments": [
+    {
+      "owner": "q",
+      "title": "把课堂上没弄明白的练习补一遍",
+      "stage": 1,
+      "status": "completed"
+    }
+  ],
+  "attendance": [
+    {
+      "owner": "t",
+      "attended": 90,
+      "missed": 0,
+      "status": "present",
+      "remedy": "none"
+    },
+    {
+      "owner": "m",
+      "attended": 90,
+      "missed": 0,
+      "status": "present",
+      "remedy": "none"
+    },
+    {
+      "owner": "f",
+      "attended": 90,
+      "missed": 0,
+      "status": "present",
+      "remedy": "none"
+    },
+    {
+      "owner": "a",
+      "attended": 90,
+      "missed": 0,
+      "status": "present",
+      "remedy": "none"
+    },
+    {
+      "owner": "r",
+      "attended": 86,
+      "missed": 4,
+      "status": "present",
+      "remedy": "none"
+    },
+    {
+      "owner": "q",
+      "attended": 80.5,
+      "missed": 9.5,
+      "status": "late",
+      "remedy": "none"
+    },
+    {
+      "owner": "l",
+      "attended": 80,
+      "missed": 10,
+      "status": "late",
+      "remedy": "none"
+    }
+  ],
+  "externalModelCalls": 0
+}

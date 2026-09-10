@@ -76,7 +76,8 @@ export class CampusScene {
    if(p.task?.blockedBy)clip='idle';if(p.task?.phase==='enter'||p.task?.phase==='exit')clip='walk';
    let blend=1,from='idle';
    if(['enter','exit'].includes(p.task?.phase)&&p.task.approach){const a=p.task.anchor,e=p.task.approach,total=Math.hypot(a.x-e.x,a.z-e.z)||1;blend=Math.max(0,Math.min(1,1-Math.hypot(p.x-a.x,p.z-a.z)/total));from='idle';clip=p.task.animation?.clip||'idle';}
-   animateCharacter(c,clip,(time+(p.id.charCodeAt(0)%7)*.2)*(p.task?.animation?.speed||1),dt,{blend,from,render:p.task?.phase==='perform'?p.task.anchor.render:undefined});
+   const gesture=!moving&&snapshot.ambient?.findLast(e=>e.actor===p.id&&e.delivery==='room'&&e.time>=snapshot.time-1.5)?.animation;
+   animateCharacter(c,clip,(time+(p.id.charCodeAt(0)%7)*.2)*(p.task?.animation?.speed||1),dt,{blend,from,gesture,render:p.task?.phase==='perform'?p.task.anchor.render:undefined});
    const tray=c.handProps.tray,carrying=!!(p.resources?.meal||p.resources?.tray);tray.visible=carrying&&!['eat','sleep','toilet'].includes(clip);if(tray.visible){c.arms[0].rotation.x=-.8;c.arms[1].rotation.x=-.8;c.elbows[0].rotation.x=-.8;c.elbows[1].rotation.x=-.8;tray.getObjectByName('meal').visible=!!p.resources.meal;}
    c.root.visible=p.room===this.room&&!p.private;c.last=p;
    if(p.id===snapshot.player){this.playerMarker.visible=p.room===this.room;this.playerMarker.position.set(c.root.position.x,2.3+(this.renderer.domElement.dataset.backend==='canvas'?0:Math.sin(time*2)*.06),c.root.position.z);this.playerMarker.rotation.y=this.renderer.domElement.dataset.backend==='canvas'?0:time;}

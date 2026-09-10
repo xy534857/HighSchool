@@ -1,15 +1,25 @@
 import {defer} from './autonomy.js';
 import {complete as completeObligation} from './obligations.js';
-import {clone,fail,list,test} from './tuning.js';
+import {clone,fail,list,test,resolve} from './tuning.js';
 import {distance} from './space.js';
 import * as sessions from './conversations.js';
-import {respond as respondSituation} from './situations.js';
+import {respond as respondSituation,contribute} from './situations.js';
 import {renderFact} from './presentation.js';
 
 // New content combines these primitives. A new primitive is an explicit engine extension.
 export function createEffects(){
  const effects=new Map(),add=(type,run)=>effects.set(type,{run});
  add('situation.respond',respondSituation);add('autonomy.defer',defer);add('obligation.complete',completeObligation);
+ add('situation.contribute',contribute);
+ add('goal.commit',(tx,c,e)=>{
+  // A promise made by this actor creates only their own plan, never another's.
+  const recipe=tx.world.tuning.pack.projects?.[e.project];fail(recipe,'Unknown commitment project');
+  const goal={...clone(recipe),id:c.causeSituation+':'+c.action+':'+c.actor.id,origin:'self-commitment',deadline:tx.state.time+(e.withinMinutes||1440)};
+  for(const step of goal.steps)for(const method of [step,...(step.alternatives||[])])for(const key of ['roles','args'])if(method[key])method[key]=resolve(method[key],c);
+  if((tx.state.goalKeys[c.actor.id]||[]).includes(goal.id))return;
+  tx.world.validateGoal(c.actor.id,goal);
+  tx.defer(()=>tx.world.addGoal(c.actor.id,goal));
+ });
  add('actor.add',(tx,c,e)=>{
   const p=tx.state.actors[e.actor||c.actor.id],spec=tx.world.tuning.pack.resources?.[e.resource];
   fail(p&&spec&&Number.isFinite(e.amount),'Invalid personal resource');

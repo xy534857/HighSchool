@@ -102,9 +102,12 @@ function renderSchoolStatus(){
  $('make-up').onclick=()=>command(ui.remedyAction,{item:p.profile.desk,obligation:debt[0].id});
 }
 function renderSituations(){
- const runs=snapshot.situations||[],run=runs.find(r=>r.status==='active')||runs.at(-1),panel=$('situation-panel');panel.hidden=!run;if(!run)return;
+ const runs=snapshot.situations||[],run=runs.find(r=>r.status==='active'&&r.room===player().room)||runs.find(r=>r.status==='active')||runs.at(-1),panel=$('situation-panel');panel.hidden=!run;if(!run)return;
  $('situation-title').textContent=run.label;$('situation-text').textContent=run.result||run.phaseLabel;
- $('situation-people').textContent=Object.entries(run.participants).map(([id,p])=>(person(id)?.name||id)+' · '+({accepted:'愿意参与',declined:'决定不参加',invited:'考虑中'}[p.status]||p.status)).join('，');
+ $('situation-people').textContent=run.ambient?[['presenter','发言'],['challenger','追问'],['helper','支持']].filter(([key])=>run.state[key]!=='none').map(([key,label])=>label+'：'+(person(run.state[key])?.name||'同学')).join(' · '):Object.entries(run.participants).map(([id,p])=>(person(id)?.name||id)+' · '+({accepted:'愿意参与',declined:'决定不参加',invited:'考虑中'}[p.status]||p.status)).join('，');
+ setHTML('situation-turns',(run.turns||[]).map(t=>`<p><time>${time(t.time)}</time> <strong>${escape(person(t.actor)?.name||'同学')}</strong><br>${escape(t.text)}</p>`).join(''));
+ setHTML('situation-choices',(run.choices||[]).map((c,i)=>`<button data-contribution="${i}">${escape(c.label)}</button>`).join(''));
+ $('situation-choices').querySelectorAll('button').forEach(b=>b.onclick=()=>{const c=run.choices[Number(b.dataset.contribution)];command(c.action,c.roles,c.args);});
  $('situation-visit').onclick=()=>{follow=false;setRoom(run.room);};
 }
 function renderConversation(){const s=snapshot.session;$('conversation').hidden=!s;if(!s){chatLast='';return;}

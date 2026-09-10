@@ -116,10 +116,12 @@ export class World {
     const pendingInvite=Object.values(this.state.sessions).some(s=>s.status==='open'&&s.members[p.id]?.status==='invited');
     const task=this.state.tasks[p.id],minute=this.state.time%1440,period=this.tuning.pack.clock.periods.find(c=>minute>=c.start&&minute<c.end)?.id;
     const scheduleChange=task&&task.attention!=='block'&&Object.entries(this.tuning.pack.actions).some(([id,a])=>a.interruptWhen&&allowsAutomatic(this,p.id,a)&&id!==task.candidate.action&&test(a.interruptWhen,{actor:p,clock:perception.clockInfo(this)}));
-    if(task&&!pendingInvite&&!scheduleChange)continue;
+    const situationDue=situations.situationDecisionDue(this,p.id);
+    if(task&&!pendingInvite&&!scheduleChange&&!situationDue)continue;
     if(this.state.time+1e-7<(this.state.nextDecision[p.id]||0))continue;
     // Urgent schedule changes and invitations may exceed the ordinary budget; ordinary work stays round-robin.
     if(decisionsLeft<=0&&priority(p)===0)continue;
+    if(situationDue){this.state.situationDecisionAt??={};this.state.situationDecisionAt[p.id]=this.state.time;}
     this.state.nextDecision[p.id]=this.state.time+this.tuning.pack.clock.step;decisionsLeft--;this.state.decisionCursor=(actors.findIndex(a=>a.id===p.id)+1)%actors.length;
     const choice=this.choose(p.id);if(choice&&!choice.candidate.fallback)this.execute(p.id,choice.candidate,this.id('autonomy'),choice.decision);
    }
